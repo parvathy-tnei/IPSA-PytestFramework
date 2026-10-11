@@ -1,0 +1,1632 @@
+##!IIF-IpsaPower-3.0
+#
+
+Header {
+    Version: "7.5+"
+    Program: "IPSA 3.0.0"
+    Type: "Network"
+    Title: "IEEE 33 Bus Network"
+    Date: "15 Aug 2025 12:28:59"
+    Created: "leee@TNEI0595"
+    Format: "IPSA3"
+    ModelUuid: "{075df5bf-8643-420c-831a-91dabc2edb52}"
+    FileUuid: "{b5ffc077-1d5b-49fa-952c-ae2e08e46cfd}"
+    BaseFileUuid: "{e63790e5-9e2a-4d16-be74-216471dc09e4}"
+    NovaUuid: "{00000000-0000-0000-0000-000000000000}"
+}
+DefRec Network {
+  Size i: 33
+  CurrentVersion i: 1
+  NumVersions i: 1
+  DiagramsLocked b: f
+}
+Define System Network {
+  Title: s, Author: s, CreationTime: s, Comment: s, Base: d, BaseinKVA: b, BaseMVAForChecking: d, Frequency: d,
+  SlackUIDs: <i>, BranchRatingNames: <s>, LoadTypes: <s>, PluginIDs: <s>, PrintUseColour: b, PrintWhiteBack: b,
+  PrintLineWidth: i, PrintLineOutStyle: i, PrintTextPadding: i, PrintLayout: i, PrintWide: i, PrintHigh: i,
+  PrintPaper: i, PrintFontSize: i, PrintLowRes: b, PrintDrawBorder: b, PrintDrawLegend: b, PrintDrawPixmap: b,
+  PrintFileName: b, PrintUserTime: b, PrintLandscape: b, PrintPDFFileName: s, MRULocate1: i, MRULocate2: i,
+  MRULocate3: i, MRULocate4: i, BusbarLabels: <s>, LoadLabels: <s>, GeneratorLabels: <s>, IndMachineLabels: <s>,
+  HarmonicFilterLabels: <s>, MechSwCapacitorLabels: <s>, StaticVArCLabels: <s>, BatteryLabels: <s>, DCMachineLabels: <s>,
+  UniMachineLabels: <s>, GridInfeedLabels: <s>, LineLabels: <s>, TransformerLabels: <s>, ThreeWindingTFLabels: <s>,
+  ACDCConverterLabels: <s>, DCDCConverterLabels: <s>, MGsetLabels: <s>, CircuitBreakerLabels: <s>, ProtectionContainerLabels: <s>,
+  SeriesRegulatorLabels: <s>, SetNewAggregatesTrue: b, DoGroupsTriggerIntertrips: b, Versions: <i>
+}
+Define System DrawTool {
+  AutoDrawBusbarType: i, AutoDrawBusbarRadius: d, AutodrawGridSize: d, AutoDrawIslandSeparation: d, AutoDrawEnlargementConst: d,
+  AutoDrawStartingX: d, AutoDrawStartingY: d, AutoDrawIncludeLoads: b, AutoDrawIncludeGens: b, AutoDrawIncludeInfeeds: b,
+  AutoDrawIncludeIMs: b, AutoDrawIncludeOtherRadials: b, AutoDrawIncludeAnnotations: b, RecDrawInitialBusbarUID: i,
+  RecDrawBusbarSize: i, RecDrawStartingX: d, RecDrawStartingY: d, RecDrawOrder: i, RecDrawBusbarType: i,
+  AutoDrawAlgorithm: i, Unlimited: b, RecDrawShowProgMsgs: b, RecDrawRedrawAll: b, DrawIncludeBreakers: b,
+  DrawIncludeProtContainers: b, DrawIncludeOtherInlines: b, AutoDrawBusbarSize: i, DeleteAllAnnotations: b,
+  Versions: <i>
+}
+Define System Staging {
+  GenProposedInService: b, GenAcceptedInService: b, GenCompletedInService: b, GenEnergisedInService: b,
+  GIProposedInService: b, GIAcceptedInService: b, GICompletedInService: b, GIEnergisedInService: b, LoadProposedInService: b,
+  LoadAcceptedInService: b, LoadCompletedInService: b, LoadEnergisedInService: b, Versions: <i>
+}
+Define System Version {
+  ID: i, BasedOn: i, Name: s, Description: s, UserDate: s, Uuid: s, Date: s, Created: <i>, Changed: <i>,
+  Deleted: <i>, AVRExts: <s>, BatteryExts: <s>, BreakerExts: <s>, BusbarExts: <s>, ConverterExts: <s>,
+  ChopperExts: <s>, DCMachExts: <s>, FilterExts: <s>, GeneratorExts: <s>, GovernorExts: <s>, GridInfeedExts: <s>,
+  HarmonicExts: <s>, IndMachineExts: <s>, LineExts: <s>, UnbLineExts: <s>, LoadExts: <s>, UnbLoadExts: <s>,
+  MSCExts: <s>, MGSetExts: <s>, NetworkExts: <s>, SeriesRegExts: <s>, SVCExts: <s>, TransformerExts: <s>,
+  UnbTransformerExts: <s>, 3WTFExts: <s>, UMachineExts: <s>, UniBranchExts: <s>, GroupMixedExts: <s>, GroupLSExts: <s>,
+  GroupGSExts: <s>, GroupTxExts: <s>, GroupFeederExts: <s>
+}
+Define System Scene {
+  ID: i, BasedOn: i, Type: s, Name: s, X: d, Y: d, Width: d, Height: d, Versions: <i>
+}
+Define System SceneData {
+  ID: i, Type: s, Name: s, BackOpacity: d, BackColour: s, BackFile: s, BackWidth: d, BackHeight: d, ShowBackgnd: b,
+  MeasureUnit: s, GeoScale: d, KeepAspectRatio: b, ShowMapDisplay: b, MapServer: s, MapType: i, MapStyle: i,
+  UseCaching: b, BaseScale: d, BaseZoom: i, Latitude: d, Scale: d, Longitude: d, SceneX: d, SceneY: d,
+  APIStatus: i, APIKey: s, Versions: <i>
+}
+Define System SceneVersion {
+  ID: i, SceneVersion: i, BasedOn: i, Name: s, Created: <i>, Changed: <i>, Deleted: <i>
+}
+Define System View {
+  ID: i, SceneName: s, WindowName: s, Maximised: b, Iconised: b, Geometry: <i>, CentreX: d, CentreY: d,
+  Scale: d, UseAntiAlias: b, HUDShow: b, HUDBackColour: <i>, HUDTextColour: <i>, HUDAlpha: d, ZoomFactor: d,
+  ZoomStepsToUse: i, ZoomRefreshInt: i, MapZoom: i, GridShow: b, GridSnap: b, GridHotspot: d, GridOnRadials: b,
+  GridColour: <i>, GridAlpha: d, Versions: <i>
+}
+Define System AnalysisFL {
+  FaultStudyType: i, FaultTime: d, FaultResistance: d, FaultReactance: d, FaultEngineType: i, FaultEngineResultType: i,
+  MaxFaultIterations: i, FaultFlatStart: b, UseSaturatedImpedances: i, AssumeAVRAction: i, CalculateCurrent: b,
+  BusbarsToFault: <i>, SingleBusToFault: i, BranchToFault: i, DistanceAlongBranch: d, MotorToStart: i,
+  BreakerDutyItems: <i>, FaultPlotSteps: i, FaultPlotMaxTime: d, FaultPlotinCycles: b, FaultPlotinkA: b,
+  FaultPlotRed: b, FaultPlotYellow: b, FaultPlotBlue: b, FaultPlotDC: b, FaultPlotRMS: b, FaultPlot2Harm: b,
+  FaultPlotMaxAsymmRed: b, SMSaliency: i, XRCalcMethod: i, XRSMEnhanced: i, XRResultCalc: i, Use2ndHarmonic: b,
+  FaultEngine: i, IEC909DefaultPhaseAngle: d, IEC909Method: i, IgnoreImpedanceCorr: b, VoltageCorrection: i,
+  IEC909UseDefaultPF: b, NearTo: b, IEC909TFRatingIndex: i, BreakerDutyLLL: b, BreakerDutyLG: b, BreakerDutyLL: b,
+  BreakerDutyLLG: b, DefinedFaultMaxIterations: i, DefinedFaultToleranceMVA: d, FaultUseCDP: b, FaultCDPStudyMode: i,
+  FaultCDPInterpMethod: i, FaultCDPNumIterations: i, ShowCDPWarnings: b, FaultCDPDefined: b, FaultCDPDefaultRatedI: b,
+  AdvancedTabToggledFL: b, AdvancedTabToggledBD: b, Versions: <i>
+}
+Define System AnalysisLF {
+  Convergence: d, MaxIterations: i, UndervoltagePU: d, OvervoltagePU: d, LockTaps: i, NoPhaseShift: b,
+  TapOscIterStart: i, TapOscSuccessive: i, TapOscLimit: i, TapOscIterEnd: i, FillkARatings: i, UseLoadScaling: b,
+  RealLoadScale: d, ReactiveLoadScale: d, CheckProtection: b, UseLegacyPhiftCheck: b, DisplayOptionDialog: b,
+  InitialFlatStart: b, SingleTapMovement: b, SlowTapMovement: b, WhichImpedance: i, IslandMethod: i, AutoSelectSlacks: b,
+  FSSetBusbarVoltages: b, FSIgnoreVoltageControlSettings: b, FSVoltageMagnitudePU: d, FSVoltageAngleDeg: d,
+  FSSetTransformerTaps: b, FSIgnoreFixedTaps: b, FSNominalTaps: i, FSTapStartPC: d, FSSetInductionMachineSlips: b,
+  FSSlipPC: d, FSSetMechSwitchCapacitorTaps: b, FSNominalMSC: b, FeederSlackVoltagePU: d, FeederSetTarget: i,
+  ProfileUse: i, ProfileLoadCategory: s, ProfileTimeSliceHrs: d, AdvancedTabToggledLF: b, AdvancedTabToggledCont: b,
+  Versions: <i>
+}
+Define System AnalysisHM {
+  HarmonicStudyType: i, FundamentalTHD: i, MinimumHarmonicOrder: i, MaximumHarmonicOrder: i, HarmonicWaveformBusbar: i,
+  HarmonicWaveformBusbar2: i, HarmonicWaveformBusbar3: i, HarmonicWaveformBusbar4: i, HarmonicWaveformBusbar5: i,
+  HarmonicWaveformBusbar6: i, HarmonicSequence: i, HarmonicUseLongLines: i, HarmonicGlobalLineModel: i,
+  HarmonicGlobalTransformerModel: i, HarmonicGlobalShuntModel: i, HarmonicGlobalLoadModel: i, HarmonicGlobalGeneratorModel: i,
+  HarmonicGlobalMotorModel: i, HarmonicOffNominalFrequencyHz: d, HarmonicOnlyScanResonant: i, HarmonicScanStepSizePU: d,
+  HarmonicBusbarsToStudy: <i>, HarmonicPlotVoltageType: i, HarmonicPlotImpedanceType: i, HarmonicPlotSeparateFundamental: b,
+  HarmonicPlotZ: b, HarmonicPlotR: b, HarmonicPlotX: b, HarmonicPlotUseLogarithmic: b, HarmonicPlotUseFrequency: b,
+  HarmonicPlotUseOhms: b, Versions: <i>
+}
+Define System AnalysisProt {
+  ProtPlotFault: i, ProtFaultBusbar: i, ProtScaleFaults: b, ProtFaultCurrentA: d, ProtFaultPhaseEarth: i,
+  ProtPlotVoltagekV: d, ProtPlotOCDevices: <i>, FaultStudyType: i, FaultEngineType: i, FaultEngineResultType: i,
+  FaultTime: d, FaultResistance: d, FaultReactance: d, FaultFlatStart: b, UseSaturatedImpedances: i, AssumeAVRAction: i,
+  SMSaliency: i, XRCalcMethod: i, XRSMEnhanced: i, Use2ndHarmonic: b, RelayRelayA: d, RelayRelayB: d, RelayRelayC: d,
+  RelayFuseA: d, RelayFuseB: d, FuseRelayC: d, FuseFuseC: d, XFormOload: d, FuseFactor: d, BreakDelay: d,
+  RelayReset: d, FuseReset: d, AdvancedTabToggled: b, Versions: <i>
+}
+Define System AnalysisTS {
+  RefGenIndex: i, StudyTime: d, StepLength: d, SlipLimit: d, ResultInterval: d, DCSwitchFactor: d, PowerImbalance: d,
+  MaxStepLength: d, PrintData: b, PrintBusbar: b, PrintAVR: b, PrintGovernor: b, ShowStepMsgs: b, ShowUDMMsgs: b,
+  ShowPluginMsgs: b, NewGraphWindow: b, StoreResults: b, FileName: s, ReadFileName: s, BusbarStoreUIDs: <i>,
+  GeneratorStoreUIDs: <i>, AVRStoreUIDs: <i>, GovernorStoreUIDs: <i>, InductMachineStoreUIDs: <i>, UniMachineStoreUIDs: <i>,
+  MSCStoreUIDs: <i>, SVCStoreUIDs: <i>, NetCtlStoreUIDs: <i>, IMCtlStoreUIDs: <i>, UMCtlStoreUIDs: <i>,
+  MSCtlStoreUIDs: <i>, BatteryStoreUIDs: <i>, DCMachineStoreUIDs: <i>, BranchStoreUIDs: <i>, ConvertorStoreUIDs: <i>,
+  DCMachCtlStoreUIDs: <i>, ACConvCtlStoreUIDs: <i>, DCConvCtlStoreUIDs: <i>, AdvancedTabToggled: b, Versions: <i>
+}
+Define System AnalysisRel {
+  AllowPVAsSource: b, IsolatorZeroClose: b, Versions: <i>
+}
+Define System AnalysisUnb {
+  MaxIterations: i, JacType: i, FullJacTolerance: d, FrequencyBase: d, SystemBase: d, MinUpdateTolerance: d,
+  MaxMismatch: d, SlowZone: d, SlowUpdate: d, JacPerturbation: d, Versions: <i>
+}
+Define System AnalysisDCLF {
+  CalculateNodalTLF: b, CalculateLODF: b, BranchLossEstimationMethod: i, InductionMachineEfficiencyPC: d,
+  OnlyLargestIsland: b, NoPhaseShift: b, UseLoadScaling: b, RealLoadScale: d, WhichImpedance: i, AutoSelectSlacks: b,
+  ProfileUse: i, ProfileLoadCategory: s, Versions: <i>
+}
+Define System AnalysisNR {
+  ReductionAlgorithm: i, BoundaryUID: i, ExportNetworkPreReduction: b, AutomaticallySelectSlacks: b, MergeZIShunts: b,
+  EquivalentInjectionCutoff: b, EquivalentInjCutoffMVA: d, EquivalentBranchZCutoff: b, EquivalentBrZCutoffPU: d,
+  ObfuscateCatalogObjects: b, UseImpedanceCutOff: b, ImpedanceCutOffPU: d, BranchPowerMode: i, DeleteBoundaryPostReduction: b,
+  ACDCConversionMode: i, CatalogDistributionMode: i, YBusMatrixDecompositionRoutine: i, AutoDrawRadials: b,
+  Versions: <i>
+}
+Define System AnalysisAF {
+  ProtPlotFault: i, ProtFaultBusbar: i, ProtFaultCurrentA: d, OCDevicesToPlot: <i>, ProtBusbarsToFault: <i>,
+  FaultStudyType: i, FaultEngineResultType: i, FaultTime: d, FaultResistance: d, FaultReactance: d, FaultFlatStart: b,
+  UseSaturatedImpedances: i, AssumeAVRAction: i, SMSaliency: i, XRCalcMethod: i, XRSMEnhanced: i, Use2ndHarmonic: b,
+  BoundaryIncidentEnergyJcm2: d, NFPAStandard: i, NFPAUserDefined: <d>, ProtCalculateOpTime: i, ProtSetOpTimeS: d,
+  ProtSetReducedOpTimeS: d, LimitMaximumOpTime: b, MaximumOpTimeS: d, ReducedFaultCurrentPC: d, IEEEStandard: i,
+  UseNFPAMeasurements: i, AdvancedTabToggled: b, Versions: <i>
+}
+Define System TransientGraph {
+  Index: i, GraphType: i, Active: b, AutoScale: b, DisplayLegend: b, XMinimum: d, XMaximum: d, YMinimum: d,
+  YMaximum: d, UDMPluginItemUID: i, ItemUIDs: <i>, TraceColours: <s>, DisplayGrid: b, Versions: <i>
+}
+Define System DataDisplay {
+  SceneName: s, CheckService: b, OutOfServiceStyle: i, OutageStyle: i, LineTypeUnsetStyle: i, LineTypeOHLStyle: i,
+  LineTypeCableStyle: i, LineTypeDuctedStyle: i, LineTypeMixedStyle: i, LineTypeServiceStyle: i, LineTypeMainStyle: i,
+  OutOfServiceColour: s, OutageColour: s, LineTypeColourUnset: s, LineTypeColourOHL: s, LineTypeColourCable: s,
+  LineTypeColourDucted: s, LineTypeColourMixed: s, LineTypeColourService: s, LineTypeColourMain: s, OutOfServiceAlpha: d,
+  OutageAlpha: d, LineTypeAlphaUnset: d, LineTypeAlphaOHL: d, LineTypeAlphaCable: d, LineTypeAlphaDucted: d,
+  LineTypeAlphaMixed: d, LineTypeAlphaService: d, LineTypeAlphaMain: d, OutOfServicePattern: s, OutagePattern: s,
+  LineTypePatternUnset: s, LineTypePatternOHL: s, LineTypePatternCable: s, LineTypePatternDucted: s, LineTypePatternMixed: s,
+  LineTypePatternService: s, LineTypePatternMain: s, OutOfServiceFont: s, OutageFont: s, ShowVoltageColours: b,
+  VoltageScheme: s, VoltageColours: <s>, UseLineType: b, ShowBreakerNames: b, ShowProtectionContainerNames: b,
+  NoZoomAll: b, DiagramFont: s, ShowBusbarMask: b, ShowFeederGroups: b, ShowFeederNameInLabel: b, HideVoltageColourWithFeederOn: b,
+  ShowCustomerNumber: b, ColourFeederGroupLabel: b
+}
+Define System ResultsDisplay {
+  SceneName: s, CheckLimits: <s>, OverLimitStyle: <s>, UnderLimitStyle: <s>, OverLimitColour: <s>, UnderLimitColour: <s>,
+  OverLimitAlpha: <s>, UnderLimitAlpha: <s>, OverLimitPattern: <s>, UnderLimitPattern: <s>, OverLimitFont: <s>,
+  UnderLimitFont: <s>
+}
+Define System ResultsDisplayLF {
+  SceneName: s, UnitsBusbar: b, AngleBusbar: b, JunctionBusbar: b, PrecisionBusbar: i, DisplayUnitsRadial: b,
+  PrecisionRadial: i, DisplayUnitsBranch: b, PrecisionBranch: i, DisplayPVUR: b, DisplayVUF): b, DisplayPhaseR: b,
+  DisplayPhaseY: b, DisplayPhaseB: b, DisplayPhaseMean: b, DisplayPhaseMax: b, DisplaySequenceP: b, DisplaySequenceN: b,
+  DisplaySequenceZ: b, ValueBusbar: s, ValueRadial: s, UnitsRadial: s, ValueBranch: s, EndBranch: s, UnitsBranch: s,
+  FlowArrowStyle: s, DefaultOverVoltagepu: d, DefaultUnderVoltagepu: d, BranchRatingIndex: i, BranchRatingOverPC: d,
+  BranchRatingUnderPC: d, UnbalanceLimitPC: d, UnbalanceCheckAtkV: d, UnbalanceWhichLimit: i, LineLoadingLowColour: s,
+  LineLoadingMidColour: s, LineLoadingHighColour: s, LineLoadingLowOpacity: i, LineLoadingMidOpacity: i,
+  LineLoadingHighOpacity: i, LineLoadingLowMidDiv: i, LineLoadingMidHighDiv: i, LineLoadingRatingIndex: i,
+  LineLoadingRatingUnit: i, DisplayLineLoading: b
+}
+Define System ResultsDisplayFL {
+  SceneName: s, DisplayAC: b, DisplaySecondHarmonic: b, DisplayRPhase: b, DisplayYPhase: b, DisplayBPhase: b,
+  DisplayPositive: b, DisplayNegative: b, DisplayZero: b, XoverRBusbar: b, DisplayJunctions: b, DisplayAngles: b,
+  DisplayUnits: b, PrecisionBusbar: i, PrecisionFlows: i, DisplayIEC909InitialSym: b, DisplayIEC909Peak: b,
+  DisplayIEC909AsymmetricBreak: b, DisplayIEC909SymmetricBreak: b, DisplayIEC909DCMagnitude: b, DisplayIEC909SteadyState: b,
+  DisplayIEC909DCXoverR: b, DisplayIEC909DCXoverRBreak: b, DisplayDC: s, UnitsFlows: s, UnitsVoltages: s,
+  EndTransformer: s, UnitsIEC909: s
+}
+Define System ResultsDisplayHM {
+  SceneName: s, DisplayTHD: b, DisplayVAS: b, DisplayMaxIndividialHD: b, DisplayIndividialHD: b, DisplayJunctions: b,
+  DisplayAngles: b, DisplayUnits: b, PrecisionBusbar: i, PrecisionFlows: i
+}
+Define System ResultsDisplayReliablity {
+  SceneName: s, DisplayAverageDuration: b, DisplayAnnualDuration: b, DisplayAnnualFrequency: b, DisplayUnits: b,
+  PrecisionBusbar: i
+}
+Define System BusbarGraphic {
+  ID: i, Type: s, Diagram: s, X: d, Y: d, Size: d, Versions: <i>
+}
+Define System RadialGraphic {
+  ID: i, Type: s, Diagram: s, FromPts: <d>, FromTypes: <i>, X: d, Y: d, Versions: <i>
+}
+Define System BranchGraphic {
+  ID: i, Type: s, Diagram: s, FromPts: <d>, FromTypes: <i>, ToPts: <d>, ToTypes: <i>, Angle: d, Width: d,
+  Height: d, SymbolX: d, SymbolY: d, Versions: <i>
+}
+Define System 3WTransformerGraphic {
+  ID: i, Type: s, Diagram: s, FromPts: <d>, FromTypes: <i>, ToPts: <d>, ToTypes: <i>, ThreePts: <d>, ThreeTypes: <i>,
+  SymbolX: d, SymbolY: d, Versions: <i>
+}
+Define System BreakerGraphic {
+  ID: i, Type: s, Diagram: s, X: d, Y: d, Size: d, Distance: d, Location: s, Versions: <i>
+}
+Define System GroupGraphic {
+  Versions: <i>, ID: i, Type: s, Diagram: s, Name: s, Items: <i>, HideLOD: d, Colour: s
+}
+Define System Automation {
+  ID: i, Title: s, LFOverVoltagePU: d, LFUnderVoltagePU: d, LFBranchRatingIndex: i, LFBranchRatingOverPC: d,
+  LFBranchRatingUnderPC: d, SaveResultsToFile: b, FileNameStart: s, NumberStudiesPerFile: i, Studies: <i>,
+  Versions: <i>
+}
+Define System Study {
+  ID: i, Title: s, Type: s, WatchType: s, AutomationUID: i, ItemsSwitchOut: <i>, ItemsSwitchIn: <i>, ItemsWatched: <i>,
+  WatchRatingViolations: b, ItemsToWatch: i, StartingPoint: i, Versions: <i>
+}
+Define System Intertrip {
+  ID: i, Name: s, TypeMaster: s, TypeSlave: s, Masters: <i>, Slaves: <i>, SignalTimeS: d, Versions: <i>
+}
+Define System Contingency {
+  ID: i, Name: s, Comment: s, FileNameStart: s, NumberContingenciesPerFile: i, Depth: i, ExtendToBreakers: b,
+  BusbarsIncluded: <i>, Versions: <i>
+}
+Define System Annotation {
+  ID: i, Diagram: s, X: d, Y: d, LabelFlags: i, HTMLText: s, Versions: <i>
+}
+Define System LabelGraphic {
+  ID: i, Type: s, Diagram: s, X: d, Y: d, LabelFlags: i, Versions: <i>
+}
+Define System AVR {
+  ID: i, ControlsUID: i, Name: s, ModelType: i, UdmID: s, PluginID: s, DbType: s, CtlBusbar: i, IEEEModel: i,
+  ForwardGain: d, ForwardTCSecs: d, FeedbackGain: d, FeedbackTCSecs: d, FBatTCSecs: d, VMaxPU: d, VMinPU: d,
+  VRatePUperSec: d, FilterTCSecs: d, ExciterGain: d, ExciterTCSecs: d, EMaxPU: d, EMinPU: d, RegulatorTCSecs: d,
+  Sat75: d, Sat100: d, Ks: d, Versions: <i>
+}
+Define System Breaker {
+  ID: i, ControlsUID: i, Type: s, Name: s, DbType: s, Status: i, NOP: b, MakePeakkA: d, BreakRMSkA: d,
+  BreakDCPC: d, BreakTimemS: d, SwitchTimeHr: d, BreakerType: i, NomCurrentkA: d, Aggregate: b, FeederCB: b,
+  Versions: <i>
+}
+Define System Busbar {
+  ID: i, Name: s, NomVoltkV: d, ControlType: i, VoltPU: d, VoltAngleRad: d, BusbarType: i, Comment: s,
+  ArcEnclosure: i, ArcEquipmentType: i, ArcConductorGapMM: d, ArcWorkingDistanceMM: d, ArcUngrounded: b,
+  OperatingTimeSec: d, ArcEnclosureHeightMM: d, ArcEnclosureWidthMM: d, ArcEnclosureDepthMM: d, ArcBusbarConfiguration: i,
+  ArcIEEEStandard: i, Versions: <i>
+}
+Define System Governor {
+  ID: i, ControlsUID: i, Name: s, ModelType: i, UdmID: s, PluginID: s, Regulation: d, FlyballTCSec: d,
+  TC1Sec: d, TC2Sec: d, TC3Sec: d, TurbineTC1Sec: d, TurbineTC2Sec: d, PMaxMW: d, DbType: s, DbPar: i,
+  Versions: <i>
+}
+Define System Generator {
+  ID: i, FromID: i, Name: s, Status: i, VoltPU: d, VBandwidthPC: d, CtlBusbar: i, GenMW: d, GenMVAr: d,
+  GenMVArMax: d, GenMVArMin: d, GenRatedMW: d, GenRatedMVA: d, ProfileUID: i, SynResistancePU: d, SynReactancePU: d,
+  ZSResistancePU: d, ZSReactancePU: d, NEResistancePU: d, NEReactancePU: d, WindingEarthing: i, DAxisTrXPU: d,
+  DAxisTrTCSec: d, DAxisStrXPU: d, DAxisStrTCSec: d, QAxisXPU: d, QAxisTrXPU: d, QAxisTrTCSec: d, QAxisStrXPU: d,
+  QAxisStrTCSec: d, InertiaSec: d, DampFactor: d, PotierXPU: d, SaturationFact: d, TID: i, PMaxMW: d, QMaxMVAr: d,
+  SMaxMVA: d, SatDAxisXPU: d, SatDAxisTrXPU: d, SatDAxisTrTCSec: d, SatDAxisStTrXPU: d, SatDAxisStrTCSec: d,
+  SatQAxisStrXPU: d, HarmRC0: d, HarmRC12: d, HarmRC1: d, HarmRC2: d, HarmRC3: d, HarmXC0: d, HarmXC1: d,
+  HarmXC2: d, HarmXC3: d, HarmXCEX: d, HarmXEX: d, HarmonicModel: i, DbGenType: s, DbGenPar: i, QMinMVAr: d,
+  DistFactor: d, GenCostPerMW: d, AbsCostPerMW: d, GenCostPerMVAr: d, AbsCostPerMVAr: d, EnhancedModelling: b,
+  LeakageReactance: d, VoltageFactorPg: d, DispPMaxPC: d, DispPMinPC: d, GenPlanningStage: i, GenMethodType: i,
+  StorageIERatio: d, Comment: s, Aggregate: b, Versions: <i>
+}
+Define System GridInfeed {
+  ID: i, FromID: i, Name: s, Status: i, VoltPU: d, GenMW: d, GenMVAr: d, ProfileUID: i, PeakLLL: d, RMSLLL: d,
+  X2RLLL: d, PeakLG: d, RMSLG: d, Tac: d, Tbreak: d, HarmR: <d>, HarmX: <d>, GridPlanningStage: i, StorageIERatio: d,
+  EnergyStorage: b, Comment: s, Aggregate: b, SSC: d, XR: d, Versions: <i>
+}
+Define System Filter {
+  ID: i, FromID: i, Name: s, Status: i, FilterType: i, Ground: b, Data1: d, Data2: d, Data3: d, Data5: d,
+  Data4: d, Data6: d, Versions: <i>
+}
+Define System Harmonic {
+  ID: i, FromID: i, Name: s, Status: i, Element: i, Parameter: i, VoltUnbal: d, FireUnbal: d, MaxTHDPC: d,
+  MaxIDistPC: d, Orders: <d>, Magnitudes: <d>, Angles: <d>, InjType: i, ImpedanceType: i, VoltageR: d,
+  VoltageX: d, VoltageRList: <d>, VoltageXList: <d>, DbType: s, Versions: <i>
+}
+Define System IndMachine {
+  ID: i, FromID: i, Name: s, Status: i, MechPowerMW: d, SlipPC: d, MagnetXPU: d, StatorRPU: d, StatorXPU: d,
+  Model: i, RotorRPU: d, RotorXPU: d, StandRPU: d, StartXPU: d, TSlipB: d, TSlipC: d, InertiaSec: d, DropoffVPU: d,
+  DropPickUpDelaySec: d, LockTimeSec: d, UnderspeedPU: d, OverspeedPU: d, PickUpTimeSec: d, PickUpVoltagePU: d,
+  SwitchOut1Sec: d, SwitchIn1Sec: d, SwitchOut2Sec: d, SwitchIn2Sec: d, MaxSwitchOp: i, DFFeedBusbar: i,
+  DFPowerFactor: d, DFExportQ: b, DFRotorReferenceFrame: i, DFFaultSwitchMode: i, DFFaultRotorCurrentLimit: d,
+  DFFaultCrowbarLimit: d, DFFaultCrowbarResPU: d, HarmRC0: d, HarmRC12: d, HarmRC1: d, HarmRC2: d, HarmRC3: d,
+  HarmXC0: d, HarmXC1: d, HarmXC2: d, HarmXC3: d, HarmXCEX: d, HarmXEX: d, HarmRotorRC0: d, HarmRotorRC2: d,
+  HarmRotorXC0: d, HarmRotorXC2: d, HarmonicModel: i, DbType: s, DbPar: i, ControlModelType: i, RatedMW: d,
+  RatedMVA: d, PolePairs: i, ControlPluginID: s, ExcludeFromTransient: b, Aggregate: b, Comment: s, Versions: <i>
+}
+Define System Line {
+  ID: i, FromID: i, ToID: i, Name: s, Section: i, LineType: i, Status: i, MinResistancePU: d, ResistancePU: d,
+  ReactancePU: d, SusceptancePU: d, ZSResistancePU: d, ZSReactancePU: d, ZSSusceptancePU: d, ZeroImpedance: b,
+  ZeroSequence: b, SwitchTime1Sec: d, SwitchTime2Sec: d, HarmRC0: d, HarmRC12: d, HarmRC1: d, HarmRC2: d,
+  HarmRC3: d, HarmXC0: d, HarmXC1: d, HarmXC2: d, HarmXC3: d, HarmXCEX: d, HarmXEX: d, HarmonicModel: i,
+  HarmonicUseLongLines: i, DbType1: s, DbType2: s, DbLength1: d, DbLength2: d, DbPar1: i, DbPar2: i, DbTranType: s,
+  DbTranPar: i, FailureRateYr: d, RepairTimeHr: d, LengthReliability: d, PluginID: s, HideLabel: b, Name2: s,
+  Status2: i, StanRatingMVA: d, StanRatingSendkA: d, StanRatingReceivekA: d, SumRatingMVA: d, SumRatingSendkA: d,
+  SumRatingReceivekA: d, WinRatingMVA: d, WinRatingSendkA: d, WinRatingReceivekA: d, ShortRatingMVA: d,
+  ShortRatingSendkA: d, ShortRatingReceivekA: d, RatingMVAs: <d>, RatingSendkAs: <d>, RatingReceivekAs: <d>,
+  Comment: s, Aggregate: b, Versions: <i>
+}
+Define System Load {
+  ID: i, FromID: i, Name: s, Status: i, RealMW: d, ReactiveMVAr: d, ProfileUID: i, Customers: i, CustomerType: i,
+  IsEquivalent: b, LoadPlanningStage: i, Comment: s, Aggregate: b, Versions: <i>
+}
+Define System MechSwCap {
+  ID: i, FromID: i, Name: s, Status: i, ControlMode: i, ControlSteps: i, CapSteps: i, IndSteps: i, CapStepSizeMVAr: d,
+  IndStepSizeMVAr: d, MaxContinuousMVAr: d, MinContinuousMVAr: d, TargetVoltagePU: d, BandwidthPC: d, ContinuousOutputMVAr: d,
+  InitPosition: i, NominalPosition: i, ControlActive: i, ControlledUID: i, SendEnd: i, TransientCtl: b,
+  ModelType: i, PluginID: s, Versions: <i>
+}
+Define System StaticVC {
+  ID: i, FromID: i, Name: s, Status: i, QMinMVAr: d, QMaxMVAr: d, VminPU: d, VmaxPU: d, IsStatcom: b, ModelType: i,
+  PluginID: s, Versions: <i>
+}
+Define System Transformer {
+  ID: i, FromID: i, ToID: i, Name: s, TransformerType: i, MagnetEnd: i, CoreLossRPU: d, MagnetXPU: d, Winding: i,
+  NEResistanceW1PU: d, NEReactanceW1PU: d, NEResistanceW2PU: d, NEReactanceW2PU: d, TapNominalPC: d, TapStartPC: d,
+  MinTapPC: d, TapStepPC: d, MaxTapPC: d, DxDTap: d, LockTap: b, SpecVPU: d, RBWidthPC: d, RemoteCtlBusbarUID: i,
+  TapControlMethod: i, TapNumber: i, TapStepActualPC: <d>, TapStepValuePC: <d>, TapStepRPU: <d>, TapStepXPU: <d>,
+  CompRPC: d, CompXPC: d, RatingMVA: d, PhShiftDeg: d, SpecPowerMW: d, SpecPowerAtSend: b, MinPhShiftDeg: d,
+  MaxPhShiftDeg: d, PhShiftStepDeg: d, DbType: s, DbParallel: i, PluginID: s, VoltFactorPt: d, Name2: s,
+  TableStatus2: i, TableStanRatingMVA: d, TableStanRatingSendkA: d, TableStanRatingReceivekA: d, TableSumRatingMVA: d,
+  TableSumRatingSendkA: d, TableSumRatingReceivekA: d, TableWinRatingMVA: d, TableWinRatingSendkA: d, WinRatingReceivekA: d,
+  ShortRatingMVA: d, ShortRatingSendkA: d, ShortRatingReceivekA: d, Comment: s, Versions: <i>
+}
+Define System ThreeWindingTF {
+  ID: i, FromID: i, ToID: i, ThreeUID: i, Name: s, Status: i, Winding: i, W1W2ResistancePU: d, W1W2ReactancePU: d,
+  W1W3ResistancePU: d, W1W3ReactancePU: d, W2W3ResistancePU: d, W2W3ReactancePU: d, W1W2ZSResistancePU: d,
+  W1W2ZSReactancePU: d, W1W3ZSResistancePU: d, W1W3ZSReactancePU: d, W2W3ZSResistancePU: d, W2W3ZSReactancePU: d,
+  W1NEResistancePU: d, W1NEReactancePU: d, W1TapNominalPC: d, W1TapStartPC: d, W1MinTapPC: d, W1TapStepPC: d,
+  W1MaxTapPC: d, W1SpecVPU: d, W1SpecVWinding: i, W1RBWidthPC: d, W1CompRatingMVA: d, W1CompRPC: d, W1CompXPC: d,
+  LockTap: b, W2NEResistancePU: d, W2NEReactancePU: d, W2TapNominalPC: d, W2TapStartPC: d, W2MinTapPC: d,
+  W2TapStepPC: d, W2MaxTapPC: d, W3NEResistancePU: d, W3NEReactancePU: d, W3TapNominalPC: d, W3TapStartPC: d,
+  W3MinTapPC: d, W3TapStepPC: d, W3MaxTapPC: d, DbType: s, PluginID: s, VoltFactorPt: d, HarmRC0: d, HarmRC12: d,
+  HarmRC1: d, HarmRC2: d, HarmRC3: d, HarmonicModel: i, SwitchTime1Sec: d, SwitchTime2Sec: d, FailureRateYr: d,
+  RepairTimeHr: d, Name2: s, Status2: i, W1StanRatingMVA: d, W1SumRatingMVA: d, W1WinRatingMVA: d, W1ShortRatingMVA: d,
+  W2StanRatingMVA: d, W2SumRatingMVA: d, W2WinRatingMVA: d, W2ShortRatingMVA: d, W3StanRatingMVA: d, W3SumRatingMVA: d,
+  W3WinRatingMVA: d, W3ShortRatingMVA: d, W1RatingMVAs: <d>, W2RatingMVAs: <d>, W3RatingMVAs: <d>, Versions: <i>
+}
+Define System SeriesRegulator {
+  ID: i, ControlsUID: i, FromID: i, ToID: i, Name: s, Status: i, ResistancePU: d, ReactancePU: d, TapStart: d,
+  MinTap: d, TapStep: d, MaxTap: d, ControlMode: i, VoltageSetpointForward: d, CompensatingRForward: d,
+  CompensatingXForward: d, VoltageSetpointBackward: d, CompensatingRBackward: d, CompensatingXBackward: d,
+  Versions: <i>
+}
+Define System UMachine {
+  ID: i, FromID: i, Name: s, Status: i, Mode: i, RealMW: d, ReactiveMVAr: d, RatingMVA: d, DefinedFault: b,
+  ThresholdVoltpu: d, FinalRealFaultCurrentpu: d, FinalReactiveFaultCurrentpu: d, DefinedFaultTimeS: <d>,
+  RealFaultCurrentpu: <d>, ReactiveFaultCurrentpu: <d>, ProfileUID: i, ModelMode: i, UdmActive: s, UdmReactive: s,
+  UdmActiveUID: i, UdmReactiveUID: i, ModelType: i, PluginID: s, ConverterDrivenPlant: b, CDPMethodType: i,
+  CDPVoltageInterpolation: i, CDPPhaseCorrections: b, CDPVoltagePU: <d>, CDPRealCurrentPU: <d>, CDPReactiveCurrentPU: <d>,
+  CDPVoltageTransientPU: <d>, CDPRealCurrentTransientPU: <d>, CDPReactiveCurrentTransientPU: <d>, CDPTimeConstantTransientMs: d,
+  CDPVoltageSubTransientPU: <d>, CDPRealCurrentSubTransientPU: <d>, CDPReactiveCurrentSubTransientPU: <d>,
+  CDPTimeConstantSubTransientMs: d, CDPKFactor: d, CDPVoltageThresholdPU: d, CDPMaxISync: d, CDPMaxITrans: d,
+  CDPMaxISubTrans: d, Aggregate: b, Versions: <i>
+}
+Define System UniBranch {
+  ID: i, FromID: i, ToID: i, Name: s, Status: i, SendMW: d, SendMVAr: d, ReceiveMW: d, ReceiveMVAr: d,
+  PluginID: s, Versions: <i>
+}
+Define System ProtContainer {
+  ID: i, ConnID: i, Type: s, Name: s, MemberUIDs: <i>, FromEnd: b, Versions: <i>
+}
+Define System ProtDevice {
+  ID: i, FromID: i, BlockOrder: <i>, Name: s, Status: i, DeviceManufacturer: s, DeviceFamily: s, DeviceDBName: s,
+  DeviceVersion: s, DeviceComments: s, GraphLabel: s, ShowAllBlockCurves: b, SpecifyBlockOrder: b, DeviceType: i,
+  ParameterUnits: i, XMinimum: d, XMaximum: d, YMinimum: d, YMaximum: d, OCNominalCurrentA: d, OCNominalRangeA: <s>,
+  FaultType: i, BreakerBaseCurrentA: d, BreakerBaseRangeA: <s>, BreaderUIDs: <i>, Versions: <i>
+}
+Define System ProtMonitor {
+  ID: i, FromID: i, Name: s, MonitoringWhat: i, PrimaryTurns: d, SecondaryTurns: d, SeesRed: b, SeesYellow: b,
+  SeesBlue: b, Versions: <i>
+}
+Define System ProtBlockConstantCurrent {
+  ID: i, BlockOrder: i, BlockName: s, Status: i, MonitoringWhat: i, CurrentSettingBlock: i, CurrentSettingA: d,
+  CurrentRangeA: <s>, CurrentMultiplier: d, CurrentMultiplierRange: <s>, CurrentOperatingPC: d, CurrentOperatingRangePC: <s>,
+  Versions: <i>
+}
+Define System ProtBlockConstantTime {
+  ID: i, BlockOrder: i, BlockName: s, Status: i, MonitoringWhat: i, CurrentSettingBlock: i, TimeSettingS: d,
+  TimeRangeS: <s>, Versions: <i>
+}
+Define System ProtBlockGivenPointsAdjust {
+  ID: i, BlockOrder: i, BlockName: s, Status: i, MonitoringWhat: i, CurrentSettingBlock: i, DisplayedCurves: i,
+  ExtrapolateCurve: b, MaxCurrentATimeS: <s>, MinCurrentATimeS: <s>, CurrentMultiplier: d, CurrentMultiplierRange: <s>,
+  CurrentOperatingPC: d, CurrentOperatingRangePC: <s>, TimeMultiplier: d, TimeMultiplierRange: <s>, Versions: <i>
+}
+Define System ProtBlockGivenPoints {
+  ID: i, BlockOrder: i, BlockName: s, Status: i, MonitoringWhat: i, CurrentSettingBlock: i, CurveType: i,
+  ExtrapolateCurve: b, OperatesIfHigherThanMax: b, UpperBandwidthPC: d, LowerBandwidthPC: d, MaxCurrentATimeS: <s>,
+  MinCurrentATimeS: <s>, Versions: <i>
+}
+Define System ProtBlockIDMT {
+  ID: i, BlockOrder: i, BlockName: s, Status: i, MonitoringWhat: i, CurrentSettingBlock: i, IDMTCurveType: i,
+  IDMTCurveTypeRange: <s>, CurveDefiniteCutoffs: <s>, DisplayedCurves: i, DisplayedIDMTCurve: i, GivenDisplayedValue: d,
+  CurrentSettingA: d, CurrentRangeA: <s>, CurrentMultiplier: d, CurrentMultiplierRange: <s>, CurrentOperatingPC: d,
+  CurrentOperatingRangePC: <s>, TimeMultiplier: d, TimeMultiplierRange: <s>, Versions: <i>
+}
+Define System ProtBlockPickAndDelay {
+  ID: i, BlockOrder: i, BlockName: s, Status: i, MonitoringWhat: i, CurrentSettingBlock: i, CurrentSettingA: d,
+  CurrentRangeA: <s>, PickUpCurrent: d, PickUpCurrentRange: <s>, TimeDelayS: d, TimeDelayRangeS: <s>, TimeDelayCurrentMultiplier: d,
+  TimeDelaySlope: d, CurrentOperatingPC: d, CurrentOperatingRangePC: <s>, Versions: <i>
+}
+Define System ProtBlockTransientDisc {
+  ID: i, BlockOrder: i, BlockName: s, Status: i, MonitoringWhat: i, CurrentSettingBlock: i, AdjustedResetTimeS: d,
+  ResetPercentage: d, TSDiscTravel: d, Versions: <i>
+}
+Define System Battery {
+  ID: i, FromID: i, Name: s, Status: i, Model: i, VoltPU: d, EmfPU: d, ResistancePU: d, CurrentPU: d, InductancePU: d,
+  SwitchTime1Secs: d, SwitchTime2Secs: d, DbType: s, DbPar: i, Versions: <i>
+}
+Define System DCMachine {
+  ID: i, FromID: i, Name: s, Status: i, BusVoltagePU: d, MechPowerMW: d, Efficiency: d, Speed: d, ArmResistPU: d,
+  ShuntResisPU: d, ControlResisPU: d, ShuntTRatio: d, SeriesTRatio: d, Compounding: d, SatFac75: d, SatFac120: d,
+  BusName2: s, ArmSelfIndPU: d, SeriesSelfIndPU: d, ShuntSelfIndPU: d, CtrlSelfIndPU: d, LeakageIndPU: d,
+  MechLossConst: d, InertiaSec: d, TSlipB: d, TSlipC: d, Switch1Sec: d, Switch2Sec: d, DbType: s, DbPar: i,
+  Versions: <i>
+}
+Define System Converter {
+  ID: i, FromID: i, ToID: i, Name: s, Status: i, DbType: s, Type: i, DCPowerMW: d, DCVoltagePU: d, ACReactivePowerMVAr: d,
+  PowerFactor: d, TransEqReactancePU: d, TransOperateTapPC: d, MinTapPC: d, TapStepPC: d, MaxTapPC: d,
+  PulseNumber: i, NumParaBridges: i, CommutateReactPU: d, MaxACCurrentPU: d, VoltRatio: d, FilterResisPU: d,
+  FilterInductPU: d, DCEquivCapPU: d, MinFireAngleDeg: d, MaxDCCurrentPU: d, Versions: <i>
+}
+Define System Chopper {
+  ID: i, FromID: i, ToID: i, Name: s, ChopperModel: i, VoltGainRatio: d, VoltGainDutyCycle: d, ConductancePU: d,
+  ConverterEfficiencyPC: d, Versions: <i>
+}
+Define System ConverterACC {
+  ID: i, ControlsUID: i, ConverterName: s, Name: s, DbType: s, CtrlBus: i, CtrlModel: i, CorrSlope: d,
+  PIFwdGain: d, VConDroop: d, PIIntGain: d, FConDroop: d, VRatioMax: d, VRatioMin: d, VRatioMod1: d, VRatioPt1: d,
+  ModIndexPt1: d, VRatioPt2: d, ModIndexPt2: d, ModIndexMax: d, ModIndexMin: d, QCurrentLimitPU: d, MaxAq: d,
+  PCurrentLimitPU: d, MaxAd: d, TotCurrentLimitPU: d, MaxAt: d, MaxPowCorrPC: d, MinPowCorrPC: d, ModelType: i,
+  PluginID: s, UdmID: s, Versions: <i>
+}
+Define System ConverterDCC {
+  ID: i, ControlsUID: i, Name: s, DbType: s, Ndczcb: i, Kymodb: i, OperateMode: i, PI1FwdGain: d, PI1IntGain: d,
+  PI2FwdGain: d, PI2IntGain: d, CorrSlope: d, IntGainK5: d, MaxAngle: d, MinAngle: d, VoltDroop: d, ActivePowSet: d,
+  FrequencySet: d, FConFreqRate: d, VConFreqRate: d, ModeSwitchTime: d, PowerFreqTC: d, PowerFreqDroop: d,
+  ModelType: i, PluginID: s, UdmID: s, Versions: <i>
+}
+Define System DCMachineCtl {
+  ID: i, ControlsUID: i, Name: s, DbType: s, DbPar: i, AVRUdmID: s, CtlBusbar: i, VRAmpGain: d, VRMaxVoltPU: d,
+  VRMinVoltPU: d, VRLeadTCSec: d, VRLagTCSec: d, VRVoltDroopPC: d, VRPowerLimMW: d, VRKoFactor: d, VRRate: d,
+  GovUdmID: s, GovAmpGain: d, GovAmpMaxPU: d, GovAmpMinPU: d, GovLeadTCSec: d, GovLagTCSec: d, GovDroopPC: d,
+  GovMaxCurrPU: d, GovKoFactor: d, ModeSwTimeSec: d, ModeSwTol: d, Versions: <i>
+}
+Define System MGSet {
+  ID: i, FromID: i, ToID: i, Name: s, Status: i, Versions: <i>
+}
+Define System Group {
+  ID: i, Type: s, Name: s, MemberUIDs: <i>, Versions: <i>
+}
+Define System GroupLoadScale {
+  ID: i, Name: s, MemberUIDs: <i>, RealScale: d, ReactiveScale: d, Versions: <i>
+}
+Define System GroupGeneratorScale {
+  ID: i, Name: s, MemberUIDs: <i>, RealScale: d, ReactiveScale: d, Versions: <i>
+}
+Define System GroupTransformer {
+  ID: i, Name: s, MemberUIDs: <i>, TapControlMethod: i, MasterTransformerUID: i, Versions: <i>
+}
+Define System GroupFeeder {
+  ID: i, Name: s, MemberUIDs: <i>, UseScaling: b, RealScale: d, ReactiveScale: d, DisplayColour: s, Versions: <i>
+}
+Define System Representing {
+  ID: i, Name: s, RepSceneUID: i, Versions: <i>
+}
+Define System Plugin {
+  ID: i, FromID: i, Name: s, Model: s, Type: s, RealParameters: <d>, IntParameters: <i>, BoolParameters: <i>,
+  StrParameters: <s>, InputUIDs: <i>, OutputUIDs: <i>, ModelDefs: <i>, Versions: <i>
+}
+Define System UdmModel {
+  ID: i, FromID: i, Name: s, Type: i, Filename: s, Pathname: s, Versions: <i>
+}
+Define System DeletedItems {
+  Items: <i>, Groups: <i>
+}
+Define System LoadProfilePQActual {
+  ID: i, Name: s, IdxNames: <s>, VarList1: <d>, VarList2: <d>, Versions: <i>
+}
+Define System LoadProfilePQScale {
+  ID: i, Name: s, IdxNames: <s>, VarList1: <d>, VarList2: <d>, Versions: <i>
+}
+Define System GeneratorProfilePQActual {
+  ID: i, Name: s, IdxNames: <s>, VarList1: <d>, VarList2: <d>, Versions: <i>
+}
+Define System GeneratorProfilePQScale {
+  ID: i, Name: s, IdxNames: <s>, VarList1: <d>, VarList2: <d>, Versions: <i>
+}
+Define System UMProfilePQActual {
+  ID: i, Name: s, IdxNames: <s>, VarList1: <d>, VarList2: <d>, Versions: <i>
+}
+Define System EquivalentBoundary {
+  ID: i, Name: s, Description: s, UseBoundaryConfigMode: b, BoundaryBusbarUIDs: <i>, BoundaryBranchUIDs: <i>,
+  BranchToBusUIDs: <i>, BranchToDirections: <i>, ReducedBusbarUIDs: <i>, ReductionCompleted: b, VerifiedBoundary: b,
+  ShowBoundaryBusMessages: b, ShowBoundaryBranchMessages: b, StaleBoundary: b, Versions: <i>
+}
+Define System EquivalentBranch {
+  ID: i, FromUID: i, ToUID: i, Name: s, Status: i, ResistancePU: d, ReactancePU: d, HideLabel: b, Comment: s,
+  Versions: <i>
+}
+Define System EquivalentRadial {
+  ID: i, FromUID: i, Name: s, Status: i, RealPowerMW: d, ReactivePowerMVAr: d, EquivResistancePU: d, EquivReactancePU: d,
+  TargetVoltagePU: d, NomVoltagekV: d, IncludesReducedSlack: b, CatalogTypes: <i>, CatalogTechs: <i>, CatalogStagings: <i>,
+  CatalogPowersMW: <d>, Comment: s, Versions: <i>
+}
+Define System LineUnbalanced {
+  ID: i, FromID: i, ToID: i, Name: s, LineType: i, Status: i, HasPhaseA: b, HasPhaseB: b, HasPhaseC: b,
+  HasNeutral: b, ResistancePhasePU: d, ReactancePhasePU: d, SusceptancePhasePU: d, ResistanceNeutralPU: d,
+  ReactanceNeutralPU: d, SusceptanceNeutralPU: d, DbType: s, DbLength: d, DbPar: i, Name2: s, Status2: i,
+  StanRatingMVA: d, StanRatingSendkA: d, StanRatingReceivekA: d, SumRatingMVA: d, SumRatingSendkA: d, SumRatingReceivekA: d,
+  WinRatingMVA: d, WinRatingSendkA: d, WinRatingReceivekA: d, ShortRatingMVA: d, ShortRatingSendkA: d,
+  ShortRatingReceivekA: d, RatingMVAs: <d>, RatingSendkAs: <d>, RatingReceivekAs: <d>, Versions: <i>
+}
+Define System LoadUnbalanced {
+  ID: i, FromID: i, Name: s, Status: i, Connection: i, HasPhaseA: b, HasPhaseB: b, HasPhaseC: b, RealPhaseAMW: d,
+  ReactivePhaseAMVAr: d, RealPhaseBMW: d, ReactivePhaseBMVAr: d, RealPhaseCMW: d, ReactivePhaseCMVAr: d,
+  ProfilePhaseAUID: i, ProfilePhaseBUID: i, ProfilePhaseCUID: i, HasTransformer: b, Versions: <i>
+}
+Define System TransformerUnbalanced {
+  ID: i, FromID: i, ToID: i, Name: s, TransformerType: i, Winding: i, Status: i, ResistancePU: d, ReactancePU: d,
+  EarthPrimaryResistancePU: d, EarthPrimaryReactancePU: d, EarthSecondaryResistancePU: d, EarthSecondaryReactancePU: d,
+  TapPrimaryNominalPC: d, TapPrimaryPositionPC: d, MinTapPrimaryPC: d, TapPrimaryStepPC: d, MaxTapPrimaryPC: d,
+  TapSecondaryNominalPC: d, TapSecondaryPositionPC: d, MinTapSecondaryPC: d, TapSecondaryStepPC: d, MaxTapSecondaryPC: d,
+  DbType: s, DbParallel: i, Name2: s, Status2: i, StanRatingMVA: d, StanRatingSendkA: d, StanRatingReceivekA: d,
+  SumRatingMVA: d, SumRatingSendkA: d, SumRatingReceivekA: d, WinRatingMVA: d, WinRatingSendkA: d, WinRatingReceivekA: d,
+  ShortRatingMVA: d, ShortRatingSendkA: d, ShortRatingReceivekA: d, RatingMVAs: <d>, RatingSendkAs: <d>,
+  RatingReceivekAs: <d>, Versions: <i>
+}
+Record System Version {
+  1  0 "Working scenario" "" "" "{6e28dbed-5752-4f25-9a93-0d1c0bafd587}" "15 Aug 2025 12:28:58"  < > 
+    < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < > 
+    < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < > 
+  
+}
+Record System AnalysisLF {
+  0.01  100  0.9  1.1  0  f  250  250  250  250  0  f  1  1  f  f  t  t  f  f  0  0  f  f  f  1  0  f
+    f  1  0  f  0  f  t  1  0  1  " 2022-10-02 18:35:39"  2  f  f  < 1 > 
+}
+Record System AnalysisFL {
+  1  0.1  0  0  4  2  5  f  0  0  f  < >   0  0  0  0  < >   5  100  f  f  t  t  t  f  f  f  t  0  1
+    1  0  t  0  0.8  3  f  3  t  f  0  t  f  f  f  30  0.03  f  0  0  1  t  t  t  f  f  < 1 > 
+}
+Record System AnalysisHM {
+  2  0  1  25  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  1  0.05  < >   1  0  f  t  f  f  f  f  f
+    < 1 > 
+}
+Record System AnalysisTS {
+  0  1  0.01  540  0.04  0  0.0001  0.01  f  f  f  f  t  t  t  f  f  ""  ""  < >   < >   < >   < >   < > 
+    < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   f  < 1 > 
+}
+Record System AnalysisRel {
+  t  t  < 1 > 
+}
+Record System AnalysisUnb {
+  100  1  0.0001  50  100  0.6  0.001  0.8  0.5  1e-06  < 1 > 
+}
+Record System AnalysisProt {
+  1  0  f  0  1  11  < >   3  4  2  0.1  0  0  f  0  0  0  1  1  t  0  0  0  0  0  0  0  0  0  0  0  0
+    f  < 1 > 
+}
+Record System AnalysisDCLF {
+  f  f  0  100  f  t  f  1  0  f  0  ""  < 1 > 
+}
+Record System AnalysisNR {
+  2  0  f  t  t  f  0  f  0  f  f  0  2  f  0  1  2  t  < 1 > 
+}
+Record System AnalysisAF {
+  1  0  0  < >   < >   3  1  0.1  0  0  f  0  0  0  1  1  t  5  0  < >   0  0  0  f  0  15  1  1  f  < 1 
+  > 
+}
+Record System Scene {
+  1  0 "IpsaSLD" "Main single line"  -568.75  -69.125  2040.76  1231.91  < 1 > 
+}
+Record System SceneVersion {
+  1  1  0 ""  < >   < >   < > 
+}
+Record System SceneData {
+  1 "IpsaSLD" ""  0.3 "#ffffff" ""  1472  1024  f "Kilometres"  1  f  f "https://a.tile.openstreetmap.org"
+    0  0  f  1  16  53.4761  0  -2.2317  0  0  0 ""  < 1 > 
+}
+Record System View {
+  1 "Main single line" "Main single line"  t  f  < 0 0 1460 597 >   453.125  353.75  0.8  f  t  < 234 
+  219 255 >   < 81 67 103 >   0.7  1.25  5  20  0  f  t  4  f  < 255 0 0 >   0.2  < 1 > 
+}
+Record System DataDisplay {
+  "Main single line"  t  4  6  6  6  6  6  6  6  6  "black"  "black"  "black"  "black"  "black"  "black"
+    "black"  "black"  "black"  0.25  0.25  1  1  1  1  1  1  1  "dot"  "dot"  "solid"  "dash"  "solid"
+    "dot"  "dashdot"  "dashdot"  "solid"  "bold"  "bold"  t  "Custom"  < "12.66" "#3874a3" >   f  f  f
+    f  "Segoe UI,7,-1,5,50,0,0,0,0,0,Regular"  f  f  f  t  f  t
+}
+Record System ResultsDisplay {
+  "Main single line"  < "Data" "Busbar" "t" "Data" "Radial" "t" "Data" "Branch" "t" "LoadFlow" "Busbar" 
+  "t" "LoadFlow" "Radial" "t" "LoadFlow" "Branch" "t" >   < "Data" "Busbar" "ItemColourFore" "Data" 
+  "Radial" "ItemColourFore" "Data" "Branch" "ItemColourFore" "LoadFlow" "Busbar" "TextColourBorder" 
+  "LoadFlow" "Radial" "TextColourBorder" "LoadFlow" "Branch" "TextColourBorder" >   < "Data" "Busbar" 
+  "ItemPattern" "Data" "Radial" "ItemPattern" "Data" "Branch" "ItemPattern" "LoadFlow" "Busbar" "TextColourBorder" 
+  "LoadFlow" "Radial" "TextColourBorder" "LoadFlow" "Branch" "TextColourBorder" >   < "Data" "Busbar" 
+  "black" "Data" "Radial" "black" "Data" "Branch" "black" "LoadFlow" "Busbar" "red" "LoadFlow" "Radial" 
+  "red" "LoadFlow" "Branch" "red" >   < "LoadFlow" "Busbar" "blue" "LoadFlow" "Radial" "blue" "LoadFlow" 
+  "Branch" "blue" >   < "Data" "Busbar" "0.25" "Data" "Radial" "0.25" "Data" "Branch" "0.25" "LoadFlow" 
+  "Busbar" "1" "LoadFlow" "Radial" "1" "LoadFlow" "Branch" "1" >   < "LoadFlow" "Busbar" "1" "LoadFlow" 
+  "Radial" "1" "LoadFlow" "Branch" "1" >   < "Data" "Busbar" "dot" "Data" "Radial" "dot" "Data" "Branch" 
+  "dot" "LoadFlow" "Busbar" "dot" "LoadFlow" "Radial" "dot" "LoadFlow" "Branch" "dot" >   < "Data" "Busbar" 
+  "dot" "Data" "Radial" "dot" "Data" "Branch" "dot" "LoadFlow" "Busbar" "dot" "LoadFlow" "Radial" "dot" 
+  "LoadFlow" "Branch" "dot" >   < "Data" "Busbar" "bold" "Data" "Radial" "bold" "Data" "Branch" "bold" 
+  "LoadFlow" "Busbar" "bold" "LoadFlow" "Radial" "bold" "LoadFlow" "Branch" "bold" >   < "Data" "Busbar" 
+  "bold" "Data" "Radial" "bold" "Data" "Branch" "bold" "LoadFlow" "Busbar" "bold" "LoadFlow" "Radial" 
+  "bold" "LoadFlow" "Branch" "bold" > 
+}
+Record System ResultsDisplayLF {
+  "Main single line"  f  f  t  3  f  3  f  3  f  f  f  f  f  t  f  f  f  f  "BusVoltagepu"  "RadialRealandReactiveFlow"
+    "UnitsMVA"  "BranchRealandReactiveFlow"  "BranchFrom"  "UnitsMVA"  "FlowArrowReal"  1.05  0.95  0
+    100  0  1  3.3  0  "green"  "gold"  "maroon"  100  100  100  33  66  0  0  f
+}
+Record System ResultsDisplayFL {
+  "Main single line"  f  f  t  f  f  f  f  f  f  t  f  f  3  3  t  f  f  f  f  f  f  f  "DCNone"  "UnitsMVA"
+    "UnitsPU"  "TransformerFrom"  "UnitskA"
+}
+Record System ResultsDisplayHM {
+  "Main single line"  t  f  f  f  t  f  f  3  3
+}
+Record System ResultsDisplayReliablity {
+  "Main single line"  t  t  t  f  3
+}
+Record System Busbar {
+  1  "Busbar1"  12.66  1  1  0  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  3  "Busbar3"  12.66  0  0.993056  0.00405591  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  4  "Busbar4"  12.66  0  0.990419  0.00595683  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  5  "Busbar5"  12.66  0  0.988062  0.00790087  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  6  "Busbar6"  12.66  0  0.981559  0.0113812  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  7  "Busbar7"  12.66  0  0.979079  0.0105298  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  8  "Busbar8"  12.66  0  0.977699  0.0122113  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  9  "Busbar9"  12.66  0  0.97641  0.0145045  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  10  "Busbar10"  12.66  0  0.975623  0.0169856  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  11  "Busbar11"  12.66  0  0.975702  0.0174084  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  12  "Busbar12"  12.66  0  0.975985  0.0181762  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  13  "Busbar13"  12.66  0  0.976845  0.0221615  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  14  "Busbar14"  12.66  3  0.977143  0.0242673  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  15  "Busbar15"  12.66  0  0.978476  0.0261417  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  16  "Busbar16"  12.66  0  0.980555  0.0283244  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  17  "Busbar17"  12.66  0  0.984457  0.035083  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  18  "Busbar18"  12.66  3  0.987196  0.0375686  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  19  "Busbar19"  12.66  0  0.99891  0.00109746  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  20  "Busbar20"  12.66  0  1.00039  0.00447698  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  21  "Busbar21"  12.66  3  1.00106  0.00574202  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  22  "Busbar22"  12.66  0  1.00043  0.00539451  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  23  "Busbar23"  12.66  0  0.991069  0.00457509  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  24  "Busbar24"  12.66  0  0.987573  0.00549526  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  25  "Busbar25"  12.66  3  0.987354  0.00716361  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  26  "Busbar26"  12.66  0  0.981311  0.0120093  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  27  "Busbar27"  12.66  0  0.981096  0.0128992  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  28  "Busbar28"  12.66  0  0.979766  0.0166657  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  29  "Busbar29"  12.66  0  0.979182  0.0196911  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  30  "Busbar30"  12.66  3  0.979773  0.0213073  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  31  "Busbar31"  12.66  0  0.981825  0.0260488  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  32  "Busbar32"  12.66  0  0.982865  0.0279574  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  33  "Busbar33"  12.66  3  0.98468  0.0311357  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  34  "Busbar2"  12.66  0  0.998887  0.000760834  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+}
+Record System Network {
+  "IEEE 33 Bus Network"  "IPSA"  ""  "(c)2025 TNEI Services Ltd."  100  f  100  50  < 1 >   < "Standard" 
+  "Summer" "Winter" "Short" >   < "0" "Unset" >   < >   t  t  1  1  0  0  1  1  0  14  f  t  t  f  f
+    t  t  ""  0  0  0  0  < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < > 
+    < >   < >   < >   < >   < >   < >   < >   f  f  < 1 > 
+}
+Record System DrawTool {
+  3  5  500  200  20  675  350  t  t  t  t  t  t  -1  5  675  350  0  3  0  f  f  f  t  t  t  5  f  < 1 
+  > 
+}
+Record System Staging {
+  f  t  t  t  t  t  t  t  t  t  t  t  < 1 > 
+}
+Record System Load {
+  75  34  "Load 1"  0  0.1  0.06  115  0  0  f  3  ""  f  < 1 > 
+  76  3  "Load 2"  0  0.09  0.04  115  0  0  f  3  ""  f  < 1 > 
+  77  4  "Load 3"  0  0.12  0.08  115  0  0  f  3  ""  f  < 1 > 
+  78  5  "Load 4"  0  0.06  0.03  115  0  0  f  3  ""  f  < 1 > 
+  79  6  "Load 5"  0  0.06  0.02  115  0  0  f  3  ""  f  < 1 > 
+  80  7  "Load 6"  0  0.2  0.1  115  0  0  f  3  ""  f  < 1 > 
+  81  8  "Load 7"  0  0.2  0.1  115  0  0  f  3  ""  f  < 1 > 
+  82  9  "Load 8"  0  0.06  0.02  115  0  0  f  3  ""  f  < 1 > 
+  83  10  "Load 9"  0  0.06  0.02  115  0  0  f  3  ""  f  < 1 > 
+  84  11  "Load 10"  0  0.045  0.03  115  0  0  f  3  ""  f  < 1 > 
+  85  12  "Load 11"  0  0.06  0.035  115  0  0  f  3  ""  f  < 1 > 
+  86  13  "Load 12"  0  0.06  0.035  115  0  0  f  3  ""  f  < 1 > 
+  87  14  "Load 13"  0  0.12  0.08  115  0  0  f  3  ""  f  < 1 > 
+  88  15  "Load 14"  0  0.06  0.01  115  0  0  f  3  ""  f  < 1 > 
+  91  16  "Load 15"  0  0.06  0.02  115  0  0  f  3  ""  f  < 1 > 
+  92  17  "Load 16"  0  0.06  0.02  115  0  0  f  3  ""  f  < 1 > 
+  93  18  "Load 17"  0  0.09  0.04  115  0  0  f  3  ""  f  < 1 > 
+  94  33  "Load 18"  0  0.06  0.04  115  0  0  f  3  ""  f  < 1 > 
+  95  32  "Load 19"  0  0.21  0.1  115  0  0  f  3  ""  f  < 1 > 
+  96  31  "Load 20"  0  0.15  0.07  115  0  0  f  3  ""  f  < 1 > 
+  97  30  "Load 21"  0  0.2  0.1  115  0  0  f  3  ""  f  < 1 > 
+  98  29  "Load 22"  0  0.12  0.07  115  0  0  f  3  ""  f  < 1 > 
+  99  28  "Load 23"  0  0.06  0.02  115  0  0  f  3  ""  f  < 1 > 
+  100  27  "Load 24"  0  0.06  0.025  115  0  0  f  3  ""  f  < 1 > 
+  101  26  "Load 25"  0  0.06  0.025  115  0  0  f  3  ""  f  < 1 > 
+  102  23  "Load 26"  0  0.09  0.05  115  0  0  f  3  ""  f  < 1 > 
+  103  24  "Load 27"  0  0.42  0.2  115  0  0  f  3  ""  f  < 1 > 
+  104  25  "Load 28"  0  0.42  0.2  115  0  0  f  3  ""  f  < 1 > 
+  105  22  "Load 29"  0  0.09  0.04  115  0  0  f  3  ""  f  < 1 > 
+  106  21  "Load 30"  0  0.09  0.04  115  0  0  f  3  ""  f  < 1 > 
+  107  20  "Load 31"  0  0.09  0.04  115  0  0  f  3  ""  f  < 1 > 
+  108  19  "Load 32"  0  0.09  0.04  115  0  0  f  3  ""  f  < 1 > 
+}
+Record System Line {
+  35  1  34  "L1"  1  0  0  0  0.0575259  0.0293245  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L1"  0  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  36  34  3  "L2"  1  0  0  0  0.307595  0.156668  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L2"  0  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  37  3  4  "L3"  1  0  0  0  0.228357  0.1163  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L3"  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  38  4  5  "L4"  1  0  0  0  0.237778  0.121104  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L4"  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  39  5  6  "L5"  1  0  0  0  0.510995  0.441115  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L5"  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  40  6  7  "L6"  1  0  0  0  0.116799  0.386085  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L6"  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  41  7  8  "L7"  1  0  0  0  0.44386  0.146685  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L7"  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  42  8  9  "L8"  1  0  0  0  0.642643  0.461705  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L8"  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  44  9  10  "L9"  1  0  0  0  0.651378  0.461705  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L9"  0  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  45  10  11  "L10"  1  0  0  0  0.122664  0.0405551  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L10"  0  0  0  0  0  0  0  0  0  0  0
+    0  0  < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  46  11  12  "L11"  1  0  0  0  0.233598  0.077242  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L11"  0  0  0  0  0  0  0  0  0  0  0  0
+    0  < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  47  12  13  "L12"  1  0  0  0  0.915922  0.720634  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L12"  0  0  0  0  0  0  0  0  0  0  0  0
+    0  < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  48  13  14  "L13"  1  0  0  0  0.337918  0.444796  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L13"  0  0  0  0  0  0  0  0  0  0  0  0
+    0  < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  49  14  15  "L14"  1  0  0  0  0.36874  0.328185  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L14"  0  0  0  0  0  0  0  0  0  0  0  0
+    0  < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  50  15  16  "L15"  1  0  0  0  0.465635  0.340039  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L15"  0  0  0  0  0  0  0  0  0  0  0  0
+    0  < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  51  16  17  "L16"  1  0  0  0  0.80424  1.07378  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L16"  0  0  0  0  0  0  0  0  0  0  0  0
+    0  < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  52  17  18  "L17"  1  0  0  0  0.456713  0.358133  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L17"  0  0  0  0  0  0  0  0  0  0  0  0
+    0  < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  53  34  19  "L18"  1  0  0  0  0.102324  0.0976443  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L18"  0  0  0  0  0  0  0  0  0  0  0
+    0  0  < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  54  19  20  "L19"  1  0  3  0  0.938508  0.845668  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L19"  3  0  0  0  0  0  0  0  0  0  0  0
+    0  < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  55  20  21  "L20"  1  0  0  0  0.255497  0.298486  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L20"  0  0  0  0  0  0  0  0  0  0  0  0
+    0  < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  56  21  22  "L21"  1  0  0  0  0.442301  0.584805  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L21"  0  0  0  0  0  0  0  0  0  0  0  0
+    0  < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  57  3  23  "L22"  1  0  0  0  0.281515  0.192356  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L22"  0  0  0  0  0  0  0  0  0  0  0  0
+    0  < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  58  23  24  "L23"  1  0  0  0  0.560285  0.442425  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L23"  0  0  0  0  0  0  0  0  0  0  0  0
+    0  < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  59  24  25  "L24"  1  0  0  0  0.559037  0.437434  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L24"  0  0  0  0  0  0  0  0  0  0  0  0
+    0  < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  60  6  26  "L25"  1  0  0  0  0.126657  0.0645139  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L25"  0  0  0  0  0  0  0  0  0  0  0  0
+    0  < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  61  26  27  "L26"  1  0  0  0  0.17732  0.090282  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L26"  0  0  0  0  0  0  0  0  0  0  0  0
+    0  < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  62  27  28  "L27"  1  0  0  0  0.660737  0.582559  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L27"  0  0  0  0  0  0  0  0  0  0  0  0
+    0  < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  63  28  29  "L28"  1  0  0  0  0.501761  0.437122  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L28"  0  0  0  0  0  0  0  0  0  0  0  0
+    0  < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  64  29  30  "L29"  1  0  0  0  0.316642  0.161285  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L29"  0  0  0  0  0  0  0  0  0  0  0  0
+    0  < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  65  30  31  "L30"  1  0  0  0  0.607953  0.60084  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L30"  0  0  0  0  0  0  0  0  0  0  0  0
+    0  < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  66  31  32  "L31"  1  0  0  0  0.193729  0.225799  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L31"  0  0  0  0  0  0  0  0  0  0  0  0
+    0  < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  67  32  33  "L32"  1  0  0  0  0.212759  0.330805  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  "L32"  0  0  0  0  0  0  0  0  0  0  0  0
+    0  < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+}
+Record System Generator {
+  69  14  "Solar PV Farm"  0  0  5  0  1  0  0  0  0  0  117  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0  0
+    0  0  0  f  0  0  0  0  3  2  1  ""  f  < 1 > 
+  70  18  "Solar PV Farm"  0  0  5  0  1  0  0  0  0  0  117  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0  0
+    0  0  0  f  0  0  0  0  3  2  1  ""  f  < 1 > 
+  71  21  "Wind Farm"  0  0  5  0  2  0  0  0  0  0  116  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0  0  0
+    0  0  f  0  0  0  0  3  3  1  ""  f  < 1 > 
+  72  25  "Wind Farm"  0  0  5  0  2  0  0  0  0  0  116  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0  0  0
+    0  0  f  0  0  0  0  3  3  1  ""  f  < 1 > 
+  73  30  "Solar PV Farm"  0  0  5  0  1  0  0  0  0  0  117  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0  0
+    0  0  0  f  0  0  0  0  3  2  1  ""  f  < 1 > 
+  74  33  "Solar PV Farm"  0  0  5  0  0.8  0  0  0  0  0  117  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0
+    0  0  0  0  f  0  0  0  0  3  2  1  ""  f  < 1 > 
+  109  18  "Energy Storage 2"  0  0  0  0  1.6  0  0  0  2  0  121  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0
+    0  0  0  0  0  f  0  0  0  0  3  1  1  ""  f  < 1 > 
+  110  33  "Energy Storage 1"  0  0  0  0  1.4  0  0  0  2  0  120  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0
+    0  0  0  0  0  f  0  0  0  0  3  1  1  ""  f  < 1 > 
+}
+Record System GridInfeed {
+  118  1  ""  0  1  1.00197  1.8281  0  0  0  0  0  0  0  0  < >   < >   3  1  f  ""  f  0  0  < 1 > 
+  
+}
+Record System LoadProfilePQScale {
+  115  "Daily Load"  < " 2022-10-02 00:00:41" " 2022-10-02 00:05:38" " 2022-10-02 00:10:40" " 2022-10-02 00:15:39" 
+  " 2022-10-02 00:20:40" " 2022-10-02 00:25:39" " 2022-10-02 00:30:42" " 2022-10-02 00:35:38" " 2022-10-02 00:40:39" 
+  " 2022-10-02 00:45:39" " 2022-10-02 00:50:39" " 2022-10-02 00:55:39" " 2022-10-02 01:00:40" " 2022-10-02 01:05:40" 
+  " 2022-10-02 01:10:40" " 2022-10-02 01:15:39" " 2022-10-02 01:20:40" " 2022-10-02 01:25:39" " 2022-10-02 01:30:39" 
+  " 2022-10-02 01:35:39" " 2022-10-02 01:40:39" " 2022-10-02 01:45:39" " 2022-10-02 01:50:41" " 2022-10-02 01:55:39" 
+  " 2022-10-02 02:00:45" " 2022-10-02 02:05:38" " 2022-10-02 02:10:39" " 2022-10-02 02:15:39" " 2022-10-02 02:20:40" 
+  " 2022-10-02 02:25:38" " 2022-10-02 02:30:40" " 2022-10-02 02:35:38" " 2022-10-02 02:40:40" " 2022-10-02 02:45:40" 
+  " 2022-10-02 02:50:39" " 2022-10-02 02:55:38" " 2022-10-02 03:00:42" " 2022-10-02 03:05:40" " 2022-10-02 03:10:38" 
+  " 2022-10-02 03:15:39" " 2022-10-02 03:20:39" " 2022-10-02 03:25:39" " 2022-10-02 03:30:40" " 2022-10-02 03:35:38" 
+  " 2022-10-02 03:40:40" " 2022-10-02 03:45:39" " 2022-10-02 03:50:39" " 2022-10-02 03:55:39" " 2022-10-02 04:00:39" 
+  " 2022-10-02 04:05:39" " 2022-10-02 04:10:39" " 2022-10-02 04:15:39" " 2022-10-02 04:20:39" " 2022-10-02 04:25:39" 
+  " 2022-10-02 04:30:39" " 2022-10-02 04:35:38" " 2022-10-02 04:40:39" " 2022-10-02 04:45:39" " 2022-10-02 04:50:39" 
+  " 2022-10-02 04:55:39" " 2022-10-02 05:00:39" " 2022-10-02 05:05:40" " 2022-10-02 05:10:39" " 2022-10-02 05:15:39" 
+  " 2022-10-02 05:20:43" " 2022-10-02 05:25:38" " 2022-10-02 05:30:42" " 2022-10-02 05:35:39" " 2022-10-02 05:40:39" 
+  " 2022-10-02 05:45:39" " 2022-10-02 05:50:41" " 2022-10-02 05:55:38" " 2022-10-02 06:00:41" " 2022-10-02 06:05:39" 
+  " 2022-10-02 06:10:40" " 2022-10-02 06:15:38" " 2022-10-02 06:20:41" " 2022-10-02 06:25:41" " 2022-10-02 06:30:39" 
+  " 2022-10-02 06:35:39" " 2022-10-02 06:40:39" " 2022-10-02 06:45:39" " 2022-10-02 06:50:39" " 2022-10-02 06:55:39" 
+  " 2022-10-02 07:00:42" " 2022-10-02 07:05:40" " 2022-10-02 07:10:40" " 2022-10-02 07:15:38" " 2022-10-02 07:20:40" 
+  " 2022-10-02 07:25:38" " 2022-10-02 07:30:43" " 2022-10-02 07:35:38" " 2022-10-02 07:40:39" " 2022-10-02 07:45:39" 
+  " 2022-10-02 07:50:39" " 2022-10-02 07:55:39" " 2022-10-02 08:00:40" " 2022-10-02 08:05:39" " 2022-10-02 08:10:40" 
+  " 2022-10-02 08:15:39" " 2022-10-02 08:20:41" " 2022-10-02 08:25:40" " 2022-10-02 08:30:40" " 2022-10-02 08:35:39" 
+  " 2022-10-02 08:40:40" " 2022-10-02 08:45:39" " 2022-10-02 08:50:41" " 2022-10-02 08:55:38" " 2022-10-02 09:00:41" 
+  " 2022-10-02 09:05:39" " 2022-10-02 09:10:41" " 2022-10-02 09:15:39" " 2022-10-02 09:20:39" " 2022-10-02 09:25:38" 
+  " 2022-10-02 09:30:40" " 2022-10-02 09:35:39" " 2022-10-02 09:40:39" " 2022-10-02 09:45:40" " 2022-10-02 09:50:43" 
+  " 2022-10-02 09:55:39" " 2022-10-02 10:00:40" " 2022-10-02 10:05:39" " 2022-10-02 10:10:41" " 2022-10-02 10:15:39" 
+  " 2022-10-02 10:20:42" " 2022-10-02 10:25:39" " 2022-10-02 10:30:42" " 2022-10-02 10:35:39" " 2022-10-02 10:40:41" 
+  " 2022-10-02 10:45:38" " 2022-10-02 10:50:41" " 2022-10-02 10:55:39" " 2022-10-02 11:00:41" " 2022-10-02 11:05:40" 
+  " 2022-10-02 11:10:41" " 2022-10-02 11:15:40" " 2022-10-02 11:20:42" " 2022-10-02 11:25:39" " 2022-10-02 11:30:46" 
+  " 2022-10-02 11:35:39" " 2022-10-02 11:40:42" " 2022-10-02 11:45:40" " 2022-10-02 11:50:42" " 2022-10-02 11:55:38" 
+  " 2022-10-02 12:00:41" " 2022-10-02 12:05:39" " 2022-10-02 12:10:39" " 2022-10-02 12:15:39" " 2022-10-02 12:20:41" 
+  " 2022-10-02 12:25:38" " 2022-10-02 12:30:40" " 2022-10-02 12:35:40" " 2022-10-02 12:40:41" " 2022-10-02 12:45:39" 
+  " 2022-10-02 12:50:38" " 2022-10-02 12:55:40" " 2022-10-02 13:00:39" " 2022-10-02 13:05:39" " 2022-10-02 13:10:42" 
+  " 2022-10-02 13:15:39" " 2022-10-02 13:20:39" " 2022-10-02 13:25:39" " 2022-10-02 13:30:39" " 2022-10-02 13:35:39" 
+  " 2022-10-02 13:40:41" " 2022-10-02 13:45:38" " 2022-10-02 13:50:40" " 2022-10-02 13:55:39" " 2022-10-02 14:00:41" 
+  " 2022-10-02 14:05:39" " 2022-10-02 14:10:40" " 2022-10-02 14:15:40" " 2022-10-02 14:20:40" " 2022-10-02 14:25:38" 
+  " 2022-10-02 14:30:40" " 2022-10-02 14:35:40" " 2022-10-02 14:40:41" " 2022-10-02 14:45:39" " 2022-10-02 14:50:40" 
+  " 2022-10-02 14:55:38" " 2022-10-02 15:00:42" " 2022-10-02 15:05:42" " 2022-10-02 15:10:40" " 2022-10-02 15:15:40" 
+  " 2022-10-02 15:20:44" " 2022-10-02 15:25:40" " 2022-10-02 15:30:39" " 2022-10-02 15:35:43" " 2022-10-02 15:40:40" 
+  " 2022-10-02 15:45:40" " 2022-10-02 15:50:40" " 2022-10-02 15:55:38" " 2022-10-02 16:00:41" " 2022-10-02 16:05:42" 
+  " 2022-10-02 16:10:39" " 2022-10-02 16:15:40" " 2022-10-02 16:20:41" " 2022-10-02 16:25:38" " 2022-10-02 16:30:45" 
+  " 2022-10-02 16:35:39" " 2022-10-02 16:40:40" " 2022-10-02 16:45:39" " 2022-10-02 16:50:40" " 2022-10-02 16:55:38" 
+  " 2022-10-02 17:00:41" " 2022-10-02 17:05:43" " 2022-10-02 17:10:40" " 2022-10-02 17:15:45" " 2022-10-02 17:20:40" 
+  " 2022-10-02 17:25:39" " 2022-10-02 17:30:41" " 2022-10-02 17:35:39" " 2022-10-02 17:40:39" " 2022-10-02 17:45:40" 
+  " 2022-10-02 17:50:39" " 2022-10-02 17:55:39" " 2022-10-02 18:00:40" " 2022-10-02 18:05:39" " 2022-10-02 18:10:39" 
+  " 2022-10-02 18:15:40" " 2022-10-02 18:20:39" " 2022-10-02 18:25:38" " 2022-10-02 18:30:39" " 2022-10-02 18:35:39" 
+  " 2022-10-02 18:40:40" " 2022-10-02 18:45:39" " 2022-10-02 18:50:39" " 2022-10-02 18:55:38" " 2022-10-02 19:00:40" 
+  " 2022-10-02 19:05:39" " 2022-10-02 19:10:40" " 2022-10-02 19:15:39" " 2022-10-02 19:20:40" " 2022-10-02 19:25:38" 
+  " 2022-10-02 19:30:39" " 2022-10-02 19:35:40" " 2022-10-02 19:40:42" " 2022-10-02 19:45:39" " 2022-10-02 19:50:40" 
+  " 2022-10-02 19:55:39" " 2022-10-02 20:00:41" " 2022-10-02 20:05:40" " 2022-10-02 20:10:41" " 2022-10-02 20:15:40" 
+  " 2022-10-02 20:20:40" " 2022-10-02 20:25:39" " 2022-10-02 20:30:40" " 2022-10-02 20:35:38" " 2022-10-02 20:40:40" 
+  " 2022-10-02 20:45:40" " 2022-10-02 20:50:39" " 2022-10-02 20:55:39" " 2022-10-02 21:00:40" " 2022-10-02 21:05:39" 
+  " 2022-10-02 21:10:40" " 2022-10-02 21:15:39" " 2022-10-02 21:20:39" " 2022-10-02 21:25:39" " 2022-10-02 21:30:39" 
+  " 2022-10-02 21:35:40" " 2022-10-02 21:40:39" " 2022-10-02 21:45:39" " 2022-10-02 21:50:40" " 2022-10-02 21:55:39" 
+  " 2022-10-02 22:00:39" " 2022-10-02 22:05:39" " 2022-10-02 22:10:39" " 2022-10-02 22:15:38" " 2022-10-02 22:20:39" 
+  " 2022-10-02 22:25:39" " 2022-10-02 22:30:39" " 2022-10-02 22:35:39" " 2022-10-02 22:40:40" " 2022-10-02 22:45:39" 
+  " 2022-10-02 22:50:40" " 2022-10-02 22:55:38" " 2022-10-02 23:00:40" " 2022-10-02 23:05:39" " 2022-10-02 23:10:39" 
+  " 2022-10-02 23:15:40" " 2022-10-02 23:20:40" " 2022-10-02 23:25:39" " 2022-10-02 23:30:40" " 2022-10-02 23:35:38" 
+  " 2022-10-02 23:40:39" " 2022-10-02 23:45:38" " 2022-10-02 23:50:38" " 2022-10-02 23:55:38" >   < 0.721774 
+  0.714984 0.715982 0.720873 0.725088 0.725088 0.722256 0.724669 0.7229 0.72187 0.720776 0.717365 0.714984 
+  0.71344 0.70797 0.70279 0.723286 0.722256 0.690434 0.692075 0.675022 0.677821 0.717365 0.673509 0.71344 
+  0.71344 0.70797 0.70279 0.674925 0.674829 0.671675 0.690434 0.660478 0.675022 0.677821 0.669005 0.676051 
+  0.668393 0.672255 0.663953 0.661347 0.659449 0.676791 0.676791 0.674829 0.645259 0.643457 0.637279 
+  0.658612 0.664436 0.636571 0.635477 0.636475 0.640979 0.637279 0.641172 0.639596 0.632742 0.635477 
+  0.636475 0.640979 0.634769 0.641172 0.647543 0.651887 0.653946 0.655909 0.655298 0.659513 0.665433 
+  0.664951 0.669874 0.671675 0.663342 0.653335 0.651823 0.659963 0.663728 0.666946 0.670742 0.675537 
+  0.68239 0.688053 0.69452 0.701052 0.704398 0.721774 0.732585 0.731716 0.732842 0.737379 0.742978 0.747 
+  0.753885 0.757425 0.762058 0.764761 0.770488 0.777792 0.782232 0.784871 0.786705 0.78796 0.789601 
+  0.789729 0.789182 0.789472 0.78796 0.787702 0.786254 0.785289 0.780495 0.774961 0.767624 0.76312 0.754979 
+  0.754722 0.748834 0.743879 0.739824 0.737282 0.730847 0.729753 0.728595 0.723897 0.718685 0.717494 
+  0.71566 0.714695 0.717076 0.715242 0.718813 0.718588 0.710351 0.714051 0.723962 0.72631 0.727984 0.729657 
+  0.7266 0.730011 0.731877 0.730847 0.730847 0.732231 0.733421 0.727501 0.732456 0.733518 0.730944 0.732166 
+  0.73252 0.732488 0.734419 0.732263 0.730365 0.732617 0.730493 0.735448 0.739245 0.743074 0.745841 
+  0.74642 0.745938 0.745294 0.749702 0.749123 0.747257 0.748801 0.747193 0.752116 0.755591 0.755977 
+  0.757843 0.76061 0.760707 0.764342 0.769169 0.775508 0.785386 0.795875 0.802664 0.802535 0.81222 0.818173 
+  0.825831 0.832813 0.840439 0.853599 0.863252 0.870524 0.877827 0.883748 0.890505 0.901123 0.90611 
+  0.909617 0.924483 0.932527 0.93449 0.937643 0.944915 0.95135 0.958203 0.962129 0.961292 0.951768 0.953473 
+  0.959973 0.959201 0.966666 0.972522 0.977155 0.977155 0.97886 0.981177 0.985746 0.990605 0.99424 0.995431 
+  0.995753 0.995624 1 0.996075 0.989575 0.987162 0.983108 0.977091 0.972586 0.963255 0.957045 0.953892 
+  0.95106 0.94086 0.932913 0.929116 0.92622 0.923421 0.923904 0.919077 0.911033 0.90537 0.908652 0.908073 
+  0.903536 0.895846 0.891599 0.885711 0.883812 0.878117 0.867982 0.862608 0.853856 0.845973 0.84607 
+  0.8443 0.838991 0.82966 0.82966 0.826442 0.814859 0.817497 0.802986 0.792947 0.792947 0.784581 0.776537 
+  0.773674 0.778661 0.768236 0.760127 0.768236 0.755108 0.760127 0.756266 0.741755 0.752791 0.740661 
+  0.741755 0.741755 0.728177 0.725152 0.740661 0.719071 0.716561 0.710415 0.707777 0.701052 >   < 0.721774 
+  0.714984 0.715982 0.720873 0.725088 0.725088 0.722256 0.724669 0.7229 0.72187 0.720776 0.717365 0.714984 
+  0.71344 0.70797 0.70279 0.723286 0.722256 0.690434 0.692075 0.675022 0.677821 0.717365 0.673509 0.71344 
+  0.71344 0.70797 0.70279 0.674925 0.674829 0.671675 0.690434 0.660478 0.675022 0.677821 0.669005 0.676051 
+  0.668393 0.672255 0.663953 0.661347 0.659449 0.676791 0.676791 0.674829 0.645259 0.643457 0.637279 
+  0.658612 0.664436 0.636571 0.635477 0.636475 0.640979 0.637279 0.641172 0.639596 0.632742 0.635477 
+  0.636475 0.640979 0.634769 0.641172 0.647543 0.651887 0.653946 0.655909 0.655298 0.659513 0.665433 
+  0.664951 0.669874 0.671675 0.663342 0.653335 0.651823 0.659963 0.663728 0.666946 0.670742 0.675537 
+  0.68239 0.688053 0.69452 0.701052 0.704398 0.721774 0.732585 0.731716 0.732842 0.737379 0.742978 0.747 
+  0.753885 0.757425 0.762058 0.764761 0.770488 0.777792 0.782232 0.784871 0.786705 0.78796 0.789601 
+  0.789729 0.789182 0.789472 0.78796 0.787702 0.786254 0.785289 0.780495 0.774961 0.767624 0.76312 0.754979 
+  0.754722 0.748834 0.743879 0.739824 0.737282 0.730847 0.729753 0.728595 0.723897 0.718685 0.717494 
+  0.71566 0.714695 0.717076 0.715242 0.718813 0.718588 0.710351 0.714051 0.723962 0.72631 0.727984 0.729657 
+  0.7266 0.730011 0.731877 0.730847 0.730847 0.732231 0.733421 0.727501 0.732456 0.733518 0.730944 0.732166 
+  0.73252 0.732488 0.734419 0.732263 0.730365 0.732617 0.730493 0.735448 0.739245 0.743074 0.745841 
+  0.74642 0.745938 0.745294 0.749702 0.749123 0.747257 0.748801 0.747193 0.752116 0.755591 0.755977 
+  0.757843 0.76061 0.760707 0.764342 0.769169 0.775508 0.785386 0.795875 0.802664 0.802535 0.81222 0.818173 
+  0.825831 0.832813 0.840439 0.853599 0.863252 0.870524 0.877827 0.883748 0.890505 0.901123 0.90611 
+  0.909617 0.924483 0.932527 0.93449 0.937643 0.944915 0.95135 0.958203 0.962129 0.961292 0.951768 0.953473 
+  0.959973 0.959201 0.966666 0.972522 0.977155 0.977155 0.97886 0.981177 0.985746 0.990605 0.99424 0.995431 
+  0.995753 0.995624 1 0.996075 0.989575 0.987162 0.983108 0.977091 0.972586 0.963255 0.957045 0.953892 
+  0.95106 0.94086 0.932913 0.929116 0.92622 0.923421 0.923904 0.919077 0.911033 0.90537 0.908652 0.908073 
+  0.903536 0.895846 0.891599 0.885711 0.883812 0.878117 0.867982 0.862608 0.853856 0.845973 0.84607 
+  0.8443 0.838991 0.82966 0.82966 0.826442 0.814859 0.817497 0.802986 0.792947 0.792947 0.784581 0.776537 
+  0.773674 0.778661 0.768236 0.760127 0.768236 0.755108 0.760127 0.756266 0.741755 0.752791 0.740661 
+  0.741755 0.741755 0.728177 0.725152 0.740661 0.719071 0.716561 0.710415 0.707777 0.701052 >   < 1 
+  > 
+}
+Record System GeneratorProfilePQScale {
+  116  "Daily Wind"  < " 2022-10-02 00:00:41" " 2022-10-02 00:05:38" " 2022-10-02 00:10:40" " 2022-10-02 00:15:39" 
+  " 2022-10-02 00:20:40" " 2022-10-02 00:25:39" " 2022-10-02 00:30:42" " 2022-10-02 00:35:38" " 2022-10-02 00:40:39" 
+  " 2022-10-02 00:45:39" " 2022-10-02 00:50:39" " 2022-10-02 00:55:39" " 2022-10-02 01:00:40" " 2022-10-02 01:05:40" 
+  " 2022-10-02 01:10:40" " 2022-10-02 01:15:39" " 2022-10-02 01:20:40" " 2022-10-02 01:25:39" " 2022-10-02 01:30:39" 
+  " 2022-10-02 01:35:39" " 2022-10-02 01:40:39" " 2022-10-02 01:45:39" " 2022-10-02 01:50:41" " 2022-10-02 01:55:39" 
+  " 2022-10-02 02:00:45" " 2022-10-02 02:05:38" " 2022-10-02 02:10:39" " 2022-10-02 02:15:39" " 2022-10-02 02:20:40" 
+  " 2022-10-02 02:25:38" " 2022-10-02 02:30:40" " 2022-10-02 02:35:38" " 2022-10-02 02:40:40" " 2022-10-02 02:45:40" 
+  " 2022-10-02 02:50:39" " 2022-10-02 02:55:38" " 2022-10-02 03:00:42" " 2022-10-02 03:05:40" " 2022-10-02 03:10:38" 
+  " 2022-10-02 03:15:39" " 2022-10-02 03:20:39" " 2022-10-02 03:25:39" " 2022-10-02 03:30:40" " 2022-10-02 03:35:38" 
+  " 2022-10-02 03:40:40" " 2022-10-02 03:45:39" " 2022-10-02 03:50:39" " 2022-10-02 03:55:39" " 2022-10-02 04:00:39" 
+  " 2022-10-02 04:05:39" " 2022-10-02 04:10:39" " 2022-10-02 04:15:39" " 2022-10-02 04:20:39" " 2022-10-02 04:25:39" 
+  " 2022-10-02 04:30:39" " 2022-10-02 04:35:38" " 2022-10-02 04:40:39" " 2022-10-02 04:45:39" " 2022-10-02 04:50:39" 
+  " 2022-10-02 04:55:39" " 2022-10-02 05:00:39" " 2022-10-02 05:05:40" " 2022-10-02 05:10:39" " 2022-10-02 05:15:39" 
+  " 2022-10-02 05:20:43" " 2022-10-02 05:25:38" " 2022-10-02 05:30:42" " 2022-10-02 05:35:39" " 2022-10-02 05:40:39" 
+  " 2022-10-02 05:45:39" " 2022-10-02 05:50:41" " 2022-10-02 05:55:38" " 2022-10-02 06:00:41" " 2022-10-02 06:05:39" 
+  " 2022-10-02 06:10:40" " 2022-10-02 06:15:38" " 2022-10-02 06:20:41" " 2022-10-02 06:25:41" " 2022-10-02 06:30:39" 
+  " 2022-10-02 06:35:39" " 2022-10-02 06:40:39" " 2022-10-02 06:45:39" " 2022-10-02 06:50:39" " 2022-10-02 06:55:39" 
+  " 2022-10-02 07:00:42" " 2022-10-02 07:05:40" " 2022-10-02 07:10:40" " 2022-10-02 07:15:38" " 2022-10-02 07:20:40" 
+  " 2022-10-02 07:25:38" " 2022-10-02 07:30:43" " 2022-10-02 07:35:38" " 2022-10-02 07:40:39" " 2022-10-02 07:45:39" 
+  " 2022-10-02 07:50:39" " 2022-10-02 07:55:39" " 2022-10-02 08:00:40" " 2022-10-02 08:05:39" " 2022-10-02 08:10:40" 
+  " 2022-10-02 08:15:39" " 2022-10-02 08:20:41" " 2022-10-02 08:25:40" " 2022-10-02 08:30:40" " 2022-10-02 08:35:39" 
+  " 2022-10-02 08:40:40" " 2022-10-02 08:45:39" " 2022-10-02 08:50:41" " 2022-10-02 08:55:38" " 2022-10-02 09:00:41" 
+  " 2022-10-02 09:05:39" " 2022-10-02 09:10:41" " 2022-10-02 09:15:39" " 2022-10-02 09:20:39" " 2022-10-02 09:25:38" 
+  " 2022-10-02 09:30:40" " 2022-10-02 09:35:39" " 2022-10-02 09:40:39" " 2022-10-02 09:45:40" " 2022-10-02 09:50:43" 
+  " 2022-10-02 09:55:39" " 2022-10-02 10:00:40" " 2022-10-02 10:05:39" " 2022-10-02 10:10:41" " 2022-10-02 10:15:39" 
+  " 2022-10-02 10:20:42" " 2022-10-02 10:25:39" " 2022-10-02 10:30:42" " 2022-10-02 10:35:39" " 2022-10-02 10:40:41" 
+  " 2022-10-02 10:45:38" " 2022-10-02 10:50:41" " 2022-10-02 10:55:39" " 2022-10-02 11:00:41" " 2022-10-02 11:05:40" 
+  " 2022-10-02 11:10:41" " 2022-10-02 11:15:40" " 2022-10-02 11:20:42" " 2022-10-02 11:25:39" " 2022-10-02 11:30:46" 
+  " 2022-10-02 11:35:39" " 2022-10-02 11:40:42" " 2022-10-02 11:45:40" " 2022-10-02 11:50:42" " 2022-10-02 11:55:38" 
+  " 2022-10-02 12:00:41" " 2022-10-02 12:05:39" " 2022-10-02 12:10:39" " 2022-10-02 12:15:39" " 2022-10-02 12:20:41" 
+  " 2022-10-02 12:25:38" " 2022-10-02 12:30:40" " 2022-10-02 12:35:40" " 2022-10-02 12:40:41" " 2022-10-02 12:45:39" 
+  " 2022-10-02 12:50:38" " 2022-10-02 12:55:40" " 2022-10-02 13:00:39" " 2022-10-02 13:05:39" " 2022-10-02 13:10:42" 
+  " 2022-10-02 13:15:39" " 2022-10-02 13:20:39" " 2022-10-02 13:25:39" " 2022-10-02 13:30:39" " 2022-10-02 13:35:39" 
+  " 2022-10-02 13:40:41" " 2022-10-02 13:45:38" " 2022-10-02 13:50:40" " 2022-10-02 13:55:39" " 2022-10-02 14:00:41" 
+  " 2022-10-02 14:05:39" " 2022-10-02 14:10:40" " 2022-10-02 14:15:40" " 2022-10-02 14:20:40" " 2022-10-02 14:25:38" 
+  " 2022-10-02 14:30:40" " 2022-10-02 14:35:40" " 2022-10-02 14:40:41" " 2022-10-02 14:45:39" " 2022-10-02 14:50:40" 
+  " 2022-10-02 14:55:38" " 2022-10-02 15:00:42" " 2022-10-02 15:05:42" " 2022-10-02 15:10:40" " 2022-10-02 15:15:40" 
+  " 2022-10-02 15:20:44" " 2022-10-02 15:25:40" " 2022-10-02 15:30:39" " 2022-10-02 15:35:43" " 2022-10-02 15:40:40" 
+  " 2022-10-02 15:45:40" " 2022-10-02 15:50:40" " 2022-10-02 15:55:38" " 2022-10-02 16:00:41" " 2022-10-02 16:05:42" 
+  " 2022-10-02 16:10:39" " 2022-10-02 16:15:40" " 2022-10-02 16:20:41" " 2022-10-02 16:25:38" " 2022-10-02 16:30:45" 
+  " 2022-10-02 16:35:39" " 2022-10-02 16:40:40" " 2022-10-02 16:45:39" " 2022-10-02 16:50:40" " 2022-10-02 16:55:38" 
+  " 2022-10-02 17:00:41" " 2022-10-02 17:05:43" " 2022-10-02 17:10:40" " 2022-10-02 17:15:45" " 2022-10-02 17:20:40" 
+  " 2022-10-02 17:25:39" " 2022-10-02 17:30:41" " 2022-10-02 17:35:39" " 2022-10-02 17:40:39" " 2022-10-02 17:45:40" 
+  " 2022-10-02 17:50:39" " 2022-10-02 17:55:39" " 2022-10-02 18:00:40" " 2022-10-02 18:05:39" " 2022-10-02 18:10:39" 
+  " 2022-10-02 18:15:40" " 2022-10-02 18:20:39" " 2022-10-02 18:25:38" " 2022-10-02 18:30:39" " 2022-10-02 18:35:39" 
+  " 2022-10-02 18:40:40" " 2022-10-02 18:45:39" " 2022-10-02 18:50:39" " 2022-10-02 18:55:38" " 2022-10-02 19:00:40" 
+  " 2022-10-02 19:05:39" " 2022-10-02 19:10:40" " 2022-10-02 19:15:39" " 2022-10-02 19:20:40" " 2022-10-02 19:25:38" 
+  " 2022-10-02 19:30:39" " 2022-10-02 19:35:40" " 2022-10-02 19:40:42" " 2022-10-02 19:45:39" " 2022-10-02 19:50:40" 
+  " 2022-10-02 19:55:39" " 2022-10-02 20:00:41" " 2022-10-02 20:05:40" " 2022-10-02 20:10:41" " 2022-10-02 20:15:40" 
+  " 2022-10-02 20:20:40" " 2022-10-02 20:25:39" " 2022-10-02 20:30:40" " 2022-10-02 20:35:38" " 2022-10-02 20:40:40" 
+  " 2022-10-02 20:45:40" " 2022-10-02 20:50:39" " 2022-10-02 20:55:39" " 2022-10-02 21:00:40" " 2022-10-02 21:05:39" 
+  " 2022-10-02 21:10:40" " 2022-10-02 21:15:39" " 2022-10-02 21:20:39" " 2022-10-02 21:25:39" " 2022-10-02 21:30:39" 
+  " 2022-10-02 21:35:40" " 2022-10-02 21:40:39" " 2022-10-02 21:45:39" " 2022-10-02 21:50:40" " 2022-10-02 21:55:39" 
+  " 2022-10-02 22:00:39" " 2022-10-02 22:05:39" " 2022-10-02 22:10:39" " 2022-10-02 22:15:38" " 2022-10-02 22:20:39" 
+  " 2022-10-02 22:25:39" " 2022-10-02 22:30:39" " 2022-10-02 22:35:39" " 2022-10-02 22:40:40" " 2022-10-02 22:45:39" 
+  " 2022-10-02 22:50:40" " 2022-10-02 22:55:38" " 2022-10-02 23:00:40" " 2022-10-02 23:05:39" " 2022-10-02 23:10:39" 
+  " 2022-10-02 23:15:40" " 2022-10-02 23:20:40" " 2022-10-02 23:25:39" " 2022-10-02 23:30:40" " 2022-10-02 23:35:38" 
+  " 2022-10-02 23:40:39" " 2022-10-02 23:45:38" " 2022-10-02 23:50:38" " 2022-10-02 23:55:38" >   < 0.9319 
+  0.951678 0.981795 0.993857 0.94531 0.94531 0.999176 0.943063 0.942538 0.942838 0.940665 0.9773 0.951678 
+  0.968984 0.962766 0.956473 1 0.999176 0.931226 0.935646 0.897288 0.90006 0.9773 0.889497 0.968984 
+  0.968984 0.962766 0.956473 0.881181 0.879308 0.868669 0.931226 0.832559 0.897288 0.90006 0.843347 
+  0.893767 0.849191 0.884028 0.836904 0.822745 0.814954 0.887773 0.887773 0.879308 0.780117 0.773374 
+  0.766107 0.833159 0.83668 0.748352 0.73659 0.741085 0.758091 0.766107 0.749925 0.739661 0.730596 0.73659 
+  0.741085 0.758091 0.715163 0.749925 0.706847 0.707971 0.712916 0.719059 0.72318 0.7276 0.726026 0.721307 
+  0.715763 0.703851 0.67718 0.647063 0.632529 0.624513 0.623614 0.621891 0.619643 0.61395 0.61777 0.62279 
+  0.626311 0.631705 0.64062 0.644141 0.64504 0.644816 0.641369 0.64092 0.635601 0.630656 0.630432 0.629383 
+  0.628933 0.624513 0.620018 0.616047 0.609455 0.606683 0.600464 0.599191 0.602038 0.604885 0.603386 
+  0.59552 0.595969 0.598741 0.600165 0.603686 0.601813 0.600165 0.601214 0.596794 0.590276 0.591774 
+  0.592898 0.588478 0.584882 0.578589 0.569149 0.568699 0.567875 0.566152 0.555214 0.557836 0.558286 
+  0.552592 0.544726 0.538508 0.54113 0.538358 0.527869 0.538957 0.548996 0.557312 0.558511 0.560683 
+  0.556937 0.554465 0.551993 0.548921 0.547198 0.547273 0.5457 0.544351 0.547947 0.543602 0.538433 0.535436 
+  0.533788 0.525547 0.527869 0.529218 0.5227 0.526071 0.530566 0.532439 0.535511 0.53626 0.540905 0.542928 
+  0.542553 0.544201 0.547872 0.5451 0.541804 0.531091 0.524123 0.523674 0.522101 0.522176 0.516707 0.514759 
+  0.508541 0.505394 0.50914 0.5 0.498951 0.493257 0.493108 0.482769 0.476476 0.46846 0.45947 0.450105 
+  0.444786 0.433998 0.421936 0.414669 0.406428 0.399685 0.396764 0.398786 0.394966 0.39092 0.388523 
+  0.388747 0.3868 0.382529 0.378484 0.373239 0.364624 0.358181 0.353311 0.351738 0.346344 0.338103 0.332035 
+  0.326266 0.321247 0.315853 0.312556 0.310009 0.306038 0.301918 0.297423 0.292703 0.288208 0.283638 
+  0.27742 0.274573 0.267755 0.261987 0.260788 0.259889 0.260788 0.26326 0.260339 0.260414 0.263335 0.269628 
+  0.271876 0.271052 0.275247 0.275097 0.275996 0.278693 0.279892 0.280566 0.282814 0.283114 0.28611 
+  0.28656 0.287833 0.288882 0.286485 0.283263 0.286785 0.286635 0.285061 0.28199 0.279518 0.274723 0.269853 
+  0.267755 0.267531 0.267531 0.26798 0.266257 0.265358 0.252622 0.243932 0.243932 0.235241 0.229248 
+  0.225352 0.22685 0.224228 0.220707 0.224228 0.22243 0.220707 0.221906 0.226551 0.22273 0.231346 0.226551 
+  0.226551 0.228798 0.228124 0.231346 0.226176 0.220033 0.213665 0.210444 0.207372 >   < 0.9319 0.951678 
+  0.981795 0.993857 0.94531 0.94531 0.999176 0.943063 0.942538 0.942838 0.940665 0.9773 0.951678 0.968984 
+  0.962766 0.956473 1 0.999176 0.931226 0.935646 0.897288 0.90006 0.9773 0.889497 0.968984 0.968984 
+  0.962766 0.956473 0.881181 0.879308 0.868669 0.931226 0.832559 0.897288 0.90006 0.843347 0.893767 
+  0.849191 0.884028 0.836904 0.822745 0.814954 0.887773 0.887773 0.879308 0.780117 0.773374 0.766107 
+  0.833159 0.83668 0.748352 0.73659 0.741085 0.758091 0.766107 0.749925 0.739661 0.730596 0.73659 0.741085 
+  0.758091 0.715163 0.749925 0.706847 0.707971 0.712916 0.719059 0.72318 0.7276 0.726026 0.721307 0.715763 
+  0.703851 0.67718 0.647063 0.632529 0.624513 0.623614 0.621891 0.619643 0.61395 0.61777 0.62279 0.626311 
+  0.631705 0.64062 0.644141 0.64504 0.644816 0.641369 0.64092 0.635601 0.630656 0.630432 0.629383 0.628933 
+  0.624513 0.620018 0.616047 0.609455 0.606683 0.600464 0.599191 0.602038 0.604885 0.603386 0.59552 
+  0.595969 0.598741 0.600165 0.603686 0.601813 0.600165 0.601214 0.596794 0.590276 0.591774 0.592898 
+  0.588478 0.584882 0.578589 0.569149 0.568699 0.567875 0.566152 0.555214 0.557836 0.558286 0.552592 
+  0.544726 0.538508 0.54113 0.538358 0.527869 0.538957 0.548996 0.557312 0.558511 0.560683 0.556937 
+  0.554465 0.551993 0.548921 0.547198 0.547273 0.5457 0.544351 0.547947 0.543602 0.538433 0.535436 0.533788 
+  0.525547 0.527869 0.529218 0.5227 0.526071 0.530566 0.532439 0.535511 0.53626 0.540905 0.542928 0.542553 
+  0.544201 0.547872 0.5451 0.541804 0.531091 0.524123 0.523674 0.522101 0.522176 0.516707 0.514759 0.508541 
+  0.505394 0.50914 0.5 0.498951 0.493257 0.493108 0.482769 0.476476 0.46846 0.45947 0.450105 0.444786 
+  0.433998 0.421936 0.414669 0.406428 0.399685 0.396764 0.398786 0.394966 0.39092 0.388523 0.388747 
+  0.3868 0.382529 0.378484 0.373239 0.364624 0.358181 0.353311 0.351738 0.346344 0.338103 0.332035 0.326266 
+  0.321247 0.315853 0.312556 0.310009 0.306038 0.301918 0.297423 0.292703 0.288208 0.283638 0.27742 
+  0.274573 0.267755 0.261987 0.260788 0.259889 0.260788 0.26326 0.260339 0.260414 0.263335 0.269628 
+  0.271876 0.271052 0.275247 0.275097 0.275996 0.278693 0.279892 0.280566 0.282814 0.283114 0.28611 
+  0.28656 0.287833 0.288882 0.286485 0.283263 0.286785 0.286635 0.285061 0.28199 0.279518 0.274723 0.269853 
+  0.267755 0.267531 0.267531 0.26798 0.266257 0.265358 0.252622 0.243932 0.243932 0.235241 0.229248 
+  0.225352 0.22685 0.224228 0.220707 0.224228 0.22243 0.220707 0.221906 0.226551 0.22273 0.231346 0.226551 
+  0.226551 0.228798 0.228124 0.231346 0.226176 0.220033 0.213665 0.210444 0.207372 >   < 1 > 
+  117  "Daily Solar"  < " 2022-10-02 00:00:41" " 2022-10-02 00:05:38" " 2022-10-02 00:10:40" " 2022-10-02 00:15:39" 
+  " 2022-10-02 00:20:40" " 2022-10-02 00:25:39" " 2022-10-02 00:30:42" " 2022-10-02 00:35:38" " 2022-10-02 00:40:39" 
+  " 2022-10-02 00:45:39" " 2022-10-02 00:50:39" " 2022-10-02 00:55:39" " 2022-10-02 01:00:40" " 2022-10-02 01:05:40" 
+  " 2022-10-02 01:10:40" " 2022-10-02 01:15:39" " 2022-10-02 01:20:40" " 2022-10-02 01:25:39" " 2022-10-02 01:30:39" 
+  " 2022-10-02 01:35:39" " 2022-10-02 01:40:39" " 2022-10-02 01:45:39" " 2022-10-02 01:50:41" " 2022-10-02 01:55:39" 
+  " 2022-10-02 02:00:45" " 2022-10-02 02:05:38" " 2022-10-02 02:10:39" " 2022-10-02 02:15:39" " 2022-10-02 02:20:40" 
+  " 2022-10-02 02:25:38" " 2022-10-02 02:30:40" " 2022-10-02 02:35:38" " 2022-10-02 02:40:40" " 2022-10-02 02:45:40" 
+  " 2022-10-02 02:50:39" " 2022-10-02 02:55:38" " 2022-10-02 03:00:42" " 2022-10-02 03:05:40" " 2022-10-02 03:10:38" 
+  " 2022-10-02 03:15:39" " 2022-10-02 03:20:39" " 2022-10-02 03:25:39" " 2022-10-02 03:30:40" " 2022-10-02 03:35:38" 
+  " 2022-10-02 03:40:40" " 2022-10-02 03:45:39" " 2022-10-02 03:50:39" " 2022-10-02 03:55:39" " 2022-10-02 04:00:39" 
+  " 2022-10-02 04:05:39" " 2022-10-02 04:10:39" " 2022-10-02 04:15:39" " 2022-10-02 04:20:39" " 2022-10-02 04:25:39" 
+  " 2022-10-02 04:30:39" " 2022-10-02 04:35:38" " 2022-10-02 04:40:39" " 2022-10-02 04:45:39" " 2022-10-02 04:50:39" 
+  " 2022-10-02 04:55:39" " 2022-10-02 05:00:39" " 2022-10-02 05:05:40" " 2022-10-02 05:10:39" " 2022-10-02 05:15:39" 
+  " 2022-10-02 05:20:43" " 2022-10-02 05:25:38" " 2022-10-02 05:30:42" " 2022-10-02 05:35:39" " 2022-10-02 05:40:39" 
+  " 2022-10-02 05:45:39" " 2022-10-02 05:50:41" " 2022-10-02 05:55:38" " 2022-10-02 06:00:41" " 2022-10-02 06:05:39" 
+  " 2022-10-02 06:10:40" " 2022-10-02 06:15:38" " 2022-10-02 06:20:41" " 2022-10-02 06:25:41" " 2022-10-02 06:30:39" 
+  " 2022-10-02 06:35:39" " 2022-10-02 06:40:39" " 2022-10-02 06:45:39" " 2022-10-02 06:50:39" " 2022-10-02 06:55:39" 
+  " 2022-10-02 07:00:42" " 2022-10-02 07:05:40" " 2022-10-02 07:10:40" " 2022-10-02 07:15:38" " 2022-10-02 07:20:40" 
+  " 2022-10-02 07:25:38" " 2022-10-02 07:30:43" " 2022-10-02 07:35:38" " 2022-10-02 07:40:39" " 2022-10-02 07:45:39" 
+  " 2022-10-02 07:50:39" " 2022-10-02 07:55:39" " 2022-10-02 08:00:40" " 2022-10-02 08:05:39" " 2022-10-02 08:10:40" 
+  " 2022-10-02 08:15:39" " 2022-10-02 08:20:41" " 2022-10-02 08:25:40" " 2022-10-02 08:30:40" " 2022-10-02 08:35:39" 
+  " 2022-10-02 08:40:40" " 2022-10-02 08:45:39" " 2022-10-02 08:50:41" " 2022-10-02 08:55:38" " 2022-10-02 09:00:41" 
+  " 2022-10-02 09:05:39" " 2022-10-02 09:10:41" " 2022-10-02 09:15:39" " 2022-10-02 09:20:39" " 2022-10-02 09:25:38" 
+  " 2022-10-02 09:30:40" " 2022-10-02 09:35:39" " 2022-10-02 09:40:39" " 2022-10-02 09:45:40" " 2022-10-02 09:50:43" 
+  " 2022-10-02 09:55:39" " 2022-10-02 10:00:40" " 2022-10-02 10:05:39" " 2022-10-02 10:10:41" " 2022-10-02 10:15:39" 
+  " 2022-10-02 10:20:42" " 2022-10-02 10:25:39" " 2022-10-02 10:30:42" " 2022-10-02 10:35:39" " 2022-10-02 10:40:41" 
+  " 2022-10-02 10:45:38" " 2022-10-02 10:50:41" " 2022-10-02 10:55:39" " 2022-10-02 11:00:41" " 2022-10-02 11:05:40" 
+  " 2022-10-02 11:10:41" " 2022-10-02 11:15:40" " 2022-10-02 11:20:42" " 2022-10-02 11:25:39" " 2022-10-02 11:30:46" 
+  " 2022-10-02 11:35:39" " 2022-10-02 11:40:42" " 2022-10-02 11:45:40" " 2022-10-02 11:50:42" " 2022-10-02 11:55:38" 
+  " 2022-10-02 12:00:41" " 2022-10-02 12:05:39" " 2022-10-02 12:10:39" " 2022-10-02 12:15:39" " 2022-10-02 12:20:41" 
+  " 2022-10-02 12:25:38" " 2022-10-02 12:30:40" " 2022-10-02 12:35:40" " 2022-10-02 12:40:41" " 2022-10-02 12:45:39" 
+  " 2022-10-02 12:50:38" " 2022-10-02 12:55:40" " 2022-10-02 13:00:39" " 2022-10-02 13:05:39" " 2022-10-02 13:10:42" 
+  " 2022-10-02 13:15:39" " 2022-10-02 13:20:39" " 2022-10-02 13:25:39" " 2022-10-02 13:30:39" " 2022-10-02 13:35:39" 
+  " 2022-10-02 13:40:41" " 2022-10-02 13:45:38" " 2022-10-02 13:50:40" " 2022-10-02 13:55:39" " 2022-10-02 14:00:41" 
+  " 2022-10-02 14:05:39" " 2022-10-02 14:10:40" " 2022-10-02 14:15:40" " 2022-10-02 14:20:40" " 2022-10-02 14:25:38" 
+  " 2022-10-02 14:30:40" " 2022-10-02 14:35:40" " 2022-10-02 14:40:41" " 2022-10-02 14:45:39" " 2022-10-02 14:50:40" 
+  " 2022-10-02 14:55:38" " 2022-10-02 15:00:42" " 2022-10-02 15:05:42" " 2022-10-02 15:10:40" " 2022-10-02 15:15:40" 
+  " 2022-10-02 15:20:44" " 2022-10-02 15:25:40" " 2022-10-02 15:30:39" " 2022-10-02 15:35:43" " 2022-10-02 15:40:40" 
+  " 2022-10-02 15:45:40" " 2022-10-02 15:50:40" " 2022-10-02 15:55:38" " 2022-10-02 16:00:41" " 2022-10-02 16:05:42" 
+  " 2022-10-02 16:10:39" " 2022-10-02 16:15:40" " 2022-10-02 16:20:41" " 2022-10-02 16:25:38" " 2022-10-02 16:30:45" 
+  " 2022-10-02 16:35:39" " 2022-10-02 16:40:40" " 2022-10-02 16:45:39" " 2022-10-02 16:50:40" " 2022-10-02 16:55:38" 
+  " 2022-10-02 17:00:41" " 2022-10-02 17:05:43" " 2022-10-02 17:10:40" " 2022-10-02 17:15:45" " 2022-10-02 17:20:40" 
+  " 2022-10-02 17:25:39" " 2022-10-02 17:30:41" " 2022-10-02 17:35:39" " 2022-10-02 17:40:39" " 2022-10-02 17:45:40" 
+  " 2022-10-02 17:50:39" " 2022-10-02 17:55:39" " 2022-10-02 18:00:40" " 2022-10-02 18:05:39" " 2022-10-02 18:10:39" 
+  " 2022-10-02 18:15:40" " 2022-10-02 18:20:39" " 2022-10-02 18:25:38" " 2022-10-02 18:30:39" " 2022-10-02 18:35:39" 
+  " 2022-10-02 18:40:40" " 2022-10-02 18:45:39" " 2022-10-02 18:50:39" " 2022-10-02 18:55:38" " 2022-10-02 19:00:40" 
+  " 2022-10-02 19:05:39" " 2022-10-02 19:10:40" " 2022-10-02 19:15:39" " 2022-10-02 19:20:40" " 2022-10-02 19:25:38" 
+  " 2022-10-02 19:30:39" " 2022-10-02 19:35:40" " 2022-10-02 19:40:42" " 2022-10-02 19:45:39" " 2022-10-02 19:50:40" 
+  " 2022-10-02 19:55:39" " 2022-10-02 20:00:41" " 2022-10-02 20:05:40" " 2022-10-02 20:10:41" " 2022-10-02 20:15:40" 
+  " 2022-10-02 20:20:40" " 2022-10-02 20:25:39" " 2022-10-02 20:30:40" " 2022-10-02 20:35:38" " 2022-10-02 20:40:40" 
+  " 2022-10-02 20:45:40" " 2022-10-02 20:50:39" " 2022-10-02 20:55:39" " 2022-10-02 21:00:40" " 2022-10-02 21:05:39" 
+  " 2022-10-02 21:10:40" " 2022-10-02 21:15:39" " 2022-10-02 21:20:39" " 2022-10-02 21:25:39" " 2022-10-02 21:30:39" 
+  " 2022-10-02 21:35:40" " 2022-10-02 21:40:39" " 2022-10-02 21:45:39" " 2022-10-02 21:50:40" " 2022-10-02 21:55:39" 
+  " 2022-10-02 22:00:39" " 2022-10-02 22:05:39" " 2022-10-02 22:10:39" " 2022-10-02 22:15:38" " 2022-10-02 22:20:39" 
+  " 2022-10-02 22:25:39" " 2022-10-02 22:30:39" " 2022-10-02 22:35:39" " 2022-10-02 22:40:40" " 2022-10-02 22:45:39" 
+  " 2022-10-02 22:50:40" " 2022-10-02 22:55:38" " 2022-10-02 23:00:40" " 2022-10-02 23:05:39" " 2022-10-02 23:10:39" 
+  " 2022-10-02 23:15:40" " 2022-10-02 23:20:40" " 2022-10-02 23:25:39" " 2022-10-02 23:30:40" " 2022-10-02 23:35:38" 
+  " 2022-10-02 23:40:39" " 2022-10-02 23:45:38" " 2022-10-02 23:50:38" " 2022-10-02 23:55:38" >   < 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.000335502 0.000336071 0.000336071 0.000336071 
+  0.000336071 0.000336071 0.0154751 0.0154755 0.0154755 0.0154755 0.0154755 0.0154755 0.0682509 0.0682488 
+  0.0682488 0.0682488 0.0682488 0.0682488 0.150195 0.150196 0.150196 0.150196 0.150196 0.150196 0.239101 
+  0.239402 0.239402 0.239402 0.239402 0.239402 0.354867 0.354871 0.354871 0.354871 0.354871 0.354879 
+  0.522469 0.522466 0.522466 0.522466 0.522466 0.522466 0.657347 0.657344 0.657344 0.657344 0.657344 
+  0.657344 0.786366 0.786371 0.786371 0.786371 0.786371 0.786371 0.912079 0.91208 0.91208 0.91208 0.91208 
+  0.91208 0.971902 0.971918 0.971918 0.971918 0.971918 0.971918 0.999993 1 1 1 1 1 0.939405 0.939389 
+  0.939389 0.939389 0.939389 0.939389 0.887881 0.887897 0.887897 0.887897 0.887897 0.887897 0.851556 
+  0.851535 0.851535 0.851535 0.851535 0.851535 0.781926 0.781916 0.781916 0.781916 0.781916 0.781916 
+  0.698178 0.698168 0.698168 0.698168 0.698168 0.698168 0.60881 0.608811 0.608811 0.608811 0.608811 
+  0.608811 0.528332 0.528334 0.528334 0.528334 0.528334 0.528334 0.406488 0.406821 0.406821 0.406821 
+  0.406821 0.406821 0.284648 0.284648 0.284648 0.284648 0.284648 0.284648 0.147348 0.147347 0.147347 
+  0.147347 0.147347 0.147347 0.028978 0.028978 0.028978 0.028978 0.028978 0.028978 0.000174654 0.000176439 
+  0.000176439 0.000176439 0.000176439 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < 0 0 0 0 0 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < 1 > 
+  120  "ES1"  < " 2022-10-02 00:00:41" " 2022-10-02 00:05:38" " 2022-10-02 00:10:40" " 2022-10-02 00:15:39" 
+  " 2022-10-02 00:20:40" " 2022-10-02 00:25:39" " 2022-10-02 00:30:42" " 2022-10-02 00:35:38" " 2022-10-02 00:40:39" 
+  " 2022-10-02 00:45:39" " 2022-10-02 00:50:39" " 2022-10-02 00:55:39" " 2022-10-02 01:00:40" " 2022-10-02 01:05:40" 
+  " 2022-10-02 01:10:40" " 2022-10-02 01:15:39" " 2022-10-02 01:20:40" " 2022-10-02 01:25:39" " 2022-10-02 01:30:39" 
+  " 2022-10-02 01:35:39" " 2022-10-02 01:40:39" " 2022-10-02 01:45:39" " 2022-10-02 01:50:41" " 2022-10-02 01:55:39" 
+  " 2022-10-02 02:00:45" " 2022-10-02 02:05:38" " 2022-10-02 02:10:39" " 2022-10-02 02:15:39" " 2022-10-02 02:20:40" 
+  " 2022-10-02 02:25:38" " 2022-10-02 02:30:40" " 2022-10-02 02:35:38" " 2022-10-02 02:40:40" " 2022-10-02 02:45:40" 
+  " 2022-10-02 02:50:39" " 2022-10-02 02:55:38" " 2022-10-02 03:00:42" " 2022-10-02 03:05:40" " 2022-10-02 03:10:38" 
+  " 2022-10-02 03:15:39" " 2022-10-02 03:20:39" " 2022-10-02 03:25:39" " 2022-10-02 03:30:40" " 2022-10-02 03:35:38" 
+  " 2022-10-02 03:40:40" " 2022-10-02 03:45:39" " 2022-10-02 03:50:39" " 2022-10-02 03:55:39" " 2022-10-02 04:00:39" 
+  " 2022-10-02 04:05:39" " 2022-10-02 04:10:39" " 2022-10-02 04:15:39" " 2022-10-02 04:20:39" " 2022-10-02 04:25:39" 
+  " 2022-10-02 04:30:39" " 2022-10-02 04:35:38" " 2022-10-02 04:40:39" " 2022-10-02 04:45:39" " 2022-10-02 04:50:39" 
+  " 2022-10-02 04:55:39" " 2022-10-02 05:00:39" " 2022-10-02 05:05:40" " 2022-10-02 05:10:39" " 2022-10-02 05:15:39" 
+  " 2022-10-02 05:20:43" " 2022-10-02 05:25:38" " 2022-10-02 05:30:42" " 2022-10-02 05:35:39" " 2022-10-02 05:40:39" 
+  " 2022-10-02 05:45:39" " 2022-10-02 05:50:41" " 2022-10-02 05:55:38" " 2022-10-02 06:00:41" " 2022-10-02 06:05:39" 
+  " 2022-10-02 06:10:40" " 2022-10-02 06:15:38" " 2022-10-02 06:20:41" " 2022-10-02 06:25:41" " 2022-10-02 06:30:39" 
+  " 2022-10-02 06:35:39" " 2022-10-02 06:40:39" " 2022-10-02 06:45:39" " 2022-10-02 06:50:39" " 2022-10-02 06:55:39" 
+  " 2022-10-02 07:00:42" " 2022-10-02 07:05:40" " 2022-10-02 07:10:40" " 2022-10-02 07:15:38" " 2022-10-02 07:20:40" 
+  " 2022-10-02 07:25:38" " 2022-10-02 07:30:43" " 2022-10-02 07:35:38" " 2022-10-02 07:40:39" " 2022-10-02 07:45:39" 
+  " 2022-10-02 07:50:39" " 2022-10-02 07:55:39" " 2022-10-02 08:00:40" " 2022-10-02 08:05:39" " 2022-10-02 08:10:40" 
+  " 2022-10-02 08:15:39" " 2022-10-02 08:20:41" " 2022-10-02 08:25:40" " 2022-10-02 08:30:40" " 2022-10-02 08:35:39" 
+  " 2022-10-02 08:40:40" " 2022-10-02 08:45:39" " 2022-10-02 08:50:41" " 2022-10-02 08:55:38" " 2022-10-02 09:00:41" 
+  " 2022-10-02 09:05:39" " 2022-10-02 09:10:41" " 2022-10-02 09:15:39" " 2022-10-02 09:20:39" " 2022-10-02 09:25:38" 
+  " 2022-10-02 09:30:40" " 2022-10-02 09:35:39" " 2022-10-02 09:40:39" " 2022-10-02 09:45:40" " 2022-10-02 09:50:43" 
+  " 2022-10-02 09:55:39" " 2022-10-02 10:00:40" " 2022-10-02 10:05:39" " 2022-10-02 10:10:41" " 2022-10-02 10:15:39" 
+  " 2022-10-02 10:20:42" " 2022-10-02 10:25:39" " 2022-10-02 10:30:42" " 2022-10-02 10:35:39" " 2022-10-02 10:40:41" 
+  " 2022-10-02 10:45:38" " 2022-10-02 10:50:41" " 2022-10-02 10:55:39" " 2022-10-02 11:00:41" " 2022-10-02 11:05:40" 
+  " 2022-10-02 11:10:41" " 2022-10-02 11:15:40" " 2022-10-02 11:20:42" " 2022-10-02 11:25:39" " 2022-10-02 11:30:46" 
+  " 2022-10-02 11:35:39" " 2022-10-02 11:40:42" " 2022-10-02 11:45:40" " 2022-10-02 11:50:42" " 2022-10-02 11:55:38" 
+  " 2022-10-02 12:00:41" " 2022-10-02 12:05:39" " 2022-10-02 12:10:39" " 2022-10-02 12:15:39" " 2022-10-02 12:20:41" 
+  " 2022-10-02 12:25:38" " 2022-10-02 12:30:40" " 2022-10-02 12:35:40" " 2022-10-02 12:40:41" " 2022-10-02 12:45:39" 
+  " 2022-10-02 12:50:38" " 2022-10-02 12:55:40" " 2022-10-02 13:00:39" " 2022-10-02 13:05:39" " 2022-10-02 13:10:42" 
+  " 2022-10-02 13:15:39" " 2022-10-02 13:20:39" " 2022-10-02 13:25:39" " 2022-10-02 13:30:39" " 2022-10-02 13:35:39" 
+  " 2022-10-02 13:40:41" " 2022-10-02 13:45:38" " 2022-10-02 13:50:40" " 2022-10-02 13:55:39" " 2022-10-02 14:00:41" 
+  " 2022-10-02 14:05:39" " 2022-10-02 14:10:40" " 2022-10-02 14:15:40" " 2022-10-02 14:20:40" " 2022-10-02 14:25:38" 
+  " 2022-10-02 14:30:40" " 2022-10-02 14:35:40" " 2022-10-02 14:40:41" " 2022-10-02 14:45:39" " 2022-10-02 14:50:40" 
+  " 2022-10-02 14:55:38" " 2022-10-02 15:00:42" " 2022-10-02 15:05:42" " 2022-10-02 15:10:40" " 2022-10-02 15:15:40" 
+  " 2022-10-02 15:20:44" " 2022-10-02 15:25:40" " 2022-10-02 15:30:39" " 2022-10-02 15:35:43" " 2022-10-02 15:40:40" 
+  " 2022-10-02 15:45:40" " 2022-10-02 15:50:40" " 2022-10-02 15:55:38" " 2022-10-02 16:00:41" " 2022-10-02 16:05:42" 
+  " 2022-10-02 16:10:39" " 2022-10-02 16:15:40" " 2022-10-02 16:20:41" " 2022-10-02 16:25:38" " 2022-10-02 16:30:45" 
+  " 2022-10-02 16:35:39" " 2022-10-02 16:40:40" " 2022-10-02 16:45:39" " 2022-10-02 16:50:40" " 2022-10-02 16:55:38" 
+  " 2022-10-02 17:00:41" " 2022-10-02 17:05:43" " 2022-10-02 17:10:40" " 2022-10-02 17:15:45" " 2022-10-02 17:20:40" 
+  " 2022-10-02 17:25:39" " 2022-10-02 17:30:41" " 2022-10-02 17:35:39" " 2022-10-02 17:40:39" " 2022-10-02 17:45:40" 
+  " 2022-10-02 17:50:39" " 2022-10-02 17:55:39" " 2022-10-02 18:00:40" " 2022-10-02 18:05:39" " 2022-10-02 18:10:39" 
+  " 2022-10-02 18:15:40" " 2022-10-02 18:20:39" " 2022-10-02 18:25:38" " 2022-10-02 18:30:39" " 2022-10-02 18:35:39" 
+  " 2022-10-02 18:40:40" " 2022-10-02 18:45:39" " 2022-10-02 18:50:39" " 2022-10-02 18:55:38" " 2022-10-02 19:00:40" 
+  " 2022-10-02 19:05:39" " 2022-10-02 19:10:40" " 2022-10-02 19:15:39" " 2022-10-02 19:20:40" " 2022-10-02 19:25:38" 
+  " 2022-10-02 19:30:39" " 2022-10-02 19:35:40" " 2022-10-02 19:40:42" " 2022-10-02 19:45:39" " 2022-10-02 19:50:40" 
+  " 2022-10-02 19:55:39" " 2022-10-02 20:00:41" " 2022-10-02 20:05:40" " 2022-10-02 20:10:41" " 2022-10-02 20:15:40" 
+  " 2022-10-02 20:20:40" " 2022-10-02 20:25:39" " 2022-10-02 20:30:40" " 2022-10-02 20:35:38" " 2022-10-02 20:40:40" 
+  " 2022-10-02 20:45:40" " 2022-10-02 20:50:39" " 2022-10-02 20:55:39" " 2022-10-02 21:00:40" " 2022-10-02 21:05:39" 
+  " 2022-10-02 21:10:40" " 2022-10-02 21:15:39" " 2022-10-02 21:20:39" " 2022-10-02 21:25:39" " 2022-10-02 21:30:39" 
+  " 2022-10-02 21:35:40" " 2022-10-02 21:40:39" " 2022-10-02 21:45:39" " 2022-10-02 21:50:40" " 2022-10-02 21:55:39" 
+  " 2022-10-02 22:00:39" " 2022-10-02 22:05:39" " 2022-10-02 22:10:39" " 2022-10-02 22:15:38" " 2022-10-02 22:20:39" 
+  " 2022-10-02 22:25:39" " 2022-10-02 22:30:39" " 2022-10-02 22:35:39" " 2022-10-02 22:40:40" " 2022-10-02 22:45:39" 
+  " 2022-10-02 22:50:40" " 2022-10-02 22:55:38" " 2022-10-02 23:00:40" " 2022-10-02 23:05:39" " 2022-10-02 23:10:39" 
+  " 2022-10-02 23:15:40" " 2022-10-02 23:20:40" " 2022-10-02 23:25:39" " 2022-10-02 23:30:40" " 2022-10-02 23:35:38" 
+  " 2022-10-02 23:40:39" " 2022-10-02 23:45:38" " 2022-10-02 23:50:38" " 2022-10-02 23:55:38" >   < 0.499013 
+  0.494319 0.495009 0.49839 0.501304 0.501304 0.499347 0.501015 0.499792 0.49908 0.498323 0.495965 0.494319 
+  0.493251 0.48947 0.485888 0.500059 0.499347 0.477346 0.47848 0.46669 0.468626 0.495965 0.465645 0.493251 
+  0.493251 0.48947 0.485888 0.466623 0.466557 0.464377 0.477346 0.456635 0.46669 0.468626 0.46253 0.467402 
+  0.462108 0.464777 0.459038 0.457236 0.455923 0.467914 0.467914 0.466557 0.446113 0.444867 0.440596 
+  0.455345 0.459371 0.440107 0.43935 0.44004 0.443154 0.440596 0.443288 0.442198 0.437459 0.43935 0.44004 
+  0.443154 0.438861 0.443288 0.447692 0.450696 0.452119 0.453476 0.453054 0.455968 0.460061 0.459727 
+  0.463131 0.464377 0.458615 0.451697 0.450651 0.456279 0.458882 0.461107 0.463732 0.466542 0.471279 
+  0.475195 0.479666 0.484182 0.486495 0.475754 0.483228 0.482628 0.483406 0.486543 0.490414 0.413874 
+  0.418638 0.421085 0.424288 0.426157 0.430116 0.312002 0.31507 0.316894 0.318162 0.31903 0.320164 0.186632 
+  0.185802 0.186002 0.184956 0.184778 0.183777 0.0095676 0.00624777 0.00242152 -0.00265047 -0.00576485 
+  -0.0114061 -0.263468 -0.267534 -0.27096 -0.273763 -0.27552 -0.279969 -0.48345 -0.484245 -0.487493 
+  -0.491097 -0.49192 -0.493188 -0.687773 -0.686135 -0.687403 -0.684934 -0.685089 -0.690784 -0.877161 
+  -0.870312 -0.868688 -0.867532 -0.866375 -0.868488 -0.956042 -0.954775 -0.955487 -0.955487 -0.95453 
+  -0.953707 -0.999996 -0.996581 -0.995847 -0.997627 -0.996781 -0.996537 -0.905485 -0.904127 -0.905618 
+  -0.90693 -0.905373 -0.906841 -0.826 -0.823398 -0.820751 -0.818838 -0.818438 -0.818771 -0.764597 -0.761518 
+  -0.761919 -0.763209 -0.762141 -0.763253 -0.655228 -0.65281 -0.652543 -0.651253 -0.64934 -0.649273 
+  -0.520904 -0.517551 -0.513169 -0.506339 -0.499087 -0.494393 -0.360179 -0.353486 -0.34937 -0.344076 
+  -0.339249 -0.333977 -0.203919 -0.197248 -0.19222 -0.18717 -0.183077 -0.178406 0.0120662 0.0150144 
+  0.0174392 0.0277167 0.033278 0.034635 0.220438 0.225465 0.229915 0.234653 0.237367 0.236788 0.436564 
+  0.437744 0.442238 0.441704 0.446865 0.450914 0.632023 0.632023 0.633202 0.634804 0.637963 0.641322 
+  0.687126 0.687947 0.688169 0.68808 0.691105 0.688657 0.684163 0.682495 0.679692 0.675532 0.672417 
+  0.665966 0.661673 0.659493 0.657535 0.650483 0.644989 0.642364 0.640362 0.638426 0.63876 0.635423 
+  0.629862 0.625946 0.628215 0.627815 0.624678 0.619362 0.616425 0.612354 0.611042 0.607104 0.600097 
+  0.596382 0.590331 0.584881 0.584948 0.583724 0.580054 0.573602 0.573602 0.571378 0.56337 0.565194 
+  0.555161 0.54822 0.54822 0.542436 0.536875 0.534895 0.538343 0.531136 0.52553 0.531136 0.522059 0.52553 
+  0.52286 0.512828 0.520458 0.512071 0.512828 0.512828 0.50344 0.501349 0.512071 0.497144 0.495409 0.49116 
+  0.489336 0.484687 >   < 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 >   < 1 > 
+  121  "ES2"  < " 2022-10-02 00:00:41" " 2022-10-02 00:05:38" " 2022-10-02 00:10:40" " 2022-10-02 00:15:39" 
+  " 2022-10-02 00:20:40" " 2022-10-02 00:25:39" " 2022-10-02 00:30:42" " 2022-10-02 00:35:38" " 2022-10-02 00:40:39" 
+  " 2022-10-02 00:45:39" " 2022-10-02 00:50:39" " 2022-10-02 00:55:39" " 2022-10-02 01:00:40" " 2022-10-02 01:05:40" 
+  " 2022-10-02 01:10:40" " 2022-10-02 01:15:39" " 2022-10-02 01:20:40" " 2022-10-02 01:25:39" " 2022-10-02 01:30:39" 
+  " 2022-10-02 01:35:39" " 2022-10-02 01:40:39" " 2022-10-02 01:45:39" " 2022-10-02 01:50:41" " 2022-10-02 01:55:39" 
+  " 2022-10-02 02:00:45" " 2022-10-02 02:05:38" " 2022-10-02 02:10:39" " 2022-10-02 02:15:39" " 2022-10-02 02:20:40" 
+  " 2022-10-02 02:25:38" " 2022-10-02 02:30:40" " 2022-10-02 02:35:38" " 2022-10-02 02:40:40" " 2022-10-02 02:45:40" 
+  " 2022-10-02 02:50:39" " 2022-10-02 02:55:38" " 2022-10-02 03:00:42" " 2022-10-02 03:05:40" " 2022-10-02 03:10:38" 
+  " 2022-10-02 03:15:39" " 2022-10-02 03:20:39" " 2022-10-02 03:25:39" " 2022-10-02 03:30:40" " 2022-10-02 03:35:38" 
+  " 2022-10-02 03:40:40" " 2022-10-02 03:45:39" " 2022-10-02 03:50:39" " 2022-10-02 03:55:39" " 2022-10-02 04:00:39" 
+  " 2022-10-02 04:05:39" " 2022-10-02 04:10:39" " 2022-10-02 04:15:39" " 2022-10-02 04:20:39" " 2022-10-02 04:25:39" 
+  " 2022-10-02 04:30:39" " 2022-10-02 04:35:38" " 2022-10-02 04:40:39" " 2022-10-02 04:45:39" " 2022-10-02 04:50:39" 
+  " 2022-10-02 04:55:39" " 2022-10-02 05:00:39" " 2022-10-02 05:05:40" " 2022-10-02 05:10:39" " 2022-10-02 05:15:39" 
+  " 2022-10-02 05:20:43" " 2022-10-02 05:25:38" " 2022-10-02 05:30:42" " 2022-10-02 05:35:39" " 2022-10-02 05:40:39" 
+  " 2022-10-02 05:45:39" " 2022-10-02 05:50:41" " 2022-10-02 05:55:38" " 2022-10-02 06:00:41" " 2022-10-02 06:05:39" 
+  " 2022-10-02 06:10:40" " 2022-10-02 06:15:38" " 2022-10-02 06:20:41" " 2022-10-02 06:25:41" " 2022-10-02 06:30:39" 
+  " 2022-10-02 06:35:39" " 2022-10-02 06:40:39" " 2022-10-02 06:45:39" " 2022-10-02 06:50:39" " 2022-10-02 06:55:39" 
+  " 2022-10-02 07:00:42" " 2022-10-02 07:05:40" " 2022-10-02 07:10:40" " 2022-10-02 07:15:38" " 2022-10-02 07:20:40" 
+  " 2022-10-02 07:25:38" " 2022-10-02 07:30:43" " 2022-10-02 07:35:38" " 2022-10-02 07:40:39" " 2022-10-02 07:45:39" 
+  " 2022-10-02 07:50:39" " 2022-10-02 07:55:39" " 2022-10-02 08:00:40" " 2022-10-02 08:05:39" " 2022-10-02 08:10:40" 
+  " 2022-10-02 08:15:39" " 2022-10-02 08:20:41" " 2022-10-02 08:25:40" " 2022-10-02 08:30:40" " 2022-10-02 08:35:39" 
+  " 2022-10-02 08:40:40" " 2022-10-02 08:45:39" " 2022-10-02 08:50:41" " 2022-10-02 08:55:38" " 2022-10-02 09:00:41" 
+  " 2022-10-02 09:05:39" " 2022-10-02 09:10:41" " 2022-10-02 09:15:39" " 2022-10-02 09:20:39" " 2022-10-02 09:25:38" 
+  " 2022-10-02 09:30:40" " 2022-10-02 09:35:39" " 2022-10-02 09:40:39" " 2022-10-02 09:45:40" " 2022-10-02 09:50:43" 
+  " 2022-10-02 09:55:39" " 2022-10-02 10:00:40" " 2022-10-02 10:05:39" " 2022-10-02 10:10:41" " 2022-10-02 10:15:39" 
+  " 2022-10-02 10:20:42" " 2022-10-02 10:25:39" " 2022-10-02 10:30:42" " 2022-10-02 10:35:39" " 2022-10-02 10:40:41" 
+  " 2022-10-02 10:45:38" " 2022-10-02 10:50:41" " 2022-10-02 10:55:39" " 2022-10-02 11:00:41" " 2022-10-02 11:05:40" 
+  " 2022-10-02 11:10:41" " 2022-10-02 11:15:40" " 2022-10-02 11:20:42" " 2022-10-02 11:25:39" " 2022-10-02 11:30:46" 
+  " 2022-10-02 11:35:39" " 2022-10-02 11:40:42" " 2022-10-02 11:45:40" " 2022-10-02 11:50:42" " 2022-10-02 11:55:38" 
+  " 2022-10-02 12:00:41" " 2022-10-02 12:05:39" " 2022-10-02 12:10:39" " 2022-10-02 12:15:39" " 2022-10-02 12:20:41" 
+  " 2022-10-02 12:25:38" " 2022-10-02 12:30:40" " 2022-10-02 12:35:40" " 2022-10-02 12:40:41" " 2022-10-02 12:45:39" 
+  " 2022-10-02 12:50:38" " 2022-10-02 12:55:40" " 2022-10-02 13:00:39" " 2022-10-02 13:05:39" " 2022-10-02 13:10:42" 
+  " 2022-10-02 13:15:39" " 2022-10-02 13:20:39" " 2022-10-02 13:25:39" " 2022-10-02 13:30:39" " 2022-10-02 13:35:39" 
+  " 2022-10-02 13:40:41" " 2022-10-02 13:45:38" " 2022-10-02 13:50:40" " 2022-10-02 13:55:39" " 2022-10-02 14:00:41" 
+  " 2022-10-02 14:05:39" " 2022-10-02 14:10:40" " 2022-10-02 14:15:40" " 2022-10-02 14:20:40" " 2022-10-02 14:25:38" 
+  " 2022-10-02 14:30:40" " 2022-10-02 14:35:40" " 2022-10-02 14:40:41" " 2022-10-02 14:45:39" " 2022-10-02 14:50:40" 
+  " 2022-10-02 14:55:38" " 2022-10-02 15:00:42" " 2022-10-02 15:05:42" " 2022-10-02 15:10:40" " 2022-10-02 15:15:40" 
+  " 2022-10-02 15:20:44" " 2022-10-02 15:25:40" " 2022-10-02 15:30:39" " 2022-10-02 15:35:43" " 2022-10-02 15:40:40" 
+  " 2022-10-02 15:45:40" " 2022-10-02 15:50:40" " 2022-10-02 15:55:38" " 2022-10-02 16:00:41" " 2022-10-02 16:05:42" 
+  " 2022-10-02 16:10:39" " 2022-10-02 16:15:40" " 2022-10-02 16:20:41" " 2022-10-02 16:25:38" " 2022-10-02 16:30:45" 
+  " 2022-10-02 16:35:39" " 2022-10-02 16:40:40" " 2022-10-02 16:45:39" " 2022-10-02 16:50:40" " 2022-10-02 16:55:38" 
+  " 2022-10-02 17:00:41" " 2022-10-02 17:05:43" " 2022-10-02 17:10:40" " 2022-10-02 17:15:45" " 2022-10-02 17:20:40" 
+  " 2022-10-02 17:25:39" " 2022-10-02 17:30:41" " 2022-10-02 17:35:39" " 2022-10-02 17:40:39" " 2022-10-02 17:45:40" 
+  " 2022-10-02 17:50:39" " 2022-10-02 17:55:39" " 2022-10-02 18:00:40" " 2022-10-02 18:05:39" " 2022-10-02 18:10:39" 
+  " 2022-10-02 18:15:40" " 2022-10-02 18:20:39" " 2022-10-02 18:25:38" " 2022-10-02 18:30:39" " 2022-10-02 18:35:39" 
+  " 2022-10-02 18:40:40" " 2022-10-02 18:45:39" " 2022-10-02 18:50:39" " 2022-10-02 18:55:38" " 2022-10-02 19:00:40" 
+  " 2022-10-02 19:05:39" " 2022-10-02 19:10:40" " 2022-10-02 19:15:39" " 2022-10-02 19:20:40" " 2022-10-02 19:25:38" 
+  " 2022-10-02 19:30:39" " 2022-10-02 19:35:40" " 2022-10-02 19:40:42" " 2022-10-02 19:45:39" " 2022-10-02 19:50:40" 
+  " 2022-10-02 19:55:39" " 2022-10-02 20:00:41" " 2022-10-02 20:05:40" " 2022-10-02 20:10:41" " 2022-10-02 20:15:40" 
+  " 2022-10-02 20:20:40" " 2022-10-02 20:25:39" " 2022-10-02 20:30:40" " 2022-10-02 20:35:38" " 2022-10-02 20:40:40" 
+  " 2022-10-02 20:45:40" " 2022-10-02 20:50:39" " 2022-10-02 20:55:39" " 2022-10-02 21:00:40" " 2022-10-02 21:05:39" 
+  " 2022-10-02 21:10:40" " 2022-10-02 21:15:39" " 2022-10-02 21:20:39" " 2022-10-02 21:25:39" " 2022-10-02 21:30:39" 
+  " 2022-10-02 21:35:40" " 2022-10-02 21:40:39" " 2022-10-02 21:45:39" " 2022-10-02 21:50:40" " 2022-10-02 21:55:39" 
+  " 2022-10-02 22:00:39" " 2022-10-02 22:05:39" " 2022-10-02 22:10:39" " 2022-10-02 22:15:38" " 2022-10-02 22:20:39" 
+  " 2022-10-02 22:25:39" " 2022-10-02 22:30:39" " 2022-10-02 22:35:39" " 2022-10-02 22:40:40" " 2022-10-02 22:45:39" 
+  " 2022-10-02 22:50:40" " 2022-10-02 22:55:38" " 2022-10-02 23:00:40" " 2022-10-02 23:05:39" " 2022-10-02 23:10:39" 
+  " 2022-10-02 23:15:40" " 2022-10-02 23:20:40" " 2022-10-02 23:25:39" " 2022-10-02 23:30:40" " 2022-10-02 23:35:38" 
+  " 2022-10-02 23:40:39" " 2022-10-02 23:45:38" " 2022-10-02 23:50:38" " 2022-10-02 23:55:38" >   < 0.322878 
+  0.319841 0.320287 0.322475 0.324361 0.324361 0.323094 0.324173 0.323382 0.322921 0.322432 0.320906 
+  0.319841 0.31915 0.316703 0.314386 0.323555 0.323094 0.308859 0.309593 0.301964 0.303216 0.320906 
+  0.301288 0.31915 0.31915 0.316703 0.314386 0.301921 0.301878 0.300467 0.308859 0.295458 0.301964 0.303216 
+  0.299272 0.302425 0.298999 0.300726 0.297013 0.295847 0.294998 0.302756 0.302756 0.301878 0.28865 
+  0.287844 0.28508 0.294623 0.297229 0.284764 0.284274 0.284721 0.286736 0.28508 0.286822 0.286117 0.283051 
+  0.284274 0.284721 0.286736 0.283958 0.286822 0.289672 0.291615 0.292536 0.293414 0.293141 0.295026 
+  0.297675 0.297459 0.299661 0.300467 0.296739 0.292263 0.291586 0.295228 0.296912 0.298351 0.30005 
+  0.30175 0.304815 0.307348 0.310241 0.313163 0.31466 0.302366 0.307202 0.306814 0.307317 0.309347 0.311851 
+  0.243699 0.246782 0.248366 0.250438 0.251647 0.25421 0.148861 0.150846 0.152026 0.152846 0.153408 
+  0.154142 0.0363613 0.0357173 0.0358468 0.0351703 0.0350552 0.0344075 -0.119068 -0.121217 -0.123693 
+  -0.126975 -0.12899 -0.132643 -0.35489 -0.35752 -0.359736 -0.36155 -0.362687 -0.365566 -0.544834 -0.545348 
+  -0.547449 -0.549781 -0.550313 -0.551134 -0.722579 -0.72152 -0.722341 -0.720743 -0.720844 -0.724529 
+  -0.889492 -0.885061 -0.88401 -0.883262 -0.882513 -0.883881 -0.961646 -0.960832 -0.961293 -0.961293 
+  -0.960674 -0.960142 -1 -0.997795 -0.99732 -0.998471 -0.997924 -0.997766 -0.917464 -0.91658 -0.917544 
+  -0.918393 -0.917386 -0.918336 -0.847848 -0.84617 -0.844457 -0.843219 -0.84296 -0.843176 -0.795297 
+  -0.793297 -0.793556 -0.794391 -0.7937 -0.79442 -0.699954 -0.698385 -0.698213 -0.697378 -0.69614 -0.696097 
+  -0.58348 -0.581307 -0.578472 -0.574053 -0.569361 -0.566324 -0.447942 -0.443611 -0.440949 -0.437523 
+  -0.434399 -0.430988 -0.318429 -0.314114 -0.310861 -0.307593 -0.304945 -0.301922 -0.135672 -0.133882 
+  -0.132313 -0.125663 -0.122065 -0.121187 0.0421573 0.0454103 0.048289 0.0513548 0.0531109 0.0527366 
+  0.230462 0.231226 0.234133 0.233788 0.237127 0.239747 0.398711 0.398711 0.399474 0.400511 0.402555 
+  0.404728 0.444532 0.445062 0.445206 0.445148 0.447106 0.445584 0.442676 0.441597 0.439783 0.437092 
+  0.435076 0.430902 0.428124 0.426714 0.425447 0.420884 0.417329 0.415631 0.414335 0.413083 0.413299 
+  0.41114 0.407541 0.405008 0.406476 0.406217 0.404188 0.400748 0.398848 0.396214 0.395364 0.392817 
+  0.388283 0.385879 0.381964 0.378437 0.378481 0.377689 0.375314 0.37114 0.37114 0.369701 0.364519 0.365699 
+  0.359208 0.354717 0.354717 0.350974 0.347376 0.346095 0.348326 0.343662 0.340035 0.343662 0.33779 
+  0.340035 0.338308 0.331816 0.336754 0.331327 0.331816 0.331816 0.325742 0.324389 0.331327 0.321669 
+  0.320546 0.317797 0.316617 0.313609 >   < 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < 1 > 
+}
+Record System BusbarGraphic {
+  1 "Vertical" "Main single line"  -163.988  133.775  80  < 1 > 
+  3 "Horizontal" "Main single line"  297  66  80  < 1 > 
+  4 "Horizontal" "Main single line"  476  65  80  < 1 > 
+  5 "Horizontal" "Main single line"  674  61  80  < 1 > 
+  6 "Horizontal" "Main single line"  850  62  80  < 1 > 
+  7 "Horizontal" "Main single line"  1011  62  80  < 1 > 
+  8 "Horizontal" "Main single line"  1153  63  80  < 1 > 
+  9 "Vertical" "Main single line"  1243.12  184  80  < 1 > 
+  10 "Vertical" "Main single line"  1242.56  298.5  80  < 1 > 
+  11 "Vertical" "Main single line"  1245  416.875  80  < 1 > 
+  12 "Vertical" "Main single line"  1245.75  540.938  80  < 1 > 
+  13 "Vertical" "Main single line"  1251.56  675  80  < 1 > 
+  14 "Horizontal" "Main single line"  1182.4  931.681  95.625  < 1 > 
+  15 "Horizontal" "Main single line"  1017.43  933.74  80  < 1 > 
+  16 "Horizontal" "Main single line"  845.59  925.828  80  < 1 > 
+  17 "Horizontal" "Main single line"  630.915  930.028  80  < 1 > 
+  18 "Horizontal" "Main single line"  416.39  922.415  80  < 1 > 
+  19 "Vertical" "Main single line"  165.812  198.75  80  < 1 > 
+  20 "Vertical" "Main single line"  165.25  314.375  80  < 1 > 
+  21 "Vertical" "Main single line"  166.25  435.687  80  < 1 > 
+  22 "Vertical" "Main single line"  166.25  563.062  80  < 1 > 
+  23 "Vertical" "Main single line"  458.687  228.5  80  < 1 > 
+  24 "Vertical" "Main single line"  458.812  343.312  80  < 1 > 
+  25 "Vertical" "Main single line"  459.375  467.937  80  < 1 > 
+  26 "Vertical" "Main single line"  896.875  170.312  80  < 1 > 
+  27 "Vertical" "Main single line"  898.437  278.125  80  < 1 > 
+  28 "Vertical" "Main single line"  901.562  393.75  80  < 1 > 
+  29 "Vertical" "Main single line"  903.125  500  80  < 1 > 
+  30 "Vertical" "Main single line"  906.25  614.062  80  < 1 > 
+  31 "Horizontal" "Main single line"  761.406  716.562  80  < 1 > 
+  32 "Horizontal" "Main single line"  598.75  716.562  80  < 1 > 
+  33 "Horizontal" "Main single line"  413.297  711.197  75  < 1 > 
+  34 "Horizontal" "Main single line"  103.125  69.0625  80  < 1 > 
+}
+Record System RadialGraphic {
+  69 "GeneratorPVSymbol" "Main single line"  < 1214.21 934.681 1214.21 988.18 >   < 1 4 >   1214.21  1003.18
+    < 1 > 
+  70 "GeneratorPVSymbol" "Main single line"  < 447.14 925.415 447.14 966.04 >   < 1 4 >   447.14  981.04
+    < 1 > 
+  71 "GeneratorWindSymbol" "Main single line"  < 169.25 465.127 257.65 465.127 >   < 1 4 >   272.65  465.127
+    < 1 > 
+  72 "GeneratorWindSymbol" "Main single line"  < 462.375 451.937 558.875 451.937 >   < 1 4 >   573.875
+    451.937  < 1 > 
+  73 "GeneratorPVSymbol" "Main single line"  < 909.25 607.812 1010 607.812 >   < 1 4 >   1025  607.812
+    < 1 > 
+  74 "GeneratorPVSymbol" "Main single line"  < 381.359 714.197 381.359 775.859 >   < 1 4 >   381.359
+    790.859  < 1 > 
+  75 "LoadSymbol" "Main single line"  < 110 66.0625 110 31.0625 >   < 1 4 >   110  26.5625  < 1 > 
+  76 "LoadSymbol" "Main single line"  < 303.437 63 303.437 27.9375 >   < 1 4 >   303.437  23.4375  < 1 
+  > 
+  77 "LoadSymbol" "Main single line"  < 471.875 62 471.875 28.25 >   < 1 4 >   471.875  23.75  < 1 > 
+  
+  78 "LoadSymbol" "Main single line"  < 672.5 58 672.5 26.0625 >   < 1 4 >   672.5  21.5625  < 1 > 
+  79 "LoadSymbol" "Main single line"  < 849.375 59 849.375 24.8125 >   < 1 4 >   849.375  20.3125  < 1 
+  > 
+  80 "LoadSymbol" "Main single line"  < 1008.75 59 1008.75 22.625 >   < 1 4 >   1008.75  18.125  < 1 
+  > 
+  81 "LoadSymbol" "Main single line"  < 1155.62 60 1155.62 19.8125 >   < 1 4 >   1155.62  15.3125  < 1 
+  > 
+  82 "LoadSymbol" "Main single line"  < 1246.12 178.125 1325.5 178.125 >   < 1 4 >   1330  178.125  < 1 
+  > 
+  83 "LoadSymbol" "Main single line"  < 1245.56 299.062 1323 299.062 >   < 1 4 >   1327.5  299.062  < 1 
+  > 
+  84 "LoadSymbol" "Main single line"  < 1248 415.937 1325.19 415.937 >   < 1 4 >   1329.69  415.937  < 1 
+  > 
+  85 "LoadSymbol" "Main single line"  < 1248.75 541.562 1328.31 541.562 >   < 1 4 >   1332.81  541.562
+    < 1 > 
+  86 "LoadSymbol" "Main single line"  < 1254.56 679.062 1328.62 679.062 >   < 1 4 >   1333.12  679.062
+    < 1 > 
+  87 "LoadSymbol" "Main single line"  < 1156.4 934.681 1156.4 1003.99 >   < 1 4 >   1156.4  1008.49  < 1 
+  > 
+  88 "LoadSymbol" "Main single line"  < 994.62 936.74 994.62 1002.53 >   < 1 4 >   994.62  1007.03  < 1 
+  > 
+  91 "LoadSymbol" "Main single line"  < 826.178 928.828 826.178 996.128 >   < 1 4 >   826.178  1000.63
+    < 1 > 
+  92 "LoadSymbol" "Main single line"  < 630.759 933.028 630.759 1000.22 >   < 1 4 >   630.759  1004.72
+    < 1 > 
+  93 "LoadSymbol" "Main single line"  < 392.64 925.415 392.64 984.165 >   < 1 4 >   392.64  988.665  < 1 
+  > 
+  94 "LoadSymbol" "Main single line"  < 444.484 714.197 444.484 756.047 >   < 1 4 >   444.484  760.547
+    < 1 > 
+  95 "LoadSymbol" "Main single line"  < 600.312 719.562 600.312 758.937 >   < 1 4 >   600.312  763.437
+    < 1 > 
+  96 "LoadSymbol" "Main single line"  < 760.625 719.562 760.625 757.375 >   < 1 4 >   760.625  761.875
+    < 1 > 
+  97 "LoadSymbol" "Main single line"  < 909.25 641.562 1001.75 641.562 >   < 1 4 >   1006.25  641.562
+    < 1 > 
+  98 "LoadSymbol" "Main single line"  < 906.125 504.375 987.687 504.375 >   < 1 4 >   992.187  504.375
+    < 1 > 
+  99 "LoadSymbol" "Main single line"  < 904.562 391.25 988.625 391.25 >   < 1 4 >   993.125  391.25  < 1 
+  > 
+  100 "LoadSymbol" "Main single line"  < 901.437 280.625 987.687 280.625 >   < 1 4 >   992.187  280.625
+    < 1 > 
+  101 "LoadSymbol" "Main single line"  < 899.875 174.375 978.312 174.375 >   < 1 4 >   982.812  174.375
+    < 1 > 
+  102 "LoadSymbol" "Main single line"  < 461.687 228.765 559.141 228.765 >   < 1 4 >   563.641  228.765
+    < 1 > 
+  103 "LoadSymbol" "Main single line"  < 461.812 338.125 559.094 338.125 >   < 1 4 >   563.594  338.125
+    < 1 > 
+  104 "LoadSymbol" "Main single line"  < 462.375 497.109 565.891 497.109 >   < 1 4 >   570.391  497.109
+    < 1 > 
+  105 "LoadSymbol" "Main single line"  < 169.25 565.312 242.219 565.312 >   < 1 4 >   246.719  565.312
+    < 1 > 
+  106 "LoadSymbol" "Main single line"  < 169.25 419.915 262.245 419.915 >   < 1 4 >   266.745  419.915
+    < 1 > 
+  107 "LoadSymbol" "Main single line"  < 168.25 331.343 262.606 331.343 >   < 1 4 >   267.106  331.343
+    < 1 > 
+  108 "LoadSymbol" "Main single line"  < 168.812 207.376 252.05 207.376 >   < 1 4 >   256.55  207.376
+    < 1 > 
+  109 "GeneratorBatteryOutSymbol" "Main single line"  < 376.39 922.437 375.147 922.437 135.69 923.687 
+  >   < 1 4 4 >   120.69  923.765  < 1 > 
+  110 "GeneratorBatteryOutSymbol" "Main single line"  < 375.797 711.16 374.555 711.16 137.296 709.079 
+  >   < 1 4 4 >   122.297  708.947  < 1 > 
+  118 "GridInfeedSymbol" "Main single line"  < -166.988 135 -264.09 135 >   < 1 4 >   -280  135  < 1 
+  > 
+}
+Record System BranchGraphic {
+  35 "Line" "Main single line"  < -160.988 108.437 -61.5875 108.437 >   < 1 4 >   < 75.3125 72.0625 
+  75.3125 108.437 37.8125 108.437 -61.5875 108.437 >   < 1 3 3 4 >   -90  0  0  -61.5875  108.437  < 1 
+  > 
+  36 "Line" "Main single line"  < 134.375 72.0625 134.375 112.5 203.125 112.5 >   < 1 3 4 >   < 271.875 
+  69 271.875 112.5 203.125 112.5 >   < 1 3 4 >   270  0  0  203.125  112.5  < 1 > 
+  37 "Line" "Main single line"  < 331.25 69 331.25 103.125 387.5 103.125 >   < 1 3 4 >   < 443.75 68 
+  443.75 103.125 387.5 103.125 >   < 1 3 4 >   270  0  0  387.5  103.125  < 1 > 
+  38 "Line" "Main single line"  < 507.812 68 507.812 101.562 573.437 101.562 >   < 1 3 4 >   < 639.062 
+  64 639.062 101.562 573.437 101.562 >   < 1 3 4 >   270  0  0  573.437  101.562  < 1 > 
+  39 "Line" "Main single line"  < 708.035 64 708.035 93.75 767.299 93.75 >   < 1 3 4 >   < 826.562 65 
+  826.562 93.75 767.299 93.75 >   < 1 3 4 >   270  0  0  767.299  93.75  < 1 > 
+  40 "Line" "Main single line"  < 875 65 875 93.75 936.719 93.75 >   < 1 3 4 >   < 998.437 65 998.437 
+  93.75 936.719 93.75 >   < 1 3 4 >   270  0  0  936.719  93.75  < 1 > 
+  41 "Line" "Main single line"  < 1034.37 65 1034.37 79.6875 1034.37 89.0625 1080.47 89.0625 >   < 1 
+  3 3 4 >   < 1126.56 66 1126.56 89.0625 1080.47 89.0625 >   < 1 3 4 >   270  0  0  1080.47  89.0625
+    < 1 > 
+  42 "Line" "Main single line"  < 1181.25 66 1181.25 108.781 >   < 1 4 >   < 1240.12 151.562 1181.25 
+  151.562 1181.25 108.781 >   < 1 3 4 >   0  0  0  1181.25  108.781  < 1 > 
+  44 "Line" "Main single line"  < 1240.12 208 1190 208 1190 241.5 >   < 1 3 4 >   < 1239.56 275 1190 
+  275 1190 241.5 >   < 1 3 4 >   360  0  0  1190  241.5  < 1 > 
+  45 "Line" "Main single line"  < 1239.56 323 1194 323 1194 356 >   < 1 3 4 >   < 1242 389 1194 389 
+  1194 356 >   < 1 3 4 >   360  0  0  1194  356  < 1 > 
+  46 "Line" "Main single line"  < 1242 446 1200 446 1200 482.5 >   < 1 3 4 >   < 1242.75 519 1200 519 
+  1200 482.5 >   < 1 3 4 >   360  0  0  1200  482.5  < 1 > 
+  47 "Line" "Main single line"  < 1242.75 571 1197 571 1197 607.5 >   < 1 3 4 >   < 1248.56 644 1197 
+  644 1197 607.5 >   < 1 3 4 >   360  0  0  1197  607.5  < 1 > 
+  48 "Line" "Main single line"  < 1248.56 700 1207 700 1205.25 700 1204.75 747.875 >   < 1 3 3 4 >   < 1204.25 
+  928.681 1204.25 795.75 1204.75 747.875 >   < 1 3 4 >   0.598368  0  0  1204.75  747.875  < 1 > 
+  49 "Line" "Main single line"  < 1144.71 928.681 1144.71 853.366 1093.7 853.966 >   < 1 3 4 >   < 1042.69 
+  930.74 1042.69 854.566 1093.7 853.966 >   < 1 3 4 >   89.3261  0  0  1093.7  853.966  < 1 > 
+  50 "Line" "Main single line"  < 993.69 930.74 993.69 851.766 928.99 851.366 >   < 1 3 4 >   < 864.29 
+  922.828 864.29 850.966 928.99 851.366 >   < 1 3 4 >   90.3542  0  0  928.99  851.366  < 1 > 
+  51 "Line" "Main single line"  < 818.89 922.828 818.89 851.166 737.89 850.766 >   < 1 3 4 >   < 656.89 
+  927.028 656.89 850.366 737.89 850.766 >   < 1 3 4 >   90.2829  0  0  737.89  850.766  < 1 > 
+  52 "Line" "Main single line"  < 611.39 927.028 611.39 852.116 523.74 852.141 >   < 1 3 4 >   < 436.09 
+  919.415 436.09 852.166 523.74 852.141 >   < 1 3 4 >   89.9837  0  0  523.74  852.141  < 1 > 
+  53 "Line" "Main single line"  < 109 72.0625 109 121.531 >   < 1 4 >   < 162.812 171 109 171 109 121.531 
+  >   < 1 3 4 >   0  0  0  109  121.531  < 1 > 
+  54 "Line" "Main single line"  < 162.812 220 108 220 108 256.5 >   < 1 3 4 >   < 162.25 293 108 293 
+  108 256.5 >   < 1 3 4 >   360  0  0  108  256.5  < 1 > 
+  55 "Line" "Main single line"  < 162.25 334 109 334 109 366.5 >   < 1 3 4 >   < 163.25 399 109 399 
+  109 366.5 >   < 1 3 4 >   360  0  0  109  366.5  < 1 > 
+  56 "Line" "Main single line"  < 163.25 461 107 461 107 494 >   < 1 3 4 >   < 163.25 527 107 527 107 
+  494 >   < 1 3 4 >   360  0  0  107  494  < 1 > 
+  57 "Line" "Main single line"  < 310.5 69 310.5 135.5 >   < 1 4 >   < 455.687 200.75 361.75 200.75 
+  310.5 202 310.5 135.5 >   < 1 3 3 4 >   0  0  0  310.5  135.5  < 1 > 
+  58 "Line" "Main single line"  < 455.687 250.75 402.5 250.75 402 283.25 >   < 1 3 4 >   < 455.812 315.75 
+  401.5 315.75 402 283.25 >   < 1 3 4 >   0.881404  0  0  402  283.25  < 1 > 
+  59 "Line" "Main single line"  < 455.812 363.75 404.5 363.75 404.5 398.75 >   < 1 3 4 >   < 456.375 
+  433.75 404.5 433.75 404.5 398.75 >   < 1 3 4 >   360  0  0  404.5  398.75  < 1 > 
+  60 "Line" "Main single line"  < 857 65 857 108.5 >   < 1 4 >   < 893.875 152 857 152 857 108.5 >   < 1 
+  3 4 >   360  0  0  857  108.5  < 1 > 
+  61 "Line" "Main single line"  < 893.875 196 857 196 857 226 >   < 1 3 4 >   < 895.437 256 857 256 
+  857 226 >   < 1 3 4 >   360  0  0  857  226  < 1 > 
+  62 "Line" "Main single line"  < 895.437 296 856 296 856 333.5 >   < 1 3 4 >   < 898.562 371 856 371 
+  856 333.5 >   < 1 3 4 >   360  0  0  856  333.5  < 1 > 
+  63 "Line" "Main single line"  < 898.562 415 856 415 856 442.5 >   < 1 3 4 >   < 900.125 470 856 470 
+  856 442.5 >   < 1 3 4 >   360  0  0  856  442.5  < 1 > 
+  64 "Line" "Main single line"  < 900.125 533 855 533 855 579 855 589 879.125 589 >   < 1 3 3 3 4 > 
+    < 903.25 589 879.125 589 >   < 1 4 >   270  0  0  879.125  589  < 1 > 
+  65 "Line" "Main single line"  < 903.25 633.25 847.25 633.25 >   < 1 4 >   < 791.25 713.562 791.25 
+  682 791.25 633.25 847.25 633.25 >   < 1 3 3 4 >   90  0  0  847.25  633.25  < 1 > 
+  66 "Line" "Main single line"  < 728.5 713.562 728.5 657.25 673.625 657.875 >   < 1 3 4 >   < 618.75 
+  713.562 618.75 658.5 673.625 657.875 >   < 1 3 4 >   89.3475  0  0  673.625  657.875  < 1 > 
+  67 "Line" "Main single line"  < 575 713.562 575 672.5 575 658.25 509.15 658.65 >   < 1 3 3 4 >   < 443.3 
+  708.197 443.3 659.05 509.15 658.65 >   < 1 3 4 >   89.652  0  0  509.15  658.65  < 1 > 
+}
+Record System LabelGraphic {
+  1 "TextName" "Main single line"  -154.738  139.4  0  < 1 > 
+  3 "TextName" "Main single line"  348.375  16.5625  0  < 1 > 
+  4 "TextName" "Main single line"  532.188  9.5  0  < 1 > 
+  5 "TextName" "Main single line"  730.562  5.8125  0  < 1 > 
+  6 "TextName" "Main single line"  899.5  5.3125  0  < 1 > 
+  7 "TextName" "Main single line"  1046.93  1.1875  0  < 1 > 
+  8 "TextName" "Main single line"  1208.94  37.4375  0  < 1 > 
+  9 "TextName" "Main single line"  1253.62  207.75  0  < 1 > 
+  10 "TextName" "Main single line"  1249.31  323.5  0  < 1 > 
+  11 "TextName" "Main single line"  1250.5  444.375  0  < 1 > 
+  12 "TextName" "Main single line"  1251.25  569.688  0  < 1 > 
+  13 "TextName" "Main single line"  1233.31  716.562  0  < 1 > 
+  14 "TextName" "Main single line"  1230.21  919.056  0  < 1 > 
+  15 "TextName" "Main single line"  1044.93  946.74  0  < 1 > 
+  16 "TextName" "Main single line"  884.34  938.828  0  < 1 > 
+  17 "TextName" "Main single line"  697.965  958.578  0  < 1 > 
+  18 "TextName" "Main single line"  269.19  939.315  0  < 1 > 
+  19 "TextName" "Main single line"  173.932  221.47  0  < 1 > 
+  20 "TextName" "Main single line"  170.78  336.355  0  < 1 > 
+  21 "TextName" "Main single line"  169.25  475.687  0  < 1 > 
+  22 "TextName" "Main single line"  169.25  603.062  0  < 1 > 
+  23 "TextName" "Main single line"  469.187  246  0  < 1 > 
+  24 "TextName" "Main single line"  470.562  362.062  0  < 1 > 
+  25 "TextName" "Main single line"  462.375  507.937  0  < 1 > 
+  26 "TextName" "Main single line"  903  188.437  0  < 1 > 
+  27 "TextName" "Main single line"  903  300.938  0  < 1 > 
+  28 "TextName" "Main single line"  909.25  418.125  0  < 1 > 
+  29 "TextName" "Main single line"  907.688  522.812  0  < 1 > 
+  30 "TextName" "Main single line"  909.25  654.062  0  < 1 > 
+  31 "TextName" "Main single line"  682.656  750.312  0  < 1 > 
+  32 "TextName" "Main single line"  519.5  748.312  0  < 1 > 
+  33 "TextName" "Main single line"  283.697  721.747  0  < 1 > 
+  34 "TextName" "Main single line"  164.188  15.25  0  < 1 > 
+  35 "TextName" "Main single line"  -61.5875  108.437  0  < 1 > 
+  36 "TextName" "Main single line"  203.125  112.5  0  < 1 > 
+  37 "TextName" "Main single line"  395.5  104.375  0  < 1 > 
+  38 "TextName" "Main single line"  549.375  105  0  < 1 > 
+  39 "TextName" "Main single line"  693.861  98.4375  0  < 1 > 
+  40 "TextName" "Main single line"  936.719  93.75  0  < 1 > 
+  41 "TextName" "Main single line"  1046.16  93.5  0  < 1 > 
+  42 "TextName" "Main single line"  1135.62  83.4685  0  < 1 > 
+  44 "TextName" "Main single line"  1111.5  205  0  < 1 > 
+  45 "TextName" "Main single line"  1117.31  319.5  0  < 1 > 
+  46 "TextName" "Main single line"  1126.12  441.938  0  < 1 > 
+  47 "TextName" "Main single line"  1127.31  563.562  0  < 1 > 
+  48 "TextName" "Main single line"  1212.56  793.188  0  < 1 > 
+  49 "TextName" "Main single line"  1057.45  853.966  0  < 1 > 
+  50 "TextName" "Main single line"  910.24  848.866  0  < 1 > 
+  51 "TextName" "Main single line"  701.64  861.716  0  < 1 > 
+  52 "TextName" "Main single line"  497.89  858.041  0  < 1 > 
+  53 "TextName" "Main single line"  34  121.219  0  < 1 > 
+  54 "TextName" "Main single line"  26.875  215.562  0  < 1 > 
+  55 "TextName" "Main single line"  26.3125  321.312  0  < 1 > 
+  56 "TextName" "Main single line"  29  460.438  0  < 1 > 
+  57 "TextName" "Main single line"  315.812  114.875  0  < 1 > 
+  58 "TextName" "Main single line"  357.58  247.238  0  < 1 > 
+  59 "TextName" "Main single line"  348.145  368.08  0  < 1 > 
+  60 "TextName" "Main single line"  778.875  95.9995  0  < 1 > 
+  61 "TextName" "Main single line"  780.12  189.273  0  < 1 > 
+  62 "TextName" "Main single line"  776.71  294.853  0  < 1 > 
+  63 "TextName" "Main single line"  778.481  404.077  0  < 1 > 
+  64 "TextName" "Main single line"  786.055  521.23  0  < 1 > 
+  65 "TextName" "Main single line"  822.25  634.5  0  < 1 > 
+  66 "TextName" "Main single line"  643.385  654.125  0  < 1 > 
+  67 "TextName" "Main single line"  471.4  661.3  0  < 1 > 
+  69 "TextName" "Main single line"  1234.46  1009.81  0  < 1 > 
+  70 "TextName" "Main single line"  471.14  989.856  0  < 1 > 
+  71 "TextName" "Main single line"  296.65  454.942  0  < 1 > 
+  72 "TextName" "Main single line"  599.875  423.752  0  < 1 > 
+  73 "TextName" "Main single line"  1036.62  530.753  0  < 1 > 
+  74 "TextName" "Main single line"  302.759  816.525  0  < 1 > 
+  75 "TextName" "Main single line"  87.75  -52.875  0  < 1 > 
+  76 "TextName" "Main single line"  278.375  -56.3125  0  < 1 > 
+  77 "TextName" "Main single line"  442.437  -59.75  0  < 1 > 
+  78 "TextName" "Main single line"  649.938  -61.625  0  < 1 > 
+  79 "TextName" "Main single line"  827.125  -58.8125  0  < 1 > 
+  80 "TextName" "Main single line"  988.065  -65.0625  0  < 1 > 
+  81 "TextName" "Main single line"  1133.06  -69.125  0  < 1 > 
+  82 "TextName" "Main single line"  1324  184.125  0  < 1 > 
+  83 "TextName" "Main single line"  1321.5  305.062  0  < 1 > 
+  84 "TextName" "Main single line"  1323.69  421.937  0  < 1 > 
+  85 "TextName" "Main single line"  1326.81  547.562  0  < 1 > 
+  86 "TextName" "Main single line"  1327.12  685.062  0  < 1 > 
+  87 "TextName" "Main single line"  1132.4  1014.49  0  < 1 > 
+  88 "TextName" "Main single line"  971.87  1016.78  0  < 1 > 
+  91 "TextName" "Main single line"  799.678  1009.13  0  < 1 > 
+  92 "TextName" "Main single line"  604.259  1009.47  0  < 1 > 
+  93 "TextName" "Main single line"  342.39  995.915  0  < 1 > 
+  94 "TextName" "Main single line"  400.484  764.047  0  < 1 > 
+  95 "TextName" "Main single line"  612.562  756.937  0  < 1 > 
+  96 "TextName" "Main single line"  774.125  754.125  0  < 1 > 
+  97 "TextName" "Main single line"  991.25  647.562  0  < 1 > 
+  98 "TextName" "Main single line"  986.187  510.375  0  < 1 > 
+  99 "TextName" "Main single line"  987.125  397.25  0  < 1 > 
+  100 "TextName" "Main single line"  986.187  286.625  0  < 1 > 
+  101 "TextName" "Main single line"  976.812  180.375  0  < 1 > 
+  102 "TextName" "Main single line"  557.641  234.765  0  < 1 > 
+  103 "TextName" "Main single line"  557.594  344.125  0  < 1 > 
+  104 "TextName" "Main single line"  564.391  503.109  0  < 1 > 
+  105 "TextName" "Main single line"  240.719  571.312  0  < 1 > 
+  106 "TextName" "Main single line"  281.871  386.103  0  < 1 > 
+  107 "TextName" "Main single line"  277.356  309.218  0  < 1 > 
+  108 "TextName" "Main single line"  268.128  221.189  0  < 1 > 
+  109 "TextName" "Main single line"  85.94  947.581  0  < 1 > 
+  110 "TextName" "Main single line"  71.297  725.263  0  < 1 > 
+  118 "TextName" "Main single line"  -304.572  65.8225  0  < 1 > 
+}
+Record System Annotation {
+  122 "Main single line"  -417.187  237.187  0 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Segoe UI'; font-size:8pt; font-weight:400; font-style:normal;\">\n<table border=\"1\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;\" cellspacing=\"2\" cellpadding=\"2\">\n<tr>\n<td>\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt; font-weight:600; color:#3874a3;\"> IEEE 33 Bus Network</span></p>\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt; font-weight:600; color:#3874a3;\">   (Profiles Example)</span></p></td></tr></table>\n<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"
+    < 1 > 
+}

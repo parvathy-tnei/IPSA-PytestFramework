@@ -4,6 +4,8 @@ A Python-based automated testing framework for validating IPSA simulation result
 
 The framework executes supported IPSA studies, generates result workbooks, and compares them against benchmark Excel files using `pytest`. It supports both complete workbook comparison and sheet-wise comparison for easier identification of failures.
 
+In addition to study automation, the framework includes functional validation of Extended Data fields and utilities for detecting IPSA executables across multiple installed versions.
+
 ---
 
 # Features
@@ -15,6 +17,7 @@ The framework executes supported IPSA studies, generates result workbooks, and c
 - Automatic model discovery
 - Support for multiple IPSA network models
 - Sheet-wise comparison for easier debugging
+- Automated result generation and Excel export
 - Detailed logging
 - Configurable through command line arguments
 - Built on `pytest`
@@ -30,6 +33,12 @@ Currently the framework supports:
     - Fault Levels on All Busbars
     - Fault Levels on Selected Busbars
 
+- Harmonics
+- Contingency
+- Profile Load Flow
+- Extended Data Check
+- IPSA Executable Detection 
+
 The framework is designed so additional study types can be added with minimal effort.
 
 ---
@@ -42,6 +51,11 @@ PyTesting/
 ├── Resources/
 │   ├── Loadflow.py
 │   ├── Fault_Level.py
+│   ├── Harmonics_Study.py
+│   ├── Contingency.py
+│   ├── profileloadflow.py
+│   ├── ExtendedDataCheck.py
+│   ├── IPSAVersionCheck.py
 │   ├── logger.py
 │   └── ...
 │
@@ -55,6 +69,11 @@ PyTesting/
 │   ├── test_fault_all.py
 │   ├── test_fault_all_sheetwise.py
 │   └── test_fault_selected.py
+│   ├── test_harmonics.py
+│   ├── test_contingency.py
+│   ├── test_profileloadflow.py
+│   ├── test_extended_data_check.py
+│   └── ...
 │
 ├── Test Results/
 │
@@ -104,7 +123,7 @@ pytest --mode=benchmark-generation
 | `--network-benchmark` | Path to benchmark zip | Network Location |
 | `--benchmark-version` | Benchmark folder/version | vbenchmark |
 | `--target-version` | IPSA target version | Current IPSA Version |
-| `--log-level` | Logging level | INFO |
+| `--log-level` | Controls logging verbosity | INFO |
 
 Example
 
@@ -182,6 +201,45 @@ The configuration object stores:
 
 This removes hardcoded values from the framework.
 
+
+
+# Running Individual Tests
+
+Individual tests can be executed independently during development and debugging. The following commands assume the corresponding test files exist in the repository.
+
+- Load Flow
+
+python -m pytest .\tests\test_loadflow.py -v -s
+
+- Fault Level Analysis
+
+python -m pytest .\tests\test_fault_all.py -v -s
+python -m pytest .\tests\test_fault_selected.py -v -s
+
+- Harmonic Analysis
+
+python -m pytest .\tests\test_harmonics.py -v -s
+
+- Contingency Analysis
+
+python -m pytest .\tests\test_contingency.py -v -s
+
+- Profile Load Flow
+
+python -m pytest .\tests\test_profileloadflow.py -v -s
+or
+python -m pytest .\tests\test_profileloadflow.py --mode=benchmark-comparison -m comparison -v -s -k "IEEE"
+
+- Extended Data Validation
+
+python -m pytest .\tests\test_extended_data_check.py -v -s
+
+- IPSA Executable Detection
+
+Run the executable detection utility directly:
+
+python .\Resources\IPSAVersionCheck.py
+
 ---
 
 # Typical Workflow
@@ -218,7 +276,8 @@ If required, use the sheet-wise tests to quickly identify which worksheet differ
 - openpyxl
 - IPSA Python package
 - Valid IPSA license
-
+- Access to the relevant IPSA network models
+- Access to the benchmark archive when no local benchmark is available
 ---
 
 # Future Enhancements

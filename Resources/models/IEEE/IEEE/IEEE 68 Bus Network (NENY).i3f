@@ -1,0 +1,1695 @@
+##!IIF-IpsaPower-3.0
+#
+
+Header {
+    Version: "7.5+"
+    Program: "IPSA 3.0.0"
+    Type: "Network"
+    Title: "IEEE 68 Bus Network (NENY)"
+    Date: "15 Aug 2025 12:34:26"
+    Created: "leee@TNEI0595"
+    Format: "IPSA3"
+    ModelUuid: "{850574cd-6eba-4721-82b6-e7f68a5c4735}"
+    FileUuid: "{4fe154dc-fae2-4779-bf53-d7486697f7ea}"
+    BaseFileUuid: "{e69fea34-ef06-4d52-9b98-84a3780b40b0}"
+    NovaUuid: "{00000000-0000-0000-0000-000000000000}"
+}
+DefRec Network {
+  Size i: 68
+  CurrentVersion i: 1
+  NumVersions i: 1
+  DiagramsLocked b: f
+}
+Define System Network {
+  Title: s, Author: s, CreationTime: s, Comment: s, Base: d, BaseinKVA: b, BaseMVAForChecking: d, Frequency: d,
+  SlackUIDs: <i>, BranchRatingNames: <s>, LoadTypes: <s>, PluginIDs: <s>, PrintUseColour: b, PrintWhiteBack: b,
+  PrintLineWidth: i, PrintLineOutStyle: i, PrintTextPadding: i, PrintLayout: i, PrintWide: i, PrintHigh: i,
+  PrintPaper: i, PrintFontSize: i, PrintLowRes: b, PrintDrawBorder: b, PrintDrawLegend: b, PrintDrawPixmap: b,
+  PrintFileName: b, PrintUserTime: b, PrintLandscape: b, PrintPDFFileName: s, MRULocate1: i, MRULocate2: i,
+  MRULocate3: i, MRULocate4: i, BusbarLabels: <s>, LoadLabels: <s>, GeneratorLabels: <s>, IndMachineLabels: <s>,
+  HarmonicFilterLabels: <s>, MechSwCapacitorLabels: <s>, StaticVArCLabels: <s>, BatteryLabels: <s>, DCMachineLabels: <s>,
+  UniMachineLabels: <s>, GridInfeedLabels: <s>, LineLabels: <s>, TransformerLabels: <s>, ThreeWindingTFLabels: <s>,
+  ACDCConverterLabels: <s>, DCDCConverterLabels: <s>, MGsetLabels: <s>, CircuitBreakerLabels: <s>, ProtectionContainerLabels: <s>,
+  SeriesRegulatorLabels: <s>, SetNewAggregatesTrue: b, DoGroupsTriggerIntertrips: b, Versions: <i>
+}
+Define System DrawTool {
+  AutoDrawBusbarType: i, AutoDrawBusbarRadius: d, AutodrawGridSize: d, AutoDrawIslandSeparation: d, AutoDrawEnlargementConst: d,
+  AutoDrawStartingX: d, AutoDrawStartingY: d, AutoDrawIncludeLoads: b, AutoDrawIncludeGens: b, AutoDrawIncludeInfeeds: b,
+  AutoDrawIncludeIMs: b, AutoDrawIncludeOtherRadials: b, AutoDrawIncludeAnnotations: b, RecDrawInitialBusbarUID: i,
+  RecDrawBusbarSize: i, RecDrawStartingX: d, RecDrawStartingY: d, RecDrawOrder: i, RecDrawBusbarType: i,
+  AutoDrawAlgorithm: i, Unlimited: b, RecDrawShowProgMsgs: b, RecDrawRedrawAll: b, DrawIncludeBreakers: b,
+  DrawIncludeProtContainers: b, DrawIncludeOtherInlines: b, AutoDrawBusbarSize: i, DeleteAllAnnotations: b,
+  Versions: <i>
+}
+Define System Staging {
+  GenProposedInService: b, GenAcceptedInService: b, GenCompletedInService: b, GenEnergisedInService: b,
+  GIProposedInService: b, GIAcceptedInService: b, GICompletedInService: b, GIEnergisedInService: b, LoadProposedInService: b,
+  LoadAcceptedInService: b, LoadCompletedInService: b, LoadEnergisedInService: b, Versions: <i>
+}
+Define System Version {
+  ID: i, BasedOn: i, Name: s, Description: s, UserDate: s, Uuid: s, Date: s, Created: <i>, Changed: <i>,
+  Deleted: <i>, AVRExts: <s>, BatteryExts: <s>, BreakerExts: <s>, BusbarExts: <s>, ConverterExts: <s>,
+  ChopperExts: <s>, DCMachExts: <s>, FilterExts: <s>, GeneratorExts: <s>, GovernorExts: <s>, GridInfeedExts: <s>,
+  HarmonicExts: <s>, IndMachineExts: <s>, LineExts: <s>, UnbLineExts: <s>, LoadExts: <s>, UnbLoadExts: <s>,
+  MSCExts: <s>, MGSetExts: <s>, NetworkExts: <s>, SeriesRegExts: <s>, SVCExts: <s>, TransformerExts: <s>,
+  UnbTransformerExts: <s>, 3WTFExts: <s>, UMachineExts: <s>, UniBranchExts: <s>, GroupMixedExts: <s>, GroupLSExts: <s>,
+  GroupGSExts: <s>, GroupTxExts: <s>, GroupFeederExts: <s>
+}
+Define System Scene {
+  ID: i, BasedOn: i, Type: s, Name: s, X: d, Y: d, Width: d, Height: d, Versions: <i>
+}
+Define System SceneData {
+  ID: i, Type: s, Name: s, BackOpacity: d, BackColour: s, BackFile: s, BackWidth: d, BackHeight: d, ShowBackgnd: b,
+  MeasureUnit: s, GeoScale: d, KeepAspectRatio: b, ShowMapDisplay: b, MapServer: s, MapType: i, MapStyle: i,
+  UseCaching: b, BaseScale: d, BaseZoom: i, Latitude: d, Scale: d, Longitude: d, SceneX: d, SceneY: d,
+  APIStatus: i, APIKey: s, Versions: <i>
+}
+Define System SceneVersion {
+  ID: i, SceneVersion: i, BasedOn: i, Name: s, Created: <i>, Changed: <i>, Deleted: <i>
+}
+Define System View {
+  ID: i, SceneName: s, WindowName: s, Maximised: b, Iconised: b, Geometry: <i>, CentreX: d, CentreY: d,
+  Scale: d, UseAntiAlias: b, HUDShow: b, HUDBackColour: <i>, HUDTextColour: <i>, HUDAlpha: d, ZoomFactor: d,
+  ZoomStepsToUse: i, ZoomRefreshInt: i, MapZoom: i, GridShow: b, GridSnap: b, GridHotspot: d, GridOnRadials: b,
+  GridColour: <i>, GridAlpha: d, Versions: <i>
+}
+Define System AnalysisFL {
+  FaultStudyType: i, FaultTime: d, FaultResistance: d, FaultReactance: d, FaultEngineType: i, FaultEngineResultType: i,
+  MaxFaultIterations: i, FaultFlatStart: b, UseSaturatedImpedances: i, AssumeAVRAction: i, CalculateCurrent: b,
+  BusbarsToFault: <i>, SingleBusToFault: i, BranchToFault: i, DistanceAlongBranch: d, MotorToStart: i,
+  BreakerDutyItems: <i>, FaultPlotSteps: i, FaultPlotMaxTime: d, FaultPlotinCycles: b, FaultPlotinkA: b,
+  FaultPlotRed: b, FaultPlotYellow: b, FaultPlotBlue: b, FaultPlotDC: b, FaultPlotRMS: b, FaultPlot2Harm: b,
+  FaultPlotMaxAsymmRed: b, SMSaliency: i, XRCalcMethod: i, XRSMEnhanced: i, XRResultCalc: i, Use2ndHarmonic: b,
+  FaultEngine: i, IEC909DefaultPhaseAngle: d, IEC909Method: i, IgnoreImpedanceCorr: b, VoltageCorrection: i,
+  IEC909UseDefaultPF: b, NearTo: b, IEC909TFRatingIndex: i, BreakerDutyLLL: b, BreakerDutyLG: b, BreakerDutyLL: b,
+  BreakerDutyLLG: b, DefinedFaultMaxIterations: i, DefinedFaultToleranceMVA: d, FaultUseCDP: b, FaultCDPStudyMode: i,
+  FaultCDPInterpMethod: i, FaultCDPNumIterations: i, ShowCDPWarnings: b, FaultCDPDefined: b, FaultCDPDefaultRatedI: b,
+  AdvancedTabToggledFL: b, AdvancedTabToggledBD: b, Versions: <i>
+}
+Define System AnalysisLF {
+  Convergence: d, MaxIterations: i, UndervoltagePU: d, OvervoltagePU: d, LockTaps: i, NoPhaseShift: b,
+  TapOscIterStart: i, TapOscSuccessive: i, TapOscLimit: i, TapOscIterEnd: i, FillkARatings: i, UseLoadScaling: b,
+  RealLoadScale: d, ReactiveLoadScale: d, CheckProtection: b, UseLegacyPhiftCheck: b, DisplayOptionDialog: b,
+  InitialFlatStart: b, SingleTapMovement: b, SlowTapMovement: b, WhichImpedance: i, IslandMethod: i, AutoSelectSlacks: b,
+  FSSetBusbarVoltages: b, FSIgnoreVoltageControlSettings: b, FSVoltageMagnitudePU: d, FSVoltageAngleDeg: d,
+  FSSetTransformerTaps: b, FSIgnoreFixedTaps: b, FSNominalTaps: i, FSTapStartPC: d, FSSetInductionMachineSlips: b,
+  FSSlipPC: d, FSSetMechSwitchCapacitorTaps: b, FSNominalMSC: b, FeederSlackVoltagePU: d, FeederSetTarget: i,
+  ProfileUse: i, ProfileLoadCategory: s, ProfileTimeSliceHrs: d, AdvancedTabToggledLF: b, AdvancedTabToggledCont: b,
+  Versions: <i>
+}
+Define System AnalysisHM {
+  HarmonicStudyType: i, FundamentalTHD: i, MinimumHarmonicOrder: i, MaximumHarmonicOrder: i, HarmonicWaveformBusbar: i,
+  HarmonicWaveformBusbar2: i, HarmonicWaveformBusbar3: i, HarmonicWaveformBusbar4: i, HarmonicWaveformBusbar5: i,
+  HarmonicWaveformBusbar6: i, HarmonicSequence: i, HarmonicUseLongLines: i, HarmonicGlobalLineModel: i,
+  HarmonicGlobalTransformerModel: i, HarmonicGlobalShuntModel: i, HarmonicGlobalLoadModel: i, HarmonicGlobalGeneratorModel: i,
+  HarmonicGlobalMotorModel: i, HarmonicOffNominalFrequencyHz: d, HarmonicOnlyScanResonant: i, HarmonicScanStepSizePU: d,
+  HarmonicBusbarsToStudy: <i>, HarmonicPlotVoltageType: i, HarmonicPlotImpedanceType: i, HarmonicPlotSeparateFundamental: b,
+  HarmonicPlotZ: b, HarmonicPlotR: b, HarmonicPlotX: b, HarmonicPlotUseLogarithmic: b, HarmonicPlotUseFrequency: b,
+  HarmonicPlotUseOhms: b, Versions: <i>
+}
+Define System AnalysisProt {
+  ProtPlotFault: i, ProtFaultBusbar: i, ProtScaleFaults: b, ProtFaultCurrentA: d, ProtFaultPhaseEarth: i,
+  ProtPlotVoltagekV: d, ProtPlotOCDevices: <i>, FaultStudyType: i, FaultEngineType: i, FaultEngineResultType: i,
+  FaultTime: d, FaultResistance: d, FaultReactance: d, FaultFlatStart: b, UseSaturatedImpedances: i, AssumeAVRAction: i,
+  SMSaliency: i, XRCalcMethod: i, XRSMEnhanced: i, Use2ndHarmonic: b, RelayRelayA: d, RelayRelayB: d, RelayRelayC: d,
+  RelayFuseA: d, RelayFuseB: d, FuseRelayC: d, FuseFuseC: d, XFormOload: d, FuseFactor: d, BreakDelay: d,
+  RelayReset: d, FuseReset: d, AdvancedTabToggled: b, Versions: <i>
+}
+Define System AnalysisTS {
+  RefGenIndex: i, StudyTime: d, StepLength: d, SlipLimit: d, ResultInterval: d, DCSwitchFactor: d, PowerImbalance: d,
+  MaxStepLength: d, PrintData: b, PrintBusbar: b, PrintAVR: b, PrintGovernor: b, ShowStepMsgs: b, ShowUDMMsgs: b,
+  ShowPluginMsgs: b, NewGraphWindow: b, StoreResults: b, FileName: s, ReadFileName: s, BusbarStoreUIDs: <i>,
+  GeneratorStoreUIDs: <i>, AVRStoreUIDs: <i>, GovernorStoreUIDs: <i>, InductMachineStoreUIDs: <i>, UniMachineStoreUIDs: <i>,
+  MSCStoreUIDs: <i>, SVCStoreUIDs: <i>, NetCtlStoreUIDs: <i>, IMCtlStoreUIDs: <i>, UMCtlStoreUIDs: <i>,
+  MSCtlStoreUIDs: <i>, BatteryStoreUIDs: <i>, DCMachineStoreUIDs: <i>, BranchStoreUIDs: <i>, ConvertorStoreUIDs: <i>,
+  DCMachCtlStoreUIDs: <i>, ACConvCtlStoreUIDs: <i>, DCConvCtlStoreUIDs: <i>, AdvancedTabToggled: b, Versions: <i>
+}
+Define System AnalysisRel {
+  AllowPVAsSource: b, IsolatorZeroClose: b, Versions: <i>
+}
+Define System AnalysisUnb {
+  MaxIterations: i, JacType: i, FullJacTolerance: d, FrequencyBase: d, SystemBase: d, MinUpdateTolerance: d,
+  MaxMismatch: d, SlowZone: d, SlowUpdate: d, JacPerturbation: d, Versions: <i>
+}
+Define System AnalysisDCLF {
+  CalculateNodalTLF: b, CalculateLODF: b, BranchLossEstimationMethod: i, InductionMachineEfficiencyPC: d,
+  OnlyLargestIsland: b, NoPhaseShift: b, UseLoadScaling: b, RealLoadScale: d, WhichImpedance: i, AutoSelectSlacks: b,
+  ProfileUse: i, ProfileLoadCategory: s, Versions: <i>
+}
+Define System AnalysisNR {
+  ReductionAlgorithm: i, BoundaryUID: i, ExportNetworkPreReduction: b, AutomaticallySelectSlacks: b, MergeZIShunts: b,
+  EquivalentInjectionCutoff: b, EquivalentInjCutoffMVA: d, EquivalentBranchZCutoff: b, EquivalentBrZCutoffPU: d,
+  ObfuscateCatalogObjects: b, UseImpedanceCutOff: b, ImpedanceCutOffPU: d, BranchPowerMode: i, DeleteBoundaryPostReduction: b,
+  ACDCConversionMode: i, CatalogDistributionMode: i, YBusMatrixDecompositionRoutine: i, AutoDrawRadials: b,
+  Versions: <i>
+}
+Define System AnalysisAF {
+  ProtPlotFault: i, ProtFaultBusbar: i, ProtFaultCurrentA: d, OCDevicesToPlot: <i>, ProtBusbarsToFault: <i>,
+  FaultStudyType: i, FaultEngineResultType: i, FaultTime: d, FaultResistance: d, FaultReactance: d, FaultFlatStart: b,
+  UseSaturatedImpedances: i, AssumeAVRAction: i, SMSaliency: i, XRCalcMethod: i, XRSMEnhanced: i, Use2ndHarmonic: b,
+  BoundaryIncidentEnergyJcm2: d, NFPAStandard: i, NFPAUserDefined: <d>, ProtCalculateOpTime: i, ProtSetOpTimeS: d,
+  ProtSetReducedOpTimeS: d, LimitMaximumOpTime: b, MaximumOpTimeS: d, ReducedFaultCurrentPC: d, IEEEStandard: i,
+  UseNFPAMeasurements: i, AdvancedTabToggled: b, Versions: <i>
+}
+Define System TransientGraph {
+  Index: i, GraphType: i, Active: b, AutoScale: b, DisplayLegend: b, XMinimum: d, XMaximum: d, YMinimum: d,
+  YMaximum: d, UDMPluginItemUID: i, ItemUIDs: <i>, TraceColours: <s>, DisplayGrid: b, Versions: <i>
+}
+Define System DataDisplay {
+  SceneName: s, CheckService: b, OutOfServiceStyle: i, OutageStyle: i, LineTypeUnsetStyle: i, LineTypeOHLStyle: i,
+  LineTypeCableStyle: i, LineTypeDuctedStyle: i, LineTypeMixedStyle: i, LineTypeServiceStyle: i, LineTypeMainStyle: i,
+  OutOfServiceColour: s, OutageColour: s, LineTypeColourUnset: s, LineTypeColourOHL: s, LineTypeColourCable: s,
+  LineTypeColourDucted: s, LineTypeColourMixed: s, LineTypeColourService: s, LineTypeColourMain: s, OutOfServiceAlpha: d,
+  OutageAlpha: d, LineTypeAlphaUnset: d, LineTypeAlphaOHL: d, LineTypeAlphaCable: d, LineTypeAlphaDucted: d,
+  LineTypeAlphaMixed: d, LineTypeAlphaService: d, LineTypeAlphaMain: d, OutOfServicePattern: s, OutagePattern: s,
+  LineTypePatternUnset: s, LineTypePatternOHL: s, LineTypePatternCable: s, LineTypePatternDucted: s, LineTypePatternMixed: s,
+  LineTypePatternService: s, LineTypePatternMain: s, OutOfServiceFont: s, OutageFont: s, ShowVoltageColours: b,
+  VoltageScheme: s, VoltageColours: <s>, UseLineType: b, ShowBreakerNames: b, ShowProtectionContainerNames: b,
+  NoZoomAll: b, DiagramFont: s, ShowBusbarMask: b, ShowFeederGroups: b, ShowFeederNameInLabel: b, HideVoltageColourWithFeederOn: b,
+  ShowCustomerNumber: b, ColourFeederGroupLabel: b
+}
+Define System ResultsDisplay {
+  SceneName: s, CheckLimits: <s>, OverLimitStyle: <s>, UnderLimitStyle: <s>, OverLimitColour: <s>, UnderLimitColour: <s>,
+  OverLimitAlpha: <s>, UnderLimitAlpha: <s>, OverLimitPattern: <s>, UnderLimitPattern: <s>, OverLimitFont: <s>,
+  UnderLimitFont: <s>
+}
+Define System ResultsDisplayLF {
+  SceneName: s, UnitsBusbar: b, AngleBusbar: b, JunctionBusbar: b, PrecisionBusbar: i, DisplayUnitsRadial: b,
+  PrecisionRadial: i, DisplayUnitsBranch: b, PrecisionBranch: i, DisplayPVUR: b, DisplayVUF): b, DisplayPhaseR: b,
+  DisplayPhaseY: b, DisplayPhaseB: b, DisplayPhaseMean: b, DisplayPhaseMax: b, DisplaySequenceP: b, DisplaySequenceN: b,
+  DisplaySequenceZ: b, ValueBusbar: s, ValueRadial: s, UnitsRadial: s, ValueBranch: s, EndBranch: s, UnitsBranch: s,
+  FlowArrowStyle: s, DefaultOverVoltagepu: d, DefaultUnderVoltagepu: d, BranchRatingIndex: i, BranchRatingOverPC: d,
+  BranchRatingUnderPC: d, UnbalanceLimitPC: d, UnbalanceCheckAtkV: d, UnbalanceWhichLimit: i, LineLoadingLowColour: s,
+  LineLoadingMidColour: s, LineLoadingHighColour: s, LineLoadingLowOpacity: i, LineLoadingMidOpacity: i,
+  LineLoadingHighOpacity: i, LineLoadingLowMidDiv: i, LineLoadingMidHighDiv: i, LineLoadingRatingIndex: i,
+  LineLoadingRatingUnit: i, DisplayLineLoading: b
+}
+Define System ResultsDisplayFL {
+  SceneName: s, DisplayAC: b, DisplaySecondHarmonic: b, DisplayRPhase: b, DisplayYPhase: b, DisplayBPhase: b,
+  DisplayPositive: b, DisplayNegative: b, DisplayZero: b, XoverRBusbar: b, DisplayJunctions: b, DisplayAngles: b,
+  DisplayUnits: b, PrecisionBusbar: i, PrecisionFlows: i, DisplayIEC909InitialSym: b, DisplayIEC909Peak: b,
+  DisplayIEC909AsymmetricBreak: b, DisplayIEC909SymmetricBreak: b, DisplayIEC909DCMagnitude: b, DisplayIEC909SteadyState: b,
+  DisplayIEC909DCXoverR: b, DisplayIEC909DCXoverRBreak: b, DisplayDC: s, UnitsFlows: s, UnitsVoltages: s,
+  EndTransformer: s, UnitsIEC909: s
+}
+Define System ResultsDisplayHM {
+  SceneName: s, DisplayTHD: b, DisplayVAS: b, DisplayMaxIndividialHD: b, DisplayIndividialHD: b, DisplayJunctions: b,
+  DisplayAngles: b, DisplayUnits: b, PrecisionBusbar: i, PrecisionFlows: i
+}
+Define System ResultsDisplayReliablity {
+  SceneName: s, DisplayAverageDuration: b, DisplayAnnualDuration: b, DisplayAnnualFrequency: b, DisplayUnits: b,
+  PrecisionBusbar: i
+}
+Define System BusbarGraphic {
+  ID: i, Type: s, Diagram: s, X: d, Y: d, Size: d, Versions: <i>
+}
+Define System RadialGraphic {
+  ID: i, Type: s, Diagram: s, FromPts: <d>, FromTypes: <i>, X: d, Y: d, Versions: <i>
+}
+Define System BranchGraphic {
+  ID: i, Type: s, Diagram: s, FromPts: <d>, FromTypes: <i>, ToPts: <d>, ToTypes: <i>, Angle: d, Width: d,
+  Height: d, SymbolX: d, SymbolY: d, Versions: <i>
+}
+Define System 3WTransformerGraphic {
+  ID: i, Type: s, Diagram: s, FromPts: <d>, FromTypes: <i>, ToPts: <d>, ToTypes: <i>, ThreePts: <d>, ThreeTypes: <i>,
+  SymbolX: d, SymbolY: d, Versions: <i>
+}
+Define System BreakerGraphic {
+  ID: i, Type: s, Diagram: s, X: d, Y: d, Size: d, Distance: d, Location: s, Versions: <i>
+}
+Define System GroupGraphic {
+  Versions: <i>, ID: i, Type: s, Diagram: s, Name: s, Items: <i>, HideLOD: d, Colour: s
+}
+Define System Automation {
+  ID: i, Title: s, LFOverVoltagePU: d, LFUnderVoltagePU: d, LFBranchRatingIndex: i, LFBranchRatingOverPC: d,
+  LFBranchRatingUnderPC: d, SaveResultsToFile: b, FileNameStart: s, NumberStudiesPerFile: i, Studies: <i>,
+  Versions: <i>
+}
+Define System Study {
+  ID: i, Title: s, Type: s, WatchType: s, AutomationUID: i, ItemsSwitchOut: <i>, ItemsSwitchIn: <i>, ItemsWatched: <i>,
+  WatchRatingViolations: b, ItemsToWatch: i, StartingPoint: i, Versions: <i>
+}
+Define System Intertrip {
+  ID: i, Name: s, TypeMaster: s, TypeSlave: s, Masters: <i>, Slaves: <i>, SignalTimeS: d, Versions: <i>
+}
+Define System Contingency {
+  ID: i, Name: s, Comment: s, FileNameStart: s, NumberContingenciesPerFile: i, Depth: i, ExtendToBreakers: b,
+  BusbarsIncluded: <i>, Versions: <i>
+}
+Define System Annotation {
+  ID: i, Diagram: s, X: d, Y: d, LabelFlags: i, HTMLText: s, Versions: <i>
+}
+Define System LabelGraphic {
+  ID: i, Type: s, Diagram: s, X: d, Y: d, LabelFlags: i, Versions: <i>
+}
+Define System AVR {
+  ID: i, ControlsUID: i, Name: s, ModelType: i, UdmID: s, PluginID: s, DbType: s, CtlBusbar: i, IEEEModel: i,
+  ForwardGain: d, ForwardTCSecs: d, FeedbackGain: d, FeedbackTCSecs: d, FBatTCSecs: d, VMaxPU: d, VMinPU: d,
+  VRatePUperSec: d, FilterTCSecs: d, ExciterGain: d, ExciterTCSecs: d, EMaxPU: d, EMinPU: d, RegulatorTCSecs: d,
+  Sat75: d, Sat100: d, Ks: d, Versions: <i>
+}
+Define System Breaker {
+  ID: i, ControlsUID: i, Type: s, Name: s, DbType: s, Status: i, NOP: b, MakePeakkA: d, BreakRMSkA: d,
+  BreakDCPC: d, BreakTimemS: d, SwitchTimeHr: d, BreakerType: i, NomCurrentkA: d, Aggregate: b, FeederCB: b,
+  Versions: <i>
+}
+Define System Busbar {
+  ID: i, Name: s, NomVoltkV: d, ControlType: i, VoltPU: d, VoltAngleRad: d, BusbarType: i, Comment: s,
+  ArcEnclosure: i, ArcEquipmentType: i, ArcConductorGapMM: d, ArcWorkingDistanceMM: d, ArcUngrounded: b,
+  OperatingTimeSec: d, ArcEnclosureHeightMM: d, ArcEnclosureWidthMM: d, ArcEnclosureDepthMM: d, ArcBusbarConfiguration: i,
+  ArcIEEEStandard: i, Versions: <i>
+}
+Define System Governor {
+  ID: i, ControlsUID: i, Name: s, ModelType: i, UdmID: s, PluginID: s, Regulation: d, FlyballTCSec: d,
+  TC1Sec: d, TC2Sec: d, TC3Sec: d, TurbineTC1Sec: d, TurbineTC2Sec: d, PMaxMW: d, DbType: s, DbPar: i,
+  Versions: <i>
+}
+Define System Generator {
+  ID: i, FromID: i, Name: s, Status: i, VoltPU: d, VBandwidthPC: d, CtlBusbar: i, GenMW: d, GenMVAr: d,
+  GenMVArMax: d, GenMVArMin: d, GenRatedMW: d, GenRatedMVA: d, ProfileUID: i, SynResistancePU: d, SynReactancePU: d,
+  ZSResistancePU: d, ZSReactancePU: d, NEResistancePU: d, NEReactancePU: d, WindingEarthing: i, DAxisTrXPU: d,
+  DAxisTrTCSec: d, DAxisStrXPU: d, DAxisStrTCSec: d, QAxisXPU: d, QAxisTrXPU: d, QAxisTrTCSec: d, QAxisStrXPU: d,
+  QAxisStrTCSec: d, InertiaSec: d, DampFactor: d, PotierXPU: d, SaturationFact: d, TID: i, PMaxMW: d, QMaxMVAr: d,
+  SMaxMVA: d, SatDAxisXPU: d, SatDAxisTrXPU: d, SatDAxisTrTCSec: d, SatDAxisStTrXPU: d, SatDAxisStrTCSec: d,
+  SatQAxisStrXPU: d, HarmRC0: d, HarmRC12: d, HarmRC1: d, HarmRC2: d, HarmRC3: d, HarmXC0: d, HarmXC1: d,
+  HarmXC2: d, HarmXC3: d, HarmXCEX: d, HarmXEX: d, HarmonicModel: i, DbGenType: s, DbGenPar: i, QMinMVAr: d,
+  DistFactor: d, GenCostPerMW: d, AbsCostPerMW: d, GenCostPerMVAr: d, AbsCostPerMVAr: d, EnhancedModelling: b,
+  LeakageReactance: d, VoltageFactorPg: d, DispPMaxPC: d, DispPMinPC: d, GenPlanningStage: i, GenMethodType: i,
+  StorageIERatio: d, Comment: s, Aggregate: b, Versions: <i>
+}
+Define System GridInfeed {
+  ID: i, FromID: i, Name: s, Status: i, VoltPU: d, GenMW: d, GenMVAr: d, ProfileUID: i, PeakLLL: d, RMSLLL: d,
+  X2RLLL: d, PeakLG: d, RMSLG: d, Tac: d, Tbreak: d, HarmR: <d>, HarmX: <d>, GridPlanningStage: i, StorageIERatio: d,
+  EnergyStorage: b, Comment: s, Aggregate: b, SSC: d, XR: d, Versions: <i>
+}
+Define System Filter {
+  ID: i, FromID: i, Name: s, Status: i, FilterType: i, Ground: b, Data1: d, Data2: d, Data3: d, Data5: d,
+  Data4: d, Data6: d, Versions: <i>
+}
+Define System Harmonic {
+  ID: i, FromID: i, Name: s, Status: i, Element: i, Parameter: i, VoltUnbal: d, FireUnbal: d, MaxTHDPC: d,
+  MaxIDistPC: d, Orders: <d>, Magnitudes: <d>, Angles: <d>, InjType: i, ImpedanceType: i, VoltageR: d,
+  VoltageX: d, VoltageRList: <d>, VoltageXList: <d>, DbType: s, Versions: <i>
+}
+Define System IndMachine {
+  ID: i, FromID: i, Name: s, Status: i, MechPowerMW: d, SlipPC: d, MagnetXPU: d, StatorRPU: d, StatorXPU: d,
+  Model: i, RotorRPU: d, RotorXPU: d, StandRPU: d, StartXPU: d, TSlipB: d, TSlipC: d, InertiaSec: d, DropoffVPU: d,
+  DropPickUpDelaySec: d, LockTimeSec: d, UnderspeedPU: d, OverspeedPU: d, PickUpTimeSec: d, PickUpVoltagePU: d,
+  SwitchOut1Sec: d, SwitchIn1Sec: d, SwitchOut2Sec: d, SwitchIn2Sec: d, MaxSwitchOp: i, DFFeedBusbar: i,
+  DFPowerFactor: d, DFExportQ: b, DFRotorReferenceFrame: i, DFFaultSwitchMode: i, DFFaultRotorCurrentLimit: d,
+  DFFaultCrowbarLimit: d, DFFaultCrowbarResPU: d, HarmRC0: d, HarmRC12: d, HarmRC1: d, HarmRC2: d, HarmRC3: d,
+  HarmXC0: d, HarmXC1: d, HarmXC2: d, HarmXC3: d, HarmXCEX: d, HarmXEX: d, HarmRotorRC0: d, HarmRotorRC2: d,
+  HarmRotorXC0: d, HarmRotorXC2: d, HarmonicModel: i, DbType: s, DbPar: i, ControlModelType: i, RatedMW: d,
+  RatedMVA: d, PolePairs: i, ControlPluginID: s, ExcludeFromTransient: b, Aggregate: b, Comment: s, Versions: <i>
+}
+Define System Line {
+  ID: i, FromID: i, ToID: i, Name: s, Section: i, LineType: i, Status: i, MinResistancePU: d, ResistancePU: d,
+  ReactancePU: d, SusceptancePU: d, ZSResistancePU: d, ZSReactancePU: d, ZSSusceptancePU: d, ZeroImpedance: b,
+  ZeroSequence: b, SwitchTime1Sec: d, SwitchTime2Sec: d, HarmRC0: d, HarmRC12: d, HarmRC1: d, HarmRC2: d,
+  HarmRC3: d, HarmXC0: d, HarmXC1: d, HarmXC2: d, HarmXC3: d, HarmXCEX: d, HarmXEX: d, HarmonicModel: i,
+  HarmonicUseLongLines: i, DbType1: s, DbType2: s, DbLength1: d, DbLength2: d, DbPar1: i, DbPar2: i, DbTranType: s,
+  DbTranPar: i, FailureRateYr: d, RepairTimeHr: d, LengthReliability: d, PluginID: s, HideLabel: b, Name2: s,
+  Status2: i, StanRatingMVA: d, StanRatingSendkA: d, StanRatingReceivekA: d, SumRatingMVA: d, SumRatingSendkA: d,
+  SumRatingReceivekA: d, WinRatingMVA: d, WinRatingSendkA: d, WinRatingReceivekA: d, ShortRatingMVA: d,
+  ShortRatingSendkA: d, ShortRatingReceivekA: d, RatingMVAs: <d>, RatingSendkAs: <d>, RatingReceivekAs: <d>,
+  Comment: s, Aggregate: b, Versions: <i>
+}
+Define System Load {
+  ID: i, FromID: i, Name: s, Status: i, RealMW: d, ReactiveMVAr: d, ProfileUID: i, Customers: i, CustomerType: i,
+  IsEquivalent: b, LoadPlanningStage: i, Comment: s, Aggregate: b, Versions: <i>
+}
+Define System MechSwCap {
+  ID: i, FromID: i, Name: s, Status: i, ControlMode: i, ControlSteps: i, CapSteps: i, IndSteps: i, CapStepSizeMVAr: d,
+  IndStepSizeMVAr: d, MaxContinuousMVAr: d, MinContinuousMVAr: d, TargetVoltagePU: d, BandwidthPC: d, ContinuousOutputMVAr: d,
+  InitPosition: i, NominalPosition: i, ControlActive: i, ControlledUID: i, SendEnd: i, TransientCtl: b,
+  ModelType: i, PluginID: s, Versions: <i>
+}
+Define System StaticVC {
+  ID: i, FromID: i, Name: s, Status: i, QMinMVAr: d, QMaxMVAr: d, VminPU: d, VmaxPU: d, IsStatcom: b, ModelType: i,
+  PluginID: s, Versions: <i>
+}
+Define System Transformer {
+  ID: i, FromID: i, ToID: i, Name: s, TransformerType: i, MagnetEnd: i, CoreLossRPU: d, MagnetXPU: d, Winding: i,
+  NEResistanceW1PU: d, NEReactanceW1PU: d, NEResistanceW2PU: d, NEReactanceW2PU: d, TapNominalPC: d, TapStartPC: d,
+  MinTapPC: d, TapStepPC: d, MaxTapPC: d, DxDTap: d, LockTap: b, SpecVPU: d, RBWidthPC: d, RemoteCtlBusbarUID: i,
+  TapControlMethod: i, TapNumber: i, TapStepActualPC: <d>, TapStepValuePC: <d>, TapStepRPU: <d>, TapStepXPU: <d>,
+  CompRPC: d, CompXPC: d, RatingMVA: d, PhShiftDeg: d, SpecPowerMW: d, SpecPowerAtSend: b, MinPhShiftDeg: d,
+  MaxPhShiftDeg: d, PhShiftStepDeg: d, DbType: s, DbParallel: i, PluginID: s, VoltFactorPt: d, Name2: s,
+  TableStatus2: i, TableStanRatingMVA: d, TableStanRatingSendkA: d, TableStanRatingReceivekA: d, TableSumRatingMVA: d,
+  TableSumRatingSendkA: d, TableSumRatingReceivekA: d, TableWinRatingMVA: d, TableWinRatingSendkA: d, WinRatingReceivekA: d,
+  ShortRatingMVA: d, ShortRatingSendkA: d, ShortRatingReceivekA: d, Comment: s, Versions: <i>
+}
+Define System ThreeWindingTF {
+  ID: i, FromID: i, ToID: i, ThreeUID: i, Name: s, Status: i, Winding: i, W1W2ResistancePU: d, W1W2ReactancePU: d,
+  W1W3ResistancePU: d, W1W3ReactancePU: d, W2W3ResistancePU: d, W2W3ReactancePU: d, W1W2ZSResistancePU: d,
+  W1W2ZSReactancePU: d, W1W3ZSResistancePU: d, W1W3ZSReactancePU: d, W2W3ZSResistancePU: d, W2W3ZSReactancePU: d,
+  W1NEResistancePU: d, W1NEReactancePU: d, W1TapNominalPC: d, W1TapStartPC: d, W1MinTapPC: d, W1TapStepPC: d,
+  W1MaxTapPC: d, W1SpecVPU: d, W1SpecVWinding: i, W1RBWidthPC: d, W1CompRatingMVA: d, W1CompRPC: d, W1CompXPC: d,
+  LockTap: b, W2NEResistancePU: d, W2NEReactancePU: d, W2TapNominalPC: d, W2TapStartPC: d, W2MinTapPC: d,
+  W2TapStepPC: d, W2MaxTapPC: d, W3NEResistancePU: d, W3NEReactancePU: d, W3TapNominalPC: d, W3TapStartPC: d,
+  W3MinTapPC: d, W3TapStepPC: d, W3MaxTapPC: d, DbType: s, PluginID: s, VoltFactorPt: d, HarmRC0: d, HarmRC12: d,
+  HarmRC1: d, HarmRC2: d, HarmRC3: d, HarmonicModel: i, SwitchTime1Sec: d, SwitchTime2Sec: d, FailureRateYr: d,
+  RepairTimeHr: d, Name2: s, Status2: i, W1StanRatingMVA: d, W1SumRatingMVA: d, W1WinRatingMVA: d, W1ShortRatingMVA: d,
+  W2StanRatingMVA: d, W2SumRatingMVA: d, W2WinRatingMVA: d, W2ShortRatingMVA: d, W3StanRatingMVA: d, W3SumRatingMVA: d,
+  W3WinRatingMVA: d, W3ShortRatingMVA: d, W1RatingMVAs: <d>, W2RatingMVAs: <d>, W3RatingMVAs: <d>, Versions: <i>
+}
+Define System SeriesRegulator {
+  ID: i, ControlsUID: i, FromID: i, ToID: i, Name: s, Status: i, ResistancePU: d, ReactancePU: d, TapStart: d,
+  MinTap: d, TapStep: d, MaxTap: d, ControlMode: i, VoltageSetpointForward: d, CompensatingRForward: d,
+  CompensatingXForward: d, VoltageSetpointBackward: d, CompensatingRBackward: d, CompensatingXBackward: d,
+  Versions: <i>
+}
+Define System UMachine {
+  ID: i, FromID: i, Name: s, Status: i, Mode: i, RealMW: d, ReactiveMVAr: d, RatingMVA: d, DefinedFault: b,
+  ThresholdVoltpu: d, FinalRealFaultCurrentpu: d, FinalReactiveFaultCurrentpu: d, DefinedFaultTimeS: <d>,
+  RealFaultCurrentpu: <d>, ReactiveFaultCurrentpu: <d>, ProfileUID: i, ModelMode: i, UdmActive: s, UdmReactive: s,
+  UdmActiveUID: i, UdmReactiveUID: i, ModelType: i, PluginID: s, ConverterDrivenPlant: b, CDPMethodType: i,
+  CDPVoltageInterpolation: i, CDPPhaseCorrections: b, CDPVoltagePU: <d>, CDPRealCurrentPU: <d>, CDPReactiveCurrentPU: <d>,
+  CDPVoltageTransientPU: <d>, CDPRealCurrentTransientPU: <d>, CDPReactiveCurrentTransientPU: <d>, CDPTimeConstantTransientMs: d,
+  CDPVoltageSubTransientPU: <d>, CDPRealCurrentSubTransientPU: <d>, CDPReactiveCurrentSubTransientPU: <d>,
+  CDPTimeConstantSubTransientMs: d, CDPKFactor: d, CDPVoltageThresholdPU: d, CDPMaxISync: d, CDPMaxITrans: d,
+  CDPMaxISubTrans: d, Aggregate: b, Versions: <i>
+}
+Define System UniBranch {
+  ID: i, FromID: i, ToID: i, Name: s, Status: i, SendMW: d, SendMVAr: d, ReceiveMW: d, ReceiveMVAr: d,
+  PluginID: s, Versions: <i>
+}
+Define System ProtContainer {
+  ID: i, ConnID: i, Type: s, Name: s, MemberUIDs: <i>, FromEnd: b, Versions: <i>
+}
+Define System ProtDevice {
+  ID: i, FromID: i, BlockOrder: <i>, Name: s, Status: i, DeviceManufacturer: s, DeviceFamily: s, DeviceDBName: s,
+  DeviceVersion: s, DeviceComments: s, GraphLabel: s, ShowAllBlockCurves: b, SpecifyBlockOrder: b, DeviceType: i,
+  ParameterUnits: i, XMinimum: d, XMaximum: d, YMinimum: d, YMaximum: d, OCNominalCurrentA: d, OCNominalRangeA: <s>,
+  FaultType: i, BreakerBaseCurrentA: d, BreakerBaseRangeA: <s>, BreaderUIDs: <i>, Versions: <i>
+}
+Define System ProtMonitor {
+  ID: i, FromID: i, Name: s, MonitoringWhat: i, PrimaryTurns: d, SecondaryTurns: d, SeesRed: b, SeesYellow: b,
+  SeesBlue: b, Versions: <i>
+}
+Define System ProtBlockConstantCurrent {
+  ID: i, BlockOrder: i, BlockName: s, Status: i, MonitoringWhat: i, CurrentSettingBlock: i, CurrentSettingA: d,
+  CurrentRangeA: <s>, CurrentMultiplier: d, CurrentMultiplierRange: <s>, CurrentOperatingPC: d, CurrentOperatingRangePC: <s>,
+  Versions: <i>
+}
+Define System ProtBlockConstantTime {
+  ID: i, BlockOrder: i, BlockName: s, Status: i, MonitoringWhat: i, CurrentSettingBlock: i, TimeSettingS: d,
+  TimeRangeS: <s>, Versions: <i>
+}
+Define System ProtBlockGivenPointsAdjust {
+  ID: i, BlockOrder: i, BlockName: s, Status: i, MonitoringWhat: i, CurrentSettingBlock: i, DisplayedCurves: i,
+  ExtrapolateCurve: b, MaxCurrentATimeS: <s>, MinCurrentATimeS: <s>, CurrentMultiplier: d, CurrentMultiplierRange: <s>,
+  CurrentOperatingPC: d, CurrentOperatingRangePC: <s>, TimeMultiplier: d, TimeMultiplierRange: <s>, Versions: <i>
+}
+Define System ProtBlockGivenPoints {
+  ID: i, BlockOrder: i, BlockName: s, Status: i, MonitoringWhat: i, CurrentSettingBlock: i, CurveType: i,
+  ExtrapolateCurve: b, OperatesIfHigherThanMax: b, UpperBandwidthPC: d, LowerBandwidthPC: d, MaxCurrentATimeS: <s>,
+  MinCurrentATimeS: <s>, Versions: <i>
+}
+Define System ProtBlockIDMT {
+  ID: i, BlockOrder: i, BlockName: s, Status: i, MonitoringWhat: i, CurrentSettingBlock: i, IDMTCurveType: i,
+  IDMTCurveTypeRange: <s>, CurveDefiniteCutoffs: <s>, DisplayedCurves: i, DisplayedIDMTCurve: i, GivenDisplayedValue: d,
+  CurrentSettingA: d, CurrentRangeA: <s>, CurrentMultiplier: d, CurrentMultiplierRange: <s>, CurrentOperatingPC: d,
+  CurrentOperatingRangePC: <s>, TimeMultiplier: d, TimeMultiplierRange: <s>, Versions: <i>
+}
+Define System ProtBlockPickAndDelay {
+  ID: i, BlockOrder: i, BlockName: s, Status: i, MonitoringWhat: i, CurrentSettingBlock: i, CurrentSettingA: d,
+  CurrentRangeA: <s>, PickUpCurrent: d, PickUpCurrentRange: <s>, TimeDelayS: d, TimeDelayRangeS: <s>, TimeDelayCurrentMultiplier: d,
+  TimeDelaySlope: d, CurrentOperatingPC: d, CurrentOperatingRangePC: <s>, Versions: <i>
+}
+Define System ProtBlockTransientDisc {
+  ID: i, BlockOrder: i, BlockName: s, Status: i, MonitoringWhat: i, CurrentSettingBlock: i, AdjustedResetTimeS: d,
+  ResetPercentage: d, TSDiscTravel: d, Versions: <i>
+}
+Define System Battery {
+  ID: i, FromID: i, Name: s, Status: i, Model: i, VoltPU: d, EmfPU: d, ResistancePU: d, CurrentPU: d, InductancePU: d,
+  SwitchTime1Secs: d, SwitchTime2Secs: d, DbType: s, DbPar: i, Versions: <i>
+}
+Define System DCMachine {
+  ID: i, FromID: i, Name: s, Status: i, BusVoltagePU: d, MechPowerMW: d, Efficiency: d, Speed: d, ArmResistPU: d,
+  ShuntResisPU: d, ControlResisPU: d, ShuntTRatio: d, SeriesTRatio: d, Compounding: d, SatFac75: d, SatFac120: d,
+  BusName2: s, ArmSelfIndPU: d, SeriesSelfIndPU: d, ShuntSelfIndPU: d, CtrlSelfIndPU: d, LeakageIndPU: d,
+  MechLossConst: d, InertiaSec: d, TSlipB: d, TSlipC: d, Switch1Sec: d, Switch2Sec: d, DbType: s, DbPar: i,
+  Versions: <i>
+}
+Define System Converter {
+  ID: i, FromID: i, ToID: i, Name: s, Status: i, DbType: s, Type: i, DCPowerMW: d, DCVoltagePU: d, ACReactivePowerMVAr: d,
+  PowerFactor: d, TransEqReactancePU: d, TransOperateTapPC: d, MinTapPC: d, TapStepPC: d, MaxTapPC: d,
+  PulseNumber: i, NumParaBridges: i, CommutateReactPU: d, MaxACCurrentPU: d, VoltRatio: d, FilterResisPU: d,
+  FilterInductPU: d, DCEquivCapPU: d, MinFireAngleDeg: d, MaxDCCurrentPU: d, Versions: <i>
+}
+Define System Chopper {
+  ID: i, FromID: i, ToID: i, Name: s, ChopperModel: i, VoltGainRatio: d, VoltGainDutyCycle: d, ConductancePU: d,
+  ConverterEfficiencyPC: d, Versions: <i>
+}
+Define System ConverterACC {
+  ID: i, ControlsUID: i, ConverterName: s, Name: s, DbType: s, CtrlBus: i, CtrlModel: i, CorrSlope: d,
+  PIFwdGain: d, VConDroop: d, PIIntGain: d, FConDroop: d, VRatioMax: d, VRatioMin: d, VRatioMod1: d, VRatioPt1: d,
+  ModIndexPt1: d, VRatioPt2: d, ModIndexPt2: d, ModIndexMax: d, ModIndexMin: d, QCurrentLimitPU: d, MaxAq: d,
+  PCurrentLimitPU: d, MaxAd: d, TotCurrentLimitPU: d, MaxAt: d, MaxPowCorrPC: d, MinPowCorrPC: d, ModelType: i,
+  PluginID: s, UdmID: s, Versions: <i>
+}
+Define System ConverterDCC {
+  ID: i, ControlsUID: i, Name: s, DbType: s, Ndczcb: i, Kymodb: i, OperateMode: i, PI1FwdGain: d, PI1IntGain: d,
+  PI2FwdGain: d, PI2IntGain: d, CorrSlope: d, IntGainK5: d, MaxAngle: d, MinAngle: d, VoltDroop: d, ActivePowSet: d,
+  FrequencySet: d, FConFreqRate: d, VConFreqRate: d, ModeSwitchTime: d, PowerFreqTC: d, PowerFreqDroop: d,
+  ModelType: i, PluginID: s, UdmID: s, Versions: <i>
+}
+Define System DCMachineCtl {
+  ID: i, ControlsUID: i, Name: s, DbType: s, DbPar: i, AVRUdmID: s, CtlBusbar: i, VRAmpGain: d, VRMaxVoltPU: d,
+  VRMinVoltPU: d, VRLeadTCSec: d, VRLagTCSec: d, VRVoltDroopPC: d, VRPowerLimMW: d, VRKoFactor: d, VRRate: d,
+  GovUdmID: s, GovAmpGain: d, GovAmpMaxPU: d, GovAmpMinPU: d, GovLeadTCSec: d, GovLagTCSec: d, GovDroopPC: d,
+  GovMaxCurrPU: d, GovKoFactor: d, ModeSwTimeSec: d, ModeSwTol: d, Versions: <i>
+}
+Define System MGSet {
+  ID: i, FromID: i, ToID: i, Name: s, Status: i, Versions: <i>
+}
+Define System Group {
+  ID: i, Type: s, Name: s, MemberUIDs: <i>, Versions: <i>
+}
+Define System GroupLoadScale {
+  ID: i, Name: s, MemberUIDs: <i>, RealScale: d, ReactiveScale: d, Versions: <i>
+}
+Define System GroupGeneratorScale {
+  ID: i, Name: s, MemberUIDs: <i>, RealScale: d, ReactiveScale: d, Versions: <i>
+}
+Define System GroupTransformer {
+  ID: i, Name: s, MemberUIDs: <i>, TapControlMethod: i, MasterTransformerUID: i, Versions: <i>
+}
+Define System GroupFeeder {
+  ID: i, Name: s, MemberUIDs: <i>, UseScaling: b, RealScale: d, ReactiveScale: d, DisplayColour: s, Versions: <i>
+}
+Define System Representing {
+  ID: i, Name: s, RepSceneUID: i, Versions: <i>
+}
+Define System Plugin {
+  ID: i, FromID: i, Name: s, Model: s, Type: s, RealParameters: <d>, IntParameters: <i>, BoolParameters: <i>,
+  StrParameters: <s>, InputUIDs: <i>, OutputUIDs: <i>, ModelDefs: <i>, Versions: <i>
+}
+Define System UdmModel {
+  ID: i, FromID: i, Name: s, Type: i, Filename: s, Pathname: s, Versions: <i>
+}
+Define System DeletedItems {
+  Items: <i>, Groups: <i>
+}
+Define System LoadProfilePQActual {
+  ID: i, Name: s, IdxNames: <s>, VarList1: <d>, VarList2: <d>, Versions: <i>
+}
+Define System LoadProfilePQScale {
+  ID: i, Name: s, IdxNames: <s>, VarList1: <d>, VarList2: <d>, Versions: <i>
+}
+Define System GeneratorProfilePQActual {
+  ID: i, Name: s, IdxNames: <s>, VarList1: <d>, VarList2: <d>, Versions: <i>
+}
+Define System GeneratorProfilePQScale {
+  ID: i, Name: s, IdxNames: <s>, VarList1: <d>, VarList2: <d>, Versions: <i>
+}
+Define System UMProfilePQActual {
+  ID: i, Name: s, IdxNames: <s>, VarList1: <d>, VarList2: <d>, Versions: <i>
+}
+Define System EquivalentBoundary {
+  ID: i, Name: s, Description: s, UseBoundaryConfigMode: b, BoundaryBusbarUIDs: <i>, BoundaryBranchUIDs: <i>,
+  BranchToBusUIDs: <i>, BranchToDirections: <i>, ReducedBusbarUIDs: <i>, ReductionCompleted: b, VerifiedBoundary: b,
+  ShowBoundaryBusMessages: b, ShowBoundaryBranchMessages: b, StaleBoundary: b, Versions: <i>
+}
+Define System EquivalentBranch {
+  ID: i, FromUID: i, ToUID: i, Name: s, Status: i, ResistancePU: d, ReactancePU: d, HideLabel: b, Comment: s,
+  Versions: <i>
+}
+Define System EquivalentRadial {
+  ID: i, FromUID: i, Name: s, Status: i, RealPowerMW: d, ReactivePowerMVAr: d, EquivResistancePU: d, EquivReactancePU: d,
+  TargetVoltagePU: d, NomVoltagekV: d, IncludesReducedSlack: b, CatalogTypes: <i>, CatalogTechs: <i>, CatalogStagings: <i>,
+  CatalogPowersMW: <d>, Comment: s, Versions: <i>
+}
+Define System LineUnbalanced {
+  ID: i, FromID: i, ToID: i, Name: s, LineType: i, Status: i, HasPhaseA: b, HasPhaseB: b, HasPhaseC: b,
+  HasNeutral: b, ResistancePhasePU: d, ReactancePhasePU: d, SusceptancePhasePU: d, ResistanceNeutralPU: d,
+  ReactanceNeutralPU: d, SusceptanceNeutralPU: d, DbType: s, DbLength: d, DbPar: i, Name2: s, Status2: i,
+  StanRatingMVA: d, StanRatingSendkA: d, StanRatingReceivekA: d, SumRatingMVA: d, SumRatingSendkA: d, SumRatingReceivekA: d,
+  WinRatingMVA: d, WinRatingSendkA: d, WinRatingReceivekA: d, ShortRatingMVA: d, ShortRatingSendkA: d,
+  ShortRatingReceivekA: d, RatingMVAs: <d>, RatingSendkAs: <d>, RatingReceivekAs: <d>, Versions: <i>
+}
+Define System LoadUnbalanced {
+  ID: i, FromID: i, Name: s, Status: i, Connection: i, HasPhaseA: b, HasPhaseB: b, HasPhaseC: b, RealPhaseAMW: d,
+  ReactivePhaseAMVAr: d, RealPhaseBMW: d, ReactivePhaseBMVAr: d, RealPhaseCMW: d, ReactivePhaseCMVAr: d,
+  ProfilePhaseAUID: i, ProfilePhaseBUID: i, ProfilePhaseCUID: i, HasTransformer: b, Versions: <i>
+}
+Define System TransformerUnbalanced {
+  ID: i, FromID: i, ToID: i, Name: s, TransformerType: i, Winding: i, Status: i, ResistancePU: d, ReactancePU: d,
+  EarthPrimaryResistancePU: d, EarthPrimaryReactancePU: d, EarthSecondaryResistancePU: d, EarthSecondaryReactancePU: d,
+  TapPrimaryNominalPC: d, TapPrimaryPositionPC: d, MinTapPrimaryPC: d, TapPrimaryStepPC: d, MaxTapPrimaryPC: d,
+  TapSecondaryNominalPC: d, TapSecondaryPositionPC: d, MinTapSecondaryPC: d, TapSecondaryStepPC: d, MaxTapSecondaryPC: d,
+  DbType: s, DbParallel: i, Name2: s, Status2: i, StanRatingMVA: d, StanRatingSendkA: d, StanRatingReceivekA: d,
+  SumRatingMVA: d, SumRatingSendkA: d, SumRatingReceivekA: d, WinRatingMVA: d, WinRatingSendkA: d, WinRatingReceivekA: d,
+  ShortRatingMVA: d, ShortRatingSendkA: d, ShortRatingReceivekA: d, RatingMVAs: <d>, RatingSendkAs: <d>,
+  RatingReceivekAs: <d>, Versions: <i>
+}
+Record System Version {
+  1  0 "Working scenario" "" "" "{39d174fd-e048-45f5-9d28-83d92a59b6c2}" "15 Aug 2025 12:34:14"  < > 
+    < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < > 
+    < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < > 
+  
+}
+Record System AnalysisLF {
+  0.01  100  0.9  1.1  0  t  250  250  250  250  0  f  1  1  f  f  t  t  f  f  0  0  t  f  f  1  0  f
+    f  1  0  f  0  f  t  1  0  0  ""  0  f  f  < 1 > 
+}
+Record System AnalysisFL {
+  1  0.1  0  0  4  2  5  f  0  0  f  < >   0  0  0  0  < >   5  100  f  f  t  t  t  f  f  f  t  0  1
+    1  0  t  0  0.8  3  f  3  t  f  0  t  f  f  f  30  0.03  t  0  0  1  t  t  t  f  f  < 1 > 
+}
+Record System AnalysisHM {
+  1  0  1  25  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  1  0.05  < >   1  0  f  t  f  f  f  f  f
+    < 1 > 
+}
+Record System AnalysisTS {
+  0  1  0.01  540  0.04  0  0.0001  0.01  f  f  f  f  t  t  t  f  f  ""  ""  < >   < >   < >   < >   < > 
+    < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   f  < 1 > 
+}
+Record System AnalysisRel {
+  t  t  < 1 > 
+}
+Record System AnalysisUnb {
+  100  1  0.0001  50  100  0.6  0.001  0.8  0.5  1e-06  < 1 > 
+}
+Record System AnalysisProt {
+  1  0  f  0  1  11  < >   3  4  2  0.1  0  0  f  0  0  0  1  1  t  0  0  0  0  0  0  0  0  0  0  0  0
+    f  < 1 >
+}
+Record System AnalysisDCLF {
+  f  f  0  100  f  t  f  1  0  f  0  ""  < 1 > 
+}
+Record System AnalysisNR {
+  2  0  f  t  t  f  0  f  0  f  f  0  2  f  0  1  2  t  < 1 >
+}
+Record System AnalysisAF {
+  1  0  0  < >   < >   3  1  0.1  0  0  f  0  0  0  1  1  t  5  0  < >   0  0  0  f  0  15  1  1  f  < 1 
+  > 
+}
+Record System Scene {
+  1  0 "IpsaSLD" "IEEE_68"  -1473.63  -646.438  3507.29  1978.6  < 1 > 
+}
+Record System SceneVersion {
+  1  1  0 ""  < >   < >   < > 
+}
+Record System SceneData {
+  1 "IpsaSLD" ""  0.3 "#ffffff" ""  1472  1024  f "Kilometres"  1  f  f "https://a.tile.openstreetmap.org"
+    0  0  f  1  16  53.4761  0  -2.2317  0  0  0 ""  < 1 > 
+}
+Record System View {
+  1 "IEEE_68" "IEEE_68"  t  f  < 0 0 1460 597 >   301.758  -85.9375  0.512  f  t  < 234 219 255 >   < 81 
+  67 103 >   0.7  1.25  5  20  0  f  t  4  f  < 255 0 0 >   0.2  < 1 > 
+}
+Record System DataDisplay {
+  "IEEE_68"  t  4  6  6  6  6  6  6  6  6  "black"  "black"  "black"  "black"  "black"  "black"  "black"
+    "black"  "black"  0.25  0.25  1  1  1  1  1  1  1  "dot"  "dot"  "solid"  "dash"  "solid"  "dot"
+    "dashdot"  "dashdot"  "solid"  "bold"  "bold"  t  "Custom"  < "138" "#e7344a" "345" "#3774a3" > 
+    f  f  f  f  "Segoe UI,6,-1,5,50,0,0,0,0,0,Regular"  f  f  f  t  f  t
+}
+Record System ResultsDisplay {
+  "IEEE_68"  < "Data" "Busbar" "t" "Data" "Radial" "t" "Data" "Branch" "t" "LoadFlow" "Busbar" "t" "LoadFlow" 
+  "Radial" "t" "LoadFlow" "Branch" "t" >   < "Data" "Busbar" "ItemColourFore" "Data" "Radial" "ItemColourFore" 
+  "Data" "Branch" "ItemColourFore" "LoadFlow" "Busbar" "TextColourBorder" "LoadFlow" "Radial" "TextColourBorder" 
+  "LoadFlow" "Branch" "TextColourBorder" >   < "Data" "Busbar" "ItemPattern" "Data" "Radial" "ItemPattern" 
+  "Data" "Branch" "ItemPattern" "LoadFlow" "Busbar" "TextColourBorder" "LoadFlow" "Radial" "TextColourBorder" 
+  "LoadFlow" "Branch" "TextColourBorder" >   < "Data" "Busbar" "black" "Data" "Radial" "black" "Data" 
+  "Branch" "black" "LoadFlow" "Busbar" "red" "LoadFlow" "Radial" "red" "LoadFlow" "Branch" "red" >   < "LoadFlow" 
+  "Busbar" "blue" "LoadFlow" "Radial" "blue" "LoadFlow" "Branch" "blue" >   < "Data" "Busbar" "0.25" 
+  "Data" "Radial" "0.25" "Data" "Branch" "0.25" "LoadFlow" "Busbar" "1" "LoadFlow" "Radial" "1" "LoadFlow" 
+  "Branch" "1" >   < "LoadFlow" "Busbar" "1" "LoadFlow" "Radial" "1" "LoadFlow" "Branch" "1" >   < "Data" 
+  "Busbar" "dot" "Data" "Radial" "dot" "Data" "Branch" "dot" "LoadFlow" "Busbar" "dot" "LoadFlow" "Radial" 
+  "dot" "LoadFlow" "Branch" "dot" >   < "Data" "Busbar" "dot" "Data" "Radial" "dot" "Data" "Branch" 
+  "dot" "LoadFlow" "Busbar" "dot" "LoadFlow" "Radial" "dot" "LoadFlow" "Branch" "dot" >   < "Data" "Busbar" 
+  "bold" "Data" "Radial" "bold" "Data" "Branch" "bold" "LoadFlow" "Busbar" "bold" "LoadFlow" "Radial" 
+  "bold" "LoadFlow" "Branch" "bold" >   < "Data" "Busbar" "bold" "Data" "Radial" "bold" "Data" "Branch" 
+  "bold" "LoadFlow" "Busbar" "bold" "LoadFlow" "Radial" "bold" "LoadFlow" "Branch" "bold" > 
+}
+Record System ResultsDisplayLF {
+  "IEEE_68"  f  f  t  3  f  3  t  3  f  f  f  f  f  t  f  f  f  f  "BusVoltagepu"  "RadialRealandReactiveFlow"
+    "UnitsMVA"  "BranchRealandReactiveFlow"  "BranchFrom"  "UnitsMVA"  "FlowArrowReal"  1.05  0.95  0
+    100  0  1  3.3  0  "green"  "gold"  "maroon"  100  100  100  33  66  0  0  f
+}
+Record System ResultsDisplayFL {
+  "IEEE_68"  f  f  t  f  f  f  f  f  f  t  f  f  3  3  t  f  f  f  f  f  f  f  "DCNone"  "UnitsMVA"  "UnitsPU"
+    "TransformerFrom"  "UnitskA"
+}
+Record System ResultsDisplayHM {
+  "IEEE_68"  t  f  f  f  t  f  f  3  3
+}
+Record System ResultsDisplayReliablity {
+  "IEEE_68"  t  t  t  f  3
+}
+Record System Busbar {
+  1  "29"  345  0  1.02242  -0.0929436  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  2  "28"  345  0  1.02229  -0.141517  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  3  "26"  345  0  1.02438  -0.199341  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  4  "9"  138  2  1.025  0.0262443  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  5  "27"  345  0  1.00932  -0.229387  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  6  "24"  345  0  1.0021  -0.181985  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  7  "1"  138  2  1.045  -0.166388  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  8  "54"  345  0  1.02156  -0.208789  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  9  "25"  345  0  1.03173  -0.182329  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  10  "7"  138  2  1.063  0.084042  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  11  "68"  345  0  0.994598  -0.185173  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  12  "37"  345  0  1.00025  -0.212839  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  13  "6"  138  2  1.05  0.0431457  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  14  "66"  345  0  0.974754  -0.187002  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  15  "67"  345  0  0.977862  -0.206585  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  16  "19"  345  0  0.99272  -0.095447  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  17  "4"  138  2  0.997  -0.00484331  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  18  "65"  345  0  0.971312  -0.151102  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  31  "8"  138  2  1.03  -0.0642221  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  32  "22"  345  0  1.02353  -0.0501311  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  41  "21"  345  0  0.999154  -0.136292  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  48  "23"  345  0  1.02215  -0.0557334  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  60  "64"  345  0  0.950063  -0.151906  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  63  "63"  345  0  0.969261  -0.149988  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  64  "62"  345  0  0.971882  -0.135761  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  65  "3"  138  2  0.983  0.000737253  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  71  "56"  345  0  0.97546  -0.220521  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  72  "57"  345  0  0.969462  -0.216962  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  73  "59"  345  0  0.962229  -0.232279  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  74  "58"  345  0  0.967807  -0.177006  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  75  "52"  345  0  0.999219  -0.230082  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  76  "55"  345  0  1.00133  -0.237153  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  77  "60"  345  0  0.964294  -0.24872  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  93  "2"  138  2  0.98  -0.0328519  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  96  "53"  345  0  1.02904  -0.327017  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  108  "47"  345  0  1.05852  -0.335089  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  111  "48"  345  0  1.0712  -0.316147  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  115  "40"  345  0  1.07603  -0.237382  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  118  "31"  345  0  1.02594  -0.303428  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  120  "10"  138  2  1.01  -0.177636  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  123  "30"  345  0  1.02026  -0.339488  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  124  "32"  345  0  1.01289  -0.268526  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  125  "11"  138  2  1  -0.139826  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  131  "33"  345  0  1.01879  -0.341146  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  134  "38"  345  0  1.03017  -0.324305  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  135  "46"  345  0  1.02637  -0.352425  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  139  "49"  345  0  1.0239  -0.340295  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  142  "34"  345  0  1.02776  -0.443116  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  143  "35"  345  0  1.03909  -0.460024  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  144  "36"  345  0  1.00406  -0.485168  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  145  "45"  345  0  1.05276  -0.499619  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  152  "61"  345  0  1.00196  -0.395378  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  157  "17"  345  0  0.99123  -0.600844  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  158  "43"  345  0  1.00531  -0.636372  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  159  "13"  138  2  1.011  -0.482316  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  165  "44"  345  0  1.0058  -0.637812  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  168  "12"  138  2  1.0156  -0.385712  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  171  "39"  345  0  1.01303  -0.662413  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  172  "50"  345  0  1.06493  -0.326197  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  177  "51"  345  0  1.06899  -0.465333  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  184  "16"  138  1  1  0  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  185  "18"  345  0  1.0036  -0.100844  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  190  "15"  138  2  1  -0.00217589  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  191  "42"  345  0  0.999025  -0.0171911  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  197  "41"  345  0  1.00021  0.158906  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  198  "14"  138  2  1  0.185679  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  204  "20"  345  0  0.990169  -0.120305  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  207  "5"  138  2  1.011  -0.0498157  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+}
+Record System Network {
+  "IEEE 68 Bus Network (NENY)"  "IPSA"  ""  "(c)2025 TNEI Services Ltd."  100  f  100  60  < 184 >   < "Standard" 
+  "Summer" "Winter" "Short" >   < "0" "Unset" >   < >   t  t  1  1  0  0  1  1  0  14  f  t  t  f  f
+    t  t  ""  96  0  0  0  < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < > 
+    < >   < >   < >   < >   < >   < >   < >   f  f  < 1 > 
+}
+Record System DrawTool {
+  3  5  500  200  20  675  350  t  t  t  t  t  t  -1  5  675  350  0  3  0  f  f  f  t  t  t  5  f  < 1 
+  > 
+}
+Record System Staging {
+  t  t  t  t  t  t  t  t  t  t  t  t  < 1 > 
+}
+Record System Load {
+  23  1  "L11"  0  284  27  0  0  0  f  3  ""  f  < 1 > 
+  24  2  "L10"  0  206  28  0  0  0  f  3  ""  f  < 1 > 
+  25  3  "L8"  0  139  17  0  0  0  f  3  ""  f  < 1 > 
+  26  5  "L9"  0  280  76  0  0  0  f  3  ""  f  < 1 > 
+  27  6  "L6"  0  309  -92  0  0  0  f  3  ""  f  < 1 > 
+  30  9  "L7"  0  224  47  0  0  0  f  3  ""  f  < 1 > 
+  44  41  "L4"  0  274  115  0  0  0  f  3  ""  f  < 1 > 
+  45  11  "L35"  0  329  32  0  0  0  f  3  ""  f  < 1 > 
+  50  48  "L5"  0  248  85  0  0  0  f  3  ""  f  < 1 > 
+  58  15  "L34"  0  320  153  0  0  0  f  3  ""  f  < 1 > 
+  62  60  "L33"  0  9  88  0  0  0  f  3  ""  f  < 1 > 
+  79  71  "L29"  0  200  73.6  0  0  0  f  3  ""  f  < 1 > 
+  82  76  "L28"  0  322  2  0  0  0  f  3  ""  f  < 1 > 
+  84  75  "L26"  0  158  30  0  0  0  f  3  ""  f  < 1 > 
+  88  77  "L31"  0  208.8  70.88  0  0  0  f  3  ""  f  < 1 > 
+  90  73  "L30"  0  234  84  0  0  0  f  3  ""  f  < 1 > 
+  107  96  "L27"  0  252.7  118.56  0  0  0  f  3  ""  f  < 1 > 
+  110  108  "L21"  0  203.12  32.59  0  0  0  f  3  ""  f  < 1 > 
+  114  111  "L22"  0  241.12  2.2  0  0  0  f  3  ""  f  < 1 > 
+  117  115  "L15"  0  65.63  23.53  0  0  0  f  3  ""  f  < 1 > 
+  133  131  "L12"  0  112  0  0  0  0  f  3  ""  f  < 1 > 
+  141  139  "L23"  0  164  29  0  0  0  f  3  ""  f  < 1 > 
+  150  144  "L13"  0  102  -19.46  0  0  0  f  3  ""  f  < 1 > 
+  151  145  "L19"  0  208  21  0  0  0  f  3  ""  f  < 1 > 
+  162  157  "L1"  0  6000  300  0  0  0  f  3  ""  f  < 1 > 
+  167  165  "L18"  0  267.55  4.84  0  0  0  f  3  ""  f  < 1 > 
+  175  171  "L14"  0  267  12.6  0  0  0  f  3  ""  f  < 1 > 
+  179  177  "L25"  0  337  -122  0  0  0  f  3  ""  f  < 1 > 
+  181  172  "L24"  0  100  -147  0  0  0  f  3  ""  f  < 1 > 
+  189  185  "L2"  0  2470  123  0  0  0  f  3  ""  f  < 1 > 
+  193  191  "L17"  0  1150  250  0  0  0  f  3  ""  f  < 1 > 
+  201  197  "L16"  0  1000  250  0  0  0  f  3  ""  f  < 1 > 
+  235  204  "L3"  0  680  103  0  0  0  f  3  ""  f  < 1 > 
+  236  152  "L32"  0  104  125  0  0  0  f  3  ""  f  < 1 > 
+  243  135  "L20"  0  150.7  28.5  0  0  0  f  3  ""  f  < 1 > 
+}
+Record System Line {
+  19  1  2  ""  1  0  3  0  0.0014  0.0151  0.249  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  20  2  3  ""  1  0  3  0  0.0043  0.0474  0.7802  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  28  5  3  ""  1  0  3  0  0.0014  0.0147  0.2396  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  29  3  9  ""  1  0  3  0  0.0032  0.0323  0.531  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  35  9  8  ""  1  0  3  0  0.007  0.0086  0.146  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  38  5  12  ""  1  0  3  0  0.0013  0.0173  0.3216  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  39  12  11  ""  1  0  3  0  0.0007  0.0089  0.1342  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  40  6  11  ""  1  0  3  0  0.0003  0.0059  0.068  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  42  41  11  ""  1  0  3  0  0.0008  0.0135  0.2548  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  43  32  41  ""  1  0  3  0  0.0008  0.014  0.2565  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  49  48  32  ""  1  0  3  0  0.0006  0.0096  0.1846  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  53  11  15  ""  1  0  3  0  0.0009  0.0094  0.171  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  54  16  11  ""  1  0  3  0  0.0016  0.0195  0.304  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  55  15  14  ""  1  0  3  0  0.0018  0.0217  0.366  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  59  14  18  ""  1  0  3  0  0.0009  0.0101  0.1723  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  67  63  64  ""  1  0  3  0  0.0004  0.0043  0.0729  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  68  18  64  ""  1  0  3  0  0.0004  0.0043  0.0729  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  78  14  71  ""  1  0  3  0  0.0008  0.0129  0.1382  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  80  72  71  ""  1  0  3  0  0.0008  0.0128  0.1342  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  83  75  76  ""  1  0  3  0  0.0011  0.0133  0.2138  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  85  75  12  ""  1  0  3  0  0.0007  0.0082  0.1319  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  86  71  76  ""  1  0  3  0  0.0013  0.0213  0.2214  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  87  77  72  ""  1  0  3  0  0.0008  0.0112  0.1476  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  89  77  73  ""  1  0  3  0  0.0004  0.0046  0.078  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  92  73  74  ""  1  0  3  0  0.0006  0.0092  0.113  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  104  5  96  ""  1  0  3  0  0.032  0.32  0.41  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  106  8  96  ""  1  0  3  0  0.0035  0.0411  0.6987  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  109  96  108  ""  1  0  3  0  0.0013  0.0188  1.31  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  112  111  108  ""  1  0  3  0  0.00125  0.0134  0.8  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  116  115  111  ""  1  0  3  0  0.002  0.022  1.28  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  119  118  96  ""  1  0  3  0  0.0016  0.0163  0.25  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  128  124  123  ""  1  0  3  0  0.0024  0.0288  0.488  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  129  123  96  ""  1  0  3  0  0.0008  0.0074  0.48  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  132  131  124  ""  1  0  3  0  0.0008  0.0099  0.168  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  136  134  131  ""  1  0  3  0  0.0036  0.0444  0.693  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  137  135  134  ""  1  0  3  0  0.0022  0.0284  0.43  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  140  139  135  ""  1  0  3  0  0.0018  0.0274  0.27  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  146  142  131  ""  1  0  3  0  0.0011  0.0157  0.202  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  148  144  142  ""  1  0  3  0  0.0033  0.011  1.45  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  149  145  143  ""  1  0  3  0  0.0007  0.0175  1.39  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  154  123  152  ""  1  0  3  0  0.00095  0.00915  0.58  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0
+    0  < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  156  144  152  ""  1  0  3  0  0.0011  0.0098  0.68  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  160  157  144  ""  1  0  3  0  0.0005  0.0045  0.32  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  164  158  157  ""  1  0  3  0  0.0005  0.0276  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  166  165  158  ""  1  0  3  0  0.0001  0.0011  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  173  165  171  ""  1  0  3  0  0  0.0411  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 0 0 
+  0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  174  145  171  ""  1  0  3  0  0  0.0839  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 0 0 
+  0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  176  145  165  ""  1  0  3  0  0.0025  0.073  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  178  177  145  ""  1  0  3  0  0.0004  0.0105  0.72  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  180  177  172  ""  1  0  3  0  0.0009  0.0221  1.62  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  183  152  77  ""  1  0  3  0  0.0023  0.0363  0.3804  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  194  185  139  ""  1  0  3  0  0.0076  0.1141  1.16  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  195  191  185  ""  1  0  3  0  0.004  0.06  2.25  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  200  197  191  ""  1  0  3  0  0.004  0.06  2.25  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  203  115  197  ""  1  0  3  0  0.006  0.084  3.15  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  210  48  10  "T7"  1  0  3  0  0.0005  0.0272  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  "T7"  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  211  204  207  "T5"  1  0  3  0  0.0009  0.0142  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  "T5"  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  212  32  13  "T6"  1  0  3  0  0  0.0143  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  "T6"  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 0 
+  0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  213  1  4  "T9"  1  0  3  0  0.0008  0.0156  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  "T9"  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  215  8  7  "T1"  1  0  3  0  0  0.0181  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  "T1"  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 0 
+  0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  216  64  65  "T3"  1  0  0  0  0  0.02  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  "T3"  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 0 
+  0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  217  74  93  "T2"  1  0  3  0  0  0.025  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  "T2"  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 0 
+  0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  218  157  159  "T13"  1  0  3  0  0  0.0033  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  "T13"  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  219  16  17  "T4"  1  0  3  0  0.0007  0.0142  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  "T4"  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  220  144  168  "T12"  1  0  3  0  0  0.0075  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  "T12"  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  221  185  184  "T16"  1  0  3  0  0  0.003  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  "T16"  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  222  191  190  "T15"  1  0  3  0  0  0.0015  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  "T15"  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  223  197  198  "T14"  1  0  3  0  0  0.0015  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  "T14"  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  224  118  120  "T10"  1  0  3  0  0  0.026  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  "T10"  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  225  124  125  "T11"  1  0  3  0  0  0.013  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  "T11"  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  226  9  31  "T8"  1  0  3  0  0.0006  0.0232  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  "T8"  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  227  6  48  ""  1  0  3  0  0.0022  0.035  0.361  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  228  1  3  ""  1  0  3  0  0.0057  0.0625  1.029  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  229  134  118  ""  1  0  3  0  0.0011  0.0147  0.247  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  230  185  172  ""  1  0  3  0  0.0012  0.0288  2.06  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  232  63  74  ""  1  0  3  0  0.0007  0.0082  0.1389  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  233  74  72  ""  1  0  3  0  0.0008  0.0128  0.1342  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  237  142  143  "T17"  1  0  3  0  0  0.0074  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  "T17"  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  238  60  63  "T18"  1  0  3  0  0.0016  0.0435  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  "T18"  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  239  60  18  "T19"  1  0  3  0  0.0016  0.0435  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  "T19"  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  240  16  204  "T20"  1  0  3  0  0.0007  0.0138  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  "T20"  3  0  0  0  0  0  0  0  0  0  0  0
+    0  < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  241  76  8  ""  1  0  3  0  0.0013  0.0151  0.2572  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  242  123  118  ""  1  0  3  0  0.0013  0.0187  0.333  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+}
+Record System Transformer {
+  210  48  10  "T7"  0  0  0  0  2  0  0  0  0  0  0  0  0  0  0  f  0  0  0  0  0  < 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0  0  0
+    0  f  0  0  0  ""  1  ""  0  "T7"  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  211  204  207  "T5"  0  0  0  0  2  0  0  0  0  0  0  0  0  0  0  f  0  0  0  0  0  < 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0  0  0
+    0  f  0  0  0  ""  1  ""  0  "T5"  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  212  32  13  "T6"  0  0  0  0  2  0  0  0  0  0  0  0  0  0  0  f  0  0  0  0  0  < 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0  0  0
+    0  f  0  0  0  ""  1  ""  0  "T6"  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  213  1  4  "T9"  0  0  0  0  2  0  0  0  0  0  0  0  0  0  0  f  0  0  0  0  0  < 0 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0  0  0  0
+    f  0  0  0  ""  1  ""  0  "T9"  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  215  8  7  "T1"  0  0  0  0  3  0  0  0  0  0  0  0  0  0  0  f  0  0  0  0  0  < 0 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0  0  0  0
+    f  0  0  0  ""  1  ""  0  "T1"  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  216  64  65  "T3"  0  0  0  0  2  0  0  0  0  0  0  0  0  0  0  f  0  0  0  0  0  < 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0  0  0
+    0  f  0  0  0  ""  1  ""  0  "T3"  0  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  217  74  93  "T2"  0  0  0  0  2  0  0  0  0  0  0  0  0  0  0  f  0  0  0  0  0  < 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0  0  0
+    0  f  0  0  0  ""  1  ""  0  "T2"  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  218  157  159  "T13"  0  0  0  0  2  0  0  0  0  0  0  0  0  0  0  f  0  0  0  0  0  < 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0  0  0
+    0  f  0  0  0  ""  1  ""  0  "T13"  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  219  16  17  "T4"  0  0  0  0  2  0  0  0  0  0  0  0  0  0  0  f  0  0  0  0  0  < 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0  0  0
+    0  f  0  0  0  ""  1  ""  0  "T4"  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  220  144  168  "T12"  0  0  0  0  2  0  0  0  0  0  0  0  0  0  0  f  0  0  0  0  0  < 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0  0  0
+    0  f  0  0  0  ""  1  ""  0  "T12"  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  221  185  184  "T16"  0  0  0  0  2  0  0  0  0  0  0  0  0  0  0  f  0  0  0  0  0  < 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0  0  0
+    0  f  0  0  0  ""  1  ""  0  "T16"  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  222  191  190  "T15"  0  0  0  0  2  0  0  0  0  0  0  0  0  0  0  f  0  0  0  0  0  < 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0  0  0
+    0  f  0  0  0  ""  1  ""  0  "T15"  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  223  197  198  "T14"  0  0  0  0  2  0  0  0  0  0  0  0  0  0  0  f  0  0  0  0  0  < 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0  0  0
+    0  f  0  0  0  ""  1  ""  0  "T14"  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  224  118  120  "T10"  0  0  0  0  2  0  0  0  0  0  0  0  0  0  0  f  0  0  0  0  0  < 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0  0  0
+    0  f  0  0  0  ""  1  ""  0  "T10"  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  225  124  125  "T11"  0  0  0  0  2  0  0  0  0  0  0  0  0  0  0  f  0  0  0  0  0  < 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0  0  0
+    0  f  0  0  0  ""  1  ""  0  "T11"  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  226  9  31  "T8"  0  0  0  0  2  0  0  0  0  0  0  0  0  0  0  f  0  0  0  0  0  < 0 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0  0  0  0
+    f  0  0  0  ""  1  ""  0  "T8"  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  237  142  143  "T17"  0  0  0  0  2  0  0  0  0  0  0  0  0  0  0  f  0  0  0  0  0  < 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0  0  0
+    0  f  0  0  0  ""  1  ""  0  "T17"  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  238  60  63  "T18"  0  0  0  0  2  0  0  0  0  0  0  0  0  0  0  f  0  0  0  0  0  < 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0  0  0
+    0  f  0  0  0  ""  1  ""  0  "T18"  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  239  60  18  "T19"  0  0  0  0  2  0  0  0  0  0  0  0  0  0  0  f  0  0  0  0  0  < 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0  0  0
+    0  f  0  0  0  ""  1  ""  0  "T19"  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  240  16  204  "T20"  0  0  0  0  2  0  0  0  0  0  0  0  0  0  0  f  0  0  0  0  0  < 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0  0  0
+    0  f  0  0  0  ""  1  ""  0  "T20"  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+}
+Record System Generator {
+  22  4  "G9"  0  1.025  0  0  800  23.5597  0  0  800  802.25  0  0  0.2106  0  0  0  0  0  0.057  4.79
+    0.045  0.05  0.205  0.076667  1.96  0.045  0.035  34.5  0.037  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0  0  0  0  0  f  0  0  0  0  3  0  1  ""  f  < 1 
+  > 
+  33  31  "G8"  0  1.03  0  0  540  10.2686  0  0  540  542.22  0  0  0.29  0  0  0  0  0  0.057  6.7
+    0.045  0.05  0.28  0.076667  0.41  0.045  0.035  24.3  0.024  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0  0  0  0  0  f  0  0  0  0  3  0  1  ""  f  < 1 
+  > 
+  36  7  "G1"  0  1.045  0  0  250  140.656  0  0  250  317.67  0  0  0.1  0  0  0  0  0  0.031  10.2
+    0.025  0.05  0.069  0.041667  1.5  0.025  0.035  42  0.011  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0  0  0  0  0  f  0  0  0  0  3  0  1  ""  f  < 1 > 
+  46  13  "G6"  0  1.05  0  0  700  227.018  0  0  700  744.7  0  0  0.254  0  0  0  0  0  0.05  7.3
+    0.04  0.05  0.241  0.0675  0.4  0.04  0.035  26  0.027  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  ""  1  0  0  0  0  0  0  f  0  0  0  0  3  0  1  ""  f  < 1 > 
+  51  10  "G7"  0  1.063  0  0  560  188.306  0  0  560  631.1  0  0  0.295  0  0  0  0  0  0.049  5.66
+    0.04  0.05  0.292  0.06667  1.5  0.04  0.035  26.4  0.021  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0  0  0  0  0  f  0  0  0  0  3  0  1  ""  f  < 1 > 
+  56  17  "G4"  0  0.997  0  0  632  27.4859  0  0  632  632  0  0  0.262  0  0  0  0  0  0.0436  5.69
+    0.035  0.05  0.258  0.058571  1.5  0.035  0.035  28.6  0.027  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0  0  0  0  0  f  0  0  0  0  3  0  1  ""  f  < 1 
+  > 
+  70  65  "G3"  0  0.983  0  0  650  99.0741  0  0  650  655.027  0  0  0.2495  0  0  0  0  0  0.0531
+    5.7  0.045  0.05  0.237  0.071429  1.5  0.045  0.035  35.8  0.027  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0  0  0  0  0  f  0  0  0  0  3  0  1  ""  f  < 1 
+  > 
+  95  93  "G2"  0  0.98  0  0  545  87.1477  0  0  545  549.477  0  0  0.295  0  0  0  0  0  0.0697  6.56
+    0.05  0.05  0.069  0.09333  1.5  0.025  0.035  30.2  0.026  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0  0  0  0  0  f  0  0  0  0  3  0  1  ""  f  < 1 > 
+  121  120  "G10"  0  1.01  0  0  500.006  -30.4255  0  0  500  500  0  0  0.169  0  0  0  0  0  0.0457
+    9.37  0.04  0.05  0.115  0.061539  1.5  0.04  0.035  31  0.015  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0  0  0  0  0  f  0  0  0  0  3  0  1  ""  f  < 1 
+  > 
+  126  125  "G11"  0  1  0  0  1000  -34.7137  0  0  1000  1000.03  0  0  0.128  0  0  0  0  0  0.018
+    4.1  0.012  0.05  0.123  0.021118  1.5  0.012  0.035  28.2  0.036  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0  0  0  0  0  f  0  0  0  0  3  0  1  ""  f  < 1 
+  > 
+  163  159  "G13"  0  1.011  0  0  3591  818.737  0  0  3591  3698.45  0  0  0.0296  0  0  0  0  0  0.0055
+    5.9  0.004  0.05  0.0286  0.0074  1.5  0.004  0.035  248  0.175  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0  0  0  0  0  f  0  0  0  0  3  0  1  ""  f  < 1 
+  > 
+  169  168  "G12"  0  1.0156  0  0  1350  223.493  0  0  1350  1378.73  0  0  0.101  0  0  0  0  0  0.031
+    7.4  0.025  0.05  0.095  0.042  1.5  0.025  0.035  92.3  0.036  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0  0  0  0  0  f  0  0  0  0  3  0  1  ""  f  < 1 
+  > 
+  187  184  "G16"  0  1  0  0  3367.86  50.0321  0  0  4000  4001.1  0  0  0.0356  0  0  0  0  0  0.0071
+    7.8  0.0055  0.05  0.0334  0.0095  1.5  0.0055  0.035  225  0.265  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0  0  0  0  0  f  0  0  0  0  3  0  1  ""  f  < 1 
+  > 
+  196  190  "G15"  0  1  0  0  1000  72.5251  0  0  1000  1002.96  0  0  0.018  0  0  0  0  0  0.00285
+    4.1  0.0023  0.05  0.0173  0.003794  1.5  0.0023  0.035  300  0.265  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0  0  0  0  0  f  0  0  0  0  3  0  1  ""  f
+    < 1 > 
+  199  198  "G14"  0  1  0  0  1785  9.75601  0  0  1785  1802.42  0  0  0.018  0  0  0  0  0  0.00285
+    4.1  0.0023  0.05  0.0173  0.003794  1.5  0.0023  0.035  300  0.265  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0  0  0  0  0  f  0  0  0  0  3  0  1  ""  f
+    < 1 > 
+  209  207  "G5"  0  1.011  0  0  505  133.813  0  0  505  518.4  0  0  0.33  0  0  0  0  0  0.066  5.4
+    0.05  0.05  0.31  0.088333  0.44  0.05  0.035  26  0.008  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  ""  1  0  0  0  0  0  0  f  0  0  0  0  3  0  1  ""  f  < 1 > 
+}
+Record System Group {
+  234  "GroupMixed"  "Group 1"  < 104 >   < 1 > 
+}
+Record System BusbarGraphic {
+  1 "Horizontal" "IEEE_68"  -437.306  911.286  214.08  < 1 > 
+  2 "Horizontal" "IEEE_68"  -225.347  734.312  232  < 1 > 
+  3 "Horizontal" "IEEE_68"  8.88913  924.212  251.2  < 1 > 
+  4 "Horizontal" "IEEE_68"  -531.447  671.812  80  < 1 > 
+  5 "Horizontal" "IEEE_68"  45.4469  713.942  80  < 1 > 
+  6 "Horizontal" "IEEE_68"  -42.8469  759.612  80  < 1 > 
+  7 "Horizontal" "IEEE_68"  442.437  1084.28  92.736  < 1 > 
+  8 "Horizontal" "IEEE_68"  408.744  922.052  323.136  < 1 > 
+  9 "Horizontal" "IEEE_68"  173.177  785.652  188  < 1 > 
+  10 "Horizontal" "IEEE_68"  -465.797  14.4617  80  < 1 > 
+  11 "Horizontal" "IEEE_68"  -7.91687  379.222  212.8  < 1 > 
+  12 "Horizontal" "IEEE_68"  67.7731  627.724  165.625  < 1 > 
+  13 "Horizontal" "IEEE_68"  -274.247  108.262  76.8  < 1 > 
+  14 "Horizontal" "IEEE_68"  44.4031  165.162  80  < 1 > 
+  15 "Horizontal" "IEEE_68"  45.0531  249.562  80  < 1 > 
+  16 "Horizontal" "IEEE_68"  -119.447  192.562  167.5  < 1 > 
+  17 "Horizontal" "IEEE_68"  -154.197  -129.888  95  < 1 > 
+  18 "Horizontal" "IEEE_68"  62.7231  -114.648  80  < 1 > 
+  31 "Horizontal" "IEEE_68"  229.105  1009.87  132.8  < 1 > 
+  32 "Horizontal" "IEEE_68"  -309.297  338.862  172.8  < 1 > 
+  41 "Horizontal" "IEEE_68"  -181.947  637.612  181.6  < 1 > 
+  48 "Horizontal" "IEEE_68"  -452.197  210.062  182.4  < 1 > 
+  60 "Horizontal" "IEEE_68"  129.853  85.2617  132.5  < 1 > 
+  63 "Horizontal" "IEEE_68"  195.113  -95.0983  131.2  < 1 > 
+  64 "Horizontal" "IEEE_68"  80.9031  -213.728  133.28  < 1 > 
+  65 "Horizontal" "IEEE_68"  82.4331  -351.678  80  < 1 > 
+  71 "Horizontal" "IEEE_68"  334.603  165.912  80  < 1 > 
+  72 "Horizontal" "IEEE_68"  288.421  2.63862  105  < 1 > 
+  73 "Horizontal" "IEEE_68"  379.004  -356.458  236.205  < 1 > 
+  74 "Horizontal" "IEEE_68"  238.743  -238.368  136.9  < 1 > 
+  75 "Horizontal" "IEEE_68"  169.453  337.824  167.5  < 1 > 
+  76 "Horizontal" "IEEE_68"  257.403  645.912  179.1  < 1 > 
+  77 "Horizontal" "IEEE_68"  481.213  5.54974  73.8953  < 1 > 
+  93 "Horizontal" "IEEE_68"  208.003  -428.828  80  < 1 > 
+  96 "Horizontal" "IEEE_68"  839.594  786.945  228.54  < 1 > 
+  108 "Horizontal" "IEEE_68"  845.984  934.786  80  < 1 > 
+  111 "Horizontal" "IEEE_68"  1088.98  935.762  124  < 1 > 
+  115 "Horizontal" "IEEE_68"  1343.82  930.744  152  < 1 > 
+  118 "Horizontal" "IEEE_68"  1039.93  674.098  214  < 1 > 
+  120 "Horizontal" "IEEE_68"  1061.54  839.386  35.2  < 1 > 
+  123 "Horizontal" "IEEE_68"  747.426  488.214  76.416  < 1 > 
+  124 "Horizontal" "IEEE_68"  831.604  588.946  119.936  < 1 > 
+  125 "Horizontal" "IEEE_68"  868.334  719.54  41.088  < 1 > 
+  131 "Horizontal" "IEEE_68"  900.084  424.93  188.112  < 1 > 
+  134 "Horizontal" "IEEE_68"  982.804  547.986  61.76  < 1 > 
+  135 "Horizontal" "IEEE_68"  1163.92  547.688  41.6  < 1 > 
+  139 "Horizontal" "IEEE_68"  1187.92  405.856  103.04  < 1 > 
+  142 "Horizontal" "IEEE_68"  833.224  342.714  60.8  < 1 > 
+  143 "Horizontal" "IEEE_68"  1090.72  342.61  106.72  < 1 > 
+  144 "Horizontal" "IEEE_68"  843.594  166.362  144.192  < 1 > 
+  145 "Horizontal" "IEEE_68"  969.534  244.163  144.864  < 1 > 
+  152 "Horizontal" "IEEE_68"  748.435  301.057  133.008  < 1 > 
+  157 "Horizontal" "IEEE_68"  813.084  -61.1663  88  < 1 > 
+  158 "Horizontal" "IEEE_68"  910.114  -232.494  135.888  < 1 > 
+  159 "Horizontal" "IEEE_68"  790.084  -319.174  116.736  < 1 > 
+  165 "Horizontal" "IEEE_68"  1008.47  -46.3823  149.008  < 1 > 
+  168 "Horizontal" "IEEE_68"  895.934  35.5097  52.352  < 1 > 
+  171 "Horizontal" "IEEE_68"  956.684  94.9937  76.848  < 1 > 
+  172 "Horizontal" "IEEE_68"  1152.73  33.8797  105.184  < 1 > 
+  177 "Horizontal" "IEEE_68"  1175.29  243.898  54.112  < 1 > 
+  184 "Horizontal" "IEEE_68"  1740.42  172.858  80  < 1 > 
+  185 "Horizontal" "IEEE_68"  1248.53  170.162  133.944  < 1 > 
+  190 "Horizontal" "IEEE_68"  1747.85  438.642  98.8  < 1 > 
+  191 "Horizontal" "IEEE_68"  1374.25  435.574  145.875  < 1 > 
+  197 "Horizontal" "IEEE_68"  1452.74  675.164  165.076  < 1 > 
+  198 "Horizontal" "IEEE_68"  1762.14  676.345  58.496  < 1 > 
+  204 "Horizontal" "IEEE_68"  -64.4969  -66.2883  80  < 1 > 
+  207 "Horizontal" "IEEE_68"  -61.8537  -240.158  58  < 1 > 
+}
+Record System RadialGraphic {
+  22 "Generator" "IEEE_68"  < -531.485 668.812 -531.485 603.712 >   < 1 4 >   -531.485  588.712  < 1 
+  > 
+  23 "LoadSymbol" "IEEE_68"  < -410.306 914.286 -410.306 983.902 >   < 1 4 >   -410.306  988.402  < 1 
+  > 
+  24 "LoadSymbol" "IEEE_68"  < -209.147 737.312 -209.147 848.412 >   < 1 4 >   -209.147  852.912  < 1 
+  > 
+  25 "LoadSymbol" "IEEE_68"  < 37.4891 927.212 37.4891 954.112 >   < 1 4 >   37.4891  958.612  < 1 > 
+  
+  26 "LoadSymbol" "IEEE_68"  < 45.2469 716.942 45.2469 746.642 >   < 1 4 >   45.2469  751.142  < 1 > 
+  
+  27 "LoadSymbol" "IEEE_68"  < -41.8469 762.612 -41.8469 820.312 >   < 1 4 >   -41.8469  824.812  < 1 
+  > 
+  30 "LoadSymbol" "IEEE_68"  < 100.113 788.652 100.113 854.68 >   < 1 4 >   100.113  859.18  < 1 > 
+  33 "Generator" "IEEE_68"  < 232.2 1012.87 232.2 1115.01 >   < 1 4 >   232.2  1130.01  < 1 > 
+  36 "Generator" "IEEE_68"  < 439.127 1087.28 439.127 1139.56 >   < 1 4 >   439.127  1154.56  < 1 > 
+  
+  44 "LoadSymbol" "IEEE_68"  < -173.797 640.612 -173.797 680.962 >   < 1 4 >   -173.797  685.462  < 1 
+  > 
+  45 "LoadSymbol" "IEEE_68"  < 15.4831 382.222 15.4831 503.222 >   < 1 4 >   15.4831  507.722  < 1 > 
+  
+  46 "Generator" "IEEE_68"  < -271.847 105.262 -271.847 41.6617 >   < 1 4 >   -271.847  26.6617  < 1 
+  > 
+  50 "LoadSymbol" "IEEE_68"  < -506.397 213.062 -506.397 295.962 >   < 1 4 >   -506.397  300.462  < 1 
+  > 
+  51 "Generator" "IEEE_68"  < -463.997 11.4617 -463.997 -52.1383 >   < 1 4 >   -463.997  -67.1383  < 1 
+  > 
+  56 "Generator" "IEEE_68"  < -159.197 -132.888 -159.197 -206.388 >   < 1 4 >   -159.197  -221.388  < 1 
+  > 
+  58 "LoadSymbol" "IEEE_68"  < 72.1031 252.562 72.1031 279.462 >   < 1 4 >   72.1031  283.962  < 1 > 
+  
+  62 "LoadSymbol" "IEEE_68"  < 139.053 88.2617 139.053 125.912 >   < 1 4 >   139.053  130.412  < 1 > 
+  
+  70 "Generator" "IEEE_68"  < 86.4331 -354.678 86.4331 -415.898 >   < 1 4 >   86.4331  -430.898  < 1 
+  > 
+  79 "LoadSymbol" "IEEE_68"  < 347.453 168.912 347.453 216.862 >   < 1 4 >   347.453  221.362  < 1 > 
+  
+  82 "LoadSymbol" "IEEE_68"  < 236.153 648.912 236.153 667.662 >   < 1 4 >   236.153  672.162  < 1 > 
+  
+  84 "LoadSymbol" "IEEE_68"  < 187.013 340.824 187.013 399.559 >   < 1 4 >   187.013  404.059  < 1 > 
+  
+  88 "LoadSymbol" "IEEE_68"  < 488.044 8.54974 488.044 43.8618 >   < 1 4 >   488.044  48.3618  < 1 > 
+  
+  90 "LoadSymbol" "IEEE_68"  < 383.944 -353.458 383.944 -301.918 >   < 1 4 >   383.944  -297.418  < 1 
+  > 
+  95 "Generator" "IEEE_68"  < 208.573 -431.828 208.573 -461.738 >   < 1 4 >   208.573  -476.738  < 1 
+  > 
+  107 "LoadSymbol" "IEEE_68"  < 945.474 789.945 945.474 868.146 >   < 1 4 >   945.474  872.646  < 1 
+  > 
+  110 "LoadSymbol" "IEEE_68"  < 831.484 937.782 831.484 969.782 >   < 1 4 >   831.484  974.282  < 1 
+  > 
+  114 "LoadSymbol" "IEEE_68"  < 1076.83 938.762 1076.83 985.072 >   < 1 4 >   1076.83  989.572  < 1 
+  > 
+  117 "LoadSymbol" "IEEE_68"  < 1340.11 933.744 1340.11 969.207 >   < 1 4 >   1340.11  973.707  < 1 
+  > 
+  121 "Generator" "IEEE_68"  < 1064.03 842.386 1064.03 875.074 >   < 1 4 >   1064.03  890.074  < 1 > 
+  
+  126 "Generator" "IEEE_68"  < 865.404 722.54 865.404 741.524 >   < 1 4 >   865.404  756.524  < 1 > 
+  
+  133 "LoadSymbol" "IEEE_68"  < 892.824 427.93 892.824 454.14 >   < 1 4 >   892.824  458.64  < 1 > 
+  141 "LoadSymbol" "IEEE_68"  < 1184.72 408.856 1184.72 438.492 >   < 1 4 >   1184.72  442.992  < 1 
+  > 
+  150 "LoadSymbol" "IEEE_68"  < 833.354 169.362 833.354 191.982 >   < 1 4 >   833.354  196.482  < 1 
+  > 
+  151 "LoadSymbol" "IEEE_68"  < 969.764 247.163 969.764 290.535 >   < 1 4 >   969.764  295.035  < 1 
+  > 
+  162 "LoadSymbol" "IEEE_68"  < 783.044 -58.1663 783.044 -19.5223 >   < 1 4 >   783.044  -15.0223  < 1 
+  > 
+  163 "Generator" "IEEE_68"  < 782.024 -322.174 782.024 -392.758 >   < 1 4 >   782.024  -407.758  < 1 
+  > 
+  167 "LoadSymbol" "IEEE_68"  < 1063.73 -43.3823 1063.73 -6.52228 >   < 1 4 >   1063.73  -2.02228  < 1 
+  > 
+  169 "Generator" "IEEE_68"  < 908.734 32.5097 908.734 -35.5703 >   < 1 4 >   908.734  -50.5703  < 1 
+  > 
+  175 "LoadSymbol" "IEEE_68"  < 939.714 97.9937 939.714 147.926 >   < 1 4 >   939.714  152.426  < 1 
+  > 
+  179 "LoadSymbol" "IEEE_68"  < 1171.32 246.898 1171.32 308.51 >   < 1 4 >   1171.32  313.01  < 1 > 
+  
+  181 "LoadSymbol" "IEEE_68"  < 1112.92 36.8797 1112.92 95.0037 >   < 1 4 >   1112.92  99.5037  < 1 
+  > 
+  187 "Generator" "IEEE_68"  < 1749.18 175.858 1749.18 226.624 >   < 1 4 >   1749.18  241.624  < 1 > 
+  
+  189 "LoadSymbol" "IEEE_68"  < 1265.37 173.162 1265.37 213.884 >   < 1 4 >   1265.37  218.384  < 1 
+  > 
+  193 "LoadSymbol" "IEEE_68"  < 1393.45 438.574 1393.45 465.249 >   < 1 4 >   1393.45  469.749  < 1 
+  > 
+  196 "Generator" "IEEE_68"  < 1745.69 441.642 1745.69 490.985 >   < 1 4 >   1745.69  505.985  < 1 > 
+  
+  199 "Generator" "IEEE_68"  < 1767.21 679.345 1767.21 747.497 >   < 1 4 >   1767.21  762.497  < 1 > 
+  
+  201 "LoadSymbol" "IEEE_68"  < 1479.6 678.164 1479.6 715.924 >   < 1 4 >   1479.6  720.424  < 1 > 
+  209 "Generator" "IEEE_68"  < -57.0137 -243.158 -57.0137 -305.358 >   < 1 4 >   -57.0137  -320.358  < 1 
+  > 
+  235 "LoadSymbol" "IEEE_68"  < -90.5469 -63.2883 -90.5469 4.61172 >   < 1 4 >   -90.5469  9.11172  < 1 
+  > 
+  236 "LoadSymbol" "IEEE_68"  < 710.501 304.057 710.501 334.109 >   < 1 4 >   710.501  338.609  < 1 
+  > 
+  243 "LoadSymbol" "IEEE_68"  < 1158.67 550.688 1158.67 597.824 >   < 1 4 >   1158.67  602.324  < 1 
+  > 
+}
+Record System BranchGraphic {
+  19 "Line" "IEEE_68"  < -338.347 908.286 -338.347 823.421 >   < 1 4 >   < -338.347 738.555 -338.347 
+  737.312 -338.347 823.421 >   < 4 1 4 >   180  0  0  -338.347  823.421  < 1 > 
+  20 "Line" "IEEE_68"  < -113.711 737.312 -113.711 828.641 >   < 1 4 >   < -113.711 919.969 -113.711 
+  921.212 -113.711 828.641 >   < 4 1 4 >   0  0  0  -113.711  828.641  < 1 > 
+  28 "Line" "IEEE_68"  < 18.2125 716.942 18.2125 819.077 >   < 1 4 >   < 18.2125 921.212 18.2125 819.077 
+  >   < 1 4 >   0  0  0  18.2125  819.077  < 1 > 
+  29 "Line" "IEEE_68"  < 124.449 921.212 124.449 854.932 >   < 1 4 >   < 124.449 788.652 124.449 854.932 
+  >   < 1 4 >   180  0  0  124.449  854.932  < 1 > 
+  35 "Line" "IEEE_68"  < 264.177 788.652 264.177 789.894 264.177 854.473 >   < 1 4 4 >   < 264.177 919.052 
+  264.177 854.473 >   < 1 4 >   0  0  0  264.177  854.473  < 1 > 
+  38 "Line" "IEEE_68"  < 30.7531 710.942 30.7531 670.833 >   < 1 4 >   < 30.7531 630.724 30.7531 670.833 
+  >   < 1 4 >   180  0  0  30.7531  670.833  < 1 > 
+  39 "Line" "IEEE_68"  < 62.0031 624.724 62.0031 503.473 >   < 1 4 >   < 62.0031 382.222 62.0031 503.473 
+  >   < 1 4 >   180  0  0  62.0031  503.473  < 1 > 
+  40 "Line" "IEEE_68"  < -29.3969 756.612 -29.3969 569.417 >   < 1 4 >   < -29.3969 382.222 -29.3969 
+  569.417 >   < 1 4 >   180  0  0  -29.3969  569.417  < 1 > 
+  42 "Line" "IEEE_68"  < -111.317 634.612 -111.317 508.417 >   < 1 4 >   < -111.317 382.222 -111.317 
+  508.417 >   < 1 4 >   180  0  0  -111.317  508.417  < 1 > 
+  43 "Line" "IEEE_68"  < -225.897 341.862 -225.897 488.237 >   < 1 4 >   < -225.897 634.612 -225.897 
+  488.237 >   < 1 4 >   0  0  0  -225.897  488.237  < 1 > 
+  49 "Line" "IEEE_68"  < -371.997 213.062 -371.997 274.462 >   < 1 4 >   < -371.997 335.862 -371.997 
+  274.462 >   < 1 4 >   0  0  0  -371.997  274.462  < 1 > 
+  53 "Line" "IEEE_68"  < 49.3031 376.222 49.3031 314.392 >   < 1 4 >   < 49.3031 252.562 49.3031 314.392 
+  >   < 1 4 >   180  0  0  49.3031  314.392  < 1 > 
+  54 "Line" "IEEE_68"  < -71.7969 195.562 -71.7969 285.892 >   < 1 4 >   < -71.7969 376.222 -71.7969 
+  285.892 >   < 1 4 >   0  0  0  -71.7969  285.892  < 1 > 
+  55 "Line" "IEEE_68"  < 53.9531 246.562 53.9531 207.362 >   < 1 4 >   < 53.9531 168.162 53.9531 207.362 
+  >   < 1 4 >   180  0  0  53.9531  207.362  < 1 > 
+  59 "Line" "IEEE_68"  < 33.0831 162.162 33.0831 25.2567 >   < 1 4 >   < 33.0831 -111.648 33.0831 25.2567 
+  >   < 1 4 >   180  0  0  33.0831  25.2567  < 1 > 
+  67 "Line" "IEEE_68"  < 137.633 -98.0983 137.633 -154.413 >   < 1 4 >   < 137.633 -210.728 137.633 
+  -154.413 >   < 1 4 >   180  0  0  137.633  -154.413  < 1 > 
+  68 "Line" "IEEE_68"  < 78.6031 -117.648 78.6031 -164.188 >   < 1 4 >   < 78.6031 -210.728 78.6031 
+  -164.188 >   < 1 4 >   180  0  0  78.6031  -164.188  < 1 > 
+  78 "Line" "IEEE_68"  < 84.4031 165.177 85.6461 165.177 189.503 165.537 >   < 1 4 4 >   < 293.36 165.897 
+  294.603 165.897 189.503 165.537 >   < 4 1 4 >   270.199  0  0  189.503  165.537  < 1 > 
+  80 "Line" "IEEE_68"  < 318.053 5.63862 318.053 84.2747 >   < 1 4 >   < 318.053 162.912 318.053 84.2747 
+  >   < 1 4 >   0  0  0  318.053  84.2747  < 1 > 
+  83 "Line" "IEEE_68"  < 233.015 340.824 233.015 491.868 >   < 1 4 >   < 233.015 642.912 233.015 491.868 
+  >   < 1 4 >   0  0  0  233.015  491.868  < 1 > 
+  85 "Line" "IEEE_68"  < 144.46 340.824 144.46 482.775 >   < 1 4 >   < 144.46 624.724 144.46 482.775 
+  >   < 1 4 >   0  0  0  144.46  482.775  < 1 > 
+  86 "Line" "IEEE_68"  < 308.453 168.912 308.453 405.912 >   < 1 4 >   < 308.453 642.912 308.453 405.912 
+  >   < 1 4 >   0  0  0  308.453  405.912  < 1 > 
+  87 "Line" "IEEE_68"  < 444.266 5.43683 443.025 5.43683 392.593 4.09418 >   < 1 4 4 >   < 342.162 2.75153 
+  340.921 2.75153 392.593 4.09418 >   < 4 1 4 >   91.525  0  0  392.593  4.09418  < 1 > 
+  89 "Line" "IEEE_68"  < 494.107 2.54974 494.107 -175.454 >   < 1 4 >   < 494.107 -353.458 494.107 -175.454 
+  >   < 1 4 >   180  0  0  494.107  -175.454  < 1 > 
+  92 "Line" "IEEE_68"  < 290.433 -353.458 290.433 -297.413 >   < 1 4 >   < 290.433 -241.368 290.433 
+  -297.413 >   < 1 4 >   0  0  0  290.433  -297.413  < 1 > 
+  104 "Line" "IEEE_68"  < 69.6441 710.942 69.6441 684.05 378.417 685.19 >   < 1 3 4 >   < 729.299 783.945 
+  729.299 686.797 687.19 686.33 378.417 685.19 >   < 1 3 3 4 >   270.212  0  0  378.417  685.19  < 1 
+  > 
+  106 "Line" "IEEE_68"  < 537.684 919.052 537.684 786.098 592.527 786.363 >   < 1 3 4 >   < 725.321 
+  786.929 724.078 786.929 647.37 786.629 592.527 786.363 >   < 1 4 3 4 >   270.277  0  0  592.527  786.363
+    < 1 > 
+  109 "Line" "IEEE_68"  < 850.984 789.945 850.984 860.866 >   < 1 4 >   < 850.984 931.786 850.984 860.866 
+  >   < 1 4 >   0  0  0  850.984  860.866  < 1 > 
+  112 "Line" "IEEE_68"  < 1026.98 935.762 1006.98 935.762 944.984 935.262 >   < 1 3 4 >   < 882.984 
+  931.786 882.984 930.543 882.984 934.762 944.984 935.262 >   < 1 4 3 4 >   90.4621  0  0  944.984  935.262
+    < 1 > 
+  116 "Line" "IEEE_68"  < 1283.63 933.744 1283.63 988.722 1199.9 988.722 >   < 1 3 4 >   < 1116.17 938.762 
+  1116.17 988.722 1199.9 988.722 >   < 1 3 4 >   90  0  0  1199.9  988.722  < 1 > 
+  119 "Line" "IEEE_68"  < 935.934 677.098 935.934 678.341 935.934 731.143 >   < 1 4 4 >   < 935.934 
+  783.945 935.934 731.143 >   < 1 4 >   0  0  0  935.934  731.143  < 1 > 
+  128 "Line" "IEEE_68"  < 774.644 585.946 774.644 538.58 >   < 1 4 >   < 774.644 491.214 774.644 538.58 
+  >   < 1 4 >   180  0  0  774.644  538.58  < 1 > 
+  129 "Line" "IEEE_68"  < 746.881 491.214 746.881 637.58 >   < 1 4 >   < 746.881 783.945 746.881 637.58 
+  >   < 1 4 >   0  0  0  746.881  637.58  < 1 > 
+  132 "Line" "IEEE_68"  < 862.204 427.93 862.204 506.938 >   < 1 4 >   < 862.204 585.946 862.204 506.938 
+  >   < 1 4 >   0  0  0  862.204  506.938  < 1 > 
+  136 "Line" "IEEE_68"  < 982.574 544.986 982.574 486.458 >   < 1 4 >   < 982.574 427.93 982.574 486.458 
+  >   < 1 4 >   180  0  0  982.574  486.458  < 1 > 
+  137 "Line" "IEEE_68"  < 1143.12 547.697 1141.88 547.697 1078.4 547.837 >   < 1 4 4 >   < 1014.93 547.977 
+  1013.68 547.977 1078.4 547.837 >   < 4 1 4 >   89.8739  0  0  1078.4  547.837  < 1 > 
+  140 "Line" "IEEE_68"  < 1155.92 408.856 1155.92 476.772 >   < 1 4 >   < 1155.92 544.688 1155.92 476.772 
+  >   < 1 4 >   0  0  0  1155.92  476.772  < 1 > 
+  146 "Line" "IEEE_68"  < 837.454 345.714 837.454 383.822 >   < 1 4 >   < 837.454 421.93 837.454 383.822 
+  >   < 1 4 >   0  0  0  837.454  383.822  < 1 > 
+  148 "Line" "IEEE_68"  < 858.504 169.362 858.504 254.538 >   < 1 4 >   < 858.504 339.714 858.504 254.538 
+  >   < 1 4 >   0  0  0  858.504  254.538  < 1 > 
+  149 "Line" "IEEE_68"  < 1039.02 247.163 1039.02 248.405 1039.66 293.387 >   < 1 4 4 >   < 1040.3 338.368 
+  1040.3 339.61 1039.66 293.387 >   < 4 1 4 >   359.188  0  0  1039.66  293.387  < 1 > 
+  154 "Line" "IEEE_68"  < 769.834 485.214 769.834 394.635 >   < 1 4 >   < 769.834 304.057 769.834 394.635 
+  >   < 1 4 >   180  0  0  769.834  394.635  < 1 > 
+  156 "Line" "IEEE_68"  < 788.894 169.362 788.894 233.709 >   < 1 4 >   < 788.894 298.057 788.894 233.709 
+  >   < 1 4 >   0  0  0  788.894  233.709  < 1 > 
+  160 "Line" "IEEE_68"  < 802.084 -58.1663 802.084 52.5977 >   < 1 4 >   < 802.084 163.362 802.084 52.5977 
+  >   < 1 4 >   0  0  0  802.084  52.5977  < 1 > 
+  164 "Line" "IEEE_68"  < 849.164 -229.494 849.164 -146.83 >   < 1 4 >   < 849.164 -64.1663 849.164 
+  -146.83 >   < 1 4 >   0  0  0  849.164  -146.83  < 1 > 
+  166 "Line" "IEEE_68"  < 975.054 -49.3823 975.054 -139.438 >   < 1 4 >   < 975.054 -229.494 975.054 
+  -139.438 >   < 1 4 >   180  0  0  975.054  -139.438  < 1 > 
+  173 "Line" "IEEE_68"  < 953.904 -43.3823 953.904 24.3057 >   < 1 4 >   < 953.904 91.9937 953.904 24.3057 
+  >   < 1 4 >   0  0  0  953.904  24.3057  < 1 > 
+  174 "Line" "IEEE_68"  < 968.424 241.163 968.424 169.579 >   < 1 4 >   < 968.424 97.9937 968.424 169.579 
+  >   < 1 4 >   180  0  0  968.424  169.579  < 1 > 
+  176 "Line" "IEEE_68"  < 1025.29 241.163 1025.29 98.8907 >   < 1 4 >   < 1025.29 -43.3823 1025.29 98.8907 
+  >   < 1 4 >   180  0  0  1025.29  98.8907  < 1 > 
+  178 "Line" "IEEE_68"  < 1148.23 243.908 1146.99 243.908 1095.1 244.031 >   < 1 4 4 >   < 1043.21 244.153 
+  1041.96 244.153 1095.1 244.031 >   < 4 1 4 >   89.8648  0  0  1095.1  244.031  < 1 > 
+  180 "Line" "IEEE_68"  < 1151.23 240.898 1151.23 239.656 1151.23 138.268 >   < 1 4 4 >   < 1151.23 
+  36.8797 1151.23 138.268 >   < 1 4 >   180  0  0  1151.23  138.268  < 1 > 
+  183 "Line" "IEEE_68"  < 716.15 298.057 716.15 6.59568 706.188 7.03426 >   < 1 3 4 >   < 517.227 9.25526 
+  517.227 8.54974 696.225 7.47283 706.188 7.03426 >   < 4 1 3 4 >   87.4794  0  0  706.188  7.03426  < 1 
+  > 
+  194 "Line" "IEEE_68"  < 1227.88 173.162 1227.88 288.009 >   < 1 4 >   < 1227.88 402.856 1227.88 288.009 
+  >   < 1 4 >   0  0  0  1227.88  288.009  < 1 > 
+  195 "Line" "IEEE_68"  < 1312.5 432.574 1312.5 302.868 >   < 1 4 >   < 1312.5 173.162 1312.5 302.868 
+  >   < 1 4 >   180  0  0  1312.5  302.868  < 1 > 
+  200 "Line" "IEEE_68"  < 1444.19 672.164 1444.19 555.99 >   < 1 4 >   < 1444.19 439.816 1444.19 438.574 
+  1444.19 555.99 >   < 4 1 4 >   180  0  0  1444.19  555.99  < 1 > 
+  203 "Line" "IEEE_68"  < 1410.97 927.744 1410.97 802.954 >   < 1 4 >   < 1410.97 678.164 1410.97 802.954 
+  >   < 1 4 >   180  0  0  1410.96  802.954  < 1 > 
+  210 "StarStarSymbol" "IEEE_68"  < -464.947 207.062 -464.947 138.512 >   < 1 4 >   < -464.947 17.4617 
+  -464.947 86.0117 >   < 1 4 >   180  30  52.5  -464.947  112.262  < 1 > 
+  211 "StarStarSymbol" "IEEE_68"  < -55.4269 -69.2883 -55.4269 -126.973 >   < 1 4 >   < -55.4269 -237.158 
+  -55.4269 -179.473 >   < 1 4 >   180  30  52.5  -55.4269  -153.223  < 1 > 
+  212 "StarStarSymbol" "IEEE_68"  < -272.709 335.862 -272.709 249.812 >   < 1 4 >   < -272.709 111.262 
+  -272.709 197.312 >   < 1 4 >   180  30  52.5  -272.709  223.562  < 1 > 
+  213 "StarStarSymbol" "IEEE_68"  < -531.247 908.286 -531.247 817.799 >   < 1 4 >   < -531.247 674.812 
+  -531.247 765.299 >   < 1 4 >   180  30  52.5  -531.247  791.549  < 1 > 
+  215 "WyeWyeSymbol" "IEEE_68"  < 440.883 925.052 440.883 976.916 >   < 1 4 >   < 440.883 1081.28 440.883 
+  1029.42 >   < 1 4 >   360  30  52.5  440.883  1003.17  < 1 > 
+  216 "StarStarSymbol" "IEEE_68"  < 78.7331 -216.728 78.7331 -256.453 >   < 1 4 >   < 78.7331 -348.678 
+  78.7331 -308.953 >   < 1 4 >   180  30  52.5  78.7331  -282.703  < 1 > 
+  217 "StarStarSymbol" "IEEE_68"  < 207.303 -241.368 207.303 -307.348 >   < 1 4 >   < 207.303 -425.828 
+  207.303 -359.848 >   < 1 4 >   180  30  52.5  207.303  -333.598  < 1 > 
+  218 "StarStarSymbol" "IEEE_68"  < 782.724 -64.1663 782.724 -163.92 >   < 1 4 >   < 782.724 -316.174 
+  782.724 -216.42 >   < 1 4 >   180  30  52.5  782.724  -190.17  < 1 > 
+  219 "StarStarSymbol" "IEEE_68"  < -181.884 189.562 -181.884 57.5867 >   < 1 4 >   < -181.884 -126.888 
+  -181.884 5.08672 >   < 1 4 >   180  30  52.5  -181.884  31.3367  < 1 > 
+  220 "StarStarSymbol" "IEEE_68"  < 894.004 163.362 894.004 127.186 >   < 1 4 >   < 894.004 38.5097 
+  894.004 74.6857 >   < 1 4 >   180  30  52.5  894.004  100.936  < 1 > 
+  221 "StarStarSymbol" "IEEE_68"  < 1315.51 170.191 1316.75 170.191 1481.72 171.329 >   < 1 4 4 >   < 1699.18 
+  172.829 1700.42 172.829 1534.21 171.691 >   < 4 1 4 >   270.395  30  52.5  1507.97  171.51  < 1 > 
+  
+  222 "StarStarSymbol" "IEEE_68"  < 1447.19 435.624 1448.43 435.624 1546.57 436.795 >   < 1 4 4 >   < 1697.21 
+  438.591 1698.45 438.591 1599.07 437.421 >   < 4 1 4 >   270.683  30  52.5  1572.82  437.108  < 1 > 
+  
+  223 "StarStarSymbol" "IEEE_68"  < 1536.52 675.188 1535.28 675.188 1607.84 675.602 >   < 4 1 4 >   < 1732.9 
+  676.32 1731.65 676.32 1660.34 675.906 >   < 1 4 4 >   270.332  30  52.5  1634.09  675.754  < 1 > 
+  224 "StarStarSymbol" "IEEE_68"  < 1064.14 677.098 1064.14 730.492 >   < 1 4 >   < 1064.14 836.386 
+  1064.14 782.992 >   < 1 4 >   360  30  52.5  1064.14  756.742  < 1 > 
+  225 "StarStarSymbol" "IEEE_68"  < 865.834 591.946 865.834 627.993 >   < 1 4 >   < 865.834 716.54 865.834 
+  680.493 >   < 1 4 >   360  30  52.5  865.834  654.243  < 1 > 
+  226 "StarStarSymbol" "IEEE_68"  < 206.449 788.652 206.449 871.512 >   < 1 4 >   < 206.449 1006.87 
+  206.449 924.012 >   < 1 4 >   360  30  52.5  206.449  897.762  < 1 > 
+  227 "Line" "IEEE_68"  < -68.2469 756.612 -68.2469 707.112 -257.708 707.102 -321.742 707.125 -477.133 
+  707.962 -477.133 460.512 >   < 1 3 3 3 3 4 >   < -477.133 460.512 -477.133 213.062 >   < 4 1 >   180
+    0  0  -477.133  460.512  < 1 > 
+  228 "Line" "IEEE_68"  < -375.741 914.286 -375.741 1031.41 -188.637 1030.22 >   < 1 3 4 >   < -1.53287 
+  927.212 -1.53287 1029.03 -188.637 1030.22 >   < 1 3 4 >   269.635  0  0  -188.637  1030.22  < 1 > 
+  
+  229 "Line" "IEEE_68"  < 982.224 550.986 982.224 611.042 >   < 1 4 >   < 982.224 671.098 982.224 611.042 
+  >   < 1 4 >   0  0  0  982.224  611.042  < 1 > 
+  230 "Line" "IEEE_68"  < 1257.16 167.162 1257.16 64.2187 >   < 1 4 >   < 1145.97 30.8797 1145.97 -39.8083 
+  1257.16 -38.7233 1257.16 64.2187 >   < 1 3 3 4 >   180  0  0  1257.16  64.2187  < 1 > 
+  232 "Line" "IEEE_68"  < 208.433 -98.0983 208.433 -166.733 >   < 1 4 >   < 208.433 -235.368 208.433 
+  -166.733 >   < 1 4 >   180  0  0  208.433  -166.733  < 1 > 
+  233 "Line" "IEEE_68"  < 285.203 -235.368 285.203 -117.865 >   < 1 4 >   < 285.203 -0.361381 285.203 
+  -117.865 >   < 1 4 >   0  0  0  285.203  -117.865  < 1 > 
+  237 "StarStarSymbol" "IEEE_68"  < 863.624 342.712 864.864 342.712 924.244 342.677 >   < 1 4 4 >   < 1036.12 
+  342.612 1037.36 342.612 976.744 342.647 >   < 4 1 4 >   269.967  30  52.5  950.494  342.662  < 1 > 
+  
+  238 "StarStarSymbol" "IEEE_68"  < 174.853 82.2617 174.853 21.3317 >   < 1 4 >   < 174.853 -92.0983 
+  174.853 -31.1683 >   < 1 4 >   180  30  52.5  174.853  -4.91828  < 1 > 
+  239 "StarStarSymbol" "IEEE_68"  < 73.8531 82.2617 73.8531 11.5567 >   < 1 4 >   < 73.8531 -111.648 
+  73.8531 -40.9433 >   < 1 4 >   180  30  52.5  73.8531  -14.6933  < 1 > 
+  240 "StarStarSymbol" "IEEE_68"  < -38.9939 189.562 -38.9939 89.3867 >   < 1 4 >   < -38.9939 -63.2883 
+  -38.9939 36.8867 >   < 1 4 >   180  30  52.5  -38.9939  63.1367  < 1 > 
+  241 "Line" "IEEE_68"  < 266.093 648.912 266.093 725.812 317.513 726.078 >   < 1 3 4 >   < 368.933 
+  919.052 368.933 726.344 317.513 726.078 >   < 1 3 4 >   270.297  0  0  317.513  726.078  < 1 > 
+  242 "Line" "IEEE_68"  < 785.634 488.193 786.874 488.193 944.344 487.412 944.344 579.255 >   < 1 4 
+  3 4 >   < 944.344 579.255 944.344 671.098 >   < 4 1 >   360  0  0  944.344  579.255  < 1 > 
+}
+Record System LabelGraphic {
+  1 "TextName" "IEEE_68"  -582.806  901.536  0  < 1 > 
+  2 "TextName" "IEEE_68"  -250.947  735.312  0  < 1 > 
+  3 "TextName" "IEEE_68"  -148.211  915.912  0  < 1 > 
+  4 "TextName" "IEEE_68"  -593.947  672.312  0  < 1 > 
+  5 "TextName" "IEEE_68"  91.4149  691.53  0  < 1 > 
+  6 "TextName" "IEEE_68"  -22.0469  761.812  0  < 1 > 
+  7 "TextName" "IEEE_68"  476.837  1087.28  0  < 1 > 
+  8 "TextName" "IEEE_68"  528.244  928.452  0  < 1 > 
+  9 "TextName" "IEEE_68"  176.153  786.38  0  < 1 > 
+  10 "TextName" "IEEE_68"  -450.347  26.6617  0  < 1 > 
+  11 "TextName" "IEEE_68"  81.8331  545.172  0  < 1 > 
+  12 "TextName" "IEEE_68"  112.714  633.622  0  < 1 > 
+  13 "TextName" "IEEE_68"  -237.247  103.662  0  < 1 > 
+  14 "TextName" "IEEE_68"  -6.73287  163.554  0  < 1 > 
+  15 "TextName" "IEEE_68"  85.0531  239.562  0  < 1 > 
+  16 "TextName" "IEEE_68"  -194.647  190.442  0  < 1 > 
+  17 "TextName" "IEEE_68"  -235.147  -144.938  0  < 1 > 
+  18 "TextName" "IEEE_68"  -3.95687  -131.888  0  < 1 > 
+  19 "TextName" "IEEE_68"  -332.097  803.421  0  < 1 > 
+  20 "TextName" "IEEE_68"  -187.461  819.891  0  < 1 > 
+  22 "TextName" "IEEE_68"  -612.847  581.728  0  < 1 > 
+  23 "TextName" "IEEE_68"  -494.656  940.802  0  < 1 > 
+  24 "TextName" "IEEE_68"  -240.947  866.212  0  < 1 > 
+  25 "TextName" "IEEE_68"  52.4891  932.362  0  < 1 > 
+  26 "TextName" "IEEE_68"  52.9969  717.392  0  < 1 > 
+  27 "TextName" "IEEE_68"  -80.5969  824.562  0  < 1 > 
+  28 "TextName" "IEEE_68"  18.2125  797.827  0  < 1 > 
+  29 "TextName" "IEEE_68"  130.699  832.432  0  < 1 > 
+  30 "TextName" "IEEE_68"  40.1131  860.038  0  < 1 > 
+  31 "TextName" "IEEE_68"  256.305  1011.27  0  < 1 > 
+  32 "TextName" "IEEE_68"  -334.897  342.662  0  < 1 > 
+  33 "TextName" "IEEE_68"  145.444  1059.37  0  < 1 > 
+  35 "TextName" "IEEE_68"  264.177  854.473  0  < 1 > 
+  36 "TextName" "IEEE_68"  351.427  1083.62  0  < 1 > 
+  38 "TextName" "IEEE_68"  37.0031  633.333  0  < 1 > 
+  39 "TextName" "IEEE_68"  62.0031  503.473  0  < 1 > 
+  40 "TextName" "IEEE_68"  -28.5969  570.217  0  < 1 > 
+  41 "TextName" "IEEE_68"  -320.197  616.862  0  < 1 > 
+  42 "TextName" "IEEE_68"  -111.317  508.417  0  < 1 > 
+  43 "TextName" "IEEE_68"  -304.297  417.287  0  < 1 > 
+  44 "TextName" "IEEE_68"  -258.297  641.012  0  < 1 > 
+  45 "TextName" "IEEE_68"  0.363125  509.242  0  < 1 > 
+  46 "TextName" "IEEE_68"  -359.417  10.3777  0  < 1 > 
+  48 "TextName" "IEEE_68"  -589.597  186.562  0  < 1 > 
+  49 "TextName" "IEEE_68"  -445.747  265.712  0  < 1 > 
+  50 "TextName" "IEEE_68"  -574.747  297.462  0  < 1 > 
+  51 "TextName" "IEEE_68"  -494.197  -142.623  0  < 1 > 
+  53 "TextName" "IEEE_68"  -29.4469  328.142  0  < 1 > 
+  54 "TextName" "IEEE_68"  -151.797  255.892  0  < 1 > 
+  55 "TextName" "IEEE_68"  60.2031  186.112  0  < 1 > 
+  56 "TextName" "IEEE_68"  -248.337  -233.783  0  < 1 > 
+  58 "TextName" "IEEE_68"  80.9131  268.442  0  < 1 > 
+  59 "TextName" "IEEE_68"  364.603  -244.243  0  < 1 > 
+  60 "TextName" "IEEE_68"  169.853  88.2617  0  < 1 > 
+  62 "TextName" "IEEE_68"  109.213  113.18  0  < 1 > 
+  63 "TextName" "IEEE_68"  121.553  -94.7783  0  < 1 > 
+  64 "TextName" "IEEE_68"  -13.4169  -221.978  0  < 1 > 
+  65 "TextName" "IEEE_68"  6.18313  -363.678  0  < 1 > 
+  67 "TextName" "IEEE_68"  139.383  -175.913  0  < 1 > 
+  68 "TextName" "IEEE_68"  7.60313  -183.188  0  < 1 > 
+  70 "TextName" "IEEE_68"  6.05313  -443.463  0  < 1 > 
+  71 "TextName" "IEEE_68"  373.803  165.712  0  < 1 > 
+  72 "TextName" "IEEE_68"  239.493  5.25462  0  < 1 > 
+  73 "TextName" "IEEE_68"  454.504  -402.458  0  < 1 > 
+  74 "TextName" "IEEE_68"  130.283  -260.688  0  < 1 > 
+  75 "TextName" "IEEE_68"  251.953  322.074  0  < 1 > 
+  76 "TextName" "IEEE_68"  345.797  632.749  0  < 1 > 
+  77 "TextName" "IEEE_68"  412.157  4.45374  0  < 1 > 
+  78 "TextName" "IEEE_68"  189.503  165.537  0  < 1 > 
+  79 "TextName" "IEEE_68"  333.253  234.562  0  < 1 > 
+  80 "TextName" "IEEE_68"  318.053  84.2747  0  < 1 > 
+  82 "TextName" "IEEE_68"  155.294  579.146  0  < 1 > 
+  83 "TextName" "IEEE_68"  233.015  491.868  0  < 1 > 
+  84 "TextName" "IEEE_68"  157.733  407.899  0  < 1 > 
+  85 "TextName" "IEEE_68"  75.7101  451.525  0  < 1 > 
+  86 "TextName" "IEEE_68"  308.453  405.912  0  < 1 > 
+  87 "TextName" "IEEE_68"  359.719  -48.9278  0  < 1 > 
+  88 "TextName" "IEEE_68"  446.744  50.6118  0  < 1 > 
+  89 "TextName" "IEEE_68"  420.357  -175.454  0  < 1 > 
+  90 "TextName" "IEEE_68"  333.804  -310.288  0  < 1 > 
+  92 "TextName" "IEEE_68"  211.683  -301.163  0  < 1 > 
+  93 "TextName" "IEEE_68"  256.853  -433.928  0  < 1 > 
+  95 "TextName" "IEEE_68"  234.433  -494.582  0  < 1 > 
+  96 "TextName" "IEEE_68"  883.344  787.695  0  < 1 > 
+  104 "TextName" "IEEE_68"  378.417  685.19  0  < 1 > 
+  106 "TextName" "IEEE_68"  588.527  785.842  0  < 1 > 
+  107 "TextName" "IEEE_68"  950.974  829.146  0  < 1 > 
+  108 "TextName" "IEEE_68"  853.554  941.812  0  < 1 > 
+  109 "TextName" "IEEE_68"  850.984  839.615  0  < 1 > 
+  110 "TextName" "IEEE_68"  815.484  977.282  0  < 1 > 
+  111 "TextName" "IEEE_68"  1124.03  942.222  0  < 1 > 
+  112 "TextName" "IEEE_68"  944.984  933.262  0  < 1 > 
+  114 "TextName" "IEEE_68"  1066.83  989.572  0  < 1 > 
+  115 "TextName" "IEEE_68"  1383.82  938.742  0  < 1 > 
+  116 "TextName" "IEEE_68"  1199.9  988.722  0  < 1 > 
+  117 "TextName" "IEEE_68"  1305.86  974.207  0  < 1 > 
+  118 "TextName" "IEEE_68"  1106.18  680.598  0  < 1 > 
+  119 "TextName" "IEEE_68"  935.934  731.143  0  < 1 > 
+  120 "TextName" "IEEE_68"  1086.29  821.828  0  < 1 > 
+  121 "TextName" "IEEE_68"  1086.19  869.718  0  < 1 > 
+  123 "TextName" "IEEE_68"  695.674  487.142  0  < 1 > 
+  124 "TextName" "IEEE_68"  816.564  591.946  0  < 1 > 
+  125 "TextName" "IEEE_68"  886.834  710.764  0  < 1 > 
+  126 "TextName" "IEEE_68"  768.714  724.016  0  < 1 > 
+  128 "TextName" "IEEE_68"  774.644  538.58  0  < 1 > 
+  129 "TextName" "IEEE_68"  670.381  613.83  0  < 1 > 
+  131 "TextName" "IEEE_68"  804.844  431.01  0  < 1 > 
+  132 "TextName" "IEEE_68"  865.754  495.004  0  < 1 > 
+  133 "TextName" "IEEE_68"  901.324  430.59  0  < 1 > 
+  134 "TextName" "IEEE_68"  993.004  548.456  0  < 1 > 
+  135 "TextName" "IEEE_68"  1188.73  542.158  0  < 1 > 
+  136 "TextName" "IEEE_68"  986.324  472.708  0  < 1 > 
+  137 "TextName" "IEEE_68"  1050.15  550.087  0  < 1 > 
+  139 "TextName" "IEEE_68"  1218.96  406.936  0  < 1 > 
+  140 "TextName" "IEEE_68"  1157.17  488.022  0  < 1 > 
+  141 "TextName" "IEEE_68"  1157.72  427.242  0  < 1 > 
+  142 "TextName" "IEEE_68"  850.824  343.154  0  < 1 > 
+  143 "TextName" "IEEE_68"  1100.77  344.074  0  < 1 > 
+  144 "TextName" "IEEE_68"  886.064  167.85  0  < 1 > 
+  145 "TextName" "IEEE_68"  896.324  250.817  0  < 1 > 
+  146 "TextName" "IEEE_68"  847.22  379.916  0  < 1 > 
+  148 "TextName" "IEEE_68"  858.504  290.788  0  < 1 > 
+  149 "TextName" "IEEE_68"  1048.18  287.215  0  < 1 > 
+  150 "TextName" "IEEE_68"  789.074  184.632  0  < 1 > 
+  151 "TextName" "IEEE_68"  971.514  255.921  0  < 1 > 
+  152 "TextName" "IEEE_68"  774.147  299.273  0  < 1 > 
+  154 "TextName" "IEEE_68"  689.834  402.135  0  < 1 > 
+  156 "TextName" "IEEE_68"  712.644  217.459  0  < 1 > 
+  157 "TextName" "IEEE_68"  832.094  -60.7263  0  < 1 > 
+  158 "TextName" "IEEE_68"  931.794  -277.516  0  < 1 > 
+  159 "TextName" "IEEE_68"  808.074  -303.15  0  < 1 > 
+  160 "TextName" "IEEE_68"  802.834  -8.65228  0  < 1 > 
+  162 "TextName" "IEEE_68"  702.798  -64.5223  0  < 1 > 
+  163 "TextName" "IEEE_68"  801.884  -449.078  0  < 1 > 
+  164 "TextName" "IEEE_68"  855.414  -174.33  0  < 1 > 
+  165 "TextName" "IEEE_68"  1089.57  -69.0983  0  < 1 > 
+  166 "TextName" "IEEE_68"  978.804  -176.938  0  < 1 > 
+  167 "TextName" "IEEE_68"  1034.33  -1.32228  0  < 1 > 
+  168 "TextName" "IEEE_68"  900.204  36.8537  0  < 1 > 
+  169 "TextName" "IEEE_68"  879.454  -126.66  0  < 1 > 
+  171 "TextName" "IEEE_68"  975.934  55.0157  0  < 1 > 
+  172 "TextName" "IEEE_68"  1176.33  41.5337  0  < 1 > 
+  173 "TextName" "IEEE_68"  958.904  -5.69428  0  < 1 > 
+  174 "TextName" "IEEE_68"  1027.34  166.159  0  < 1 > 
+  175 "TextName" "IEEE_68"  920.954  153.386  0  < 1 > 
+  176 "TextName" "IEEE_68"  1027.79  66.1407  0  < 1 > 
+  177 "TextName" "IEEE_68"  1246.79  385.028  0  < 1 > 
+  178 "TextName" "IEEE_68"  1087.1  247.031  0  < 1 > 
+  179 "TextName" "IEEE_68"  1144.57  312.76  0  < 1 > 
+  180 "TextName" "IEEE_68"  1156.23  117.018  0  < 1 > 
+  181 "TextName" "IEEE_68"  1078.42  110.254  0  < 1 > 
+  183 "TextName" "IEEE_68"  725.719  -2.7314  0  < 1 > 
+  184 "TextName" "IEEE_68"  1783.07  155.19  0  < 1 > 
+  185 "TextName" "IEEE_68"  1177.25  171.554  0  < 1 > 
+  187 "TextName" "IEEE_68"  1768.94  229.608  0  < 1 > 
+  189 "TextName" "IEEE_68"  1233.87  216.384  0  < 1 > 
+  190 "TextName" "IEEE_68"  1760.8  445.542  0  < 1 > 
+  191 "TextName" "IEEE_68"  1414.25  438.574  0  < 1 > 
+  193 "TextName" "IEEE_68"  1381.45  477.749  0  < 1 > 
+  194 "TextName" "IEEE_68"  1225.92  288.009  0  < 1 > 
+  195 "TextName" "IEEE_68"  1312.5  302.868  0  < 1 > 
+  196 "TextName" "IEEE_68"  1761.42  494.177  0  < 1 > 
+  197 "TextName" "IEEE_68"  1336.9  647.764  0  < 1 > 
+  198 "TextName" "IEEE_68"  1809.81  697.852  0  < 1 > 
+  199 "TextName" "IEEE_68"  1669.1  742.993  0  < 1 > 
+  200 "TextName" "IEEE_68"  1444.19  555.99  0  < 1 > 
+  201 "TextName" "IEEE_68"  1450.58  726.627  0  < 1 > 
+  203 "TextName" "IEEE_68"  1313.31  795.141  0  < 1 > 
+  204 "TextName" "IEEE_68"  -143.347  -88.3883  0  < 1 > 
+  207 "TextName" "IEEE_68"  -106.604  -292.158  0  < 1 > 
+  209 "TextName" "IEEE_68"  -98.5137  -394.663  0  < 1 > 
+  210 "TextName" "IEEE_68"  -561.797  87.9617  0  < 1 > 
+  211 "TextName" "IEEE_68"  -144.877  -203.573  0  < 1 > 
+  212 "TextName" "IEEE_68"  -359.859  209.012  0  < 1 > 
+  213 "TextName" "IEEE_68"  -632.297  775.799  0  < 1 > 
+  215 "TextName" "IEEE_68"  463.883  995.816  0  < 1 > 
+  216 "TextName" "IEEE_68"  -10.2669  -304.503  0  < 1 > 
+  217 "TextName" "IEEE_68"  127.753  -346.798  0  < 1 > 
+  218 "TextName" "IEEE_68"  706.77  -268.47  0  < 1 > 
+  219 "TextName" "IEEE_68"  -259.384  -54.0633  0  < 1 > 
+  220 "TextName" "IEEE_68"  803.554  73.1857  0  < 1 > 
+  221 "TextName" "IEEE_68"  1527.92  113.56  0  < 1 > 
+  222 "TextName" "IEEE_68"  1584.52  460.658  0  < 1 > 
+  223 "TextName" "IEEE_68"  1584.58  591.535  0  < 1 > 
+  224 "TextName" "IEEE_68"  1101.79  737.092  0  < 1 > 
+  225 "TextName" "IEEE_68"  769.784  633.043  0  < 1 > 
+  226 "TextName" "IEEE_68"  214.199  924.512  0  < 1 > 
+  227 "TextName" "IEEE_68"  -473.033  438.462  0  < 1 > 
+  228 "TextName" "IEEE_68"  -229.887  1030.22  0  < 1 > 
+  229 "TextName" "IEEE_68"  982.224  611.042  0  < 1 > 
+  230 "TextName" "IEEE_68"  1167.16  -38.2813  0  < 1 > 
+  232 "TextName" "IEEE_68"  209.433  -194.733  0  < 1 > 
+  233 "TextName" "IEEE_68"  648.663  -319.225  0  < 1 > 
+  235 "TextName" "IEEE_68"  -142.422  -0.575781  0  < 1 > 
+  236 "TextName" "IEEE_68"  696.971  335.319  0  < 1 > 
+  237 "TextName" "IEEE_68"  931.814  363.791  0  < 1 > 
+  238 "TextName" "IEEE_68"  189.293  21.0217  0  < 1 > 
+  239 "TextName" "IEEE_68"  85.7631  13.1667  0  < 1 > 
+  240 "TextName" "IEEE_68"  -114.444  73.9247  0  < 1 > 
+  241 "TextName" "IEEE_68"  280.013  729.828  0  < 1 > 
+  242 "TextName" "IEEE_68"  871.844  539.255  0  < 1 > 
+  243 "TextName" "IEEE_68"  1149.67  605.818  0  < 1 > 
+}
+Record System Annotation {
+  244 "IEEE_68"  -1157.23  -435.546  0 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Segoe UI'; font-size:8pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:30pt; font-weight:600; color:#534264;\">New England Test System (NETS)</span></p></body></html>"
+    < 1 > 
+  246 "IEEE_68"  1021.88  -431.898  0 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Segoe UI'; font-size:8pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:30pt; font-weight:600; color:#b84775;\">New York Power System (NYPS)</span></p></body></html>"
+    < 1 > 
+}

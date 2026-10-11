@@ -17,8 +17,13 @@ from utils import (
 
 
 SUPPORTED_NETWORKS = {
-    "IEEE 14 Bus Dynamic Model"
-}
+    "IEEE 14 Bus Dynamic Model",
+    "SuperGrid R1",
+    "ENWL_INM_AllGen_240423",
+    "NGED-West Midlands-Connected_CDP",
+    "SPM Current Model CIM R0.69",
+    "Simple Defined Fault"
+} 
 
 @pytest.mark.comparison
 @pytest.mark.fault_selected

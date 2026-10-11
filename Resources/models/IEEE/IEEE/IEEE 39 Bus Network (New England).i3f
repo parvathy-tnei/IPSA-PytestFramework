@@ -1,0 +1,1244 @@
+##!IIF-IpsaPower-3.0
+#
+
+Header {
+    Version: "7.5+"
+    Program: "IPSA 3.0.0"
+    Type: "Network"
+    Title: "IEEE 39 Bus Network"
+    Date: "15 Aug 2025 12:29:14"
+    Created: "leee@TNEI0595"
+    Format: "IPSA3"
+    ModelUuid: "{79afe59a-6d1a-4169-94c9-3cbfe7d5a764}"
+    FileUuid: "{f7db8cf1-82b2-41f0-aab5-58d95e60e016}"
+    BaseFileUuid: "{d3e9fc36-d34d-4dc3-9437-831308a5d875}"
+    NovaUuid: "{00000000-0000-0000-0000-000000000000}"
+}
+DefRec Network {
+  Size i: 39
+  CurrentVersion i: 1
+  NumVersions i: 1
+  DiagramsLocked b: f
+}
+Define System Network {
+  Title: s, Author: s, CreationTime: s, Comment: s, Base: d, BaseinKVA: b, BaseMVAForChecking: d, Frequency: d,
+  SlackUIDs: <i>, BranchRatingNames: <s>, LoadTypes: <s>, PluginIDs: <s>, PrintUseColour: b, PrintWhiteBack: b,
+  PrintLineWidth: i, PrintLineOutStyle: i, PrintTextPadding: i, PrintLayout: i, PrintWide: i, PrintHigh: i,
+  PrintPaper: i, PrintFontSize: i, PrintLowRes: b, PrintDrawBorder: b, PrintDrawLegend: b, PrintDrawPixmap: b,
+  PrintFileName: b, PrintUserTime: b, PrintLandscape: b, PrintPDFFileName: s, MRULocate1: i, MRULocate2: i,
+  MRULocate3: i, MRULocate4: i, BusbarLabels: <s>, LoadLabels: <s>, GeneratorLabels: <s>, IndMachineLabels: <s>,
+  HarmonicFilterLabels: <s>, MechSwCapacitorLabels: <s>, StaticVArCLabels: <s>, BatteryLabels: <s>, DCMachineLabels: <s>,
+  UniMachineLabels: <s>, GridInfeedLabels: <s>, LineLabels: <s>, TransformerLabels: <s>, ThreeWindingTFLabels: <s>,
+  ACDCConverterLabels: <s>, DCDCConverterLabels: <s>, MGsetLabels: <s>, CircuitBreakerLabels: <s>, ProtectionContainerLabels: <s>,
+  SeriesRegulatorLabels: <s>, SetNewAggregatesTrue: b, DoGroupsTriggerIntertrips: b, Versions: <i>
+}
+Define System DrawTool {
+  AutoDrawBusbarType: i, AutoDrawBusbarRadius: d, AutodrawGridSize: d, AutoDrawIslandSeparation: d, AutoDrawEnlargementConst: d,
+  AutoDrawStartingX: d, AutoDrawStartingY: d, AutoDrawIncludeLoads: b, AutoDrawIncludeGens: b, AutoDrawIncludeInfeeds: b,
+  AutoDrawIncludeIMs: b, AutoDrawIncludeOtherRadials: b, AutoDrawIncludeAnnotations: b, RecDrawInitialBusbarUID: i,
+  RecDrawBusbarSize: i, RecDrawStartingX: d, RecDrawStartingY: d, RecDrawOrder: i, RecDrawBusbarType: i,
+  AutoDrawAlgorithm: i, Unlimited: b, RecDrawShowProgMsgs: b, RecDrawRedrawAll: b, DrawIncludeBreakers: b,
+  DrawIncludeProtContainers: b, DrawIncludeOtherInlines: b, AutoDrawBusbarSize: i, DeleteAllAnnotations: b,
+  Versions: <i>
+}
+Define System Staging {
+  GenProposedInService: b, GenAcceptedInService: b, GenCompletedInService: b, GenEnergisedInService: b,
+  GIProposedInService: b, GIAcceptedInService: b, GICompletedInService: b, GIEnergisedInService: b, LoadProposedInService: b,
+  LoadAcceptedInService: b, LoadCompletedInService: b, LoadEnergisedInService: b, Versions: <i>
+}
+Define System Version {
+  ID: i, BasedOn: i, Name: s, Description: s, UserDate: s, Uuid: s, Date: s, Created: <i>, Changed: <i>,
+  Deleted: <i>, AVRExts: <s>, BatteryExts: <s>, BreakerExts: <s>, BusbarExts: <s>, ConverterExts: <s>,
+  ChopperExts: <s>, DCMachExts: <s>, FilterExts: <s>, GeneratorExts: <s>, GovernorExts: <s>, GridInfeedExts: <s>,
+  HarmonicExts: <s>, IndMachineExts: <s>, LineExts: <s>, UnbLineExts: <s>, LoadExts: <s>, UnbLoadExts: <s>,
+  MSCExts: <s>, MGSetExts: <s>, NetworkExts: <s>, SeriesRegExts: <s>, SVCExts: <s>, TransformerExts: <s>,
+  UnbTransformerExts: <s>, 3WTFExts: <s>, UMachineExts: <s>, UniBranchExts: <s>, GroupMixedExts: <s>, GroupLSExts: <s>,
+  GroupGSExts: <s>, GroupTxExts: <s>, GroupFeederExts: <s>
+}
+Define System Scene {
+  ID: i, BasedOn: i, Type: s, Name: s, X: d, Y: d, Width: d, Height: d, Versions: <i>
+}
+Define System SceneData {
+  ID: i, Type: s, Name: s, BackOpacity: d, BackColour: s, BackFile: s, BackWidth: d, BackHeight: d, ShowBackgnd: b,
+  MeasureUnit: s, GeoScale: d, KeepAspectRatio: b, ShowMapDisplay: b, MapServer: s, MapType: i, MapStyle: i,
+  UseCaching: b, BaseScale: d, BaseZoom: i, Latitude: d, Scale: d, Longitude: d, SceneX: d, SceneY: d,
+  APIStatus: i, APIKey: s, Versions: <i>
+}
+Define System SceneVersion {
+  ID: i, SceneVersion: i, BasedOn: i, Name: s, Created: <i>, Changed: <i>, Deleted: <i>
+}
+Define System View {
+  ID: i, SceneName: s, WindowName: s, Maximised: b, Iconised: b, Geometry: <i>, CentreX: d, CentreY: d,
+  Scale: d, UseAntiAlias: b, HUDShow: b, HUDBackColour: <i>, HUDTextColour: <i>, HUDAlpha: d, ZoomFactor: d,
+  ZoomStepsToUse: i, ZoomRefreshInt: i, MapZoom: i, GridShow: b, GridSnap: b, GridHotspot: d, GridOnRadials: b,
+  GridColour: <i>, GridAlpha: d, Versions: <i>
+}
+Define System AnalysisFL {
+  FaultStudyType: i, FaultTime: d, FaultResistance: d, FaultReactance: d, FaultEngineType: i, FaultEngineResultType: i,
+  MaxFaultIterations: i, FaultFlatStart: b, UseSaturatedImpedances: i, AssumeAVRAction: i, CalculateCurrent: b,
+  BusbarsToFault: <i>, SingleBusToFault: i, BranchToFault: i, DistanceAlongBranch: d, MotorToStart: i,
+  BreakerDutyItems: <i>, FaultPlotSteps: i, FaultPlotMaxTime: d, FaultPlotinCycles: b, FaultPlotinkA: b,
+  FaultPlotRed: b, FaultPlotYellow: b, FaultPlotBlue: b, FaultPlotDC: b, FaultPlotRMS: b, FaultPlot2Harm: b,
+  FaultPlotMaxAsymmRed: b, SMSaliency: i, XRCalcMethod: i, XRSMEnhanced: i, XRResultCalc: i, Use2ndHarmonic: b,
+  FaultEngine: i, IEC909DefaultPhaseAngle: d, IEC909Method: i, IgnoreImpedanceCorr: b, VoltageCorrection: i,
+  IEC909UseDefaultPF: b, NearTo: b, IEC909TFRatingIndex: i, BreakerDutyLLL: b, BreakerDutyLG: b, BreakerDutyLL: b,
+  BreakerDutyLLG: b, DefinedFaultMaxIterations: i, DefinedFaultToleranceMVA: d, FaultUseCDP: b, FaultCDPStudyMode: i,
+  FaultCDPInterpMethod: i, FaultCDPNumIterations: i, ShowCDPWarnings: b, FaultCDPDefined: b, FaultCDPDefaultRatedI: b,
+  AdvancedTabToggledFL: b, AdvancedTabToggledBD: b, Versions: <i>
+}
+Define System AnalysisLF {
+  Convergence: d, MaxIterations: i, UndervoltagePU: d, OvervoltagePU: d, LockTaps: i, NoPhaseShift: b,
+  TapOscIterStart: i, TapOscSuccessive: i, TapOscLimit: i, TapOscIterEnd: i, FillkARatings: i, UseLoadScaling: b,
+  RealLoadScale: d, ReactiveLoadScale: d, CheckProtection: b, UseLegacyPhiftCheck: b, DisplayOptionDialog: b,
+  InitialFlatStart: b, SingleTapMovement: b, SlowTapMovement: b, WhichImpedance: i, IslandMethod: i, AutoSelectSlacks: b,
+  FSSetBusbarVoltages: b, FSIgnoreVoltageControlSettings: b, FSVoltageMagnitudePU: d, FSVoltageAngleDeg: d,
+  FSSetTransformerTaps: b, FSIgnoreFixedTaps: b, FSNominalTaps: i, FSTapStartPC: d, FSSetInductionMachineSlips: b,
+  FSSlipPC: d, FSSetMechSwitchCapacitorTaps: b, FSNominalMSC: b, FeederSlackVoltagePU: d, FeederSetTarget: i,
+  ProfileUse: i, ProfileLoadCategory: s, ProfileTimeSliceHrs: d, AdvancedTabToggledLF: b, AdvancedTabToggledCont: b,
+  Versions: <i>
+}
+Define System AnalysisHM {
+  HarmonicStudyType: i, FundamentalTHD: i, MinimumHarmonicOrder: i, MaximumHarmonicOrder: i, HarmonicWaveformBusbar: i,
+  HarmonicWaveformBusbar2: i, HarmonicWaveformBusbar3: i, HarmonicWaveformBusbar4: i, HarmonicWaveformBusbar5: i,
+  HarmonicWaveformBusbar6: i, HarmonicSequence: i, HarmonicUseLongLines: i, HarmonicGlobalLineModel: i,
+  HarmonicGlobalTransformerModel: i, HarmonicGlobalShuntModel: i, HarmonicGlobalLoadModel: i, HarmonicGlobalGeneratorModel: i,
+  HarmonicGlobalMotorModel: i, HarmonicOffNominalFrequencyHz: d, HarmonicOnlyScanResonant: i, HarmonicScanStepSizePU: d,
+  HarmonicBusbarsToStudy: <i>, HarmonicPlotVoltageType: i, HarmonicPlotImpedanceType: i, HarmonicPlotSeparateFundamental: b,
+  HarmonicPlotZ: b, HarmonicPlotR: b, HarmonicPlotX: b, HarmonicPlotUseLogarithmic: b, HarmonicPlotUseFrequency: b,
+  HarmonicPlotUseOhms: b, Versions: <i>
+}
+Define System AnalysisProt {
+  ProtPlotFault: i, ProtFaultBusbar: i, ProtScaleFaults: b, ProtFaultCurrentA: d, ProtFaultPhaseEarth: i,
+  ProtPlotVoltagekV: d, ProtPlotOCDevices: <i>, FaultStudyType: i, FaultEngineType: i, FaultEngineResultType: i,
+  FaultTime: d, FaultResistance: d, FaultReactance: d, FaultFlatStart: b, UseSaturatedImpedances: i, AssumeAVRAction: i,
+  SMSaliency: i, XRCalcMethod: i, XRSMEnhanced: i, Use2ndHarmonic: b, RelayRelayA: d, RelayRelayB: d, RelayRelayC: d,
+  RelayFuseA: d, RelayFuseB: d, FuseRelayC: d, FuseFuseC: d, XFormOload: d, FuseFactor: d, BreakDelay: d,
+  RelayReset: d, FuseReset: d, AdvancedTabToggled: b, Versions: <i>
+}
+Define System AnalysisTS {
+  RefGenIndex: i, StudyTime: d, StepLength: d, SlipLimit: d, ResultInterval: d, DCSwitchFactor: d, PowerImbalance: d,
+  MaxStepLength: d, PrintData: b, PrintBusbar: b, PrintAVR: b, PrintGovernor: b, ShowStepMsgs: b, ShowUDMMsgs: b,
+  ShowPluginMsgs: b, NewGraphWindow: b, StoreResults: b, FileName: s, ReadFileName: s, BusbarStoreUIDs: <i>,
+  GeneratorStoreUIDs: <i>, AVRStoreUIDs: <i>, GovernorStoreUIDs: <i>, InductMachineStoreUIDs: <i>, UniMachineStoreUIDs: <i>,
+  MSCStoreUIDs: <i>, SVCStoreUIDs: <i>, NetCtlStoreUIDs: <i>, IMCtlStoreUIDs: <i>, UMCtlStoreUIDs: <i>,
+  MSCtlStoreUIDs: <i>, BatteryStoreUIDs: <i>, DCMachineStoreUIDs: <i>, BranchStoreUIDs: <i>, ConvertorStoreUIDs: <i>,
+  DCMachCtlStoreUIDs: <i>, ACConvCtlStoreUIDs: <i>, DCConvCtlStoreUIDs: <i>, AdvancedTabToggled: b, Versions: <i>
+}
+Define System AnalysisRel {
+  AllowPVAsSource: b, IsolatorZeroClose: b, Versions: <i>
+}
+Define System AnalysisUnb {
+  MaxIterations: i, JacType: i, FullJacTolerance: d, FrequencyBase: d, SystemBase: d, MinUpdateTolerance: d,
+  MaxMismatch: d, SlowZone: d, SlowUpdate: d, JacPerturbation: d, Versions: <i>
+}
+Define System AnalysisDCLF {
+  CalculateNodalTLF: b, CalculateLODF: b, BranchLossEstimationMethod: i, InductionMachineEfficiencyPC: d,
+  OnlyLargestIsland: b, NoPhaseShift: b, UseLoadScaling: b, RealLoadScale: d, WhichImpedance: i, AutoSelectSlacks: b,
+  ProfileUse: i, ProfileLoadCategory: s, Versions: <i>
+}
+Define System AnalysisNR {
+  ReductionAlgorithm: i, BoundaryUID: i, ExportNetworkPreReduction: b, AutomaticallySelectSlacks: b, MergeZIShunts: b,
+  EquivalentInjectionCutoff: b, EquivalentInjCutoffMVA: d, EquivalentBranchZCutoff: b, EquivalentBrZCutoffPU: d,
+  ObfuscateCatalogObjects: b, UseImpedanceCutOff: b, ImpedanceCutOffPU: d, BranchPowerMode: i, DeleteBoundaryPostReduction: b,
+  ACDCConversionMode: i, CatalogDistributionMode: i, YBusMatrixDecompositionRoutine: i, AutoDrawRadials: b,
+  Versions: <i>
+}
+Define System AnalysisAF {
+  ProtPlotFault: i, ProtFaultBusbar: i, ProtFaultCurrentA: d, OCDevicesToPlot: <i>, ProtBusbarsToFault: <i>,
+  FaultStudyType: i, FaultEngineResultType: i, FaultTime: d, FaultResistance: d, FaultReactance: d, FaultFlatStart: b,
+  UseSaturatedImpedances: i, AssumeAVRAction: i, SMSaliency: i, XRCalcMethod: i, XRSMEnhanced: i, Use2ndHarmonic: b,
+  BoundaryIncidentEnergyJcm2: d, NFPAStandard: i, NFPAUserDefined: <d>, ProtCalculateOpTime: i, ProtSetOpTimeS: d,
+  ProtSetReducedOpTimeS: d, LimitMaximumOpTime: b, MaximumOpTimeS: d, ReducedFaultCurrentPC: d, IEEEStandard: i,
+  UseNFPAMeasurements: i, AdvancedTabToggled: b, Versions: <i>
+}
+Define System TransientGraph {
+  Index: i, GraphType: i, Active: b, AutoScale: b, DisplayLegend: b, XMinimum: d, XMaximum: d, YMinimum: d,
+  YMaximum: d, UDMPluginItemUID: i, ItemUIDs: <i>, TraceColours: <s>, DisplayGrid: b, Versions: <i>
+}
+Define System DataDisplay {
+  SceneName: s, CheckService: b, OutOfServiceStyle: i, OutageStyle: i, LineTypeUnsetStyle: i, LineTypeOHLStyle: i,
+  LineTypeCableStyle: i, LineTypeDuctedStyle: i, LineTypeMixedStyle: i, LineTypeServiceStyle: i, LineTypeMainStyle: i,
+  OutOfServiceColour: s, OutageColour: s, LineTypeColourUnset: s, LineTypeColourOHL: s, LineTypeColourCable: s,
+  LineTypeColourDucted: s, LineTypeColourMixed: s, LineTypeColourService: s, LineTypeColourMain: s, OutOfServiceAlpha: d,
+  OutageAlpha: d, LineTypeAlphaUnset: d, LineTypeAlphaOHL: d, LineTypeAlphaCable: d, LineTypeAlphaDucted: d,
+  LineTypeAlphaMixed: d, LineTypeAlphaService: d, LineTypeAlphaMain: d, OutOfServicePattern: s, OutagePattern: s,
+  LineTypePatternUnset: s, LineTypePatternOHL: s, LineTypePatternCable: s, LineTypePatternDucted: s, LineTypePatternMixed: s,
+  LineTypePatternService: s, LineTypePatternMain: s, OutOfServiceFont: s, OutageFont: s, ShowVoltageColours: b,
+  VoltageScheme: s, VoltageColours: <s>, UseLineType: b, ShowBreakerNames: b, ShowProtectionContainerNames: b,
+  NoZoomAll: b, DiagramFont: s, ShowBusbarMask: b, ShowFeederGroups: b, ShowFeederNameInLabel: b, HideVoltageColourWithFeederOn: b,
+  ShowCustomerNumber: b, ColourFeederGroupLabel: b
+}
+Define System ResultsDisplay {
+  SceneName: s, CheckLimits: <s>, OverLimitStyle: <s>, UnderLimitStyle: <s>, OverLimitColour: <s>, UnderLimitColour: <s>,
+  OverLimitAlpha: <s>, UnderLimitAlpha: <s>, OverLimitPattern: <s>, UnderLimitPattern: <s>, OverLimitFont: <s>,
+  UnderLimitFont: <s>
+}
+Define System ResultsDisplayLF {
+  SceneName: s, UnitsBusbar: b, AngleBusbar: b, JunctionBusbar: b, PrecisionBusbar: i, DisplayUnitsRadial: b,
+  PrecisionRadial: i, DisplayUnitsBranch: b, PrecisionBranch: i, DisplayPVUR: b, DisplayVUF): b, DisplayPhaseR: b,
+  DisplayPhaseY: b, DisplayPhaseB: b, DisplayPhaseMean: b, DisplayPhaseMax: b, DisplaySequenceP: b, DisplaySequenceN: b,
+  DisplaySequenceZ: b, ValueBusbar: s, ValueRadial: s, UnitsRadial: s, ValueBranch: s, EndBranch: s, UnitsBranch: s,
+  FlowArrowStyle: s, DefaultOverVoltagepu: d, DefaultUnderVoltagepu: d, BranchRatingIndex: i, BranchRatingOverPC: d,
+  BranchRatingUnderPC: d, UnbalanceLimitPC: d, UnbalanceCheckAtkV: d, UnbalanceWhichLimit: i, LineLoadingLowColour: s,
+  LineLoadingMidColour: s, LineLoadingHighColour: s, LineLoadingLowOpacity: i, LineLoadingMidOpacity: i,
+  LineLoadingHighOpacity: i, LineLoadingLowMidDiv: i, LineLoadingMidHighDiv: i, LineLoadingRatingIndex: i,
+  LineLoadingRatingUnit: i, DisplayLineLoading: b
+}
+Define System ResultsDisplayFL {
+  SceneName: s, DisplayAC: b, DisplaySecondHarmonic: b, DisplayRPhase: b, DisplayYPhase: b, DisplayBPhase: b,
+  DisplayPositive: b, DisplayNegative: b, DisplayZero: b, XoverRBusbar: b, DisplayJunctions: b, DisplayAngles: b,
+  DisplayUnits: b, PrecisionBusbar: i, PrecisionFlows: i, DisplayIEC909InitialSym: b, DisplayIEC909Peak: b,
+  DisplayIEC909AsymmetricBreak: b, DisplayIEC909SymmetricBreak: b, DisplayIEC909DCMagnitude: b, DisplayIEC909SteadyState: b,
+  DisplayIEC909DCXoverR: b, DisplayIEC909DCXoverRBreak: b, DisplayDC: s, UnitsFlows: s, UnitsVoltages: s,
+  EndTransformer: s, UnitsIEC909: s
+}
+Define System ResultsDisplayHM {
+  SceneName: s, DisplayTHD: b, DisplayVAS: b, DisplayMaxIndividialHD: b, DisplayIndividialHD: b, DisplayJunctions: b,
+  DisplayAngles: b, DisplayUnits: b, PrecisionBusbar: i, PrecisionFlows: i
+}
+Define System ResultsDisplayReliablity {
+  SceneName: s, DisplayAverageDuration: b, DisplayAnnualDuration: b, DisplayAnnualFrequency: b, DisplayUnits: b,
+  PrecisionBusbar: i
+}
+Define System BusbarGraphic {
+  ID: i, Type: s, Diagram: s, X: d, Y: d, Size: d, Versions: <i>
+}
+Define System RadialGraphic {
+  ID: i, Type: s, Diagram: s, FromPts: <d>, FromTypes: <i>, X: d, Y: d, Versions: <i>
+}
+Define System BranchGraphic {
+  ID: i, Type: s, Diagram: s, FromPts: <d>, FromTypes: <i>, ToPts: <d>, ToTypes: <i>, Angle: d, Width: d,
+  Height: d, SymbolX: d, SymbolY: d, Versions: <i>
+}
+Define System 3WTransformerGraphic {
+  ID: i, Type: s, Diagram: s, FromPts: <d>, FromTypes: <i>, ToPts: <d>, ToTypes: <i>, ThreePts: <d>, ThreeTypes: <i>,
+  SymbolX: d, SymbolY: d, Versions: <i>
+}
+Define System BreakerGraphic {
+  ID: i, Type: s, Diagram: s, X: d, Y: d, Size: d, Distance: d, Location: s, Versions: <i>
+}
+Define System GroupGraphic {
+  Versions: <i>, ID: i, Type: s, Diagram: s, Name: s, Items: <i>, HideLOD: d, Colour: s
+}
+Define System Automation {
+  ID: i, Title: s, LFOverVoltagePU: d, LFUnderVoltagePU: d, LFBranchRatingIndex: i, LFBranchRatingOverPC: d,
+  LFBranchRatingUnderPC: d, SaveResultsToFile: b, FileNameStart: s, NumberStudiesPerFile: i, Studies: <i>,
+  Versions: <i>
+}
+Define System Study {
+  ID: i, Title: s, Type: s, WatchType: s, AutomationUID: i, ItemsSwitchOut: <i>, ItemsSwitchIn: <i>, ItemsWatched: <i>,
+  WatchRatingViolations: b, ItemsToWatch: i, StartingPoint: i, Versions: <i>
+}
+Define System Intertrip {
+  ID: i, Name: s, TypeMaster: s, TypeSlave: s, Masters: <i>, Slaves: <i>, SignalTimeS: d, Versions: <i>
+}
+Define System Contingency {
+  ID: i, Name: s, Comment: s, FileNameStart: s, NumberContingenciesPerFile: i, Depth: i, ExtendToBreakers: b,
+  BusbarsIncluded: <i>, Versions: <i>
+}
+Define System Annotation {
+  ID: i, Diagram: s, X: d, Y: d, LabelFlags: i, HTMLText: s, Versions: <i>
+}
+Define System LabelGraphic {
+  ID: i, Type: s, Diagram: s, X: d, Y: d, LabelFlags: i, Versions: <i>
+}
+Define System AVR {
+  ID: i, ControlsUID: i, Name: s, ModelType: i, UdmID: s, PluginID: s, DbType: s, CtlBusbar: i, IEEEModel: i,
+  ForwardGain: d, ForwardTCSecs: d, FeedbackGain: d, FeedbackTCSecs: d, FBatTCSecs: d, VMaxPU: d, VMinPU: d,
+  VRatePUperSec: d, FilterTCSecs: d, ExciterGain: d, ExciterTCSecs: d, EMaxPU: d, EMinPU: d, RegulatorTCSecs: d,
+  Sat75: d, Sat100: d, Ks: d, Versions: <i>
+}
+Define System Breaker {
+  ID: i, ControlsUID: i, Type: s, Name: s, DbType: s, Status: i, NOP: b, MakePeakkA: d, BreakRMSkA: d,
+  BreakDCPC: d, BreakTimemS: d, SwitchTimeHr: d, BreakerType: i, NomCurrentkA: d, Aggregate: b, FeederCB: b,
+  Versions: <i>
+}
+Define System Busbar {
+  ID: i, Name: s, NomVoltkV: d, ControlType: i, VoltPU: d, VoltAngleRad: d, BusbarType: i, Comment: s,
+  ArcEnclosure: i, ArcEquipmentType: i, ArcConductorGapMM: d, ArcWorkingDistanceMM: d, ArcUngrounded: b,
+  OperatingTimeSec: d, ArcEnclosureHeightMM: d, ArcEnclosureWidthMM: d, ArcEnclosureDepthMM: d, ArcBusbarConfiguration: i,
+  ArcIEEEStandard: i, Versions: <i>
+}
+Define System Governor {
+  ID: i, ControlsUID: i, Name: s, ModelType: i, UdmID: s, PluginID: s, Regulation: d, FlyballTCSec: d,
+  TC1Sec: d, TC2Sec: d, TC3Sec: d, TurbineTC1Sec: d, TurbineTC2Sec: d, PMaxMW: d, DbType: s, DbPar: i,
+  Versions: <i>
+}
+Define System Generator {
+  ID: i, FromID: i, Name: s, Status: i, VoltPU: d, VBandwidthPC: d, CtlBusbar: i, GenMW: d, GenMVAr: d,
+  GenMVArMax: d, GenMVArMin: d, GenRatedMW: d, GenRatedMVA: d, ProfileUID: i, SynResistancePU: d, SynReactancePU: d,
+  ZSResistancePU: d, ZSReactancePU: d, NEResistancePU: d, NEReactancePU: d, WindingEarthing: i, DAxisTrXPU: d,
+  DAxisTrTCSec: d, DAxisStrXPU: d, DAxisStrTCSec: d, QAxisXPU: d, QAxisTrXPU: d, QAxisTrTCSec: d, QAxisStrXPU: d,
+  QAxisStrTCSec: d, InertiaSec: d, DampFactor: d, PotierXPU: d, SaturationFact: d, TID: i, PMaxMW: d, QMaxMVAr: d,
+  SMaxMVA: d, SatDAxisXPU: d, SatDAxisTrXPU: d, SatDAxisTrTCSec: d, SatDAxisStTrXPU: d, SatDAxisStrTCSec: d,
+  SatQAxisStrXPU: d, HarmRC0: d, HarmRC12: d, HarmRC1: d, HarmRC2: d, HarmRC3: d, HarmXC0: d, HarmXC1: d,
+  HarmXC2: d, HarmXC3: d, HarmXCEX: d, HarmXEX: d, HarmonicModel: i, DbGenType: s, DbGenPar: i, QMinMVAr: d,
+  DistFactor: d, GenCostPerMW: d, AbsCostPerMW: d, GenCostPerMVAr: d, AbsCostPerMVAr: d, EnhancedModelling: b,
+  LeakageReactance: d, VoltageFactorPg: d, DispPMaxPC: d, DispPMinPC: d, GenPlanningStage: i, GenMethodType: i,
+  StorageIERatio: d, Comment: s, Aggregate: b, Versions: <i>
+}
+Define System GridInfeed {
+  ID: i, FromID: i, Name: s, Status: i, VoltPU: d, GenMW: d, GenMVAr: d, ProfileUID: i, PeakLLL: d, RMSLLL: d,
+  X2RLLL: d, PeakLG: d, RMSLG: d, Tac: d, Tbreak: d, HarmR: <d>, HarmX: <d>, GridPlanningStage: i, StorageIERatio: d,
+  EnergyStorage: b, Comment: s, Aggregate: b, SSC: d, XR: d, Versions: <i>
+}
+Define System Filter {
+  ID: i, FromID: i, Name: s, Status: i, FilterType: i, Ground: b, Data1: d, Data2: d, Data3: d, Data5: d,
+  Data4: d, Data6: d, Versions: <i>
+}
+Define System Harmonic {
+  ID: i, FromID: i, Name: s, Status: i, Element: i, Parameter: i, VoltUnbal: d, FireUnbal: d, MaxTHDPC: d,
+  MaxIDistPC: d, Orders: <d>, Magnitudes: <d>, Angles: <d>, InjType: i, ImpedanceType: i, VoltageR: d,
+  VoltageX: d, VoltageRList: <d>, VoltageXList: <d>, DbType: s, Versions: <i>
+}
+Define System IndMachine {
+  ID: i, FromID: i, Name: s, Status: i, MechPowerMW: d, SlipPC: d, MagnetXPU: d, StatorRPU: d, StatorXPU: d,
+  Model: i, RotorRPU: d, RotorXPU: d, StandRPU: d, StartXPU: d, TSlipB: d, TSlipC: d, InertiaSec: d, DropoffVPU: d,
+  DropPickUpDelaySec: d, LockTimeSec: d, UnderspeedPU: d, OverspeedPU: d, PickUpTimeSec: d, PickUpVoltagePU: d,
+  SwitchOut1Sec: d, SwitchIn1Sec: d, SwitchOut2Sec: d, SwitchIn2Sec: d, MaxSwitchOp: i, DFFeedBusbar: i,
+  DFPowerFactor: d, DFExportQ: b, DFRotorReferenceFrame: i, DFFaultSwitchMode: i, DFFaultRotorCurrentLimit: d,
+  DFFaultCrowbarLimit: d, DFFaultCrowbarResPU: d, HarmRC0: d, HarmRC12: d, HarmRC1: d, HarmRC2: d, HarmRC3: d,
+  HarmXC0: d, HarmXC1: d, HarmXC2: d, HarmXC3: d, HarmXCEX: d, HarmXEX: d, HarmRotorRC0: d, HarmRotorRC2: d,
+  HarmRotorXC0: d, HarmRotorXC2: d, HarmonicModel: i, DbType: s, DbPar: i, ControlModelType: i, RatedMW: d,
+  RatedMVA: d, PolePairs: i, ControlPluginID: s, ExcludeFromTransient: b, Aggregate: b, Comment: s, Versions: <i>
+}
+Define System Line {
+  ID: i, FromID: i, ToID: i, Name: s, Section: i, LineType: i, Status: i, MinResistancePU: d, ResistancePU: d,
+  ReactancePU: d, SusceptancePU: d, ZSResistancePU: d, ZSReactancePU: d, ZSSusceptancePU: d, ZeroImpedance: b,
+  ZeroSequence: b, SwitchTime1Sec: d, SwitchTime2Sec: d, HarmRC0: d, HarmRC12: d, HarmRC1: d, HarmRC2: d,
+  HarmRC3: d, HarmXC0: d, HarmXC1: d, HarmXC2: d, HarmXC3: d, HarmXCEX: d, HarmXEX: d, HarmonicModel: i,
+  HarmonicUseLongLines: i, DbType1: s, DbType2: s, DbLength1: d, DbLength2: d, DbPar1: i, DbPar2: i, DbTranType: s,
+  DbTranPar: i, FailureRateYr: d, RepairTimeHr: d, LengthReliability: d, PluginID: s, HideLabel: b, Name2: s,
+  Status2: i, StanRatingMVA: d, StanRatingSendkA: d, StanRatingReceivekA: d, SumRatingMVA: d, SumRatingSendkA: d,
+  SumRatingReceivekA: d, WinRatingMVA: d, WinRatingSendkA: d, WinRatingReceivekA: d, ShortRatingMVA: d,
+  ShortRatingSendkA: d, ShortRatingReceivekA: d, RatingMVAs: <d>, RatingSendkAs: <d>, RatingReceivekAs: <d>,
+  Comment: s, Aggregate: b, Versions: <i>
+}
+Define System Load {
+  ID: i, FromID: i, Name: s, Status: i, RealMW: d, ReactiveMVAr: d, ProfileUID: i, Customers: i, CustomerType: i,
+  IsEquivalent: b, LoadPlanningStage: i, Comment: s, Aggregate: b, Versions: <i>
+}
+Define System MechSwCap {
+  ID: i, FromID: i, Name: s, Status: i, ControlMode: i, ControlSteps: i, CapSteps: i, IndSteps: i, CapStepSizeMVAr: d,
+  IndStepSizeMVAr: d, MaxContinuousMVAr: d, MinContinuousMVAr: d, TargetVoltagePU: d, BandwidthPC: d, ContinuousOutputMVAr: d,
+  InitPosition: i, NominalPosition: i, ControlActive: i, ControlledUID: i, SendEnd: i, TransientCtl: b,
+  ModelType: i, PluginID: s, Versions: <i>
+}
+Define System StaticVC {
+  ID: i, FromID: i, Name: s, Status: i, QMinMVAr: d, QMaxMVAr: d, VminPU: d, VmaxPU: d, IsStatcom: b, ModelType: i,
+  PluginID: s, Versions: <i>
+}
+Define System Transformer {
+  ID: i, FromID: i, ToID: i, Name: s, TransformerType: i, MagnetEnd: i, CoreLossRPU: d, MagnetXPU: d, Winding: i,
+  NEResistanceW1PU: d, NEReactanceW1PU: d, NEResistanceW2PU: d, NEReactanceW2PU: d, TapNominalPC: d, TapStartPC: d,
+  MinTapPC: d, TapStepPC: d, MaxTapPC: d, DxDTap: d, LockTap: b, SpecVPU: d, RBWidthPC: d, RemoteCtlBusbarUID: i,
+  TapControlMethod: i, TapNumber: i, TapStepActualPC: <d>, TapStepValuePC: <d>, TapStepRPU: <d>, TapStepXPU: <d>,
+  CompRPC: d, CompXPC: d, RatingMVA: d, PhShiftDeg: d, SpecPowerMW: d, SpecPowerAtSend: b, MinPhShiftDeg: d,
+  MaxPhShiftDeg: d, PhShiftStepDeg: d, DbType: s, DbParallel: i, PluginID: s, VoltFactorPt: d, Name2: s,
+  TableStatus2: i, TableStanRatingMVA: d, TableStanRatingSendkA: d, TableStanRatingReceivekA: d, TableSumRatingMVA: d,
+  TableSumRatingSendkA: d, TableSumRatingReceivekA: d, TableWinRatingMVA: d, TableWinRatingSendkA: d, WinRatingReceivekA: d,
+  ShortRatingMVA: d, ShortRatingSendkA: d, ShortRatingReceivekA: d, Comment: s, Versions: <i>
+}
+Define System ThreeWindingTF {
+  ID: i, FromID: i, ToID: i, ThreeUID: i, Name: s, Status: i, Winding: i, W1W2ResistancePU: d, W1W2ReactancePU: d,
+  W1W3ResistancePU: d, W1W3ReactancePU: d, W2W3ResistancePU: d, W2W3ReactancePU: d, W1W2ZSResistancePU: d,
+  W1W2ZSReactancePU: d, W1W3ZSResistancePU: d, W1W3ZSReactancePU: d, W2W3ZSResistancePU: d, W2W3ZSReactancePU: d,
+  W1NEResistancePU: d, W1NEReactancePU: d, W1TapNominalPC: d, W1TapStartPC: d, W1MinTapPC: d, W1TapStepPC: d,
+  W1MaxTapPC: d, W1SpecVPU: d, W1SpecVWinding: i, W1RBWidthPC: d, W1CompRatingMVA: d, W1CompRPC: d, W1CompXPC: d,
+  LockTap: b, W2NEResistancePU: d, W2NEReactancePU: d, W2TapNominalPC: d, W2TapStartPC: d, W2MinTapPC: d,
+  W2TapStepPC: d, W2MaxTapPC: d, W3NEResistancePU: d, W3NEReactancePU: d, W3TapNominalPC: d, W3TapStartPC: d,
+  W3MinTapPC: d, W3TapStepPC: d, W3MaxTapPC: d, DbType: s, PluginID: s, VoltFactorPt: d, HarmRC0: d, HarmRC12: d,
+  HarmRC1: d, HarmRC2: d, HarmRC3: d, HarmonicModel: i, SwitchTime1Sec: d, SwitchTime2Sec: d, FailureRateYr: d,
+  RepairTimeHr: d, Name2: s, Status2: i, W1StanRatingMVA: d, W1SumRatingMVA: d, W1WinRatingMVA: d, W1ShortRatingMVA: d,
+  W2StanRatingMVA: d, W2SumRatingMVA: d, W2WinRatingMVA: d, W2ShortRatingMVA: d, W3StanRatingMVA: d, W3SumRatingMVA: d,
+  W3WinRatingMVA: d, W3ShortRatingMVA: d, W1RatingMVAs: <d>, W2RatingMVAs: <d>, W3RatingMVAs: <d>, Versions: <i>
+}
+Define System SeriesRegulator {
+  ID: i, ControlsUID: i, FromID: i, ToID: i, Name: s, Status: i, ResistancePU: d, ReactancePU: d, TapStart: d,
+  MinTap: d, TapStep: d, MaxTap: d, ControlMode: i, VoltageSetpointForward: d, CompensatingRForward: d,
+  CompensatingXForward: d, VoltageSetpointBackward: d, CompensatingRBackward: d, CompensatingXBackward: d,
+  Versions: <i>
+}
+Define System UMachine {
+  ID: i, FromID: i, Name: s, Status: i, Mode: i, RealMW: d, ReactiveMVAr: d, RatingMVA: d, DefinedFault: b,
+  ThresholdVoltpu: d, FinalRealFaultCurrentpu: d, FinalReactiveFaultCurrentpu: d, DefinedFaultTimeS: <d>,
+  RealFaultCurrentpu: <d>, ReactiveFaultCurrentpu: <d>, ProfileUID: i, ModelMode: i, UdmActive: s, UdmReactive: s,
+  UdmActiveUID: i, UdmReactiveUID: i, ModelType: i, PluginID: s, ConverterDrivenPlant: b, CDPMethodType: i,
+  CDPVoltageInterpolation: i, CDPPhaseCorrections: b, CDPVoltagePU: <d>, CDPRealCurrentPU: <d>, CDPReactiveCurrentPU: <d>,
+  CDPVoltageTransientPU: <d>, CDPRealCurrentTransientPU: <d>, CDPReactiveCurrentTransientPU: <d>, CDPTimeConstantTransientMs: d,
+  CDPVoltageSubTransientPU: <d>, CDPRealCurrentSubTransientPU: <d>, CDPReactiveCurrentSubTransientPU: <d>,
+  CDPTimeConstantSubTransientMs: d, CDPKFactor: d, CDPVoltageThresholdPU: d, CDPMaxISync: d, CDPMaxITrans: d,
+  CDPMaxISubTrans: d, Aggregate: b, Versions: <i>
+}
+Define System UniBranch {
+  ID: i, FromID: i, ToID: i, Name: s, Status: i, SendMW: d, SendMVAr: d, ReceiveMW: d, ReceiveMVAr: d,
+  PluginID: s, Versions: <i>
+}
+Define System ProtContainer {
+  ID: i, ConnID: i, Type: s, Name: s, MemberUIDs: <i>, FromEnd: b, Versions: <i>
+}
+Define System ProtDevice {
+  ID: i, FromID: i, BlockOrder: <i>, Name: s, Status: i, DeviceManufacturer: s, DeviceFamily: s, DeviceDBName: s,
+  DeviceVersion: s, DeviceComments: s, GraphLabel: s, ShowAllBlockCurves: b, SpecifyBlockOrder: b, DeviceType: i,
+  ParameterUnits: i, XMinimum: d, XMaximum: d, YMinimum: d, YMaximum: d, OCNominalCurrentA: d, OCNominalRangeA: <s>,
+  FaultType: i, BreakerBaseCurrentA: d, BreakerBaseRangeA: <s>, BreaderUIDs: <i>, Versions: <i>
+}
+Define System ProtMonitor {
+  ID: i, FromID: i, Name: s, MonitoringWhat: i, PrimaryTurns: d, SecondaryTurns: d, SeesRed: b, SeesYellow: b,
+  SeesBlue: b, Versions: <i>
+}
+Define System ProtBlockConstantCurrent {
+  ID: i, BlockOrder: i, BlockName: s, Status: i, MonitoringWhat: i, CurrentSettingBlock: i, CurrentSettingA: d,
+  CurrentRangeA: <s>, CurrentMultiplier: d, CurrentMultiplierRange: <s>, CurrentOperatingPC: d, CurrentOperatingRangePC: <s>,
+  Versions: <i>
+}
+Define System ProtBlockConstantTime {
+  ID: i, BlockOrder: i, BlockName: s, Status: i, MonitoringWhat: i, CurrentSettingBlock: i, TimeSettingS: d,
+  TimeRangeS: <s>, Versions: <i>
+}
+Define System ProtBlockGivenPointsAdjust {
+  ID: i, BlockOrder: i, BlockName: s, Status: i, MonitoringWhat: i, CurrentSettingBlock: i, DisplayedCurves: i,
+  ExtrapolateCurve: b, MaxCurrentATimeS: <s>, MinCurrentATimeS: <s>, CurrentMultiplier: d, CurrentMultiplierRange: <s>,
+  CurrentOperatingPC: d, CurrentOperatingRangePC: <s>, TimeMultiplier: d, TimeMultiplierRange: <s>, Versions: <i>
+}
+Define System ProtBlockGivenPoints {
+  ID: i, BlockOrder: i, BlockName: s, Status: i, MonitoringWhat: i, CurrentSettingBlock: i, CurveType: i,
+  ExtrapolateCurve: b, OperatesIfHigherThanMax: b, UpperBandwidthPC: d, LowerBandwidthPC: d, MaxCurrentATimeS: <s>,
+  MinCurrentATimeS: <s>, Versions: <i>
+}
+Define System ProtBlockIDMT {
+  ID: i, BlockOrder: i, BlockName: s, Status: i, MonitoringWhat: i, CurrentSettingBlock: i, IDMTCurveType: i,
+  IDMTCurveTypeRange: <s>, CurveDefiniteCutoffs: <s>, DisplayedCurves: i, DisplayedIDMTCurve: i, GivenDisplayedValue: d,
+  CurrentSettingA: d, CurrentRangeA: <s>, CurrentMultiplier: d, CurrentMultiplierRange: <s>, CurrentOperatingPC: d,
+  CurrentOperatingRangePC: <s>, TimeMultiplier: d, TimeMultiplierRange: <s>, Versions: <i>
+}
+Define System ProtBlockPickAndDelay {
+  ID: i, BlockOrder: i, BlockName: s, Status: i, MonitoringWhat: i, CurrentSettingBlock: i, CurrentSettingA: d,
+  CurrentRangeA: <s>, PickUpCurrent: d, PickUpCurrentRange: <s>, TimeDelayS: d, TimeDelayRangeS: <s>, TimeDelayCurrentMultiplier: d,
+  TimeDelaySlope: d, CurrentOperatingPC: d, CurrentOperatingRangePC: <s>, Versions: <i>
+}
+Define System ProtBlockTransientDisc {
+  ID: i, BlockOrder: i, BlockName: s, Status: i, MonitoringWhat: i, CurrentSettingBlock: i, AdjustedResetTimeS: d,
+  ResetPercentage: d, TSDiscTravel: d, Versions: <i>
+}
+Define System Battery {
+  ID: i, FromID: i, Name: s, Status: i, Model: i, VoltPU: d, EmfPU: d, ResistancePU: d, CurrentPU: d, InductancePU: d,
+  SwitchTime1Secs: d, SwitchTime2Secs: d, DbType: s, DbPar: i, Versions: <i>
+}
+Define System DCMachine {
+  ID: i, FromID: i, Name: s, Status: i, BusVoltagePU: d, MechPowerMW: d, Efficiency: d, Speed: d, ArmResistPU: d,
+  ShuntResisPU: d, ControlResisPU: d, ShuntTRatio: d, SeriesTRatio: d, Compounding: d, SatFac75: d, SatFac120: d,
+  BusName2: s, ArmSelfIndPU: d, SeriesSelfIndPU: d, ShuntSelfIndPU: d, CtrlSelfIndPU: d, LeakageIndPU: d,
+  MechLossConst: d, InertiaSec: d, TSlipB: d, TSlipC: d, Switch1Sec: d, Switch2Sec: d, DbType: s, DbPar: i,
+  Versions: <i>
+}
+Define System Converter {
+  ID: i, FromID: i, ToID: i, Name: s, Status: i, DbType: s, Type: i, DCPowerMW: d, DCVoltagePU: d, ACReactivePowerMVAr: d,
+  PowerFactor: d, TransEqReactancePU: d, TransOperateTapPC: d, MinTapPC: d, TapStepPC: d, MaxTapPC: d,
+  PulseNumber: i, NumParaBridges: i, CommutateReactPU: d, MaxACCurrentPU: d, VoltRatio: d, FilterResisPU: d,
+  FilterInductPU: d, DCEquivCapPU: d, MinFireAngleDeg: d, MaxDCCurrentPU: d, Versions: <i>
+}
+Define System Chopper {
+  ID: i, FromID: i, ToID: i, Name: s, ChopperModel: i, VoltGainRatio: d, VoltGainDutyCycle: d, ConductancePU: d,
+  ConverterEfficiencyPC: d, Versions: <i>
+}
+Define System ConverterACC {
+  ID: i, ControlsUID: i, ConverterName: s, Name: s, DbType: s, CtrlBus: i, CtrlModel: i, CorrSlope: d,
+  PIFwdGain: d, VConDroop: d, PIIntGain: d, FConDroop: d, VRatioMax: d, VRatioMin: d, VRatioMod1: d, VRatioPt1: d,
+  ModIndexPt1: d, VRatioPt2: d, ModIndexPt2: d, ModIndexMax: d, ModIndexMin: d, QCurrentLimitPU: d, MaxAq: d,
+  PCurrentLimitPU: d, MaxAd: d, TotCurrentLimitPU: d, MaxAt: d, MaxPowCorrPC: d, MinPowCorrPC: d, ModelType: i,
+  PluginID: s, UdmID: s, Versions: <i>
+}
+Define System ConverterDCC {
+  ID: i, ControlsUID: i, Name: s, DbType: s, Ndczcb: i, Kymodb: i, OperateMode: i, PI1FwdGain: d, PI1IntGain: d,
+  PI2FwdGain: d, PI2IntGain: d, CorrSlope: d, IntGainK5: d, MaxAngle: d, MinAngle: d, VoltDroop: d, ActivePowSet: d,
+  FrequencySet: d, FConFreqRate: d, VConFreqRate: d, ModeSwitchTime: d, PowerFreqTC: d, PowerFreqDroop: d,
+  ModelType: i, PluginID: s, UdmID: s, Versions: <i>
+}
+Define System DCMachineCtl {
+  ID: i, ControlsUID: i, Name: s, DbType: s, DbPar: i, AVRUdmID: s, CtlBusbar: i, VRAmpGain: d, VRMaxVoltPU: d,
+  VRMinVoltPU: d, VRLeadTCSec: d, VRLagTCSec: d, VRVoltDroopPC: d, VRPowerLimMW: d, VRKoFactor: d, VRRate: d,
+  GovUdmID: s, GovAmpGain: d, GovAmpMaxPU: d, GovAmpMinPU: d, GovLeadTCSec: d, GovLagTCSec: d, GovDroopPC: d,
+  GovMaxCurrPU: d, GovKoFactor: d, ModeSwTimeSec: d, ModeSwTol: d, Versions: <i>
+}
+Define System MGSet {
+  ID: i, FromID: i, ToID: i, Name: s, Status: i, Versions: <i>
+}
+Define System Group {
+  ID: i, Type: s, Name: s, MemberUIDs: <i>, Versions: <i>
+}
+Define System GroupLoadScale {
+  ID: i, Name: s, MemberUIDs: <i>, RealScale: d, ReactiveScale: d, Versions: <i>
+}
+Define System GroupGeneratorScale {
+  ID: i, Name: s, MemberUIDs: <i>, RealScale: d, ReactiveScale: d, Versions: <i>
+}
+Define System GroupTransformer {
+  ID: i, Name: s, MemberUIDs: <i>, TapControlMethod: i, MasterTransformerUID: i, Versions: <i>
+}
+Define System GroupFeeder {
+  ID: i, Name: s, MemberUIDs: <i>, UseScaling: b, RealScale: d, ReactiveScale: d, DisplayColour: s, Versions: <i>
+}
+Define System Representing {
+  ID: i, Name: s, RepSceneUID: i, Versions: <i>
+}
+Define System Plugin {
+  ID: i, FromID: i, Name: s, Model: s, Type: s, RealParameters: <d>, IntParameters: <i>, BoolParameters: <i>,
+  StrParameters: <s>, InputUIDs: <i>, OutputUIDs: <i>, ModelDefs: <i>, Versions: <i>
+}
+Define System UdmModel {
+  ID: i, FromID: i, Name: s, Type: i, Filename: s, Pathname: s, Versions: <i>
+}
+Define System DeletedItems {
+  Items: <i>, Groups: <i>
+}
+Define System LoadProfilePQActual {
+  ID: i, Name: s, IdxNames: <s>, VarList1: <d>, VarList2: <d>, Versions: <i>
+}
+Define System LoadProfilePQScale {
+  ID: i, Name: s, IdxNames: <s>, VarList1: <d>, VarList2: <d>, Versions: <i>
+}
+Define System GeneratorProfilePQActual {
+  ID: i, Name: s, IdxNames: <s>, VarList1: <d>, VarList2: <d>, Versions: <i>
+}
+Define System GeneratorProfilePQScale {
+  ID: i, Name: s, IdxNames: <s>, VarList1: <d>, VarList2: <d>, Versions: <i>
+}
+Define System UMProfilePQActual {
+  ID: i, Name: s, IdxNames: <s>, VarList1: <d>, VarList2: <d>, Versions: <i>
+}
+Define System EquivalentBoundary {
+  ID: i, Name: s, Description: s, UseBoundaryConfigMode: b, BoundaryBusbarUIDs: <i>, BoundaryBranchUIDs: <i>,
+  BranchToBusUIDs: <i>, BranchToDirections: <i>, ReducedBusbarUIDs: <i>, ReductionCompleted: b, VerifiedBoundary: b,
+  ShowBoundaryBusMessages: b, ShowBoundaryBranchMessages: b, StaleBoundary: b, Versions: <i>
+}
+Define System EquivalentBranch {
+  ID: i, FromUID: i, ToUID: i, Name: s, Status: i, ResistancePU: d, ReactancePU: d, HideLabel: b, Comment: s,
+  Versions: <i>
+}
+Define System EquivalentRadial {
+  ID: i, FromUID: i, Name: s, Status: i, RealPowerMW: d, ReactivePowerMVAr: d, EquivResistancePU: d, EquivReactancePU: d,
+  TargetVoltagePU: d, NomVoltagekV: d, IncludesReducedSlack: b, CatalogTypes: <i>, CatalogTechs: <i>, CatalogStagings: <i>,
+  CatalogPowersMW: <d>, Comment: s, Versions: <i>
+}
+Define System LineUnbalanced {
+  ID: i, FromID: i, ToID: i, Name: s, LineType: i, Status: i, HasPhaseA: b, HasPhaseB: b, HasPhaseC: b,
+  HasNeutral: b, ResistancePhasePU: d, ReactancePhasePU: d, SusceptancePhasePU: d, ResistanceNeutralPU: d,
+  ReactanceNeutralPU: d, SusceptanceNeutralPU: d, DbType: s, DbLength: d, DbPar: i, Name2: s, Status2: i,
+  StanRatingMVA: d, StanRatingSendkA: d, StanRatingReceivekA: d, SumRatingMVA: d, SumRatingSendkA: d, SumRatingReceivekA: d,
+  WinRatingMVA: d, WinRatingSendkA: d, WinRatingReceivekA: d, ShortRatingMVA: d, ShortRatingSendkA: d,
+  ShortRatingReceivekA: d, RatingMVAs: <d>, RatingSendkAs: <d>, RatingReceivekAs: <d>, Versions: <i>
+}
+Define System LoadUnbalanced {
+  ID: i, FromID: i, Name: s, Status: i, Connection: i, HasPhaseA: b, HasPhaseB: b, HasPhaseC: b, RealPhaseAMW: d,
+  ReactivePhaseAMVAr: d, RealPhaseBMW: d, ReactivePhaseBMVAr: d, RealPhaseCMW: d, ReactivePhaseCMVAr: d,
+  ProfilePhaseAUID: i, ProfilePhaseBUID: i, ProfilePhaseCUID: i, HasTransformer: b, Versions: <i>
+}
+Define System TransformerUnbalanced {
+  ID: i, FromID: i, ToID: i, Name: s, TransformerType: i, Winding: i, Status: i, ResistancePU: d, ReactancePU: d,
+  EarthPrimaryResistancePU: d, EarthPrimaryReactancePU: d, EarthSecondaryResistancePU: d, EarthSecondaryReactancePU: d,
+  TapPrimaryNominalPC: d, TapPrimaryPositionPC: d, MinTapPrimaryPC: d, TapPrimaryStepPC: d, MaxTapPrimaryPC: d,
+  TapSecondaryNominalPC: d, TapSecondaryPositionPC: d, MinTapSecondaryPC: d, TapSecondaryStepPC: d, MaxTapSecondaryPC: d,
+  DbType: s, DbParallel: i, Name2: s, Status2: i, StanRatingMVA: d, StanRatingSendkA: d, StanRatingReceivekA: d,
+  SumRatingMVA: d, SumRatingSendkA: d, SumRatingReceivekA: d, WinRatingMVA: d, WinRatingSendkA: d, WinRatingReceivekA: d,
+  ShortRatingMVA: d, ShortRatingSendkA: d, ShortRatingReceivekA: d, RatingMVAs: <d>, RatingSendkAs: <d>,
+  RatingReceivekAs: <d>, Versions: <i>
+}
+Record System Version {
+  1  0 "Working scenario" "" "" "{d4819a1c-f674-4bfe-88f7-8850fd7d2657}" "15 Aug 2025 12:29:13"  < > 
+    < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < > 
+    < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < > 
+  
+}
+Record System AnalysisLF {
+  0.01  100  0.9  1.1  0  f  250  250  250  250  0  f  1  1  f  f  t  t  f  f  0  0  f  t  f  1  0  f
+    f  1  0  f  0  f  t  1  0  0  ""  0  f  f  < 1 > 
+}
+Record System AnalysisFL {
+  1  0.1  0  0  4  2  5  f  0  0  f  < >   0  0  0  0  < >   5  100  f  f  t  t  t  f  f  f  t  0  1
+    1  0  t  0  0.8  3  f  3  t  f  0  t  f  f  f  30  0.03  t  0  0  1  t  t  t  f  f  < 1 > 
+}
+Record System AnalysisHM {
+  1  0  1  25  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  1  0.05  < >   1  0  f  t  f  f  f  f  f
+    < 1 > 
+}
+Record System AnalysisTS {
+  0  1  0.01  540  0.04  0  0.0001  0.01  f  f  f  f  t  t  t  f  f  ""  ""  < >   < >   < >   < >   < > 
+    < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   f  < 1 > 
+}
+Record System AnalysisRel {
+  t  t  < 1 > 
+}
+Record System AnalysisUnb {
+  100  1  0.0001  50  100  0.6  0.001  0.8  0.5  1e-06  < 1 > 
+}
+Record System AnalysisProt {
+  1  0  f  0  1  11  < >   3  4  2  0.1  0  0  f  0  0  0  1  1  t  0  0  0  0  0  0  0  0  0  0  0  0
+    f  < 1 > 
+}
+Record System AnalysisDCLF {
+  f  f  0  100  f  t  f  1  0  f  0  ""  < 1 > 
+}
+Record System AnalysisNR {
+  2  0  f  t  t  f  0  f  0  f  f  0  2  f  0  1  2  t  < 1 > 
+}
+Record System AnalysisAF {
+  1  0  0  < >   < >   3  1  0.1  0  0  f  0  0  0  1  1  t  5  0  < >   0  0  0  f  0  15  1  1  f  < 1 
+  > 
+}
+Record System Scene {
+  1  0 "IpsaSLD" "Main single line"  0  -223.844  2051.25  1757.77  < 1 > 
+}
+Record System SceneVersion {
+  1  1  0 ""  < >   < >   < > 
+}
+Record System SceneData {
+  1 "IpsaSLD" ""  0.3 "#ffffff" ""  1472  1024  f "Kilometres"  1  f  f "https://a.tile.openstreetmap.org"
+    0  0  f  1  16  53.4761  0  -2.2317  0  0  0 ""  < 1 > 
+}
+Record System View {
+  1 "Main single line" "Main single line"  t  f  < 0 0 1460 597 >   1027.34  877.344  0.64  f  t  < 234 
+  219 255 >   < 81 67 103 >   0.7  1.25  5  20  0  f  t  4  f  < 255 0 0 >   0.2  < 1 > 
+}
+Record System DataDisplay {
+  "Main single line"  t  4  6  6  6  6  6  6  6  6  "black"  "black"  "black"  "black"  "black"  "black"
+    "black"  "black"  "black"  0.25  0.25  1  1  1  1  1  1  1  "dot"  "dot"  "solid"  "dash"  "solid"
+    "dot"  "dashdot"  "dashdot"  "solid"  "bold"  "bold"  t  "Custom"  < "16.5" "#e7344a" "138" "#ba4675" 
+  "230" "#3774a3" "345" "#514367" >   f  f  f  f  "Segoe UI,8,-1,5,50,0,0,0,0,0,Regular"  f  f  f  t
+    f  t
+}
+Record System ResultsDisplay {
+  "Main single line"  < "Data" "Busbar" "t" "Data" "Radial" "t" "Data" "Branch" "t" "LoadFlow" "Busbar" 
+  "t" "LoadFlow" "Radial" "t" "LoadFlow" "Branch" "t" >   < "Data" "Busbar" "ItemColourFore" "Data" 
+  "Radial" "ItemColourFore" "Data" "Branch" "ItemColourFore" "LoadFlow" "Busbar" "TextColourBorder" 
+  "LoadFlow" "Radial" "TextColourBorder" "LoadFlow" "Branch" "TextColourBorder" >   < "Data" "Busbar" 
+  "ItemPattern" "Data" "Radial" "ItemPattern" "Data" "Branch" "ItemPattern" "LoadFlow" "Busbar" "TextColourBorder" 
+  "LoadFlow" "Radial" "TextColourBorder" "LoadFlow" "Branch" "TextColourBorder" >   < "Data" "Busbar" 
+  "black" "Data" "Radial" "black" "Data" "Branch" "black" "LoadFlow" "Busbar" "red" "LoadFlow" "Radial" 
+  "red" "LoadFlow" "Branch" "red" >   < "LoadFlow" "Busbar" "blue" "LoadFlow" "Radial" "blue" "LoadFlow" 
+  "Branch" "blue" >   < "Data" "Busbar" "0.25" "Data" "Radial" "0.25" "Data" "Branch" "0.25" "LoadFlow" 
+  "Busbar" "1" "LoadFlow" "Radial" "1" "LoadFlow" "Branch" "1" >   < "LoadFlow" "Busbar" "1" "LoadFlow" 
+  "Radial" "1" "LoadFlow" "Branch" "1" >   < "Data" "Busbar" "dot" "Data" "Radial" "dot" "Data" "Branch" 
+  "dot" "LoadFlow" "Busbar" "dot" "LoadFlow" "Radial" "dot" "LoadFlow" "Branch" "dot" >   < "Data" "Busbar" 
+  "dot" "Data" "Radial" "dot" "Data" "Branch" "dot" "LoadFlow" "Busbar" "dot" "LoadFlow" "Radial" "dot" 
+  "LoadFlow" "Branch" "dot" >   < "Data" "Busbar" "bold" "Data" "Radial" "bold" "Data" "Branch" "bold" 
+  "LoadFlow" "Busbar" "bold" "LoadFlow" "Radial" "bold" "LoadFlow" "Branch" "bold" >   < "Data" "Busbar" 
+  "bold" "Data" "Radial" "bold" "Data" "Branch" "bold" "LoadFlow" "Busbar" "bold" "LoadFlow" "Radial" 
+  "bold" "LoadFlow" "Branch" "bold" > 
+}
+Record System ResultsDisplayLF {
+  "Main single line"  f  f  t  4  f  3  f  4  f  f  f  f  f  t  f  f  f  f  "BusVoltagepu"  "RadialRealandReactiveFlow"
+    "UnitsMVA"  "BranchRealandReactiveFlow"  "BranchFrom"  "UnitsMVA"  "FlowArrowBothAnimated"  1.064
+    0.95  0  100  0  1  3.3  0  "green"  "gold"  "maroon"  100  100  100  33  66  0  0  f
+}
+Record System ResultsDisplayFL {
+  "Main single line"  f  f  t  f  f  f  f  f  f  t  f  f  3  3  t  f  f  f  f  f  f  f  "DCNone"  "UnitsMVA"
+    "UnitsPU"  "TransformerFrom"  "UnitskA"
+}
+Record System ResultsDisplayHM {
+  "Main single line"  t  f  f  f  t  f  f  3  3
+}
+Record System ResultsDisplayReliablity {
+  "Main single line"  t  t  t  f  3
+}
+Record System Busbar {
+  1  "Busbar1"  345  0  1.04736  -0.147283  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  2  "Busbar2"  345  0  1.04874  -0.100422  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  3  "Busbar3"  345  0  1.03017  -0.150073  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  4  "Busbar4"  345  0  1.00386  -0.167668  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  5  "Busbar5"  345  0  1.00531  -0.150306  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  6  "Busbar6"  345  0  1.00767  -0.138749  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  7  "Busbar7"  345  0  0.996999  -0.176695  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  8  "Busbar8"  345  0  0.996018  -0.185274  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  9  "Busbar9"  345  0  1.02823  -0.180153  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  10  "Busbar39"  345  2  1.03  -0.175458  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  17  "Busbar31"  16.5  1  0.982  0  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  21  "Busbar32"  16.5  7  0.9831  0.0448376  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  23  "Busbar13"  345  5  1.01431  -0.106423  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  24  "Busbar14"  345  0  1.01173  -0.133629  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  25  "Busbar15"  345  0  1.01538  -0.13502  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  26  "Busbar16"  345  0  1.03177  -0.107992  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  27  "Busbar17"  345  0  1.03355  -0.127431  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  28  "Busbar18"  345  0  1.03093  -0.143533  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  29  "Busbar19"  345  5  1.04986  -0.01785  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  30  "Busbar20"  230  0  0.991176  -0.035162  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  31  "Busbar21"  345  0  1.03176  -0.0659821  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  32  "Busbar22"  345  0  1.04979  0.0116648  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  33  "Busbar23"  345  0  1.04479  0.00820423  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  34  "Busbar24"  345  0  1.03731  -0.105904  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  35  "Busbar25"  345  0  1.05757  -0.0761553  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  36  "Busbar26"  345  0  1.05208  -0.0964592  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  37  "Busbar27"  345  0  1.03774  -0.130819  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  38  "Busbar28"  345  0  1.05012  -0.035166  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  39  "Busbar29"  345  0  1.04994  0.0129918  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  40  "Busbar30"  16.5  7  1.0475  -0.0581889  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  41  "Busbar33"  16.5  7  0.9972  0.0732119  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  42  "Busbar34"  16.5  7  1.0123  0.0554148  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  43  "Busbar35"  16.5  7  1.0493  0.0982637  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  44  "Busbar36"  16.5  2  1.0635  0.145263  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  45  "Busbar37"  16.5  7  1.0278  0.0422565  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  46  "Busbar38"  16.5  7  1.0265  0.136271  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  62  "Busbar10"  345  0  1.01715  -0.0947208  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  68  "Busbar11"  345  5  1.01269  -0.109682  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+  69  "Busbar12"  138  0  0.988019  -0.108983  0  ""  0  0  0  0  f  0  0  0  0  0  1  < 1 > 
+}
+Record System Network {
+  "IEEE 39 Bus Network"  "IPSA"  ""  "(c)2025 TNEI Services Ltd."  100  f  100  60  < 17 >   < "Standard" 
+  "Summer" "Winter" "Short" >   < "0" "Unset" >   < >   t  t  1  1  0  0  1  1  0  14  f  t  t  f  f
+    t  t  ""  33  33  35  0  < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < >   < > 
+    < >   < >   < >   < >   < >   < >   < >   f  f  < 1 > 
+}
+Record System DrawTool {
+  3  5  500  200  20  675  350  t  t  t  t  t  t  -1  5  675  350  0  3  0  f  f  f  t  t  t  5  f  < 1 
+  > 
+}
+Record System Staging {
+  t  t  t  t  t  t  t  t  t  t  t  t  < 1 > 
+}
+Record System Load {
+  86  3  "Load3"  0  322  2.4  0  0  0  f  3  ""  f  < 1 > 
+  87  4  "Load 4"  0  500  184  0  0  0  f  3  ""  f  < 1 > 
+  88  7  "Load 7"  0  233.8  84  0  0  0  f  3  ""  f  < 1 > 
+  89  8  "Load 8"  0  522  176  0  0  0  f  3  ""  f  < 1 > 
+  90  69  "Load 12"  0  7.5  88  0  0  0  f  3  ""  f  < 1 > 
+  91  25  "Load 15"  0  320  153  0  0  0  f  3  ""  f  < 1 > 
+  92  26  "Load 16"  0  329  32.3  0  0  0  f  3  ""  f  < 1 > 
+  93  28  "Load 18"  0  158  30  0  0  0  f  3  ""  f  < 1 > 
+  94  30  "Load 20"  0  628  103  0  0  0  f  3  ""  f  < 1 > 
+  95  31  "Load 21"  0  274  115  0  0  0  f  3  ""  f  < 1 > 
+  96  33  "Load 23"  0  247.5  84.6  0  0  0  f  3  ""  f  < 1 > 
+  97  34  "Load 24"  0  308.6  -92.2  0  0  0  f  3  ""  f  < 1 > 
+  98  35  "Load 25"  0  224  47.2  0  0  0  f  3  ""  f  < 1 > 
+  99  36  "Load 26"  0  139  17  0  0  0  f  3  ""  f  < 1 > 
+  100  37  "Load 27"  0  281  75.5  0  0  0  f  3  ""  f  < 1 > 
+  102  38  "Load 28"  0  206  27.6  0  0  0  f  3  ""  f  < 1 > 
+  103  39  "Load 29"  0  283.5  26.9  0  0  0  f  3  ""  f  < 1 > 
+  104  17  "Load 31"  0  9.2  4.6  0  0  0  f  3  ""  f  < 1 > 
+  105  10  "Load 39"  0  1104  250  0  0  0  f  3  ""  f  < 1 > 
+}
+Record System Line {
+  12  10  9  ""  1  0  0  0  0.001  0.025  1.2  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  13  9  8  ""  1  0  0  0  0.0023  0.0363  0.3804  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  14  7  8  ""  1  0  0  0  0.0004  0.0046  0.078  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  15  7  6  ""  1  0  0  0  0.0006  0.0092  0.113  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  16  6  5  ""  1  0  0  0  0.0002  0.0026  0.0434  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  19  6  17  ""  1  0  3  0  0  0.025  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 0 0 0 
+  >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  49  2  1  ""  1  0  3  0  0.0035  0.0411  0.6987  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  50  35  2  ""  1  0  0  0  0.007  0.0086  0.146  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  51  35  36  ""  1  0  0  0  0.0032  0.0323  0.513  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  52  2  3  ""  1  0  3  0  0.0013  0.0151  0.2572  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  53  3  28  ""  1  0  0  0  0.0011  0.0133  0.2138  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  54  28  27  ""  1  0  0  0  0.0007  0.0082  0.1319  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  56  3  4  ""  1  0  0  0  0.0013  0.0213  0.2214  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  59  4  24  ""  1  0  0  0  0.0008  0.0129  0.1382  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  60  24  25  ""  1  0  3  0  0.0018  0.0217  0.366  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  61  25  26  ""  1  0  0  0  0.0009  0.0094  0.171  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  63  26  31  ""  1  0  0  0  0.0008  0.0135  0.2548  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  64  32  31  ""  1  0  0  0  0.0008  0.014  0.2565  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  65  32  33  ""  1  0  0  0  0.0006  0.0096  0.1846  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  66  33  34  ""  1  0  0  0  0.0022  0.035  0.361  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  67  34  26  ""  1  0  0  0  0.0003  0.0059  0.068  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  72  68  6  ""  1  0  0  0  0.0007  0.0082  0.1389  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  73  68  62  ""  1  0  0  0  0.0004  0.0043  0.0729  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  74  23  24  ""  1  0  0  0  0.0009  0.0101  0.1723  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  75  23  62  ""  1  0  0  0  0.0004  0.0043  0.0729  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  76  26  27  ""  1  0  0  0  0.0007  0.0089  0.1342  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  77  37  27  ""  1  0  0  0  0.0013  0.0173  0.3216  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  78  36  37  ""  1  0  0  0  0.0014  0.0147  0.2396  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  79  36  39  ""  1  0  0  0  0.0057  0.0625  1.029  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  80  36  38  ""  1  0  0  0  0.0043  0.0474  0.7802  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0
+    < 0 0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  81  38  39  ""  1  0  0  0  0.0014  0.0151  0.249  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  82  29  26  ""  1  0  0  0  0.0016  0.0195  0.304  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  83  5  4  ""  1  0  0  0  0.0008  0.0128  0.1342  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  84  5  8  ""  1  0  0  0  0.0008  0.0112  0.1476  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  85  1  10  ""  1  0  0  0  0.001  0.025  0.75  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  ""  ""  0  0  1  1  ""  0  0  0  0  ""  f  ""  0  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  114  68  69  ""  1  0  3  0  0.0016  0.0435  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  115  23  69  ""  1  0  3  0  0.0016  0.0435  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  116  62  21  ""  1  0  3  0  0  0.02  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 0 0 0 
+  >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  117  29  41  ""  1  0  3  0  0.0007  0.0142  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  118  30  42  ""  1  0  3  0  0.0009  0.018  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  119  32  43  ""  1  0  3  0  0  0.0143  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 0 0 
+  0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  120  33  44  ""  1  0  3  0  0.0005  0.0272  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  122  35  45  ""  1  0  3  0  0.0006  0.0232  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  123  2  40  ""  1  0  3  0  0  0.0181  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 0 0 0 
+  >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  124  39  46  ""  1  0  3  0  0.0008  0.0156  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+  125  29  30  ""  1  0  3  0  0.0007  0.0138  0  0  0  0  f  f  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  ""  ""  1  0  1  1  ""  0  0  0  1  ""  f  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  < 0 
+  0 0 0 >   < 0 0 0 0 >   < 0 0 0 0 >   ""  f  < 1 > 
+}
+Record System Transformer {
+  19  6  17  ""  0  0  0  0  3  0  0  0  0  0  7  -7  3.5  7  0  t  1  0  0  0  0  < 0 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0  0  0  0
+    f  0  0  0  ""  1  ""  0  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  114  68  69  ""  0  0  0  0  3  0  0  0  0  0  0.6  -0.6  0.6  0.6  0  t  -1  0  0  0  0  < 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0
+    0  0  0  f  0  0  0  ""  1  ""  0  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  115  23  69  ""  0  0  0  0  3  0  0  0  0  0  0.6  -0.6  0.6  0.6  0  t  -1  0  0  0  0  < 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0
+    0  0  0  f  0  0  0  ""  1  ""  0  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  116  62  21  ""  0  0  0  0  3  0  0  0  0  0  7  -7  3.5  7  0  t  1  0  0  0  0  < 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0  0  0
+    0  f  0  0  0  ""  1  ""  0  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  117  29  41  ""  0  0  0  0  3  0  0  0  0  0  7  -7  3.5  7  0  t  1  0  0  0  0  < 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0  0  0
+    0  f  0  0  0  ""  1  ""  0  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  118  30  42  ""  0  0  0  0  3  0  0  0  0  0  0.8999  -0.9  0.9  0.9  0  t  1  0  0  0  0  < 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0
+    0  0  0  0  f  0  0  0  ""  1  ""  0  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  119  32  43  ""  0  0  0  0  3  0  0  0  0  0  2.5  -2.5  2.5  2.5  0  t  1  0  0  0  0  < 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0
+    0  0  0  f  0  0  0  ""  1  ""  0  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  120  33  44  ""  0  0  0  0  3  0  0  0  0  0  0  0  0  0  0  t  0  0  0  0  0  < 0 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0  0  0  0
+    f  0  0  0  ""  1  ""  0  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  122  35  45  ""  0  0  0  0  3  0  0  0  0  0  2.5  -2.5  2.5  2.5  0  t  1  0  0  0  0  < 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0
+    0  0  0  f  0  0  0  ""  1  ""  0  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  123  2  40  ""  0  0  0  0  3  0  0  0  0  0  2.5  -2.5  2.5  2.5  0  t  1  0  0  0  0  < 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0
+    0  0  0  f  0  0  0  ""  1  ""  0  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  124  39  46  ""  0  0  0  0  3  0  0  0  0  0  2.5  -2.5  2.5  2.5  0  t  1  0  0  0  0  < 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0
+    0  0  0  f  0  0  0  ""  1  ""  0  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+  125  29  30  ""  0  0  0  0  3  0  0  0  0  0  6  -6  3  6  0  t  -1  0  0  0  0  < 0 0 0 0 0 0 0 
+  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 >   < >   < >   < >   0  0  0  0
+    0  f  0  0  0  ""  1  ""  0  ""  3  0  0  0  0  0  0  0  0  0  0  0  0  ""  < 1 > 
+}
+Record System Generator {
+  11  10  "G 01"  0  1.03  0  0  1000  88.2907  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0
+    0  0  0  0  f  0  0  0  0  3  0  1  ""  f  < 1 > 
+  20  17  "G 02"  0  0.982  0  0  520.815  198.26  490  -210  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  ""  1
+    0  0  0  0  0  0  f  0  0  0  0  3  0  1  ""  f  < 1 > 
+  22  21  "G 03"  0  0.9831  0  0  650  205.164  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0
+    0  0  0  0  f  0  0  0  0  3  0  1  ""  f  < 1 > 
+  107  41  "G 04"  0  0.9972  0  0  632  109.92  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0
+    0  0  0  0  f  0  0  0  0  3  0  1  ""  f  < 1 > 
+  108  42  "G 05"  0  1.0123  0  0  508  165.766  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0
+    0  0  0  0  f  0  0  0  0  3  0  1  ""  f  < 1 > 
+  109  43  "G 06"  0  1.0493  0  0  650  212.419  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0
+    0  0  0  0  f  0  0  0  0  3  0  1  ""  f  < 1 > 
+  110  44  "G 07"  0  1.0635  0  0  560  101.179  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0
+    0  0  0  0  f  0  0  0  0  3  0  1  ""  f  < 1 > 
+  111  45  "G 08"  0  1.0278  0  0  540  0.443127  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0
+    0  0  0  0  0  f  0  0  0  0  3  0  1  ""  f  < 1 > 
+  112  46  "G 09"  0  1.0265  0  0  830  22.8451  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0
+    0  0  0  0  f  0  0  0  0  3  0  1  ""  f  < 1 > 
+  113  40  "G 10"  0  1.0475  0  0  250  146.165  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+    0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  ""  1  0  0
+    0  0  0  0  f  0  0  0  0  3  0  1  ""  f  < 1 > 
+}
+Record System Governor {
+  126  109  ""  0  ""  ""  0  0  0  0  0  0  0  0  ""  1  < 1 > 
+}
+Record System BusbarGraphic {
+  1 "Horizontal" "Main single line"  386.844  403.906  169.844  < 1 > 
+  2 "Horizontal" "Main single line"  466.5  270  160  < 1 > 
+  3 "Horizontal" "Main single line"  627  444.25  207.5  < 1 > 
+  4 "Horizontal" "Main single line"  567.25  565.75  80  < 1 > 
+  5 "Horizontal" "Main single line"  531.25  684.25  136  < 1 > 
+  6 "Horizontal" "Main single line"  466.437  1092.37  227.5  < 1 > 
+  7 "Horizontal" "Main single line"  396.109  953.914  220.625  < 1 > 
+  8 "Horizontal" "Main single line"  408.864  820.207  153.242  < 1 > 
+  9 "Horizontal" "Main single line"  341.469  615.766  80  < 1 > 
+  10 "Horizontal" "Main single line"  260.938  501.125  260.812  < 1 > 
+  17 "Horizontal" "Main single line"  445.59  1279.17  117.5  < 1 > 
+  21 "Horizontal" "Main single line"  929.609  1359.93  80  < 1 > 
+  23 "Horizontal" "Main single line"  882.5  691.953  265.312  < 1 > 
+  24 "Horizontal" "Main single line"  916.25  600  80  < 1 > 
+  25 "Horizontal" "Main single line"  996.25  497.5  110  < 1 > 
+  26 "Horizontal" "Main single line"  1145  423.75  447.5  < 1 > 
+  27 "Horizontal" "Main single line"  935  292.5  80  < 1 > 
+  28 "Horizontal" "Main single line"  670  292.5  112.5  < 1 > 
+  29 "Horizontal" "Main single line"  1246.25  621.25  202.5  < 1 > 
+  30 "Horizontal" "Main single line"  1141.17  785.547  80  < 1 > 
+  31 "Horizontal" "Main single line"  1337.5  522.5  80  < 1 > 
+  32 "Horizontal" "Main single line"  1613.75  493.75  80  < 1 > 
+  33 "Horizontal" "Main single line"  1772.5  713.75  310  < 1 > 
+  34 "Horizontal" "Main single line"  1401.72  265.234  100  < 1 > 
+  35 "Horizontal" "Main single line"  618.75  142.5  200  < 1 > 
+  36 "Horizontal" "Main single line"  958.75  52.75  140.8  < 1 > 
+  37 "Horizontal" "Main single line"  1060  171.25  197.5  < 1 > 
+  38 "Horizontal" "Main single line"  1285.7  56.85  80  < 1 > 
+  39 "Horizontal" "Main single line"  1692.75  47.05  145  < 1 > 
+  40 "Horizontal" "Main single line"  395.4  13.65  80  < 1 > 
+  41 "Horizontal" "Main single line"  1327.5  967.5  80  < 1 > 
+  42 "Horizontal" "Main single line"  1118.75  977.5  80  < 1 > 
+  43 "Horizontal" "Main single line"  1680  388.75  117.5  < 1 > 
+  44 "Horizontal" "Main single line"  1658.52  876.875  80  < 1 > 
+  45 "Horizontal" "Main single line"  616.1  -59.65  80  < 1 > 
+  46 "Horizontal" "Main single line"  1781.2  241.85  117.5  < 1 > 
+  62 "Horizontal" "Main single line"  935.391  1182.5  150.156  < 1 > 
+  68 "Horizontal" "Main single line"  779.453  1090.47  80  < 1 > 
+  69 "Horizontal" "Main single line"  746.25  838.75  170  < 1 > 
+}
+Record System RadialGraphic {
+  11 "Generator" "Main single line"  < 152.61 498.125 152.61 442.047 >   < 1 4 >   152.61  427.047  < 1 
+  > 
+  20 "Generator" "Main single line"  < 413.028 1282.17 413.028 1326.76 >   < 1 4 >   413.028  1341.76
+    < 1 > 
+  22 "Generator" "Main single line"  < 938.984 1362.93 938.984 1419.61 >   < 1 4 >   938.984  1434.61
+    < 1 > 
+  86 "LoadSymbol" "Main single line"  < 646.25 447.25 646.25 479.25 >   < 1 4 >   646.25  483.75  < 1 
+  > 
+  87 "LoadSymbol" "Main single line"  < 590 568.75 590 604.25 >   < 1 4 >   590  608.75  < 1 > 
+  88 "LoadSymbol" "Main single line"  < 301.64 956.914 301.64 993.977 >   < 1 4 >   301.64  998.477  < 1 
+  > 
+  89 "LoadSymbol" "Main single line"  < 412.051 823.207 412.051 856.379 >   < 1 4 >   412.051  860.879
+    < 1 > 
+  90 "LoadSymbol" "Main single line"  < 677.5 841.75 677.5 881.75 >   < 1 4 >   677.5  886.25  < 1 > 
+  
+  91 "LoadSymbol" "Main single line"  < 1020 500.5 1020 534.25 >   < 1 4 >   1020  538.75  < 1 > 
+  92 "LoadSymbol" "Main single line"  < 1103.75 426.75 1103.75 459.719 >   < 1 4 >   1103.75  464.219
+    < 1 > 
+  93 "LoadSymbol" "Main single line"  < 671.25 295.5 671.25 325.5 >   < 1 4 >   671.25  330  < 1 > 
+  94 "LoadSymbol" "Main single line"  < 1154.92 788.547 1154.92 826.047 >   < 1 4 >   1154.92  830.547
+    < 1 > 
+  95 "LoadSymbol" "Main single line"  < 1305 525.5 1305 558.234 >   < 1 4 >   1305  562.734  < 1 > 
+  96 "LoadSymbol" "Main single line"  < 1877.03 716.75 1877.03 759.719 >   < 1 4 >   1877.03  764.219
+    < 1 > 
+  97 "LoadSymbol" "Main single line"  < 1401.01 268.234 1401.01 307.062 >   < 1 4 >   1401.01  311.562
+    < 1 > 
+  98 "LoadSymbol" "Main single line"  < 592.422 145.5 592.422 183.781 >   < 1 4 >   592.422  188.281
+    < 1 > 
+  99 "LoadSymbol" "Main single line"  < 902.75 55.75 902.75 89.425 >   < 1 4 >   902.75  93.925  < 1 
+  > 
+  100 "LoadSymbol" "Main single line"  < 1070.55 174.25 1070.55 208.469 >   < 1 4 >   1070.55  212.969
+    < 1 > 
+  102 "LoadSymbol" "Main single line"  < 1280.15 59.85 1280.15 93.5219 >   < 1 4 >   1280.15  98.0219
+    < 1 > 
+  103 "LoadSymbol" "Main single line"  < 1645.25 50.05 1645.25 83.8 >   < 1 4 >   1645.25  88.3  < 1 
+  > 
+  104 "LoadSymbol" "Main single line"  < 460.84 1282.17 460.84 1312.42 >   < 1 4 >   460.84  1316.92
+    < 1 > 
+  105 "LoadSymbol" "Main single line"  < 152.188 504.125 152.188 532.375 >   < 1 4 >   152.188  536.875
+    < 1 > 
+  107 "Generator" "Main single line"  < 1330.39 970.5 1330.39 1017.42 >   < 1 4 >   1330.39  1032.42
+    < 1 > 
+  108 "Generator" "Main single line"  < 1116.41 980.5 1116.41 1028.98 >   < 1 4 >   1116.41  1043.98
+    < 1 > 
+  109 "Generator" "Main single line"  < 1686.25 385.75 1686.25 350 >   < 1 4 >   1686.25  335  < 1 > 
+  
+  110 "Generator" "Main single line"  < 1659.76 879.875 1659.76 929.141 >   < 1 4 >   1659.76  944.141
+    < 1 > 
+  111 "Generator" "Main single line"  < 628.834 -62.65 628.834 -118.166 >   < 1 4 >   628.834  -133.166
+    < 1 > 
+  112 "Generator" "Main single line"  < 1829.35 238.85 1829.35 182.419 >   < 1 4 >   1829.35  167.419
+    < 1 > 
+  113 "Generator" "Main single line"  < 389.307 10.65 389.307 -51.1935 >   < 1 4 >   389.307  -66.1935
+    < 1 > 
+}
+Record System BranchGraphic {
+  12 "Line" "Main single line"  < 345.719 504.125 345.719 558.445 >   < 1 4 >   < 345.719 612.766 345.719 
+  558.445 >   < 1 4 >   0  0  0  345.719  558.445  < 1 > 
+  13 "Line" "Main single line"  < 362.062 618.766 362.062 717.986 >   < 1 4 >   < 362.062 817.207 362.062 
+  717.986 >   < 1 4 >   0  0  0  362.062  717.986  < 1 > 
+  14 "Line" "Main single line"  < 350.243 950.914 350.243 887.06 >   < 1 4 >   < 350.243 823.207 350.243 
+  887.06 >   < 1 4 >   180  0  0  350.243  887.06  < 1 > 
+  15 "Line" "Main single line"  < 431 956.914 431 1023.14 >   < 1 4 >   < 431 1089.37 431 1023.14 > 
+    < 1 4 >   0  0  0  431  1023.14  < 1 > 
+  16 "Line" "Main single line"  < 554.738 1089.37 554.738 888.312 >   < 1 4 >   < 554.738 687.25 554.738 
+  888.312 >   < 1 4 >   180  0  0  554.738  888.312  < 1 > 
+  19 "WyeWyeSymbol" "Main single line"  < 451.641 1095.37 451.641 1159.52 >   < 1 4 >   < 451.641 1276.17 
+  451.641 1212.02 >   < 1 4 >   0  30  52.5  451.641  1185.77  < 1 > 
+  49 "Line" "Main single line"  < 427.5 273 427.5 336.953 >   < 1 4 >   < 427.5 400.906 427.5 336.953 
+  >   < 1 4 >   0  0  0  427.5  336.953  < 1 > 
+  50 "Line" "Main single line"  < 521.75 145.5 521.75 146.743 521.75 206.871 >   < 1 4 4 >   < 521.75 
+  267 521.75 206.871 >   < 1 4 >   0  0  0  521.75  206.871  < 1 > 
+  51 "Line" "Main single line"  < 718.75 142.544 719.992 142.544 831.775 143.722 >   < 1 4 4 >   < 944.8 
+  55.75 944.8 144.9 831.775 143.722 >   < 1 3 4 >   -89.3997  0  0  831.775  143.722  < 1 > 
+  52 "Line" "Main single line"  < 529.75 273 529.75 357.125 >   < 1 4 >   < 529.75 441.25 529.75 357.125 
+  >   < 1 4 >   0  0  0  529.75  357.125  < 1 > 
+  53 "Line" "Main single line"  < 617.75 441.25 617.75 368.375 >   < 1 4 >   < 617.75 295.5 617.75 368.375 
+  >   < 1 4 >   180  0  0  617.75  368.375  < 1 > 
+  54 "Line" "Main single line"  < 726.25 292.5 810.625 292.5 >   < 1 4 >   < 895 292.5 810.625 292.5 
+  >   < 1 4 >   270  0  0  810.625  292.5  < 1 > 
+  56 "Line" "Main single line"  < 563.75 447.25 563.75 505 >   < 1 4 >   < 563.75 562.75 563.75 505 
+  >   < 1 4 >   0  0  0  563.75  505  < 1 > 
+  59 "Line" "Main single line"  < 607.25 565.72 608.493 565.72 746.75 564.735 >   < 1 4 4 >   < 886.25 
+  597 886.25 563.75 746.75 564.735 >   < 1 3 4 >   -90.4063  0  0  746.75  564.735  < 1 > 
+  60 "Line" "Main single line"  < 953.25 597 953.25 595.757 953.25 548.129 >   < 1 4 4 >   < 953.25 
+  500.5 953.25 548.129 >   < 1 4 >   180  0  0  953.25  548.129  < 1 > 
+  61 "Line" "Main single line"  < 986.25 494.5 986.25 460.625 >   < 1 4 >   < 986.25 426.75 986.25 460.625 
+  >   < 1 4 >   180  0  0  986.25  460.625  < 1 > 
+  63 "Line" "Main single line"  < 1321.25 426.75 1321.25 473.125 >   < 1 4 >   < 1321.25 519.5 1321.25 
+  473.125 >   < 1 4 >   0  0  0  1321.25  473.125  < 1 > 
+  64 "Line" "Main single line"  < 1573.75 493.768 1572.51 493.768 1465.62 494.228 >   < 1 4 4 >   < 1357.5 
+  519.5 1357.5 494.688 1465.62 494.228 >   < 1 3 4 >   89.755  0  0  1465.62  494.228  < 1 > 
+  65 "Line" "Main single line"  < 1633.75 496.75 1633.75 603.75 >   < 1 4 >   < 1633.75 710.75 1633.75 
+  603.75 >   < 1 4 >   0  0  0  1633.75  603.75  < 1 > 
+  66 "Line" "Main single line"  < 1852.81 710.75 1852.81 305.625 1649.38 305.156 >   < 1 3 4 >   < 1445.62 
+  268.234 1445.62 277.188 1445.94 304.688 1649.38 305.156 >   < 1 3 3 4 >   90.1319  0  0  1649.38  305.156
+    < 1 > 
+  67 "Line" "Main single line"  < 1361.75 268.234 1361.75 344.492 >   < 1 4 >   < 1361.75 420.75 1361.75 
+  344.492 >   < 1 4 >   0  0  0  1361.75  344.492  < 1 > 
+  72 "Line" "Main single line"  < 739.453 1090.51 738.21 1090.51 706.679 1090.84 >   < 1 4 4 >   < 580.187 
+  1092.32 581.429 1092.32 673.906 1091.17 706.679 1090.84 >   < 1 4 3 4 >   89.4149  0  0  706.679  1090.84
+    < 1 > 
+  73 "Line" "Main single line"  < 819.453 1090.51 820.695 1090.51 859.922 1090.84 >   < 1 4 4 >   < 900.391 
+  1179.5 900.391 1091.17 859.922 1090.84 >   < 1 3 4 >   -89.5222  0  0  859.922  1090.84  < 1 > 
+  74 "Line" "Main single line"  < 884.25 688.953 884.25 645.976 >   < 1 4 >   < 884.25 603 884.25 645.976 
+  >   < 1 4 >   180  0  0  884.25  645.976  < 1 > 
+  75 "Line" "Main single line"  < 967.234 694.953 967.234 937.226 >   < 1 4 >   < 967.234 1179.5 967.234 
+  937.226 >   < 1 4 >   0  0  0  967.234  937.226  < 1 > 
+  76 "Line" "Main single line"  < 933.75 420.75 933.75 358.125 >   < 1 4 >   < 933.75 295.5 933.75 358.125 
+  >   < 1 4 >   180  0  0  933.75  358.125  < 1 > 
+  77 "Line" "Main single line"  < 972 174.25 972 231.254 >   < 1 4 >   < 972 288.257 972 289.5 972 231.254 
+  >   < 4 1 4 >   0  0  0  972  231.254  < 1 > 
+  78 "Line" "Main single line"  < 999.25 55.75 999.25 112 >   < 1 4 >   < 999.25 168.25 999.25 112 > 
+    < 1 4 >   0  0  0  999.25  112  < 1 > 
+  79 "Line" "Main single line"  < 962.184 49.75 962.184 -23.15 1342.15 -23.15 >   < 1 3 4 >   < 1722.11 
+  44.05 1722.11 -23.15 1342.15 -23.15 >   < 1 3 4 >   270  0  0  1342.15  -23.15  < 1 > 
+  80 "Line" "Main single line"  < 1019.45 49.75 1019.45 28.1 1137.58 28.1 >   < 1 3 4 >   < 1255.7 53.85 
+  1255.7 28.1 1137.58 28.1 >   < 1 3 4 >   270  0  0  1137.58  28.1  < 1 > 
+  81 "Line" "Main single line"  < 1311.95 53.85 1311.95 28.1 1473.2 28.1 >   < 1 3 4 >   < 1634.45 44.05 
+  1634.45 45.6 1634.45 28.1 1473.2 28.1 >   < 1 3 3 4 >   270  0  0  1473.2  28.1  < 1 > 
+  82 "Line" "Main single line"  < 1186.25 618.25 1186.25 522.5 >   < 1 4 >   < 1186.25 426.75 1186.25 
+  522.5 >   < 1 4 >   180  0  0  1186.25  522.5  < 1 > 
+  83 "Line" "Main single line"  < 550 681.25 550 625 >   < 1 4 >   < 550 568.75 550 625 >   < 1 4 > 
+    180  0  0  550  625  < 1 > 
+  84 "Line" "Main single line"  < 470 687.25 470 752.228 >   < 1 4 >   < 470 817.207 470 752.228 >   < 1 
+  4 >   0  0  0  470  752.228  < 1 > 
+  85 "Line" "Main single line"  < 312.422 406.906 312.422 452.516 >   < 1 4 >   < 312.422 498.125 312.422 
+  452.516 >   < 1 4 >   0  0  0  312.422  452.516  < 1 > 
+  114 "WyeWyeSymbol" "Main single line"  < 774.41 1087.47 774.41 990.86 >   < 1 4 >   < 774.41 841.75 
+  774.41 938.36 >   < 1 4 >   180  30  52.5  774.41  964.61  < 1 > 
+  115 "WyeWyeSymbol" "Main single line"  < 796.25 694.953 796.25 739.101 >   < 1 4 >   < 796.25 835.75 
+  796.25 791.601 >   < 1 4 >   0  30  52.5  796.25  765.351  < 1 > 
+  116 "WyeWyeSymbol" "Main single line"  < 938.562 1185.5 938.562 1244.97 >   < 1 4 >   < 938.562 1356.93 
+  938.562 1297.47 >   < 1 4 >   0  30  52.5  938.562  1271.22  < 1 > 
+  117 "WyeWyeSymbol" "Main single line"  < 1305.5 624.25 1305.5 768.125 >   < 1 4 >   < 1305.5 964.5 
+  1305.5 820.625 >   < 1 4 >   0  30  52.5  1305.5  794.375  < 1 > 
+  118 "WyeWyeSymbol" "Main single line"  < 1123 788.547 1123 855.274 >   < 1 4 >   < 1123 974.5 1123 
+  907.774 >   < 1 4 >   0  30  52.5  1123  881.524  < 1 > 
+  119 "WyeWyeSymbol" "Main single line"  < 1650.75 490.75 1650.75 489.507 1650.75 466.879 >   < 1 4 
+  4 >   < 1650.75 391.75 1650.75 414.379 >   < 1 4 >   180  30  52.5  1650.75  440.629  < 1 > 
+  120 "WyeWyeSymbol" "Main single line"  < 1663.75 716.75 1663.75 769.062 >   < 1 4 >   < 1663.75 873.875 
+  1663.75 821.562 >   < 1 4 >   0  30  52.5  1663.75  795.312  < 1 > 
+  122 "WyeWyeSymbol" "Main single line"  < 592.75 139.5 592.75 67.675 >   < 1 4 >   < 592.75 -56.65 
+  592.75 15.175 >   < 1 4 >   180  30  52.5  592.75  41.425  < 1 > 
+  123 "WyeWyeSymbol" "Main single line"  < 423.75 267 423.75 168.075 >   < 1 4 >   < 423.75 16.65 423.75 
+  115.575 >   < 1 4 >   180  30  52.5  423.75  141.825  < 1 > 
+  124 "WyeWyeSymbol" "Main single line"  < 1732.95 50.05 1732.95 118.2 >   < 1 4 >   < 1732.95 238.85 
+  1732.95 170.7 >   < 1 4 >   0  30  52.5  1732.95  144.45  < 1 > 
+  125 "WyeWyeSymbol" "Main single line"  < 1167.5 624.25 1167.5 677.149 >   < 1 4 >   < 1167.5 782.547 
+  1167.5 729.649 >   < 1 4 >   0  30  52.5  1167.5  703.399  < 1 > 
+}
+Record System LabelGraphic {
+  1 "TextName" "Main single line"  426.844  406.906  0  < 1 > 
+  2 "TextName" "Main single line"  327.75  239.875  0  < 1 > 
+  3 "TextName" "Main single line"  732  428.5  0  < 1 > 
+  4 "TextName" "Main single line"  621  568.75  0  < 1 > 
+  5 "TextName" "Main single line"  571.25  687.25  0  < 1 > 
+  6 "TextName" "Main single line"  483  1097.33  0  < 1 > 
+  7 "TextName" "Main single line"  442.359  963.164  0  < 1 > 
+  8 "TextName" "Main single line"  441.364  826.957  0  < 1 > 
+  9 "TextName" "Main single line"  243.969  605.016  0  < 1 > 
+  10 "TextName" "Main single line"  230.938  502.875  0  < 1 > 
+  11 "TextName" "Main single line"  176.61  397.58  0  < 1 > 
+  12 "TextName" "Main single line"  345.719  558.445  0  < 1 > 
+  13 "TextName" "Main single line"  362.062  717.986  0  < 1 > 
+  14 "TextName" "Main single line"  266.259  848.389  0  < 1 > 
+  15 "TextName" "Main single line"  431  1023.14  0  < 1 > 
+  16 "TextName" "Main single line"  557.18  888.313  0  < 1 > 
+  17 "TextName" "Main single line"  523.09  1255.61  0  < 1 > 
+  19 "TextName" "Main single line"  465.937  1164.4  0  < 1 > 
+  20 "TextName" "Main single line"  337.028  1311.52  0  < 1 > 
+  21 "TextName" "Main single line"  969.609  1362.93  0  < 1 > 
+  22 "TextName" "Main single line"  856.234  1394.18  0  < 1 > 
+  23 "TextName" "Main single line"  883.828  700.031  0  < 1 > 
+  24 "TextName" "Main single line"  917.188  624.484  0  < 1 > 
+  25 "TextName" "Main single line"  1036.25  500.5  0  < 1 > 
+  26 "TextName" "Main single line"  1185  426.75  0  < 1 > 
+  27 "TextName" "Main single line"  975  295.5  0  < 1 > 
+  28 "TextName" "Main single line"  681.25  240.5  0  < 1 > 
+  29 "TextName" "Main single line"  1326.25  633.25  0  < 1 > 
+  30 "TextName" "Main single line"  1181.42  758.797  0  < 1 > 
+  31 "TextName" "Main single line"  1377.5  525.5  0  < 1 > 
+  32 "TextName" "Main single line"  1653.75  496.75  0  < 1 > 
+  33 "TextName" "Main single line"  1771.48  720.656  0  < 1 > 
+  34 "TextName" "Main single line"  1379.22  210.422  0  < 1 > 
+  35 "TextName" "Main single line"  658.75  145.5  0  < 1 > 
+  36 "TextName" "Main single line"  886.772  -18.2031  0  < 1 > 
+  37 "TextName" "Main single line"  1167.5  153  0  < 1 > 
+  38 "TextName" "Main single line"  1325.7  59.85  0  < 1 > 
+  39 "TextName" "Main single line"  1732.75  50.05  0  < 1 > 
+  40 "TextName" "Main single line"  442.6  -5.75  0  < 1 > 
+  41 "TextName" "Main single line"  1367.5  970.5  0  < 1 > 
+  42 "TextName" "Main single line"  1158.75  980.5  0  < 1 > 
+  43 "TextName" "Main single line"  1720  391.75  0  < 1 > 
+  44 "TextName" "Main single line"  1703.89  872.55  0  < 1 > 
+  45 "TextName" "Main single line"  674.5  -82.25  0  < 1 > 
+  46 "TextName" "Main single line"  1821.2  244.85  0  < 1 > 
+  49 "TextName" "Main single line"  360  303.203  0  < 1 > 
+  50 "TextName" "Main single line"  521.75  206.871  0  < 1 > 
+  51 "TextName" "Main single line"  831.775  143.722  0  < 1 > 
+  52 "TextName" "Main single line"  528.5  325.254  0  < 1 > 
+  53 "TextName" "Main single line"  621.5  389.625  0  < 1 > 
+  54 "TextName" "Main single line"  795.625  246.25  0  < 1 > 
+  56 "TextName" "Main single line"  567.5  490  0  < 1 > 
+  59 "TextName" "Main single line"  746.75  564.735  0  < 1 > 
+  60 "TextName" "Main single line"  953.25  548.129  0  < 1 > 
+  61 "TextName" "Main single line"  988.75  436.875  0  < 1 > 
+  62 "TextName" "Main single line"  961.328  1190.19  0  < 1 > 
+  63 "TextName" "Main single line"  1320.94  428.75  0  < 1 > 
+  64 "TextName" "Main single line"  1465.63  494.229  0  < 1 > 
+  65 "TextName" "Main single line"  1633.75  603.75  0  < 1 > 
+  66 "TextName" "Main single line"  1606.88  305.156  0  < 1 > 
+  67 "TextName" "Main single line"  1361.75  344.492  0  < 1 > 
+  68 "TextName" "Main single line"  751.719  1098.47  0  < 1 > 
+  69 "TextName" "Main single line"  844.062  824.562  0  < 1 > 
+  72 "TextName" "Main single line"  655.898  1096.7  0  < 1 > 
+  73 "TextName" "Main single line"  864.14  1013.9  0  < 1 > 
+  74 "TextName" "Main single line"  825.5  614.727  0  < 1 > 
+  75 "TextName" "Main single line"  967.234  937.227  0  < 1 > 
+  76 "TextName" "Main single line"  930  356.875  0  < 1 > 
+  77 "TextName" "Main single line"  972  231.254  0  < 1 > 
+  78 "TextName" "Main single line"  999.25  112  0  < 1 > 
+  79 "TextName" "Main single line"  1342.15  -75.8844  0  < 1 > 
+  80 "TextName" "Main single line"  1137.58  28.1  0  < 1 > 
+  81 "TextName" "Main single line"  1473.2  28.1  0  < 1 > 
+  82 "TextName" "Main single line"  1186.25  522.5  0  < 1 > 
+  83 "TextName" "Main single line"  487.5  611.25  0  < 1 > 
+  84 "TextName" "Main single line"  471.25  728.478  0  < 1 > 
+  85 "TextName" "Main single line"  316.172  413.766  0  < 1 > 
+  86 "TextName" "Main single line"  666  466  0  < 1 > 
+  87 "TextName" "Main single line"  571  611  0  < 1 > 
+  88 "TextName" "Main single line"  307.64  1004.48  0  < 1 > 
+  89 "TextName" "Main single line"  383.754  861.644  0  < 1 > 
+  90 "TextName" "Main single line"  651.676  904.344  0  < 1 > 
+  91 "TextName" "Main single line"  1020.14  566.234  0  < 1 > 
+  92 "TextName" "Main single line"  1109.75  470.219  0  < 1 > 
+  93 "TextName" "Main single line"  687.875  312.562  0  < 1 > 
+  94 "TextName" "Main single line"  1160.92  821.547  0  < 1 > 
+  95 "TextName" "Main single line"  1360  570.734  0  < 1 > 
+  96 "TextName" "Main single line"  1883.03  770.219  0  < 1 > 
+  97 "TextName" "Main single line"  1407.01  317.562  0  < 1 > 
+  98 "TextName" "Main single line"  598.422  194.281  0  < 1 > 
+  99 "TextName" "Main single line"  843.95  83.925  0  < 1 > 
+  100 "TextName" "Main single line"  1076.55  218.969  0  < 1 > 
+  102 "TextName" "Main single line"  1254.15  99.2219  0  < 1 > 
+  103 "TextName" "Main single line"  1651.25  94.3  0  < 1 > 
+  104 "TextName" "Main single line"  466.84  1322.92  0  < 1 > 
+  105 "TextName" "Main single line"  125.609  542.797  0  < 1 > 
+  107 "TextName" "Main single line"  1354.39  1041.24  0  < 1 > 
+  108 "TextName" "Main single line"  1140.41  1052.8  0  < 1 > 
+  109 "TextName" "Main single line"  1714  320.066  0  < 1 > 
+  110 "TextName" "Main single line"  1683.76  952.957  0  < 1 > 
+  111 "TextName" "Main single line"  654.787  -161.459  0  < 1 > 
+  112 "TextName" "Main single line"  1861.16  131.313  0  < 1 > 
+  113 "TextName" "Main single line"  421.119  -96.4408  0  < 1 > 
+  114 "TextName" "Main single line"  789.41  990.86  0  < 1 > 
+  115 "TextName" "Main single line"  723.75  736.602  0  < 1 > 
+  116 "TextName" "Main single line"  953.562  1295.9  0  < 1 > 
+  117 "TextName" "Main single line"  1322.11  819.635  0  < 1 > 
+  118 "TextName" "Main single line"  1138  907.773  0  < 1 > 
+  119 "TextName" "Main single line"  1663.25  411.879  0  < 1 > 
+  120 "TextName" "Main single line"  1686.56  811.797  0  < 1 > 
+  122 "TextName" "Main single line"  628.95  13.575  0  < 1 > 
+  123 "TextName" "Main single line"  338.35  107.575  0  < 1 > 
+  124 "TextName" "Main single line"  1747.95  170.7  0  < 1 > 
+  125 "TextName" "Main single line"  1193.5  689.648  0  < 1 > 
+}
+Record System Annotation {
+  136 "Main single line"  1283.2  1175.78  0 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n<table border=\"1\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;\" cellspacing=\"2\" cellpadding=\"2\">\n<tr>\n<td>\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:24pt; font-weight:600; color:#514367;\"> IEEE 39 Bus Network </span></p>\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:24pt; font-weight:600; color:#514367;\">      (New England)</span></p></td></tr></table></body></html>"
+    < 1 > 
+}

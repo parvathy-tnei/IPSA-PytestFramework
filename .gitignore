@@ -1,0 +1,22 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# PyTest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Generated results and local benchmark data
+Test Results/
+
+# Local secrets
+.env
+.env.*
+
+# Editor files
+.vscode/
+.idea/
