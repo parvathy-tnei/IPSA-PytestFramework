@@ -1,1 +1,9 @@
 python -m pip install lxml
+
+
+
+basic testing 2
+
+python -m pip install pyautogui
+
+python -m pip install opencv-python
