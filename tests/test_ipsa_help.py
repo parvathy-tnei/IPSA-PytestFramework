@@ -133,15 +133,14 @@ time.sleep(3)
 close_window()
 print("Accessing Reference Guide: SUCCESS")
 
-window.activate()
-time.sleep(2)
-
-
 # 4. Scripting Guide
 open_user_guide(2)
-time.sleep(3)
+time.sleep(3)   
 close_window()
 print("Accessing Scripting Guide: SUCCESS")
+
+window.activate()
+time.sleep(2)
 
 print("\nAll user guide access tests completed.")
 
