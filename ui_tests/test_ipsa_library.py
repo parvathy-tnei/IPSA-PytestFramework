@@ -1,3 +1,4 @@
+
 """
 DISCLAIMER:
 1. FRESH SESSION REQUIRED:
@@ -138,6 +139,8 @@ def get_network_path(network_key):
 LOADFLOW_SCRIPTS = [
     "loadflow_summary",
     "loadflow_results_by_busbar",
+    "All_Data_Tables",
+    "all_loadflow_results",
 ]
 
 HARMONICS_SCRIPTS = [
@@ -789,7 +792,24 @@ def run_loadflow_stage():
         return False
     if not run_load_flow_analysis():
         return False
-    results = [run_script_and_report(name) for name in LOADFLOW_SCRIPTS]
+
+    results = []
+    for name in LOADFLOW_SCRIPTS:
+        if name in ("All_Data_Tables", "all_loadflow_results"):
+            prev_windows = excel_window_titles()
+            ok = run_script_and_report(
+                name,
+                extra_check=lambda: check_excel_workbook_opened(prev_windows, timeout=30),
+            )
+            # Give Excel an 8-second buffer to finish generating data and rendering
+            if name == "all_loadflow_results":
+                time.sleep(8)
+
+            close_excel_workbook()
+            results.append(ok)
+        else:
+            results.append(run_script_and_report(name))
+
     return all(results)
 
 
@@ -1217,6 +1237,10 @@ def main():
 3. EMERGENCY STOP (FAILSAFE):
    To terminate automation immediately at any point, force your mouse pointer
    into the TOP-LEFT CORNER of the screen (x=0, y=0).
+
+4. UI-ONLY VALIDATION:
+   These tests check UI elements and actions; they do not validate final
+   analysis results or generated output values.
 ===============================================================================
 """
     print(banner)

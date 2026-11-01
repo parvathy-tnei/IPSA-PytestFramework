@@ -2,6 +2,10 @@ import sys
 from pathlib import Path
 
 from runtime_config import CONFIG
+from runtime_config import is_network_applicable
+
+from importlib.metadata import version
+import ipsa
 
 import pytest
 
@@ -16,22 +20,39 @@ from utils import (
     assert_comparison_passed
 )
 
+
+SUPPORTED_NETWORKS = {
+    "Automation-Contingency Example"
+}
+
+CONTINGENCY_DEPTHS = {
+    "quick": ["N-1", "N-2"],
+    "full": ["N-1", "N-2", "N-3", "N-1-1"],
+}
+
+
 @pytest.mark.comparison
 @pytest.mark.contingency
 def test_contingency(network, resources_dir):
 
+    if not is_network_applicable(network["name"], SUPPORTED_NETWORKS):
+        pytest.skip(
+            "Contingency study not applicable for this network"
+        )
+
     ipsa_interface = network["ipsa"]
+
+    print(f"PyIPSA package version: {version('PyIPSA')}")
+    print(f"Loaded ipsa module: {ipsa.__file__}")
+    print(f"IPSA engine version: {ipsa_interface.GetVersion()}")
+
     net = network["network"]
 
     ipsa_version = ipsa_interface.GetVersion()
     model_name = network["path"].name
 
-    contingency_depths = [
-        "N-1",
-        "N-2",
-        "N-3",
-        "N-1-1"
-    ]
+    contingency_depths = CONTINGENCY_DEPTHS[CONFIG.contingency_depth]
+    print(f"Contingency run mode: {CONFIG.contingency_depth}")
 
     for contingency_depth in contingency_depths:
 
@@ -68,17 +89,18 @@ def test_contingency(network, resources_dir):
 @pytest.mark.contingency
 def test_contingency_generation(network, resources_dir):
 
+    if not is_network_applicable(network["name"], SUPPORTED_NETWORKS):
+        pytest.skip(
+            "Contingency study not applicable for this network"
+        )
+
     ipsa_interface = network["ipsa"]
     net = network["network"]
 
     model_name = network["path"].name
 
-    contingency_depths = [
-        "N-1",
-        "N-2",
-        "N-3",
-        "N-1-1"
-    ]
+    contingency_depths = CONTINGENCY_DEPTHS[CONFIG.contingency_depth]
+    print(f"Contingency run mode: {CONFIG.contingency_depth}")
 
     print(
         "\n=========================================="
@@ -113,7 +135,4 @@ def test_contingency_generation(network, resources_dir):
         )
 
         for output_file in output_files:
-
-            print(
-                output_file
-            )
+            print(output_file)

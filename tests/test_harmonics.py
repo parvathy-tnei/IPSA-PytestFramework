@@ -2,7 +2,7 @@ import sys
 from pathlib import Path
 
 from runtime_config import CONFIG
-
+from runtime_config import is_network_applicable
 import pytest
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -17,9 +17,19 @@ from utils import (
 )
 
 
+SUPPORTED_NETWORKS = {
+    "Windfarm Harmonics Example"
+}
+
+
 @pytest.mark.comparison
 @pytest.mark.harmonics
 def test_harmonics(network, resources_dir):
+
+    if not is_network_applicable(network["name"], SUPPORTED_NETWORKS):
+        pytest.skip(
+            "Harmonics study not applicable for this network"
+        )
 
     ipsa_interface = network["ipsa"]
     net = network["network"]
@@ -28,7 +38,6 @@ def test_harmonics(network, resources_dir):
     model_name = network["path"].name
 
     try:
-
         output_files = Harmonics_Study.runHarmonics(
             ipsa_interface,
             net,
@@ -38,9 +47,8 @@ def test_harmonics(network, resources_dir):
         )
 
     except Exception as ex:
-
         pytest.skip(
-            f"Harmonics study unsupported : {ex}"
+            f"Harmonics study unsupported: {ex}"
         )
 
     for output_file in output_files:
@@ -61,6 +69,11 @@ def test_harmonics(network, resources_dir):
 @pytest.mark.generation
 def test_harmonics_generation(network, resources_dir):
 
+    if not is_network_applicable(network["name"], SUPPORTED_NETWORKS):
+        pytest.skip(
+            "Harmonics study not applicable for this network"
+        )
+
     ipsa_interface = network["ipsa"]
     net = network["network"]
 
@@ -68,7 +81,6 @@ def test_harmonics_generation(network, resources_dir):
     model_name = network["path"].name
 
     try:
-
         output_files = Harmonics_Study.runHarmonics(
             ipsa_interface,
             net,
@@ -83,7 +95,6 @@ def test_harmonics_generation(network, resources_dir):
             print(output_file)
 
     except Exception as ex:
-
         pytest.skip(
-            f"Harmonics study unsupported : {ex}"
+            f"Harmonics study unsupported: {ex}"
         )

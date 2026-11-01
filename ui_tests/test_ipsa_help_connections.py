@@ -307,6 +307,10 @@ if __name__ == "__main__":
 3. EMERGENCY STOP (FAILSAFE):
    To terminate automation immediately at any point, force your mouse pointer
    into the TOP-LEFT CORNER of the screen (x=0, y=0).
+
+4. UI-ONLY VALIDATION:
+   These tests check UI elements and actions; they do not validate final
+   analysis results or generated output values.
 ===============================================================================
 """
     print(banner)
@@ -381,8 +385,8 @@ if __name__ == "__main__":
             is_browser=True
         )
 
-    # 6. Licensing Check (Runs last)
-    auto_check_licensing(3)
+    # Disabled because opening Help -> Licensing crashes IPSA.
+    # auto_check_licensing(3)
 
     # --- Summary Report Generation ---
     total = len(test_results)

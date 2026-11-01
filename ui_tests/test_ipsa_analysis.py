@@ -46,7 +46,7 @@ def clean(text):
 def print_pretest_disclaimer():
     banner = """
 ===============================================================================
-                             IMPORTANT DISCLAIMER
+                               IMPORTANT DISCLAIMER
 ===============================================================================
 1. FRESH SESSION REQUIRED:
    Please ensure you launch a CLEAN / FRESH session of IPSA 3 before running
@@ -59,6 +59,10 @@ def print_pretest_disclaimer():
 3. EMERGENCY STOP (FAILSAFE):
    To terminate automation immediately at any point, force your mouse pointer
    into the TOP-LEFT CORNER of the primary screen (x=0, y=0).
+
+4. UI-ONLY VALIDATION:
+   These tests check UI elements and actions; they do not validate final
+   analysis results or generated output values.
 ===============================================================================
 """
     print(banner)
@@ -74,19 +78,44 @@ def print_pretest_disclaimer():
 def get_ipsa_window():
     global APP, WIN
     try:
+        windows = [window for window in gw.getAllWindows() if "IPSA 3" in window.title]
+        if not windows:
+            return None, None
+
+        main_window = windows[0]
+        if WIN is not None and getattr(WIN, "handle", None) != main_window._hWnd:
+            WIN = None
+            APP = None
+
         if WIN is None:
             APP = Application(backend="uia").connect(
-                title_re=r".*IPSA 3.*",
-                found_index=0,
-                timeout=WINDOW_TIMEOUT
+                handle=main_window._hWnd,
+                timeout=WINDOW_TIMEOUT,
             )
-            main = APP.window(title_re=r".*IPSA 3.*", found_index=0)
-            WIN = APP.window(handle=main.wrapper_object().handle)
+            WIN = APP.window(handle=main_window._hWnd)
+
+        if main_window.isMinimized:
+            main_window.restore()
+        main_window.activate()
+        time.sleep(0.2)
         WIN.set_focus()
         return APP, WIN
     except Exception as error:
         report_error(f"Could not connect to IPSA 3: {error}")
         return None, None
+
+
+def _get_uia_wrapper(target_window):
+    """Safely retrieves or wraps a PyGetWindow or Pywinauto handle into a UIA window."""
+    if hasattr(target_window, "descendants"):
+        return target_window
+    hwnd = getattr(target_window, "_hWnd", None) or getattr(target_window, "handle", None)
+    if hwnd:
+        try:
+            return Desktop(backend="uia").window(handle=hwnd)
+        except Exception:
+            pass
+    return None
 
 
 def find_network_example_file(filename_pattern, subfolder=""):
@@ -176,20 +205,33 @@ def open_network_file(file_path):
     pyautogui.typewrite(file_path, interval=0.01)
     time.sleep(0.4)
     pyautogui.press("enter")
-    time.sleep(2.5)
 
-    for w in gw.getAllWindows():
-        t = w.title.strip().lower()
-        if "warning" in t or "convert" in t:
-            try:
-                w.activate()
-                time.sleep(0.2)
-                pyautogui.press("enter")
-                time.sleep(0.5)
-            except Exception:
-                pass
+    expected_title = Path(file_path).name.casefold()
+    deadline = time.monotonic() + 30
+    while time.monotonic() < deadline:
+        for window in gw.getAllWindows():
+            title = window.title.strip()
+            normalized_title = title.casefold()
+            if "warning" in normalized_title or "convert" in normalized_title:
+                try:
+                    window.activate()
+                    time.sleep(0.2)
+                    pyautogui.press("enter")
+                    time.sleep(0.5)
+                except Exception as error:
+                    report_error(f"Could not dismiss network-open prompt '{title}': {error}")
+                break
 
-    return True
+            if expected_title in normalized_title:
+                _, main_window = get_ipsa_window()
+                if main_window is not None:
+                    print(f"Network loaded and IPSA focused: {title}")
+                    return True
+
+        time.sleep(0.3)
+
+    report_error(f"Network '{expected_title}' did not finish loading within 30 seconds.")
+    return False
 
 
 def close_active_network():
@@ -246,11 +288,22 @@ def close_active_network():
 def trigger_analysis_item_by_index(index):
     _, win = get_ipsa_window()
     if win is None:
+        report_error("Cannot open Analysis menu because the IPSA main window was not found.")
         return
     win.set_focus()
-    time.sleep(0.3)
-    pyautogui.hotkey("alt", "a")
-    time.sleep(0.3)
+    time.sleep(0.2)
+    pyautogui.press("esc")
+    time.sleep(0.1)
+
+    # Access the menu bar and navigate to Analysis (index 4: File->Edit->Network->Database->Analysis)
+    pyautogui.press("alt")
+    time.sleep(0.15)
+    for _ in range(4):
+        pyautogui.press("right")
+        time.sleep(0.05)
+    pyautogui.press("down")
+    time.sleep(0.2)
+
     for _ in range(index):
         pyautogui.press("down")
         time.sleep(0.06)
@@ -261,11 +314,22 @@ def trigger_analysis_item_by_index(index):
 def trigger_analysis_submenu_item(main_index, sub_index):
     _, win = get_ipsa_window()
     if win is None:
+        report_error("Cannot open Analysis submenu because the IPSA main window was not found.")
         return
     win.set_focus()
-    time.sleep(0.3)
-    pyautogui.hotkey("alt", "a")
-    time.sleep(0.3)
+    time.sleep(0.2)
+    pyautogui.press("esc")
+    time.sleep(0.1)
+
+    # Access the menu bar and navigate to Analysis (index 4: File->Edit->Network->Database->Analysis)
+    pyautogui.press("alt")
+    time.sleep(0.15)
+    for _ in range(4):
+        pyautogui.press("right")
+        time.sleep(0.05)
+    pyautogui.press("down")
+    time.sleep(0.2)
+
     for _ in range(main_index):
         pyautogui.press("down")
         time.sleep(0.06)
@@ -1094,7 +1158,10 @@ def run_contingency_analysis_suite(overall_results):
 # PART 8: Automation Suite (New Automation -> Run Automation)
 # =============================================================================
 def select_automation_item_in_list(dlg):
-    dlg.activate()
+    if hasattr(dlg, "set_focus"):
+        dlg.set_focus()
+    else:
+        dlg.activate()
     time.sleep(0.4)
     hwnd = getattr(dlg, "_hWnd", None) or getattr(dlg, "handle", None)
 
@@ -1710,6 +1777,283 @@ def run_motor_start_suite(overall_results):
 
 
 # =============================================================================
+# PART 12: Run Overcurrent Analysis Suite (Screen/Resolution Independent)
+# =============================================================================
+def select_device_in_overcurrent_select_dlg(select_dlg):
+    """
+    Selects protection devices in the 'Select Item' dialog using UIA controls
+    or 'Select all items', then confirms OK.
+    """
+    dlg_uia = _get_uia_wrapper(select_dlg)
+    if not dlg_uia:
+        report_error("Unable to bind UIA handle to 'Select Item' dialog.")
+        return False
+
+    dlg_uia.set_focus()
+    time.sleep(0.3)
+
+    device_selected = False
+
+    # Attempt 1: Click "Select all items" button directly
+    try:
+        for btn in dlg_uia.descendants(control_type="Button"):
+            txt = clean(btn.window_text()).casefold()
+            if "select all" in txt:
+                btn.click_input()
+                device_selected = True
+                time.sleep(0.3)
+                break
+    except Exception:
+        pass
+
+    # Attempt 2: Pick item from TreeView
+    if not device_selected:
+        try:
+            tree_items = dlg_uia.descendants(control_type="TreeItem")
+            for item in tree_items:
+                txt = clean(item.window_text()).strip()
+                if txt in ["Prot. devices", "Prot. containers", "33", "11"]:
+                    try:
+                        item.set_focus()
+                        pyautogui.press("add")
+                        pyautogui.press("right")
+                        time.sleep(0.2)
+                    except Exception:
+                        pass
+
+            for item in dlg_uia.descendants(control_type="TreeItem"):
+                txt = clean(item.window_text()).lower()
+                if any(term in txt for term in ["overcurrent", "ref542", "spaj"]):
+                    item.set_focus()
+                    try:
+                        item.select()
+                    except Exception:
+                        rect = item.rectangle()
+                        pyautogui.click(rect.mid_point().x, rect.mid_point().y)
+                    device_selected = True
+                    break
+        except Exception as e:
+            report_error(f"Error selecting device in tree: {e}")
+
+    # Fallback key navigation
+    if not device_selected:
+        pyautogui.press("tab")
+        pyautogui.press("down")
+        pyautogui.press("down")
+        time.sleep(0.2)
+
+    # Click OK on Select Item dialog
+    ok_clicked = False
+    try:
+        for btn in dlg_uia.descendants(control_type="Button"):
+            if clean(btn.window_text()).casefold() == "ok":
+                btn.click_input()
+                ok_clicked = True
+                break
+    except Exception:
+        pass
+
+    if not ok_clicked:
+        pyautogui.press("enter")
+
+    time.sleep(0.8)
+    return True
+
+
+def configure_overcurrent_settings(dlg):
+    """
+    Clicks 'Select...', selects devices, and selects 'At busbar' radio button.
+    """
+    dlg_uia = _get_uia_wrapper(dlg)
+    if not dlg_uia:
+        report_error("Unable to bind UIA handle to 'Overcurrent Selection' dialog.")
+        return False
+
+    dlg_uia.set_focus()
+    time.sleep(0.3)
+
+    # Step 1: Click "Select..." button
+    select_btn = None
+    try:
+        for btn in dlg_uia.descendants(control_type="Button"):
+            if "select" in clean(btn.window_text()).casefold():
+                select_btn = btn
+                break
+    except Exception:
+        pass
+
+    if select_btn:
+        select_btn.click_input()
+    else:
+        pyautogui.hotkey("alt", "s")
+
+    time.sleep(1.0)
+
+    # Step 2: Handle 'Select Item' dialog
+    select_dlg = wait_for_dialog_by_title("Select Item", timeout=5.0)
+    if not select_dlg:
+        select_dlg = wait_for_dialog_by_title("Select", timeout=3.0)
+
+    if select_dlg:
+        select_device_in_overcurrent_select_dlg(select_dlg)
+    else:
+        report_error("'Select Item' dialog did not appear.")
+
+    # Step 3: Choose "At busbar" radio button
+    dlg_uia.set_focus()
+    time.sleep(0.3)
+    radio_clicked = False
+
+    try:
+        for rb in dlg_uia.descendants(control_type="RadioButton"):
+            txt = clean(rb.window_text()).lower()
+            if "at busbar" in txt:
+                rb.click_input()
+                radio_clicked = True
+                break
+    except Exception:
+        pass
+
+    if not radio_clicked:
+        pyautogui.hotkey("alt", "b")
+        time.sleep(0.2)
+
+    return True
+
+
+def run_overcurrent_suite(overall_results):
+    # Locate SuperGrid R1 / SuperGrid example files specifically
+    example_path = (
+        find_network_example_file("*SuperGrid*R1*.i3f", "")
+        or find_network_example_file("*SuperGrid*R1*.i2f", "")
+        or find_network_example_file("*SuperGrid*.i3f", "")
+        or find_network_example_file("*SuperGrid*.i2f", "")
+        or find_network_example_file("*SuperGrid*.*", "")
+    )
+
+    if not example_path:
+        report_error("'SuperGrid R1' network file not found.")
+        overall_results["Run Overcurrent"] = False
+        return
+
+    if not open_network_file(example_path):
+        report_error(f"Failed to open network: {example_path}")
+        overall_results["Run Overcurrent"] = False
+        return
+
+    time.sleep(1.0)
+
+    # Trigger Run Overcurrent (F10 with menu index 13 fallback)
+    _, win = get_ipsa_window()
+    if win:
+        win.set_focus()
+        time.sleep(0.2)
+    pyautogui.press("f10")
+
+    oc_dlg = wait_for_dialog_by_title("Overcurrent Selection", timeout=5.0)
+    if not oc_dlg:
+        trigger_analysis_item_by_index(13)
+        oc_dlg = wait_for_dialog_by_title("Overcurrent Selection", timeout=5.0)
+
+    if oc_dlg:
+        configure_overcurrent_settings(oc_dlg)
+        time.sleep(0.5)
+
+        confirm_dialog_ok_with_dlg(oc_dlg, "Overcurrent Selection")
+        time.sleep(2.5)
+
+        dialog_still_open = any("overcurrent selection" in w.title.lower() for w in gw.getAllWindows())
+        has_error = any("error" in w.title.lower() for w in gw.getAllWindows() if "ipsa 3 -" not in w.title.lower())
+
+        if not dialog_still_open and not has_error:
+            overall_results["Run Overcurrent"] = True
+        else:
+            if dialog_still_open:
+                report_error("'Overcurrent Selection' dialog remained open.")
+                pyautogui.press("esc")
+            if has_error:
+                report_error("An error dialog was detected after running overcurrent.")
+            overall_results["Run Overcurrent"] = False
+    else:
+        report_error("'Overcurrent Selection' dialog did not appear.")
+        pyautogui.press("esc")
+        overall_results["Run Overcurrent"] = False
+
+    time.sleep(1.0)
+    close_active_network()
+
+
+# =============================================================================
+# PART 13: Storage Suite (Flip all, Flip to import, Flip to export)
+# =============================================================================
+def run_storage_suite(overall_results):
+    """
+    Automates Storage actions located under Analysis -> Storage:
+      - Flip all storage (sub_index=0)
+      - Flip all to import (sub_index=1)
+      - Flip all to export (sub_index=2)
+    """
+    example_path = (
+        find_network_example_file("*SuperGrid*R1*.i3f", "")
+        or find_network_example_file("*SuperGrid*R1*.i2f", "")
+        or find_network_example_file("*SuperGrid*.i3f", "")
+        or find_network_example_file("*SuperGrid*.i2f", "")
+        or find_network_example_file("*Storage*.*", "")
+        or find_network_example_file("*IEEE 9 Bus Network*.i3f", "IEEE Standard Networks")
+    )
+
+    if not example_path:
+        report_error("Network file for Storage test not found.")
+        overall_results["Storage (Flip All)"] = False
+        overall_results["Storage (Flip Import)"] = False
+        overall_results["Storage (Flip Export)"] = False
+        return
+
+    if not open_network_file(example_path):
+        report_error(f"Failed to open network for Storage: {example_path}")
+        overall_results["Storage (Flip All)"] = False
+        overall_results["Storage (Flip Import)"] = False
+        overall_results["Storage (Flip Export)"] = False
+        return
+
+    time.sleep(1.0)
+
+    # 1. Flip all storage
+    trigger_analysis_submenu_item(main_index=23, sub_index=0)
+    time.sleep(1.5)
+    has_error = any("error" in w.title.lower() for w in gw.getAllWindows() if "ipsa 3 -" not in w.title.lower())
+    overall_results["Storage (Flip All)"] = not has_error
+    if has_error:
+        report_error("Flip all storage triggered an error dialog.")
+        pyautogui.press("esc")
+
+    time.sleep(1.0)
+
+    # 2. Flip all to import
+    trigger_analysis_submenu_item(main_index=23, sub_index=1)
+    time.sleep(1.5)
+    has_error = any("error" in w.title.lower() for w in gw.getAllWindows() if "ipsa 3 -" not in w.title.lower())
+    overall_results["Storage (Flip Import)"] = not has_error
+    if has_error:
+        report_error("Flip all to import triggered an error dialog.")
+        pyautogui.press("esc")
+
+    time.sleep(1.0)
+
+    # 3. Flip all to export
+    trigger_analysis_submenu_item(main_index=23, sub_index=2)
+    time.sleep(1.5)
+    has_error = any("error" in w.title.lower() for w in gw.getAllWindows() if "ipsa 3 -" not in w.title.lower())
+    overall_results["Storage (Flip Export)"] = not has_error
+    if has_error:
+        report_error("Flip all to export triggered an error dialog.")
+        pyautogui.press("esc")
+
+    time.sleep(1.0)
+    close_active_network()
+
+
+# =============================================================================
 # Main Orchestrator
 # =============================================================================
 def main():
@@ -1760,6 +2104,12 @@ def main():
     time.sleep(1.5)
 
     run_motor_start_suite(overall_results)
+    time.sleep(1.5)
+
+    run_overcurrent_suite(overall_results)
+    time.sleep(1.5)
+
+    run_storage_suite(overall_results)
 
     # Final Combined Summary Table
     print("\n=======================================================")

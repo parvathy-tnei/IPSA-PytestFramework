@@ -49,6 +49,10 @@ def print_pretest_disclaimer():
 3. EMERGENCY STOP (FAILSAFE):
    To terminate automation immediately at any point, move your mouse pointer
    to the TOP-LEFT CORNER of the screen (x=0, y=0).
+
+4. UI-ONLY VALIDATION:
+   These tests check UI elements and actions; they do not validate final
+   analysis results or generated output values.
 ===============================================================================
 """
     print(banner)

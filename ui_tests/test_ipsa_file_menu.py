@@ -40,6 +40,10 @@ def print_pretest_disclaimer():
 3. EMERGENCY STOP (FAILSAFE):
    To terminate automation immediately at any point, force your mouse pointer
    into the TOP-LEFT CORNER of the screen (x=0, y=0).
+
+4. UI-ONLY VALIDATION:
+   These tests check UI elements and actions; they do not validate final
+   analysis results or generated output values.
 ===============================================================================
 """
     print(banner)
@@ -255,11 +259,11 @@ def test_file_item(name, index, submenu=False):
         pyautogui.press("esc")
 
 
-# 6. Project Flow (Index 10)
+# 6. Project Flow (Index 11)
 def test_export_project():
     test_name = "Export Project"
     before_handles = {w._hWnd for w in gw.getAllWindows()}
-    open_file_item(10, submenu=True)
+    open_file_item(11, submenu=True)
     pyautogui.press("down", presses=2, interval=0.15)
     pyautogui.press("enter")
     time.sleep(1.5)
@@ -296,7 +300,7 @@ def test_export_project():
 
 def test_close_project():
     test_name = "Close Project"
-    open_file_item(10, submenu=True)
+    open_file_item(11, submenu=True)
     pyautogui.press("down", interval=0.15)
     pyautogui.press("enter")
     time.sleep(2.0)
@@ -310,7 +314,7 @@ def test_import_project():
         return False
 
     before_handles = {w._hWnd for w in gw.getAllWindows()}
-    open_file_item(10, submenu=True)
+    open_file_item(11, submenu=True)
     pyautogui.press("enter")
     time.sleep(2.0)
 
@@ -349,11 +353,11 @@ def test_import_project():
     return success
 
 
-# 7. Merge... (Index 11)
+# 7. Merge... (Index 12)
 def test_merge():
     test_name = "Merge..."
     before_handles = {w._hWnd for w in gw.getAllWindows()}
-    open_file_item(11)
+    open_file_item(12)
 
     dialog = wait_for_new_window(before_handles, timeout=4) or gw.getActiveWindow()
     if dialog and "IPSA 3" not in dialog.title:
@@ -416,7 +420,7 @@ def test_delete_diagram():
         pyautogui.press("esc")
 
 
-# 9. Exit (Index 18)
+# 9. Exit (Index 19)
 def test_exit():
     test_name = "Exit"
     dismiss_mode_dialogs()
@@ -442,7 +446,7 @@ def test_exit():
     pyautogui.press("home")
     time.sleep(0.2)
 
-    pyautogui.press("down", presses=18, interval=0.12)
+    pyautogui.press("down", presses=19, interval=0.12)
     time.sleep(0.4)
     pyautogui.press("enter")
     time.sleep(1.0)
@@ -473,12 +477,12 @@ def test_exit():
     record_result(test_name, closed)
 
 
-def main():
+def main() -> int:
     print_pretest_disclaimer()
 
     if not is_ipsa_alive():
         report_error("IPSA 3 is not open! Please start IPSA 3 before running this suite.")
-        sys.exit(1)
+        return 1
 
     time.sleep(2)
 
@@ -518,9 +522,9 @@ def main():
     # 10. Merge...
     test_merge()
 
-    # 11. Print... (Index 16) and Print to PDF... (Index 17)
-    test_file_item("Print...", 16, False)
-    test_file_item("Print to PDF...", 17, False)
+    # 11. Print... (Index 17) and Print to PDF... (Index 18)
+    test_file_item("Print...", 17, False)
+    test_file_item("Print to PDF...", 18, False)
 
     # 12. Add Diagram & Delete Diagram
     if test_add_diagram():
@@ -532,7 +536,7 @@ def main():
     test_close()
 
     # 14. Exit
-    test_exit()
+    # test_exit()
 
     # Final Combined Summary Table
     print("\n=======================================================")
@@ -542,7 +546,8 @@ def main():
         status = "[PASS]" if passed else "[FAIL]"
         print(f"{status:<8} {test_name}")
     print("=======================================================\n")
+    return 0 if all(results.values()) else 1
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

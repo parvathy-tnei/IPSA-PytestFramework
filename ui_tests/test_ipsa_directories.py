@@ -1,3 +1,5 @@
+import os
+import re
 import sys
 import time
 from datetime import datetime
@@ -7,9 +9,47 @@ from pathlib import Path
 # CONFIGURATION
 # ============================================================
 
-# Hardcoded system directories
-TEMPLATE_FILE = Path(r"C:\ProgramData\IPSA 3.3\Templates\Templates.i3f")
-SCRIPTS_DIR = Path(r"C:\Users\Public\IPSA 3.3\PyIPSA Examples")
+def get_ipsa_engine_version() -> str:
+    try:
+        import ipsa
+    except ImportError as error:
+        raise RuntimeError("Could not import the PyIPSA engine module.") from error
+
+    try:
+        version = ipsa.GetInterface().GetVersion()
+    except Exception as error:
+        raise RuntimeError(f"Could not read the IPSA engine version: {error}") from error
+
+    if not version:
+        raise RuntimeError("The IPSA engine returned an empty version.")
+    return str(version)
+
+
+def discover_ipsa_data_directories(
+    engine_version: str,
+    program_data_root: Path | None = None,
+    public_root: Path | None = None,
+) -> tuple[Path | None, Path | None]:
+    program_data_root = program_data_root or Path(
+        os.environ.get("ProgramData", r"C:\ProgramData")
+    )
+    public_root = public_root or Path(
+        os.environ.get("PUBLIC", r"C:\Users\Public")
+    )
+    version_match = re.search(r"\d+\.\d+", engine_version)
+    if not version_match:
+        return None, None
+
+    version_folder = f"IPSA {version_match.group(0)}"
+    program_data_version = program_data_root / version_folder
+    public_version = public_root / version_folder
+    if not program_data_version.is_dir() or not public_version.is_dir():
+        return None, None
+
+    return (
+        program_data_version / "Templates" / "Templates.i3f",
+        public_version / "PyIPSA Examples",
+    )
 
 EXPECTED_SCRIPTS = [
     "All_Data_Tables",
@@ -25,9 +65,6 @@ EXPECTED_SCRIPTS = [
     "loadflow_summary",
 ]
 
-REPORT_FILE = Path.cwd() / "ipsa_directories_check.txt"
-
-
 # ============================================================
 # DISCLAIMER & COUNTDOWN
 # ============================================================
@@ -38,8 +75,8 @@ def print_pretest_disclaimer():
                              IMPORTANT DISCLAIMER
 ===============================================================================
 1. DIRECTORY / FILE VERIFICATION:
-   This test verifies installation integrity and standard paths for IPSA 3.3
-   templates and PyIPSA example scripts.
+   This test verifies templates and PyIPSA example scripts for the version
+   reported by the active IPSA engine.
 
 2. DO NOT MODIFY FILESYSTEM DURING TEST:
    Ensure no installation, update, or file transfer processes are modifying
@@ -82,44 +119,54 @@ def record(results_dict, description, passed, details=""):
 
 def run_filesystem_checks():
     results = {}
+    try:
+        engine_version = get_ipsa_engine_version()
+        template_file, scripts_dir = discover_ipsa_data_directories(engine_version)
+        record(results, "IPSA engine version", True, engine_version)
+    except RuntimeError as error:
+        engine_version = None
+        template_file = None
+        scripts_dir = None
+        record(results, "IPSA engine version", False, str(error))
 
     # 1. Template directory and file checks
+    template_directory = template_file.parent if template_file else None
     record(
         results,
         "Template directory exists",
-        TEMPLATE_FILE.parent.is_dir(),
-        str(TEMPLATE_FILE.parent),
+        template_directory is not None and template_directory.is_dir(),
+        str(template_directory) if template_directory else "No matching IPSA version found",
     )
 
     record(
         results,
         "Templates.i3f exists",
-        TEMPLATE_FILE.is_file(),
-        str(TEMPLATE_FILE),
+        template_file is not None and template_file.is_file(),
+        str(template_file) if template_file else f"No IPSA data folders found for engine version {engine_version}",
     )
 
     # 2. Script directory check
-    scripts_dir_exists = SCRIPTS_DIR.is_dir()
+    scripts_dir_exists = scripts_dir is not None and scripts_dir.is_dir()
     record(
         results,
         "Scripts directory exists",
         scripts_dir_exists,
-        str(SCRIPTS_DIR),
+        str(scripts_dir) if scripts_dir else f"No IPSA data folders found for engine version {engine_version}",
     )
 
     # 3. Individual script checks
     if scripts_dir_exists:
         for script_name in EXPECTED_SCRIPTS:
             candidates = [
-                SCRIPTS_DIR / f"{script_name}.py",
-                SCRIPTS_DIR / f"{script_name}.pyw",
+                scripts_dir / f"{script_name}.py",
+                scripts_dir / f"{script_name}.pyw",
             ]
             matches = [path for path in candidates if path.is_file()]
 
             if not matches:
                 matches = [
                     path
-                    for path in SCRIPTS_DIR.rglob("*")
+                    for path in scripts_dir.rglob("*")
                     if path.is_file()
                     and path.name.lower()
                     in {
@@ -150,11 +197,6 @@ def save_report(results):
     passed_count = sum(1 for passed in results.values() if passed)
     failed_count = sum(1 for passed in results.values() if not passed)
 
-    report_lines = [
-        f"[{'PASS' if passed else 'FAIL'}] {desc}"
-        for desc, passed in results.items()
-    ]
-
     summary_lines = [
         "",
         "=======================================================",
@@ -172,19 +214,15 @@ def save_report(results):
         summary_lines.append(f"{status:<8} {desc}")
     summary_lines.append("=======================================================\n")
 
-    full_report = "\n".join(report_lines + summary_lines)
-    REPORT_FILE.write_text(full_report, encoding="utf-8")
-
-    # Print summary to console
     print("\n".join(summary_lines))
-    print(f"Report saved to: {REPORT_FILE}")
 
 
-def main():
+def main() -> int:
     print_pretest_disclaimer()
     results = run_filesystem_checks()
     save_report(results)
+    return 0 if all(results.values()) else 1
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

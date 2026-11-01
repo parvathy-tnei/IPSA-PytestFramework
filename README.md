@@ -4,9 +4,6 @@ A Python-based automated testing framework for validating IPSA simulation result
 
 The framework executes supported IPSA studies, generates result workbooks, and compares them against benchmark Excel files using `pytest`. It supports both complete workbook comparison and sheet-wise comparison for easier identification of failures.
 
-In addition to study automation, the framework includes functional validation of Extended Data fields and utilities for detecting IPSA executables across multiple installed versions.
-
----
 
 # Features
 
@@ -59,16 +56,16 @@ PyTesting/
 │   ├── logger.py
 │   └── ...
 │
-├── Tests/
+├── tests/
 │   ├── conftest.py
-│   ├── config.py
+│   ├── runtime_config.py
 │   ├── utils.py
 │   ├── data_generators.py
 │   ├── test_loadflow.py
 │   ├── test_loadflow_sheetwise.py
 │   ├── test_fault_all.py
 │   ├── test_fault_all_sheetwise.py
-│   └── test_fault_selected.py
+│   ├── test_fault_selected.py
 │   ├── test_harmonics.py
 │   ├── test_contingency.py
 │   ├── test_profileloadflow.py
@@ -77,6 +74,10 @@ PyTesting/
 │
 ├── Test Results/
 │
+├── ui_tests/
+│   └── test_*.py
+├── run_all_pytest.py
+├── run_all_gui.py
 ├── pytest.ini
 │
 └── README.md
@@ -84,56 +85,153 @@ PyTesting/
 
 ---
 
+# Getting Started (Fresh Windows Setup)
 
-# Running the Framework
+The commands below assume Windows PowerShell and that the current directory is
+the project root (the folder containing `run_all_pytest.py` and `run_all_gui.py`).
 
-## Comparison Mode (Default)
+## 1. Install prerequisites
 
-Runs all tests and compares generated results against benchmark files.
+Install a Python version supported by the installed IPSA release. The IPSA
+Python API (`ipsa`) is supplied with IPSA and must be available to the Python
+environment used for these tests; a regular `pip install` may not install it.
+Use the Python interpreter configured for your IPSA installation.
 
-```bash
-pytest
+Install the Python dependencies used by the pytest and GUI suites:
+
+```powershell
+python -m pip install pytest pandas openpyxl numpy colorama reportlab lxml pyautogui pygetwindow pywinauto opencv-python
 ```
 
-or
+Verify that pytest and the IPSA API are available:
 
-```bash
-pytest --mode=benchmark-comparison
+```powershell
+python -m pytest --version
+python -c "import ipsa; print(ipsa.GetInterface().GetVersion())"
 ```
 
----
+If importing `ipsa` fails, configure/use the IPSA-supported Python
+environment before running either suite.
 
-## Benchmark Generation Mode
+## 2. Check local and shared test data
 
-Generates benchmark files only.
+- Pytest discovers `.i2f` and `.i3f` network models under `Resources\models`.
+  Make sure the required models are available there.
+- Benchmark-comparison mode needs the benchmark archive. By default, the
+  project looks for `S:\Adarsh\vbenchmark.zip`; this location must be
+  accessible, or pass a different archive path with `--network-benchmark`.
+- The GUI runner expects IPSA at
+  `C:\Program Files\IPSA Software\IPSA 3.4\bin\ipsa3.exe`. If IPSA is installed
+  elsewhere, update `IPSA_EXE` in `run_all_gui.py` before running the GUI suite.
+- The GUI checks automate a Windows desktop and require a valid IPSA
+  installation and license.
 
-No comparisons are performed.
+## 3. Run the pytest/API suite
 
-```bash
-pytest --mode=benchmark-generation
+Run all discovered pytest tests from the project root:
+
+```powershell
+python run_all_pytest.py
 ```
 
----
+Run one or more test modules by placing their paths after the runner. Extra
+arguments are passed through to pytest:
 
-# Command Line Arguments
+```powershell
+python run_all_pytest.py tests\test_loadflow.py -k IEEE
+python run_all_pytest.py tests\test_harmonics.py tests\test_contingency.py
+```
+
+### Generate benchmark results
+
+Generation mode creates benchmark outputs and skips comparison-marked tests.
+Choose a benchmark-version name to label the generated data:
+
+```powershell
+python run_all_pytest.py --mode=benchmark-generation --benchmark-version=vbenchmark --log-level=INFO
+python run_all_pytest.py tests\test_loadflow.py --mode=benchmark-generation --benchmark-version=vbenchmark --log-level=INFO
+```
+
+### Compare results against a benchmark
+
+Comparison mode is the default. Specify the target IPSA version and benchmark
+version explicitly when needed:
+
+```powershell
+python -m pytest tests\test_harmonics.py --mode=benchmark-comparison -m comparison -v -s --target-version=v3.4.0 --benchmark-version=vbenchmark
+python run_all_pytest.py tests\test_harmonics.py --mode=benchmark-comparison --target-version=v3.4.0 --benchmark-version=vbenchmark
+python run_all_pytest.py tests\test_harmonics.py tests\test_contingency.py --mode=benchmark-comparison --target-version=v3.4.0 --benchmark-version=vbenchmark
+```
+
+`python -m pytest` runs pytest directly. `run_all_pytest.py` is the project
+wrapper: it chooses the tests folder if no test path is supplied and adds
+verbose/output options.
+
+### Additional pytest options
+
+Select one discovered network (the `.i2f`/`.i3f` extension is optional):
+
+```powershell
+python run_all_pytest.py --network "My Network"
+python run_all_pytest.py tests\test_profileloadflow.py --network "My Network"
+```
+
+For contingency tests, `quick` runs N-1 and N-2; `full` also runs N-3 and
+N-1-1. The default is `full`:
+
+```powershell
+python run_all_pytest.py --contingency-depth=quick
+python run_all_pytest.py --contingency-depth=full
+```
+
+If the default benchmark archive is unavailable, supply its location:
+
+```powershell
+python run_all_pytest.py tests\test_harmonics.py --mode=benchmark-comparison --benchmark-version=vbenchmark --target-version=v3.4.0 --network-benchmark="D:\Benchmarks\vbenchmark.zip"
+```
 
 | Argument | Description | Default |
 |----------|-------------|---------|
-| `--mode` | benchmark-generation / benchmark-comparison | benchmark-comparison |
-| `--network-benchmark` | Path to benchmark zip | Network Location |
-| `--benchmark-version` | Benchmark folder/version | vbenchmark |
-| `--target-version` | IPSA target version | Current IPSA Version |
-| `--log-level` | Controls logging verbosity | INFO |
+| `--mode` | `benchmark-generation` or `benchmark-comparison` | `benchmark-comparison` |
+| `--network` | Select a network model by name | All discovered models |
+| `--network-benchmark` | Path to the benchmark ZIP archive | `S:\Adarsh\vbenchmark.zip` |
+| `--benchmark-version` | Benchmark output folder/version | `vbenchmark` |
+| `--target-version` | IPSA version under test | `v3.4.0` |
+| `--contingency-depth` | `quick` or `full` | `full` |
+| `--log-level` | Logging verbosity | `INFO` |
 
-Example
+Pytest results are saved to `Test Results\Latest_Test_Execution_Report.xlsx`.
+The workbook contains **Test Details** and **Summary Matrix** sheets.
 
-```bash
-pytest \
-    --mode=benchmark-comparison \
-    --benchmark-version=vbenchmark \
-    --target-version=v3.3.0 \
-    --log-level=DEBUG
+## 4. Run the GUI suite
+
+Run every standalone UI script sequentially and write its combined Excel report:
+
+```powershell
+python run_all_gui.py
 ```
+
+The scripts run in this order: templates, library, help, help connections,
+directories, geographic map, analysis, component, and file menu. Additional
+`test_*.py` scripts in `ui_tests` run afterward in alphabetical order.
+
+**GUI test limitation:** These tests exercise the IPSA user interface—such as
+opening panels, dialogs, menus, and performing UI actions. They do **not**
+validate the correctness of the final generated study outputs or compare those
+outputs with benchmark results. Use the pytest/API suite for result generation
+and benchmark comparison.
+
+The GUI runner controls the mouse and keyboard. Before running it, open IPSA in
+a ready state if you want to reuse the existing session; do not interact with
+the computer while tests are running. Move the pointer to the top-left screen
+corner to trigger PyAutoGUI's failsafe. If IPSA is already open, the runner
+closes any active network, chooses **No** if asked to save changes, and reuses
+that session for the first test. It launches a fresh IPSA session for later
+tests and closes the session after each test.
+
+The GUI report is `Test Results\Latest_GUI_Test_Execution_Report.xlsx`, with
+**Test Details** and **Summary Matrix** sheets. Each run replaces the previous
+GUI report; it does not overwrite the pytest report.
 
 ---
 
@@ -189,7 +287,8 @@ This makes it significantly easier to identify which section of the workbook has
 
 # Configuration
 
-Runtime configuration is managed through `config.py`.
+Runtime configuration is managed through `tests\runtime_config.py` and is
+populated from the pytest command-line options.
 
 The configuration object stores:
 
@@ -203,81 +302,42 @@ This removes hardcoded values from the framework.
 
 
 
-# Running Individual Tests
-
-Individual tests can be executed independently during development and debugging. The following commands assume the corresponding test files exist in the repository.
-
-- Load Flow
-
-python -m pytest .\tests\test_loadflow.py -v -s
-
-- Fault Level Analysis
-
-python -m pytest .\tests\test_fault_all.py -v -s
-python -m pytest .\tests\test_fault_selected.py -v -s
-
-- Harmonic Analysis
-
-python -m pytest .\tests\test_harmonics.py -v -s
-
-- Contingency Analysis
-
-python -m pytest .\tests\test_contingency.py -v -s
-
-- Profile Load Flow
-
-python -m pytest .\tests\test_profileloadflow.py -v -s
-or
-python -m pytest .\tests\test_profileloadflow.py --mode=benchmark-comparison -m comparison -v -s -k "IEEE"
-
-- Extended Data Validation
-
-python -m pytest .\tests\test_extended_data_check.py -v -s
-
-- IPSA Executable Detection
-
-Run the executable detection utility directly:
-
-python .\Resources\IPSAVersionCheck.py
-
----
-
 # Typical Workflow
 
 ## Generate benchmark
 
 ```bash
-pytest --mode=benchmark-generation
+python run_all_pytest.py --mode=benchmark-generation --benchmark-version=vbenchmark --log-level=INFO
 ```
 
-Review generated outputs.
+Review the generated workbook outputs, then archive/publish the approved
+benchmark data in the location used by comparison runs.
 
-Archive the benchmark results.
+## Compare against a benchmark
 
----
-
-## Execute comparison
-
-```bash
-pytest
+```powershell
+python run_all_pytest.py --mode=benchmark-comparison --target-version=v3.4.0 --benchmark-version=vbenchmark
 ```
 
-Review any failed tests.
+Review `Test Results\Latest_Test_Execution_Report.xlsx` for passed, failed, or
+skipped pytest checks.
 
-If required, use the sheet-wise tests to quickly identify which worksheet differs.
+For GUI smoke/interaction checks, run `python run_all_gui.py` separately. Those
+tests do not check final analysis output values.
 
 ---
 
 # Requirements
 
-- Python 3.x
-- pytest
-- pandas
-- openpyxl
-- IPSA Python package
-- Valid IPSA license
-- Access to the relevant IPSA network models
-- Access to the benchmark archive when no local benchmark is available
+- Windows and a Python version supported by the installed IPSA release
+- IPSA installed, licensed, and its Python API (`ipsa`) importable from the
+  selected Python environment
+- Python packages installed as shown in [Getting Started](#getting-started-fresh-windows-setup)
+- Required `.i2f`/`.i3f` models under `Resources\models`
+- For comparison mode, access to the benchmark ZIP (default:
+  `S:\Adarsh\vbenchmark.zip`) or a path supplied with `--network-benchmark`
+- For GUI tests, the IPSA executable at the configured path and an interactive
+  desktop session
 ---
 
 # Future Enhancements

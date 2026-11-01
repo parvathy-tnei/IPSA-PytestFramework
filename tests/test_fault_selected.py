@@ -2,6 +2,7 @@ import sys
 from pathlib import Path
 
 from runtime_config import CONFIG
+from runtime_config import is_network_applicable
 import pytest
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -29,7 +30,7 @@ SUPPORTED_NETWORKS = {
 @pytest.mark.fault_selected
 def test_fault_selected_busbars(network, resources_dir):
 
-    if network["name"] not in SUPPORTED_NETWORKS:
+    if not is_network_applicable(network["name"], SUPPORTED_NETWORKS):
         pytest.skip(
             "Selected busbar study not applicable"
         )
@@ -64,7 +65,7 @@ def test_fault_selected_busbars(network, resources_dir):
 @pytest.mark.generation
 def test_fault_selected_generation(network, resources_dir):
 
-    if network["name"] not in SUPPORTED_NETWORKS:
+    if not is_network_applicable(network["name"], SUPPORTED_NETWORKS):
         pytest.skip(
             "Selected busbar study not applicable"
         )

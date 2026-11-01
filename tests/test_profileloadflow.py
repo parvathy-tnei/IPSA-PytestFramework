@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from runtime_config import CONFIG
+from runtime_config import CONFIG, is_network_applicable
 
 from Logger import debug, info, error, setLoggerMode
 
@@ -28,9 +28,9 @@ SUPPORTED_NETWORKS = [
 @pytest.mark.profile_loadflow
 def test_profileloadflow(network, resources_dir):
 
-    if network["name"] not in SUPPORTED_NETWORKS:
+    if not is_network_applicable(network["name"], SUPPORTED_NETWORKS):
         pytest.skip(
-            "Profile Load Flow not applicable to this network"
+            "Profile Load Flow not selected for this network"
         )
     ipsa_interface = network["ipsa"]
     net = network["network"]
@@ -65,8 +65,8 @@ def test_profileloadflow(network, resources_dir):
 @pytest.mark.profile_loadflow
 def test_profileloadflow_generation(network, resources_dir):
 
-    if network["name"] not in SUPPORTED_NETWORKS:
-        pytest.skip("Selected busbar study not applicable")
+    if not is_network_applicable(network["name"], SUPPORTED_NETWORKS):
+        pytest.skip("Profile Load Flow not selected for this network")
     ipsa_interface = network["ipsa"]
     net = network["network"]
 
